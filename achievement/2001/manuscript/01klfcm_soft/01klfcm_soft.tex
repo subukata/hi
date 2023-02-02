@@ -1,0 +1,1079 @@
+%%tl.ma.name=ファジィ学会誌
+%%tl.pp.par.=000 A4 縦置き LaTeX
+%題　　目：K-L情報量正則化FCMクラスタリング法
+%英文題目：Fuzzy c-Means Clustering with Regularization by K-L Information
+
+\documentstyle[fleqn,a4j,citesort,epsbox]{jarticle}
+\setlength{\mathindent}{1mm}      %数式を左から３ミリ
+\setlength{\jot}{3mm}             %文章と式の上下幅３ミリ
+%\setlength{\textwidth}{64zw}      %文章の幅を６４文字分  
+\setlength{\textwidth}{169mm}     % 
+\setlength{\parindent}{3mm}
+\setlength{\oddsidemargin}{ 0in}  % 
+\setlength{\textheight}{240mm}    % 
+\setlength{\topmargin}{0in}       % 
+\setlength{\headsep}{0mm}         % 
+\setlength{\columnsep}{8mm}      % 二段組の中央余白
+\renewcommand{\topfraction}{1.0}         %図で１００％埋めてもよし 
+\renewcommand{\bottomfraction}{1.0}         %図で１００％埋めてもよし 
+\renewcommand{\textfraction}{0.0}        %文章が０％でもよし 
+\renewcommand{\floatpagefraction}{ 0.0}  %文章が０％でもよし 
+\setlength{\floatsep}{5mm}               %フロートと文章の間０ミリ
+\setcounter{totalnumber}{10}             %１ページのフロート数
+\setcounter{topnumber}{5}                %１ページのフロート数
+\setcounter{bottomnumber}{5}             %１ページのフロート数
+
+%% boldmath define
+\newcommand{\vctr}[1]{\mbox{\boldmath $#1$}}
+\newenvironment{indention}[1]{\par
+\addtolength{\leftskip}{#1}
+\begingroup}{\endgroup\par}
+
+\sloppy
+\pagestyle{empty}
+\begin{document}
+
+%%%%%%%%%%%%%%%% Step Counter %%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{mycounti}
+\newcounter{mycountii}[mycounti]
+\newenvironment{steplist}{%
+\def\themycountii{\themycounti.\arabic{mycountii}}
+\def\step{%
+\refstepcounter{mycounti}\item[\it Step \themycounti:]}%
+\def\skipstep{\stepcounter{mycounti}}
+\def\substep{%
+\refstepcounter{mycountii}\item[\it Step \themycountii:]}%
+\begin{list}{}{\setlength{\leftmargin}{16mm}
+\setlength{\labelsep}{1em}
+\setlength{\labelwidth}{\leftmargin}
+\addtolength{\labelwidth}{-\labelsep}}
+}{\end{list}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%ファジー学会  1p-4p
+
+
+%1p  表題（和文・英文）
+
+
+
+\begin{center}
+    \vspace*{50mm}
+    {\huge K-L情報量正則化FCMクラスタリング法}\\
+    \vspace{50mm}
+    {\large Fuzzy $c$-Means Clustering with Regularization by K-L Information} 
+\end{center}
+\clearpage
+
+%2p 著者・所属・所在地（和文・英文）
+
+
+\begin{center}
+    \vspace*{20mm}
+    {\LARGE  宮岸　聖高} \\
+
+    {\LARGE  市橋　秀友} \\
+
+    {\LARGE  本多　克宏} \\
+
+    {\Large 大阪府立大学大学院　工学研究科　電気・情報系専攻　経営工学分野\\
+    〒599-8531　大阪府堺市学園町１ー１ \\}
+
+    \vspace*{20mm}
+    {\LARGE  Kiyotaka MIYAGISHI} \\
+
+    {\LARGE  Hidetomo ICHIHASHI} \\
+
+    {\LARGE  Katsuhiro HONDA} \\
+
+    {\Large Graduate School of Engineering, Electrical Engineering and Information Science, Industrial Engineering, Osaka Prefecture University\\
+      1-1 Gakuen-cho, Sakai, Osaka 599-8531, Japan}
+
+\end{center}
+\clearpage
+
+%3p 日本語の要約とキーワード
+
+{\Large 要　約 \\}
+\vspace{5mm}
+
+\addtolength{\baselineskip}{5mm}
+Fuzzy $c$-Means (FCM法)は目的関数の最適化によるクラスタリング法である．一方，ガウス混合モデルは複数の正規分布を足し合わせて密度関数を表現し，パラメータ推定にEMアルゴリズムを適用する方法で一種のクラスタリング法とも考えられている．本研究ではK-L情報量正則化によるFCM法 (KFCM法)を提案し，ガウス混合モデルとの類似点と相違点を議論する．ガウス混合モデルは提案法におけるファジィ度を制御するパラメータ$\lambda$が特定の値を持つときのみ同等のアルゴリズムが導かれるが特定の値以外の場合には対応する混合モデルが存在しないことを示す．そのことから，KFCM法ではパラメータ$\lambda$の値を温度とみなし，アニーリングを行なうことが可能で，クラスタリング結果を改善できることを示す．また，Gustafson-Kesselの制約項を導入したGKFCM法を提案し，ノイズのあるデータに対して可能性的クラスタリングと同様の結果を得ることができることを示す．
+\addtolength{\baselineskip}{-5mm}
+
+\vspace{20mm}
+{\Large キーワード\\}
+
+\vspace{5mm}
+
+ファジィクラスタリング，ガウス混合モデル，K-L情報量正則化，可能性的クラスタリング
+
+\clearpage
+
+
+%4p 英語の要約とキーワード
+
+{\Large 　Abstract \\}
+\vspace{5mm}
+
+\addtolength{\baselineskip}{5mm}
+Gaussian mixture model with EM algorithm is a popular density estimation method that uses the likelihood function as a measure of fit. It can be used as a tool for clustering. The thesis of the paper is that although the iterative algorithm of Fuzzy $c$-Means (FCM) clustering with entropy regularization is similar to that of the Gaussian mixture model, the FCM clustering has more flexible structure since the algorithm is based on the objective function method. We show that just the same algorithm as the Gaussian mixture model can be derived from a modified objective function with regularization by K-L information, and in a slightly different manner such as installing an annealing parameter and addition of Gustafson and Kessel's constraints, the proposed algorithm provides more valid or useful clustering results.\\
+
+
+\addtolength{\baselineskip}{-5mm}
+
+\vspace{20mm}
+{\Large Keywords \\}
+
+\vspace{5mm}
+Fuzzy clustering, Gaussian mixture model, Regularization by K-L Information, Possibilistic clustering
+\clearpage
+
+
+\twocolumn
+
+\baselineskip 6mm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   はじめに
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{はじめに}
+
+クラスタリングの手法は大別して，階層的クラスタリングと非階層的クラスタリングに分かれる．非階層的方法に，クラスタリング結果の良さを評価するための目的関数を設定する，最適化クラスタリングの一つであるK-平均法(K-means)がある．それから発展したFCM(fuzzy $c$-means)法\cite{ref1}でも目的関数の局所最適解が最適なクラスタリングであるとされる．
+
+類似性の測度としてユークリッド距離を用いる場合は，目的関数にはクラスタ中心からの2乗距離の総和が用いられ，距離の定義や目的関数の変更によって多くのファジィクラスタリング法が研究され，開発されてきた．一方，確率統計やニューラルネットの分野でも類似のアルゴリズムが開発されている．中でも，ガウス混合モデル\cite{ref2,ref3}は複数の正規分布を足しあわせて密度関数を表現し，パラメータ推定にEMアルゴリズムを適用する方法であり，確率ニューラルネットワークの一種とも見なされている．ガウス混合モデルは，最近活発に研究されているエントロピー正則化によるFCM法\cite{ref4,ref5}とそのアルゴリズムに類似性がある\cite{ref6}．
+
+本論文では，K-L情報量(相互情報量)正則化によるFCM法(KFCM法)を提案し，ガウス混合モデルにおけるEMアルゴリズムとの相違点を議論しFCM法の有効性を明らかにする．まず，提案のKFCM法でのファジィ度を制御するパラメータ$\lambda$を2とするとガウス混合モデルと同じアルゴリズムが導かれるが，2以外の場合には対応する混合モデルが存在しないことを示す．そのことから，KFCM法ではパラメータ$\lambda$の値を温度とみなし，反復アルゴリズムの中で逐次減少させる，いわゆるアニーリングが可能で，クラスタリング結果を改善できることを示す．また，Gustafson-Kessel\cite{ref10}の制約項を導入したKFCM法を提案し，可能性的クラスタリング\cite{ref15,ref16}と類似したクラスタリング結果を得ることができることを示す．数値実験ではガウス混合モデルとの分類結果や局所解の頻度，Gustafson-Kesselの制約を付加する場合との比較を行い，それぞれの特徴を明らかにする．
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    第2章
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{ガウス混合モデルとKFCM法}
+
+正規分布や$\chi^2$分布などの単一の分布型を仮定しない確率密度関数の推定法にガウス混合モデルがある．そこでは，判別分析のためのクラスも考慮される場合があるが，ここではクラスは一つであるとする．密度関数は複数の正規分布の凸結合で表されるので，各正規分布の平均の周りにデータが分布するように，平均（中心）が定められる．したがって，クラスタ中心の周りにデータが分布するように分割する，ファジィクラスタリングによく似た方法であると考えられる．ファジィクラスタリングではファジィ部分集合へのメンバシップによって分割するのに対して，ガウス混合モデルでは，正規分布の確率密度関数に従って個体が生起すると考える．データの集合をクラスタの集まりと見るか，確率分布の集まりと見るかの違いはあるが，両者には類似性がある．
+
+$n$個の個体（サンプル）の特徴量を$s$次元データベクトル$\vctr x_k$，$c$個の正規分布の平均を$s$次元ベクトル$\vctr v_i$とする．また，$\phi^*$をパラメータの推定値，$\phi$を更新後のパラメータ推定値とする．ガウス混合モデルは密度関数を
+%
+\begin{eqnarray}
+g(\vctr x | \phi )=\sum_{i=1}^c \pi_i p_i(\vctr x | \phi_i ) 
+\label{eq1}
+\end{eqnarray}
+%
+\begin{eqnarray*}
+p_i(\vctr x | \phi_i ) = \frac{1}{(2\pi)^{\frac{s}{2}} |A_i|^{\frac{1}{2}}}  
+\end{eqnarray*}
+%
+\begin{eqnarray}
+\hspace{10mm} \exp \biggl( -\frac{1}{2}(\vctr x - \vctr v_i)^T A_i^{-1}(\vctr x - \vctr v_i)
+\biggr)
+\label{eq2}
+\end{eqnarray}
+%
+と表して，未知パラメータである行列$A_i$，平均$\vctr v_i$，足しあわせの比率$\pi_i$を最尤法によって求める．$\vctr x_k$が与えられた場合のモデル$l$の生起する事後確率を
+%
+\begin{eqnarray}
+u_{lk} = \frac{\pi_l^* p_l(\vctr x_k | \phi^*_l )}{\sum_{j=1}^c \pi_j^* p_j(\vctr x_k | \phi^*_j)}
+\label{eq3}
+\end{eqnarray}
+%
+とすると，
+EMアルゴリズムは，対数尤度
+%
+\begin{eqnarray}
+\nonumber
+Q(\phi|\phi^*)= \sum_{i=1}^c \sum_{k=1}^n \log [\pi_i p_i(\vctr x_k | \phi_i )] u_{ik} \\
+\nonumber
+= \sum_{i=1}^c \sum_{k=1}^n u_{ik} \log \pi_i 　　　　\\
++ \sum_{i=1}^c \sum_{k=1}^n u_{ik} \log p_i(\vctr x_k | \phi_i )　
+\label{eq4}
+\end{eqnarray}
+%
+の最大化として求められる．
+
+まず，Eステップとして
+%
+\begin{eqnarray*}
+&& \hspace{-80mm}
+u_{lk}= \\ 
+\frac{\pi_l \exp \bigl( -\frac{1}{2}(\vctr x_k - \vctr v_l)^T A_l^{-1} (\vctr x_k - \vctr v_l) \bigr) |A_l|^{ -\frac{1}{2}}}{\sum_{i=1}^c \pi_i \exp \bigl( -\frac{1}{2}(\vctr x_k - \vctr v_i)^T A_i^{-1} (\vctr x_k - \vctr v_i) \bigr) |A_i|^{ -\frac{1}{2}}}
+\label{eq5}
+\end{eqnarray*}
+%
+\begin{eqnarray}
+\end{eqnarray}
+%
+Mステップとして
+%
+\begin{eqnarray}
+\pi_i=\frac{1}{n}\sum_{k=1}^n u_{ik}
+\label{eq6}
+\end{eqnarray}
+%
+また，$A_i$と$\vctr v_i$は，式(\ref{eq4})の第1項目には含まれていないので，第2項目から，
+%
+\begin{eqnarray}
+A_i=\frac{\sum_{k=1}^n u_{ik}(\vctr x_k - \vctr v_i)(\vctr x_k - \vctr v_i)^T}{\sum_{k=1}^n u_{ik}}
+\label{eq7}
+\end{eqnarray}
+%
+\begin{eqnarray}
+\vctr v_i=\frac{\sum_{k=1}^n u_{ik}\vctr x_k}{\sum_{k=1}^n u_{ik}}
+\label{eq8}
+\end{eqnarray}
+%
+となる．上記のEステップとMステップを交互に繰り返す，EMアルゴリズムが知られている\cite{ref3,ref7}．EMアルゴリズムでは，行列$A_i$も決定変数としていて，$A_i$が正定値行列とならない場合が起こりうる．また局所解に陥りやすいという問題もしばしば指摘されている．
+
+J.C.Bezdekによる文献\cite{ref1}のFCM法は，メンバシップを求めることで個体の集合をファジィ部分集合に分割するクラスタリング法である．前述の$c$個の正規分布の平均に代えて，クラスタの中心ベクトルを$s$次元ベクトル$\vctr v_i$とし，個体$k$がクラスタ$i$に属する度合いをメンバシップ$u_{ik}$とする．目的関数は次のように定められている．%
+%
+\begin{eqnarray}
+J_m=\sum_{i=1}^c \sum_{k=1}^n (u_{ik})^m d_{ik}
+\label{eq9}
+\end{eqnarray}
+%
+ただし，メンバシップ$u_{ik}$は非負で，$c$個のクラスタについての和は各個体毎に1であるという制約条件の下での最小化を考える．
+%
+\begin{eqnarray}
+d_{ik}=(\vctr x_k - \vctr v_i)^T A_i^{-1} (\vctr x_k - \vctr v_i)
+\label{eq10}
+\end{eqnarray}
+%
+は，ユークリッド距離やマハラノビス距離などの，事前に選ばれた重み付き距離である．$A_i$を単位行列としてユークリッド距離が用いられることが多いが，D.E.GustafsonとW.C.Kesselによる修正FCM法\cite{ref10}では$|A_i|$の大きさに制約を付加していて，$A_i$の要素も決定変数である．指数の$m$はBezdekの論文\cite{ref11}で初めて導入されたもので，$J_m$はメンバシップの$m$乗で重みづけられた各個体からクラスタ中心までの距離の和である．したがって，$J_m$を最小化する解はクラスタ中心からの距離を最小化するファジィクラスタである．添え字の集合を次のように定めると，
+%
+\begin{eqnarray*}
+I_k&=&\{ i |1\le i \le c;d_{ik}= \parallel \vctr x_k - \vctr v_i \parallel =0 \}\\
+\tilde{I_k}&=&\{ 1,2,\ldots,c \} - I_k
+\end{eqnarray*}
+%
+$J_m$の最適性の必要条件はメンバシップ$u_{ik}$について，\\
+$I_k=\phi$ならば，
+%
+\begin{eqnarray}
+u_{ik}=\frac{1}{\sum_{j=1}^c \bigl( \frac{d_{ik}}{d_{jk}} \bigr)^{\frac{1}{(m-1)}}}
+\label{eq11}
+\end{eqnarray}
+%
+$I_k \ne \phi$ならば，
+%
+\begin{eqnarray}
+u_{ik}=0\ \forall i \in \tilde{I_k}かつ\sum_{i \in I_k} u_{ik}=1
+\label{eq12}
+\end{eqnarray}
+%
+また，クラスタ中心$\vctr v_i$について
+%
+\begin{eqnarray}
+\vctr v_i =\frac{\sum_{k=1}^n(u_{ik})^m \vctr x_k}{\sum_{k=1}^n(u_{ik})^m}
+\label{eq13}
+\end{eqnarray}
+%
+となる．
+
+すべての$u_{ik}$を固定すると，すべての$\vctr v_i$の最適値が求まり，逆にすべての$\vctr v_i$を固定すると，すべての$u_{ik}$の最適値を求めることができる．そこで，FCM法のアルゴリズムは，$J_m$の最適性の必要条件である式(\ref{eq11})～式(\ref{eq13})により，決定変数のグループ毎に最適解を求めることを繰り返すもので，Picard反復と呼ばれている．
+
+メンバシップのべき乗を用いるオリジナルなFCM法には，式(\ref{eq12})のような技術的トリックが存在する．FCM法では$\vctr x_k$とクラスタ中心$\vctr v_i$が同じ値で，その間の距離が$d_{ik}=0$でメンバシップの算式(\ref{eq11})の分母が0となることを特異であると呼ぶ．一方，文献\cite{ref4,ref5}で，宮本らはラグランジュ乗数法で解が求まらないという意味でクリスプなクラスタを特異と呼び，ファジィクラスタが求まるようにエントロピー項を導入する方法を提案している．エントロピー正則化による場合は上記のような技術的トリックは必要でない．一般に正則化は滑らかな解を得るための方法という意味合いで使われることがあり，目的関数$J_1$にある種の正則化項$K$を正数パラメータ$\lambda$とともに付加し，$J=J_1+\lambda K$を最適化することはしばしば行われている．最適化される目的関数は，$J_m$の代わりに，
+%
+\begin{eqnarray}
+J_{\lambda}=\sum_{i=1}^c \sum_{k=1}^n u_{ik} d_{ik} + \lambda \sum_{i=1}^c \sum_{k=1}^n u_{ik} \log u_{ik}
+\label{eq14}
+\end{eqnarray}
+%
+を採用する．ラグランジュ乗数法を用いることによって$u_{ik}$の最適解が次式で与えられる\cite{ref5}．
+%
+\begin{eqnarray}
+u_{ik}=\frac{\exp(-\frac{1}{\lambda}d_{ik})}{\sum_{j=1}^c \exp(-\frac{1}{\lambda}d_{jk})}
+\label{eq15}
+\end{eqnarray}
+%
+また，$\vctr v_i$の最適解は次のようになる．
+%
+\begin{eqnarray}
+\vctr v_i=\frac{\sum_{k=1}^n u_{ik}\vctr x_k}{\sum_{k=1}^n u_{ik}}
+\label{eq16}
+\end{eqnarray}
+%
+式(\ref{eq13})では平均(中心)の計算がメンバシップの$m$乗の重み付きとして求められるが，式(\ref{eq16})では$m$乗が不要である．メンバシップのべき乗によるFCM法では，十分遠くにある個体はどのクラスタにもほぼ等しいメンバシップを持つようになるが，エントロピー正則化では，0あるいは1に近づく\cite{ref5}．\\
+　本論文では，エントロピー正則化FCM法の目的関数である式(\ref{eq14})のエントロピー項をK-L情報量に変更し，制約条件をラグランジュ関数として含めて
+%
+
+{\small
+\begin{eqnarray}
+	J_{\lambda \tau} &=& \sum_{i=1}^c \sum_{k=1}^n u_{ik}d_{ik}
++ \lambda \sum_{i=1}^c \sum_{k=1}^n u_{ik} \log
+  \frac{u_{ik}}{\pi_i}
+\nonumber\\
+  &+& \sum_{i=1}^c \sum_{k=1}^n u_{ik} \log |A_i| - \sum_{k=1}^n \eta_k (\sum_{i=1}^c u_{ik} - 1) 
+\nonumber\\
+  &-& \tau (\sum_{i=1}^c \pi_i - 1)
+ \label{eq17}
+\end{eqnarray}
+}
+とする．$d_{ik}$は式(\ref{eq10})とし，$\eta_k$と$\tau$はラグランジュ乗数で，対応する項はそれぞれ，メンバシップおよび新たに導入した変数$\pi_i$の$i$についての$c$個の和が1であることを表している．式(\ref{eq14})のエントロピー項はメンバシップができるだけ均等になるように設けられたものである．一方，式(\ref{eq17})の第2項目は$u_{ik}$と$\pi_i$がすべての$i$について等しければ，0となり，$u_{ik}$と$\pi_i$の分布の近さを測るためのK-L情報量を表している．すなわち，クラスタ$i$内の個体のメンバシップ$u_{ik}$がすべて$\pi_i$に，できるだけ等しくなるように設けられた項で，パラメータ$\lambda$でその程度を指定する．K-L情報量正則化項を導入することで，クラスタの容量を考慮しながらクラスタリングを行なうことになり，大きさに差があるクラスタを適当に分割することができる\cite{ref21}．提案のファジィクラスタリング法は確率統計理論におけるエントロピーやK-L情報量の形式を採用しているが，ファジィなクラスタを得ようとするもので，EMアルゴリズムのような確率論的アプローチではない．
+
+式(\ref{eq17})の最適性の必要条件
+%
+\begin{eqnarray}
+\frac{\partial J_{\lambda\tau}}{\partial u_{ik}}=0
+\label{eq18}
+\end{eqnarray}
+%
+より，
+%
+\begin{eqnarray}
+u_{ik}=\pi_i |A_i|^{ -\frac{1}{\lambda}} \exp \biggl( -\frac{1}{\lambda}d_{ik} \biggr) \exp \biggl( \frac{\eta_k }{\lambda} - 1 \biggr)
+\label{eq19}
+\end{eqnarray}
+%
+また，
+%
+\begin{eqnarray}
+\sum_{i=1}^c u_{ik}=1
+\label{eq20}
+\end{eqnarray}
+%
+であるので，
+%
+\begin{eqnarray}
+u_{ik}=\frac{\pi_i \exp \bigl( -\frac{1}{\lambda} d_{ik} \bigr) |A_i|^{ -\frac{1}{\lambda}}}{\sum_{j=1}^c \pi_j \exp \bigl( -\frac{1}{\lambda} d_{jk} \bigr) |A_j|^{ -\frac{1}{\lambda}} }
+\label{eq21}
+\end{eqnarray}
+%
+さらに，
+%
+\begin{eqnarray}
+\frac{\partial J_{\lambda\tau}}{\partial \pi_i} = 0
+\label{eq22}
+\end{eqnarray}
+%
+より，
+%
+\begin{eqnarray}
+\pi_i=\frac{-\lambda}{\tau}\sum_{k=1}^n u_{ik}
+\label{eq23}
+\end{eqnarray}
+%
+また，
+%
+\begin{eqnarray}
+\sum_{i=1}^c \pi_i = 1
+\label{eq24}
+\end{eqnarray}
+%
+より，
+%
+\begin{eqnarray}
+\pi_i=\frac{\sum_{k=1}^n u_{ik}}{\sum_{j=1}^c \sum_{k=1}^n u_{jk}} =\frac{1}{n} \sum_{k=1}^n u_{ik}
+\label{eq25}
+\end{eqnarray}
+%
+となる．上式より$\pi_i$はファジィクラスタ$i$に含まれるデータの容量(割合)であるといえる．同様に行列$A_i$の$jl$成分を$a^{jl}_i$ とすると，
+%
+\begin{eqnarray}
+\frac{\partial J_{\lambda\tau}}{\partial a^{jl}_i} = 0
+\label{eq26}
+\end{eqnarray}
+%
+より，
+%
+\begin{eqnarray}
+A_i=\frac{\sum_{k=1}^n u_{ik}(\vctr x_k - \vctr v_i)(\vctr x_k - \vctr v_i)^T}{\sum_{k=1}^n u_{ik}}
+\label{eq27}
+\end{eqnarray}
+%
+\begin{eqnarray}
+\frac{\partial J_{\lambda\tau}}{\partial \vctr v_i} = {\Large \vctr 0}
+\label{eq28}
+\end{eqnarray}
+%
+から，
+%
+\begin{eqnarray}
+\vctr v_i=\frac{\sum_{k=1}^n u_{ik} \vctr x_k}{\sum_{k=1}^n u_{ik}}
+\label{eq29}
+\end{eqnarray}
+%
+となる．したがって，計算アルゴリズムは次のような，式(\ref{eq21})，式(\ref{eq25})，式(\ref{eq27})，式(\ref{eq29})の繰り返しとなる．本提案アルゴリズムをKFCM法と呼ぶ．
+
+\noindent \newline {\bf KFCM アルゴリズム}
+%
+\begin{steplist}
+	\setcounter{mycounti}{0}
+	\step メンバシップの初期値$u_{ik}$を乱数により与える．
+	\step 式(\ref{eq29})よりクラスタ中心$\,\vctr{v}_i$を求める．
+	\step 式(\ref{eq27})より行列$A_i$を求める．
+        \step 式(\ref{eq25})よりクラスタ$i$の容量$\pi_i$を求める．
+	\step 式(\ref{eq21})よりメンバシップ$u_{ik}$を求める．
+	\step 収束判定条件
+		\begin{eqnarray}
+        	\max_{c, \ j} | u_{cj}^{NEW} - u_{cj}^{OLD} | < \epsilon \nonumber
+		\end{eqnarray}
+		を満たせば終了．その他は{\em Step 2}へ戻る．
+\end{steplist}
+%\\
+
+目的関数にK-L情報量による正則化を導入し，ファジィクラスタを得るための重みパラメータ$\lambda$を2とすることによって，ガウス混合モデルでの式(\ref{eq5})～式(\ref{eq8})のアルゴリズムが得られる．したがって，ガウス混合モデルとKFCM法は分布（確率密度）を求めるのか集合（メンバシップ）を求めるのかの相違はあるが密接な関係にあると言える．FCM法では行列$A_i$は単位行列とされることが多いが，D.E.GustafsonとW.C.Kesselによる修正FCM法\cite{ref10}では$A_i$の要素も繰り返しアルゴリズムの中で求められる．
+
+式(\ref{eq21})のメンバシップ関数は，エントロピー正則化のFCM法に比べて$\pi_i$が分母分子にかかっている．式(\ref{eq25})より，$\pi_i$はクラスタ$i$の容量を表していると考えられ，式(\ref{eq17})の目的関数は未知数$\pi_i$についても最小化されるので，K-L情報量による正則化ではクラスタ容量についても最適化を図っているといえる．ガウス混合モデルと同様，KFCM法でもしばしば局所解に陥り，$A_i$も決定変数とすると，$A_i$が正定値行列とならない場合が起こりうる．この点のアニーリングによる改善については5.2節の数値実験で述べる．
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    第3章
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ガウス混合モデルとKFCM法との比較}
+%
+K-L情報量による正則化を付加した目的関数式(\ref{eq17})から求まるメンバシップ$u_{ik}$には，式(\ref{eq21})のように変数$\lambda$が含まれている．$\lambda=2$の場合は$u_{ik}，\pi_i，A_i，\vctr v_i$のすべての未知パラメータを求めるアルゴリズムが，ガウス混合モデルの場合と一致している．また，$\lambda$は式(\ref{eq21})の$u_{ik}$にのみ含まれている．そこで，$\lambda \neq 2$の場合に相当するガウス分布以外の何らかの混合モデルが存在するかを考察する．
+%\begin{eqnarray}
+%	u_{ik} &=& \frac{\pi_i \exp \left(- \frac{1}{\lambda} d_{ik} \right)|A_i^{-1}|^{ 1%/\lambda}}
+%                  {\sum_{j=1}^c \pi_j \exp 
+%		\left(- \frac{1}{\lambda} d_{ik} \right)|A_j^{-1}|^{ 1/\lambda}}
+%\label{eq30}
+%\end{eqnarray}
+%
+
+
+式(\ref{eq21})は事前確率から事後確率を求めるベイズの定理に相当する．そこで，Eステップによって事後確率を表す式(\ref{eq21})が得られる次の関数を考える．
+%
+\begin{eqnarray}
+	p_i(\vctr{x}) &=& \frac{|A_i^{-1}|^{1/\lambda}}{K}
+	\exp \left(- \frac{1}{\lambda} d_{ik} \right)
+ \label{eq31}
+\end{eqnarray}
+%
+この関数が確率密度関数であるかを以下に議論する．ただし，$K$は定数である．$K$を適当に定めることによって，式(\ref{eq31})の積分が$1$となれば, 何らかの確率密度関数であり，Eステップの式(\ref{eq21})をベイズの定理から定めることができる．ここでは説明を分かりやすくするために，$2$変数の密度関数の場合について考える．
+式(\ref{eq31})の関数の全領域での積分値は，
+%
+%{\small
+\begin{eqnarray}
+&& \hspace{-7mm}
+\frac{{|A_i^{-1}|^{1/\lambda}}}{K} \nonumber\\
+&& \hspace{0mm}
+\int_{-\infty}^\infty \int_{-\infty}^\infty  \exp \left(- \frac{1}{\lambda} (\vctr{x} - \vctr{v}_i)^T A_i^{-1} (\vctr{x} - \vctr{v}_i)\right)\,d\vctr{x} \nonumber\\
+&& \hspace{3mm}
+= \frac{ \lambda \pi }{K} |A_i|^{\frac{\lambda - 2}{2\lambda}}
+\label{eq43}
+\end{eqnarray}
+%}
+%
+となる．$K=\lambda \pi$で$\lambda = 2$のときは正規分布に等しく積分は$1$となる．
+しかし，$\lambda \neq 2$のとき積分値が$1$となるためには，$K = \lambda \pi |A_i|^{\frac{\lambda - 2}{2\lambda}}$でなければならず，$K$は$|A_i|$に依存するので，すべての$i$について定数とすることができるのは，すべての$i$について$|A_i|$が一定値のときのみである．ベイズの定理を用いて，式(\ref{eq21})をEステップから求めることができる密度関数は式(\ref{eq31})の形に限られる．すなわち$K$は定数でなければならないので，$|A_i|$が定数でなければその積分値が常に$1$になるような確率密度関数は存在しない．したがって，$\lambda \neq 2$の場合は対応する混合分布モデルは存在せず，提案法はファジィクラスタリング固有のものであるといえる．
+2変量の場合の分布について述べたが，一般に$p$変量に拡張することができる．\\
+　KFCM法の目的関数式(\ref{eq17})の第2項目は各$k$について$u_{ik}$と$\pi_i$の離散分布$(i=1,\cdots,c)$間の離れ具合を表すK-L情報量である．したがって，第2項目の値は非負であり，最小値は$0$である．また，最小値をとるのは$u_{ik} = \pi_i \ (i=1,\cdots,c)$の場合のみである．このことから，$\lambda$を大きくすると，すべての$k$について$u_{ik}$は$\pi_i$に近い値として求まると考えられる．すなわち，すべてのデータの第$i$クラスタに対するメンバシップ値が$u_{ik} \simeq \pi_i$となり，あいまいさの大きなクラスタリング結果が得られる．$\lambda$が$0$の場合は，$u_{ik}$について線形制約の下での線形最適化問題になり，$u_{ik}$は端点，すなわち$0$または$1$として求まる．
+このように，式(\ref{eq9})の$m$と同様に，式(\ref{eq17})の$\lambda$を変化させることでハードやファジィなクラスタリングを行なうことができる．
+
+ガウス混合モデルと異なり，KFCM法では係数$\lambda$を自由に変えることができるために，$\lambda$の値を反復アルゴリズムの中で小さくしていく，いわゆる，アニーリングを行なうことが可能である．この点においては5.2節の数値実験で示す．
+
+$\sum_{k=1}^n u_{ik} $は，ファジィクラスタ$i$に含まれるデータ件数に相当している．提案アルゴリズムでは，$J_{\lambda \tau}$の最適性の必要条件から，$A_i$は式(\ref{eq27})のようにサンプルデータのファジィ分散共分散行列として求まる．今，行列$A_i$は$m$個の1次独立な固有ベクトル，すなわち主成分ベクトル$(\vctr{p}_1,\vctr{p}_2,\cdots,\vctr{p}_m)$を持つとすると，
+%
+\begin{eqnarray}
+	\log |A_i| = \log \prod_{j=1}^m \delta_j^2 =  \sum_{j=1}^m \log \delta_j^2
+ \label{eq50}
+\end{eqnarray}
+%
+である．ただし，$\delta_j^2$は$A_i$の固有値である．したがって，$\log |A_i|$はクラスタ内のデータの各主成分の分散の対数の和であり，クラスタの広がりを表している．また，$J_{\lambda \tau}$の第3項目$\sum_{k=1}^n u_{ik} \log |A_i|$は，クラスタ毎のデータ件数で重み付けたクラスタの広がりを最小化するように$A_i$を求めることを意味していて，式(\ref{eq10})のマハラノビス距離$d_{ik}$は$A_i^{-1}$で定義されている．ここで，$J_{\lambda \tau}$の第3項目に重み係数$\varphi$を付加すると，最適性の必要条件より導出されるメンバシップ値$u_{ik}$に$\varphi$が含まれるが，$\lambda/\varphi$を新たな$\lambda$とおくことにより，$\varphi$を1とした場合に等しくなる．したがって，重み係数の一方を固定してもう一方をパラメータとすればよい．そこで今回提案するKFCM法では係数$\lambda$を第2項目に付加し，第3項目は重み係数を1としている．
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    第4章
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{擬似的な可能性的クラスタリング}
+
+前章では，KFCM法がガウス混合モデルに対するEMアルゴリズムを包含していることを示した．本章では，目的関数の第3項目にD.E.GustafsonとW.C.Kesselによる$|A_i|$の大きさを制約する方法\cite{ref1,ref10}を採用したKFCM法(GKFCM法)を提案し，可能性的クラスタリング\cite{ref15,ref16}に類似したファジィクラスタリングが実現できることを示す．
+D.E.GustafsonとW.C.Kesselは最適なクラスタの形状を得るために，マハラノビス距離を定める行列$A_i$を導入し，その最適値を導出するために，行列$A_i$に制約を設けている\cite{ref10}．Gustafson-Kesselの手法では，初めに$|A_i|$の大きさ$\rho_i$を指定する必要がある．本章では，KFCM法の目的関数に$c+1$番目のクラスタに対してGustafson-Kesselの制約項を入れた目的関数，
+%
+
+{\small
+\begin{eqnarray}
+	J_{\lambda \tau} &=& \sum_{i=1}^{c+1} \sum_{k=1}^n u_{ik}d_{ik}
++ \lambda \sum_{i=1}^{c+1} \sum_{k=1}^n u_{ik} \log
+  \frac{u_{ik}}{\pi_i} \nonumber\\
+  &+& \sum_{i=1}^c \sum_{k=1}^n u_{ik} \log |A_i| \nonumber\\
+  &+& \gamma ( \sum_{k=1}^n u_{c+1 k} \log |A_{c+1}| - \rho)\nonumber\\
+  &-& \sum_{k=1}^n \eta_k (\sum_{i=1}^{c+1} u_{ik} - 1) - \tau (\sum_{i=1}^{c+1} \pi_i - 1)
+ \label{eq62}
+\end{eqnarray}
+}
+%
+\\
+を提案する．D.E.GustafsonとW.C.Kesselによる制約条件$|A_i| = \rho_i,i=1,\cdots,c+1$を付加する方法は宮本ら\cite{ref15}によって提案されているが，式(\ref{eq62})では制約条件を$\sum_{k=1}^n u_{c+1 k} \log |A_{c+1}| = \rho$と変更している．$\gamma$はラグランジュ乗数を表しており，$\rho$は正の定数である．
+
+未知パラメータは最適性の必要条件より，\\
+%
+\begin{eqnarray}
+\vctr v_i=\frac{\sum_{k=1}^n u_{ik} \vctr x_k}{\sum_{k=1}^n u_{ik}}
+\label{eq63}
+\end{eqnarray}
+%
+と求まる．また，
+\begin{eqnarray}
+W &=&\sum_{j=1}^c \pi_j \exp \bigl( -\frac{1}{\lambda} d_{jk} \bigr) |A_j|^{ - 1/\lambda} \nonumber \\
+&+&\pi_{c+1} \exp \bigl( -\frac{1}{\lambda} d_{c+1 k} \bigr) |A_{c+1}|^{ - \gamma / \lambda}
+ \label{eq64}
+\end{eqnarray}
+とおくと，$i \le c$のとき，
+%
+\begin{eqnarray}
+u_{ik}=\pi_i \exp \bigl( -\frac{1}{\lambda} d_{ik} \bigr) |A_i|^{ - 1/\lambda} / W
+\label{eq65}
+\end{eqnarray}
+\\
+%
+$i = c+1$のとき，
+%
+\begin{eqnarray}
+u_{ik}=\pi_{c+1} \exp \bigl( -\frac{1}{\lambda} d_{c+1 k} \bigr) |A_{c+1}|^{ - \gamma / \lambda} / W
+\label{eq66}
+\end{eqnarray}
+%
+%\hspace{5mm}
+%
+\begin{eqnarray}
+\pi_i=\frac{\sum_{k=1}^n u_{ik}}{\sum_{j=1}^c \sum_{k=1}^n u_{jk}} = \frac{1}{n} \sum_{k=1}^n u_{ik}
+\label{eq67}
+\end{eqnarray}
+%
+\\
+とそれぞれ求まり，行列$A_i$は，$i \le c$のとき，
+%
+\begin{eqnarray}
+A_i=\frac{\sum_{k=1}^n u_{ik}(\vctr x_k - \vctr v_i)(\vctr x_k - \vctr v_i)^T}{\sum_{k=1}^n u_{ik}}
+\label{eq68}
+\end{eqnarray}
+\\
+%
+$i = c+1$のとき，\\
+$S_i = \sum_{k=1}^n u_{ik} (\vctr x_k - \vctr v_i) (\vctr x_k - \vctr v_i)^T$ とおくと，
+\begin{eqnarray}
+A_{c+1} &=& \frac{S_{c+1}}{|S_{c+1}|^{1/p}} \{ \exp \bigl( \rho / n \pi_{c+1} \bigr) \}^{1/p}
+ \label{eq75}
+\end{eqnarray}
+%
+\\
+と求まる．式(\ref{eq75})の$\{ \exp \bigl( \rho / n \pi_{c+1} \bigr) \}^{1/p}$は，変数グループ$A_{c+1}$を最適化する繰り返しアルゴリズムの中では定数である．また，目的関数式(\ref{eq62})の第2項目のパラメータ$\lambda$は，前述の議論からクラスタのファジィ度を制御するパラメータとみなすことができる．
+
+クラスタリングアルゴリズムはKFCM法のアルゴリズムにおいて，メンバシップを式(\ref{eq64})～式(\ref{eq66})で求め，$A_{c+1}$を式(\ref{eq75})で求める．本提案アルゴリズムをGKFCM法と呼ぶ．
+
+ファジィクラスタリングのための制約条件には，確率的制約と可能性的制約\cite{ref15,ref16}がある．これらはそれぞれ
+%
+\begin{eqnarray}
+M_{prb} &=& \bigl\{ u_{ik} | \sum_{i=1}^c u_{ik} = 1, u_{ik} \ge 0 , \forall i, k \bigr\} \\
+M_{pos} &=& \bigl\{ u_{ik} | \sum_{i=1}^c u_{ik} > 0, u_{ik} \ge 0 , \forall i, k \bigr\} 
+\label{eq76}
+\end{eqnarray}
+%
+で与えられている．$M_{pos}$では$M_{prb}$の$u_{ik}$の和に関する制約が外されている．そのことから，ノイズが広範囲に，一様に含まれたデータからクラスタを抽出することができる\cite{ref15}．5.3節の数値実験に示すように，式(\ref{eq62})の目的関数から導かれたGKFCM法では$M_{pos}$に類似したクラスタリング結果を得ることができる．
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    第5章
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{数値実験}
+数値実験では，本研究で作成したKFCM Simulator (図~\ref{fig1})を用いた．本章では，KFCM法とガウス混合モデルにおけるEMアルゴリズムとの比較，および，KFCM法と目的関数の第3項目にGustafson-Kesselの制約項を付加したGKFCM法でのクラスタリング結果を比較する．
+%%%%%%%%%%%%%%%%%%%
+%     Fig.1
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig01.eps,width=75mm} 
+    \end{center}
+    \caption{KFCM シミュレータ}
+    \label{fig1}
+\end{figure}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           第5章-1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{ガウス混合モデルとKFCM法の比較}
+KFCM法では$\lambda$が大きい場合，広域のデータを含んだクラスタを形成する傾向がある．図~\ref{fig2}～図~\ref{fig5}に分類結果を示す．ガウス混合モデル(KFCM法では$\lambda = 2$の場合に相当する)による結果(図~\ref{fig2}，図~\ref{fig3})とKFCM法の$\lambda = 4$での結果(図~\ref{fig4}，図~\ref{fig5})では，図中右上のデータが密集しているところを抽出するには，KFCM法が有効であることが分かる．図~\ref{fig2}，図~\ref{fig4}の等値線はマハラノビス距離を，図~\ref{fig3}と図~\ref{fig5}は分類関数\cite{ref5}を表示したものである．
+
+
+% \clearpage
+
+%%%%%%%%%%%%%%%%%%%
+%     Fig.2
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig02.eps,width=65mm} 
+    \end{center}
+    \caption{ガウス混合モデルでの結果}
+    \label{fig2}
+\end{figure}
+%
+%%%%%%%%%%%%%%%%%%%
+%     Fig.3
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig03.eps,width=75mm} 
+    \end{center}
+    \caption{ガウス混合モデルの事後確率 (分類関数)}
+    \label{fig3}
+\end{figure}
+%
+%%%%%%%%%%%%%%%%%%%
+%     Fig.4
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig04.eps,width=65mm} 
+    \end{center}
+    \caption{KFCM法($\lambda=4$)での結果}
+    \label{fig4}
+\end{figure}
+%
+%%%%%%%%%%%%%%%%%%%
+%     Fig.5
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig05.eps,width=75mm} 
+    \end{center}
+    \caption{KFCM法($\lambda=4$)での第2クラスタのメンバシップ (分類関数)}
+    \label{fig5}
+\end{figure}
+%
+%\clearpage
+　
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           第5章-2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{局所解の比較}
+次に$\lambda$の値を温度とみなして，反復アルゴリズムの中で減少させる，アニーリングの効果を調べた．クラスタ数を$2$，KFCM法の重み係数のアニーリングスケジュールとして，$\lambda^*$を$8$とし，S.GemanとD.Geman\cite{ref20}の冷却スケジュールをまねた，
+%
+\begin{eqnarray}
+\lambda (t) = \lambda^* /\ln (2+t)
+ \label{eq77}
+\end{eqnarray}
+%
+を使用した．ただし$t$は繰り返し回数である．
+また，ガウス混合モデルの結果との比較のために，$\lambda$は2になれば固定するように設定した．
+すなわち，反復回数が53回目で$\lambda (53) = 1.99$になり，53回目以降は，$\lambda = 2$とした．図~\ref{fig-annealing}はアニーリングスケジュールによるパラメータ$\lambda$の減少変化を示している．\\
+
+
+%%%%%%%%%%%%%%%%%%%
+%  Fig.annealing
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/annealing.eps,width=68mm} 
+    \end{center}
+    \caption{アニーリングスケジュール}
+    \label{fig-annealing}
+\end{figure}
+%
+%\clearpage
+図~\ref{fig6}に示すデータパターン1はデータ数が$10$で，得られる種々の分類結果において，目的関数値にあまり変化がないデータ配置になっている．図~\ref{fig6}の等値線はその中の一つの分類結果を示している．クラスタ中心の初期値は乱数により与えた．なお，試行回数は20回とした．ガウス混合モデルでの結果を表1，アニーリングを行なったKFCM法の結果を表2に示す．
+表中の度数は，同一の分類結果が得られた回数を表している．
+分類結果1から7はそれぞれ異なる分類結果に収束したことを示している．KFCM法でアニーリングを行なった場合はガウス混合モデルに比べて，収束結果が4通りと少ない．しかし，収束までに要した平均反復回数はアニーリングを行なっているために増加している．KFCM法でアニーリングを行なった場合でも局所解に陥るが，比較的良い解に収束することが分かる．
+
+%%%%%%%%%%%%%%%%%%%
+%     Fig.6
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig06.eps,width=70mm} 
+    \end{center}
+    \caption{データパターン1}
+    \label{fig6}
+\end{figure}
+%
+%%%%%%%%%%%%%%%%%%%
+%     表１
+%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htb]
+\begin{center}
+\caption{ガウス混合モデルでの結果}
+\label{tab1}
+\begin{tabular}{|c|c|c|c|} \hline
+分類結果 & 平均反復回数 & 度数 & 目的関数値 \\\hline
+ 1 & 32 & 5 & 4.22$\times10^9$ \\\hline
+ 2 & 29 & 5 & 4.24$\times10^9$ \\\hline
+ 3 & 34 & 2 & 4.66$\times10^9$ \\\hline
+ 4 & 52 & 4 & 4.57$\times10^9$ \\\hline
+ 5 & 25 & 1 & 4.17$\times10^9$ \\\hline
+ 6 & 25 & 2 & 3.81$\times10^9$ \\\hline
+ 7 & 25 & 1 & 3.43$\times10^9$ \\\hline
+\end{tabular}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%
+%     表２
+%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htb]
+\begin{center}
+\caption{KFCM法での結果}
+\label{tab2}
+\begin{tabular}{|c|c|c|c|} \hline
+分類結果 & 平均反復回数 & 度数 & 目的関数値 \\\hline
+ 1 & 74 & 14 & 4.22$\times10^9$ \\\hline
+ 5 & 59 & 3 & 4.17$\times10^9$ \\\hline
+ 6 & 63 & 2 & 3.81$\times10^9$ \\\hline
+ 7 & 60 & 1 & 3.43$\times10^9$ \\\hline
+\end{tabular}
+\end{center}
+\end{table}
+%
+\vspace{50mm}
+同様に図~\ref{fig7}のデータパターンを用いて，各手法で最適解に収束する回数を調べた．ただし，100回の試行の中で最も目的関数の値の小さいものを最適解とした．試行回数を100とし，その他のアニーリングスケジュールやパラメータの条件は前例と同じとした．Gustafson-Kesselの制約$|A_i|= \rho_i$をすべてのクラスタに付加する場合のFCM法をG-Kと表記する．GMMはガウス混合モデルの場合でKFCM法で$\lambda=2$としたものに等しい．表3より最適解に収束する割合は，KFCM法でアニーリングを行なう場合が他の手法と比べてかなり高い．KFCM法ではアニーリングを行なうことで初期値に依存せずにほとんどの場合，最適な結果に収束することが分かる．この例ではガウス混合モデルとの結果の違いが顕著である．また，図~\ref{fig8}のデータパターンでの最適解に収束した度数を表4に示す．このデータパターンはいずれの手法でも最適解に収束しやすいが，KFCM法ではほとんどが最適解に収束している．また，ガウス混合モデルとKFCM法のアニーリングスケジュールとして，$\lambda$を一定値ずつ減少させて$0$に近づけ，ハードクラスタリングをおこなった結果と比較した場合も違いは顕著であった．結果は省略する．
+
+%%%%%%%%%%%%%%%%%%%
+%     Fig.7
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig07.eps,width=65mm} 
+    \end{center}
+    \caption{データパターン2}
+    \label{fig7}
+\end{figure}
+%
+%%%%%%%%%%%%%%%%%%%
+%     表３
+%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htb]
+\begin{center}
+\caption{データパターン2での結果}
+\label{tab3}
+\begin{tabular}{|c|c|c|} \hline
+手法 & 度数 & 目的関数値 \\\hline
+GMM ($\lambda=2$)& 11 & 3.89$\times10^{10}$ \\\hline
+KFCM (Annealing) & 75 & 3.89$\times10^{10}$ \\\hline
+G-K (Annealing) & 7 & 3.85$\times10^{10}$ \\\hline
+\end{tabular}
+\end{center}
+\end{table}
+%
+%%%%%%%%%%%%%%%%%%%
+%     Fig.8
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig08.eps,width=65mm} 
+    \end{center}
+    \caption{データパターン3}
+    \label{fig8}
+\end{figure}
+%
+%%%%%%%%%%%%%%%%%%%
+%     表４
+%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htb]
+\begin{center}
+\caption{データパターン3での結果}
+\label{tab4}
+\begin{tabular}{|c|c|c|} \hline
+手法 & 度数 & 目的関数値 \\\hline
+GMM ($\lambda=2$) & 70 & 2.05$\times10^{10}$ \\\hline
+KFCM (Annealing) & 99 & 2.05$\times10^{10}$ \\\hline
+G-K (Annealing) & 86 & 2.04$\times10^{10}$ \\\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\vspace{30mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           第5章-3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{GKFCM法での分類結果の比較}
+Gustafson-Kesselの制約項を1つのクラスタにのみ付加した，GKFCM法では可能性的制約($M_{pos}$)を用いるクラスタリングに類似した分類結果を得ることができる．ほぼ一様にデータが配置されているが，2箇所にやや密集しているデータ(図~\ref{fig24})を用いた．クラスタ数は3とした．図~\ref{fig24}～図~\ref{fig27}はガウス混合モデルでのクラスタリング結果，図~\ref{fig28}～図~\ref{fig31}はGKFCM法でのクラスタリング結果である．ガウス混合モデルの結果と比較して，GKFCM法ではデータの密集しているところにクラスタが形成されている．このような分類結果は，メンバシップの和を1とするFCM法での制約条件を除いた，可能性的クラスタリング\cite{ref15}で得られているものに類似していて，広く分布しているノイズデータに影響されない分類結果が得られる．
+\vspace{15mm}
+%%%%%%%%%%%%%%%%%%%
+%     Fig.24
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig24.eps,width=65mm} 
+    \end{center}
+    \caption{ガウス混合モデルでの結果}
+    \label{fig24}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%
+%     Fig.25
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig25.eps,width=75mm} 
+    \end{center}
+    \caption{ガウス混合モデルでの結果 ($c$=1) (分類関数)}
+    \label{fig25}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%
+%     Fig.27
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig27.eps,width=75mm} 
+    \end{center}
+    \caption{ガウス混合モデルでの結果 ($c$=3) (分類関数)}
+    \label{fig27}
+\end{figure}
+%
+%\clearpage
+%%%%%%%%%%%%%%%%%%%
+%     Fig.28
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig28.eps,width=65mm} 
+    \end{center}
+    \caption{GKFCM法での結果}
+    \label{fig28}
+\end{figure}
+%
+%%%%%%%%%%%%%%%%%%%
+%     Fig.29
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig29.eps,width=75mm} 
+    \end{center}
+    \caption{GKFCM法での結果 ($c$=1) (分類関数)}
+    \label{fig29}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%
+%     Fig.31
+%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[htb]
+    \begin{center}
+        \epsfile{file=./eps/fig31.eps,width=75mm} 
+    \end{center}
+    \caption{GKFCM法での結果 ($c$=3) (分類関数)}
+    \label{fig31}
+\end{figure}
+　　　　　　
+　　　　　　
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    第6章
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{おわりに}
+
+本研究では，K-L情報量正則化によるFCM法(KFCM法)を提案し，ガウス混合モデルにおけるEMアルゴリズムとの類似点と相違点を議論し，KFCM法がガウス混合モデルとは異なる固有の方法であることを示した．\\
+
+ガウス混合モデルとKFCM法の相違点は，
+\begin{itemize}
+    \item ガウス混合モデルでは尤度関数最大化であるのに対し，KFCM法では目的関数最小化であるので種々の制約条件を導入しやすい．
+    \item KFCM法では，ファジィ度を制御する係数$\lambda$の値を変えることで，ファジィやクリスプなクラスタが得られる．(ガウス混合モデルでは$\lambda = 2$に固定)
+    \item KFCM法はファジィ度を制御するパラメータ$\lambda$のアニーリングが可能で，パラメータの初期値に依存しにくい分類結果が得られる．
+　　\item $\lambda$を大きく設定すると，ノイズのある広いデータパターンに対して，データの密集部分を抽出するようにクラスタを形成する．
+\end{itemize}
+である．
+
+また，ノイズの影響を受けにくい可能性的クラスタリングを実現できるGKFCM法を提案し，ガウス混合モデルに比べデータの密集部分を抽出できることを示した．クラスタリングと多変量解析の同時分析法\cite{ref17,ref18,ref19}などのデータ解析やデータマイニングへの応用が今後の課題である．
+
+%========================================
+\begin{flushleft}
+{\Large 謝\hspace{5mm}辞}
+\end{flushleft}
+%========================================
+%
+
+本研究の一部は文部科学省科学研究費補助金・基盤研究(C)(13680375)の助成に基づいて行われたものであり，謝意を表する．
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   参考資料
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\small
+\begin{thebibliography}{99}
+
+\bibitem{ref1}
+J.C.Bezdek: {\it Pattern Recognition with Fuzzy Objective Function Algorithms}, Plenum Press, (1981)
+
+\bibitem{ref2}
+R.L.Streit and T.E.Luginbuhl: Maximum likelihood training of probabilistic neural networks , {\it IEEE Transactions on Neural Networks}, Vol.5, No.5, pp.764-783, (1994)
+
+\bibitem{ref3}
+田中雅博: EMアルゴリズムの原理と応用，システム/制御/情報，Vol.42, No.2, pp.88-96, (1998)
+
+\bibitem{ref4}
+S.Miyamoto and M.Mukaidono: Fuzzy $c$-means as a regularization and maximum entropy approach, {\it Proc. of the 7th International Fuzzy Systems Association World Congress(IFSA '97)}, Vol.II, pp.86-92, (1997)
+
+\bibitem{ref5}
+宮本定明，馬屋原一孝，向殿政男: ファジィc-平均法とエントロピー正則化法におけるファジィ分類関数，日本ファジィ学会誌，Vol.10, No.3, pp.548-557, (1998)
+
+\bibitem{ref6}
+赤穂昭太郎: EMアルゴリズム－クラスタリングへの適用と最近の発展－，日本ファジィ学会誌，Vol.12, No.5, pp.594-602, (2000)
+
+\bibitem{ref10}
+D.E.Gustafson and W.C.Kessel: Fuzzy clustering with a fuzzy covariance matrix, {\it Proc. IEEE CDC}, Vol.2, pp.761-766, (1979)
+
+\bibitem{ref15}
+渋谷和宏, 宮本定明, 高田治 :
+   ファジィc-平均クラスタリングにおける制約条件と正則化;
+   {\it 第10回インテリジェントシステムシンポジウム}, 東京, pp.365-368, (2000)
+
+\bibitem{ref16}
+F.H\"oppner, F.Klawonn, R.Kruse, T.Runkler :
+  {\it Fuzzy Cluster Analysis, (Methods for Classification, Data Analysis and Image Recognition)}, John Wiley \& Sons,Ltd, (1999)
+
+\bibitem{ref7}
+宮本定明: クラスター分析入門，ファジィクラスタリングの理論と応用，森北出版，(1999)
+
+%\bibitem{ref8}
+%J.C.Bezdek,\hspace*{-2mm} C.Coray, R.Gunderson and J.Watson : Detection and characterizati%on of cluster substructure. I. linear structure, fuzzy c-lines, {\it SIAM J. Appl. Math.},% Vol.40, No.2, pp.339-357, (1981)
+
+
+%\bibitem{ref9}
+% J.C.Bezdek, C.Coray, R.Gunderson and J.Watson :
+% Detection and characterization of cluster substructure. II. fuzzy c-varieties and convex %combinations thereof,
+%{\it SIAM J. Appl. Math.}, Vol.40, No.2, pp.358-372, (1981) 
+
+
+\bibitem{ref11}
+J.C.Bezdek: {\it Fuzzy Mathematics in Pattern Classification, Ph.D. Thesis}, Applied Math. Center, Cornell University, (1973)
+
+%\bibitem{ref10}
+%S.Miyamoto: {\it Fuzzy Sets in Information Retrieval and Cluster Analysis}, Kluwer 
+%Academic Publishers, Dordrecht, (1990)
+
+\bibitem{ref21}
+宮岸聖高，安富善彦，市橋秀友，本多克宏 :
+   KL情報量正則化によるファジィクラスタリング; 
+   {\it 第16回ファジィシステムシンポジウム}, 秋田, pp.549-550, (2000)
+
+%\bibitem{ref12}
+%特集　ファジィクラスタリングとその応用，日本ファジィ学会誌，Vol.8, No.3, pp.405-467, 
+%(1996)
+
+%\bibitem{ref13}
+%R.N.Dave: An adaptive fuzzy c-elliptotype clustering algorithm, {\it Proc. of NAFIPS '90
+% : Quater Century of Fuzziness}, Vol.1, pp.9-12, (1990)
+
+\bibitem{ref20}
+坂和正敏，田中雅博: ニューロコンピューティング入門，森北出版，(1996)
+
+\bibitem{ref17}
+金海好彦, 山川あす香, 市橋秀友, 三好哲也: クラスタリングと数量化分析３類の同時分析法, 
+システム制御情報学会論文誌, Vol.12, No.3, pp.47-54, (1999)
+
+\bibitem{ref18}
+本多克宏, 山川あす香, 市橋秀友, 三好哲也, 奥山哲史: ファジィクラスタリングと回帰と主成分の同時分析法, 
+システム制御情報学会論文誌, Vol.13, No.5, pp.236-243, (2000)
+
+\bibitem{ref19}
+山川あす香, 市橋秀友, 三好哲也: 正準相関係数を最大とするファジィc-Meansクラスタリング法, 
+日本経営工学会論文誌, Vol.51, pp.17-26, (2000)
+
+
+
+
+\end{thebibliography}
+}
+
+\vspace{30mm}
+
+\begin{flushleft}
+［問い合わせ先］\\
+〒599-8531 \hspace{5mm} 
+\begin{minipage}[t]{60mm}
+大阪府堺市学園町1-1\\
+大阪府立大学大学院工学研究科 \\
+電気・情報系経営工学分野 \\
+市橋  秀友 \\
+TEL : 0722-54-9352 \\
+FAX : 0722-54-9915 \\
+E--mail: ichi@ie.osakafu-u.ac.jp
+\end{minipage}
+\end{flushleft}
+
+\vspace{30mm}
+
+
+\begin{flushleft}
+著者略歴
+\end{flushleft}
+
+
+
+宮岸　聖高　\small(みやぎし　きよたか)\normalsize
+\begin{indention}{5mm}
+2001年大阪府立大学大学院工学研究科博士前期課程電気・情報系専攻修了，同年日本電気（株）入社，現在に至る．ファジィクラスタリング，ファジィモデリング，ニューラルネットワークに興味を持つ．
+
+\end{indention}
+\noindent
+
+\vspace{5mm}
+
+市橋　秀友　\small(いちはし　ひでとも) [正会員]\normalsize 
+\begin{indention}{5mm}
+1971年大阪府立大学工学部経営工学科卒業．同年松下電器産業（株）入社，1981年大阪府立大学工学部経営工学科助手，1987年同講師，1989年同助教授，1993年同教授，現在に至る．工学博士．ファジィクラスタリングやニューラルネットワークなどでのデータ解析法，その知的システムや人間機械システムへの応用研究に従事．IEEE，日本ファジィ学会，システム制御情報学会，電子情報通信学会，日本経営工学会などの会員．
+\end{indention}
+\noindent
+
+\vspace{5mm}
+
+本多　克宏　\small(ほんだ　かつひろ) [正会員]\normalsize
+\begin{indention}{5mm}
+1999年大阪府立大学大学院工学研究科博士前期課程電気・情報系専攻修了．同年日本電信電話（株）入社，同年大阪府立大学工学部経営工学科助手，現在に至る．ニューラルネットワーク，ファジィクラスタリングの研究に従事．IEEE，日本ファジィ学会，システム制御情報学会，日本経営工学会の会員．
+\end{indention}
+\noindent
+
+
+\twocolumn[
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    訂正
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+「訂正」
+
+式(33)～式(40)に著者の責任による記載誤りがありましたので，以下のように訂正させていただきます．
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+{\small
+\begin{eqnarray}
+	J_{\lambda \tau} &=& \sum_{i=1}^{c+1} \sum_{k=1}^n u_{ik}d_{ik}
++ \lambda \sum_{i=1}^{c+1} \sum_{k=1}^n u_{ik} \log
+  \frac{u_{ik}}{\pi_i} 
+  + \sum_{i=1}^{c+1} \sum_{k=1}^n u_{ik} \log |A_i| \nonumber\\
+  &+& \gamma (\log |A_{c+1}| - \rho)
+  - \sum_{k=1}^n \eta_k (\sum_{i=1}^{c+1} u_{ik} - 1) - \tau (\sum_{i=1}^{c+1} \pi_i - 1)　　　　　　　　(33)
+ \nonumber
+\end{eqnarray}
+}
+を提案する．D.E.GustafsonとW.C.Kesselによる制約条件$|A_i| = \rho_i,i=1,\cdots,c+1$を付加する方法は宮本ら~\cite{ref15}によって提案されているが，式(33)では制約条件を$\log |A_{c+1}| = \rho$のみに変更している．$\gamma$はラグランジュ乗数を表しており，$\rho$は正の定数である．未知パラメータ$\vctr v_i, u_{ik}, \pi_j$は最適性の必要条件より，$c$を$c+1$としてKFCM法と同様に求まる．行列$A_i$は，$i \le c$と$i = c+1$のとき，それぞれ
+%
+\begin{eqnarray}
+A_i=\frac{\sum_{k=1}^n u_{ik}(\vctr x_k - \vctr v_i)(\vctr x_k - \vctr v_i)^T}{\sum_{k=1}^n u_{ik}}　　　　　　　　　　　　　　　　　(39) \nonumber
+\end{eqnarray}
+\begin{eqnarray}
+A_{c+1} &=& \frac{S_{c+1}}{|S_{c+1}|^{1/p}} e^{\rho/p}　　　　　　　　　　　　　　　　　　　　　　(40)
+\nonumber
+\end{eqnarray}
+%
+ただし，$S_{c+1} = \sum_{k=1}^n u_{c+1,k} (\vctr x_k - \vctr v_{c+1}) (\vctr x_k - \vctr v_{c+1})^T$と求まる．式(33)の第2項目のパラメータ$\lambda$は，前述の議論からクラスタのファジィ度を制御するパラメータとみなすことができる．クラスタリングアルゴリズムはKFCM法と同様の不動点反復法とする．本提案アルゴリズムをGKFCM法と呼ぶ．\\
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+]
+
+\end{document}
+
