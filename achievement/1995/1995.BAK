@@ -1,0 +1,244 @@
+<HEAD>
+<TITLE> Table of Gyoseki Home Page(1995)</TITLE>
+</HEAD>
+
+<BODY>
+<BODY Bgcolor="black"  TEXT="Aqua" LINK="Aqua" VLINK="red">
+<h2>
+１９９５年発表論文一覧<p>
+</h2>
+
+<HR>
+<pre>
+<h3>
+1.学術論文，国際会議Proc.
+
+<a name="j-jounal">
+
+■ニューロ・ファジィ有限要素法と誤差解析
+(Neuro-Fuzzy Finite Element Method  and Residual Estimation)
+市橋秀友，佐藤禎浩，三好哲也，長坂一徳
+システム制御情報学会論文誌, 8-3, 122-129(1995).
+(FEM,  Neuro-Fuzzy, Laplace equation, Residual estimation ,  RBF network)
+
+<IMG  SRC="../gif/label_t.gif"><a href="./maniscript/95fem_sci/95fem_sci.zip">  TeX sorce Download</a>　<IMG  SRC="../gif/label_e.gif"><a href="./maniscript/95fem_sci/95fem_sci.ps">  EPS file Download</a>　<IMG  SRC="../gif/label_p.gif"> <a href="./maniscript/95fem_sci/95fem_sci.pdf">PDF file Download</a>
+
+
+■ニューロ・ファジィ断層撮影法における正則化の効果 
+(Effect of Regularization in Neuro-Fuzzy Computerized Tomography)
+市橋秀友，三好哲也，長坂一徳，柴田綾子
+日本ファジィ学会誌, 7-4, 895-900(1995).
+(Tomography, RBF,  Regularization, Smoothing)
+
+<IMG  SRC="../gif/label_t.gif"><a href="./maniscript/95ct2_soft/95ct2_soft.zip">  TeX sorce Download</a>　<IMG  SRC="../gif/label_e.gif"><a href="./maniscript/95ct2_soft/95ct2_soft.ps">  EPS file Download</a>　<IMG  SRC="../gif/label_p.gif"> <a href="./maniscript/95ct2_soft/95ct2_soft.pdf">PDF file Download</a>
+
+
+■Neuro-Fuzzy GMDH and Its Application to Modeling Grinding Characteristics
+（ニューロファジィＧＭＤＨとその研削特性のモデリングへの応用）
+K.Nagasaka, H.Ichihashi and R.Leonard
+International Journal of Production Research, 33-5, 1229-1240(1995).
+(GMDH, Adaptive learning networks, Grinding characteristics)
+
+NO TeX sorce 
+NO EPS file 
+
+
+■A Neuro-Fuzzy Approach to Variational Problems by Using Gaussian 
+  Membership Functions
+(ガウスメンバシップ関数を用いた変分問題へのニューロファジィアプローチ)
+H.Ichihashi, T.Miyoshi, K.Nagasaka, M.Tokunaga and T.Wakamatsu
+International Journal of Approximate Reasoning, 13-4, 287-302(1995).
+(Neuro-Fuzzy, Optimal control, RBF, Variational problem, Direct solution method)
+
+<IMG  SRC="../gif/label_t.gif"><a href="./maniscript/95mani_app/95mani_app.zip">  TeX sorce Download</a>　NO EPS file    <IMG  SRC="../gif/label_p.gif"><a href="./maniscript/95mani_app/95mani_app.pdf">  TeX sorce Download</a>　
+
+
+
+■Neuro-Fuzzy Finite Element Method and a Posteriori Error Estimation
+(ニューロ・ファジィ有限要素法と誤差推定)
+H.Ichihashi, Y.Satoh, T.Miyoshi and  K.Nagasaka
+Proc. of FUZZ-IEEE/IFES'95, 2335-2342(1995).
+(FEM,  Neuro-Fuzzy, Laplace equation, Residual estimation ,  RBF network)
+
+<IMG  SRC="../gif/label_t.gif"><a href="./maniscript/95fem_ifes/95fem_ifes.zip">  TeX sorce Download</a>　<IMG  SRC="../gif/label_e.gif"><a href="./maniscript/95fem_ifes/95fem_ifes.ps">  EPS file Download</a>　<IMG  SRC="../gif/label_p.gif"> <a href="./maniscript/95fem_ifes/95fem_ifes.pdf">PDF file Download</a>
+
+
+
+■Selection of the Optimum Number of Hidden Layers in Neuro-Fuzzy GMDH
+(ニューロ・ファジィGMDHにおける中間層の最適数の選択)
+H.Ichihashi, N.Harada and K.Nagasaka
+Proc. of FUZZ-IEEE/IFES'95, 1519-1526(1995).
+(AIC, RBF, GMDH)
+
+NO TeX sorce
+NO EPS file 
+
+
+■Neuro-Fuzzy Data Analysis and Its Future Direction
+(ニューロ・ファジィデータ解析と将来展望)
+H.Ichihashi and I.B.Turksen
+Proc. of FUZZ-IEEE/IFES'95, 1919-1925(1995).
+(Hierarchical fuzzy model, Neural network, Pairwise comparison, 
+ Guttman's method, AHP)
+
+NO TeX sorce
+NO EPS file 
+
+
+■Learning Chaotic Dynamics in Recurrent RBF Network
+(RBFネットワークによるカオスダイナミクスの学習)
+T.Miyoshi, H.Ichihashi, S.Okamoto and  T.Hayakawa
+Proc. of ICNN'95, 588-593(1995)
+(Chaos, Recurrent network, Sensitivity equation, Adjoint equation)
+
+<IMG  SRC="../gif/label_t.gif"><a href="./maniscript/95recu_icnn/95recu_icnn.zip">  TeX sorce Download</a>　<IMG  SRC="../gif/label_e.gif"><a href="./maniscript/95recu_icnn/95recu.ps">  EPS file Download</a>　<IMG  SRC="../gif/label_p.gif"><a href="./maniscript/95recu_icnn/nn950588.pdf">  PDF file  Download</a>　
+
+
+■A Simple Steepest Descent Method for Minimizing Hopfield Energy to Obtain Optimal Solution of the TSP with Reasonable Certainty
+(高い確率でTSPの解を得るためのHopfieldエネルギー関数に対する最急降下法)
+Y.Tachibana, G.H.Lee, H.Ichihashi and T.Miyoshi
+Proc. of ICNN'95, 1871-1875(1995).
+(TSP, Hopfield network, Energy surface)
+
+NO TeX sorce    NO EPS file     <IMG  SRC="../gif/label_p.gif"><a href="./maniscript/95tsp_icnn/nn951871.pdf">  PDF file  Download</a>　
+
+
+■Neuro-Fuzzy Projection Pursuit Regression
+(ニューロ・ファジィ射影追跡回帰)
+T.Miyoshi, K.Nakao, H.Ichihashi and K.Nagasaka
+Proc. of ICNN'95, 766-770(1995).
+(Projection pursuit, Regression, RBF, Neuro-Fuzzy)
+
+<IMG  SRC="../gif/label_t.gif"><a href="./maniscript/95ppr_icnn/95ppr_icnn.zip">   TeX sorce Download</a>　<IMG  SRC="../gif/label_e.gif"><a href="./maniscript/95ppr_icnn/95ppr.ps">   EPS file Download</a>　<IMG  SRC="../gif/label_p.gif"><a href="./maniscript/95ppr_icnn/nn950766.pdf">  PDF file  Download</a>　
+
+
+
+■Computerized Tomography with Radial Basis Functions Network
+(RBFネットワークによるCT)
+H.Tabuchi, T.Miyoshi, H.Ichihashi and K.Ohno
+Proc. of ICNN'95, 2258-2263(1995).
+(CT, Geotomography, RBF)
+
+<IMG  SRC="../gif/label_t.gif"><a href="./maniscript/95ct_icnn/95ct_icnn.zip">   TeX sorce( Download</a>　<IMG  SRC="../gif/label_e.gif"><a href="./maniscript/95ct_icnn/95ct_icn.ps">   EPS file  Download</a>　<IMG  SRC="../gif/label_p.gif"><a href="./maniscript/95ct_icnn/nn952258.pdf">  PDF file  Download</a>　
+
+
+<HR>
+<a name="kaisetu">
+2.解説，総説
+
+■ファジィニューラルネットワークの基礎　
+市橋秀友
+計測自動制御学会ＳＩＣＥセミナー「ファジィニューラルネットワークの現状と新たな展開」テキスト, 1-12(1995).
+
+
+
+
+<HR>
+3.学術著書
+
+■Efficient Algorithms for Acquiring Fuzzy Rules from Examples
+H.Ichihashi
+Theoretical Aspects of Fuzzy Control, (Ed. by H.T.Nguyen, M.Sugeno, R.Tong, and R.Yager), John Wiley & Sons Inc., 261-280(1995).
+
+
+■ニューロ・ファジィによるカオス力学系の学習
+市橋秀友
+カオス応用システム（合原一幸・五百旗頭正　編著）, 朝倉書店, 39-55(1995).  
+
+
+
+<a name="j-proc">
+<HR>
+5.学術講演発表
+
+■日本ファジィ学会関東支部第４回ワークショップ（3月, 東京）
+
+鳶　敏和，外山薫，市橋秀友
+代数的学習法を用いたファジィモデルの学習係数の自動調整
+講演論文集, 25-36.
+
+
+
+
+■第39回システム制御情報学会研究発表講演会（5月，大阪）
+
+三好哲也, 市橋秀友, 岡本茂樹, 早川　武
+RBFを用いたリカレントネットワークの学習
+講演論文集, 63-64.
+
+田渕　創, 三好哲也, 市橋秀友, 大野　研
+ニューロ・ファジィ地盤断層撮影
+講演論文集, 101-102.
+
+
+■ロボティクス・メカトロニクス'95(6月，川崎）
+
+三好哲也, 市橋秀友, 若松隆司
+筋運動の特性を考慮した上肢運動のモデル
+講演論文集, 893-896.
+
+
+■第11回ファジィシステムシンポジウム（7月，那覇）
+
+三好哲也，中尾圭介，市橋秀友，長坂一徳 
+ニューロ・ファジィ射影追跡による回帰と判別
+講演論文集, 811-814.
+
+
+三好哲也，市橋秀友
+モデルフリーなニューロ・ファジィ線形化法の最適レギュレータでの比較
+講演論文集, 277-278.
+
+
+三好哲也，市橋秀友，岡本茂樹，早川　武
+リカレント型ニューロ・ファジィモデルによるカオス力学系の学習
+講演論文集, 737-740.
+
+
+北川善也，市橋秀友，三好哲也，上久保典昭，鳶　敏和
+ニューロ・ファジィ手法による大規模熱源システムの負荷予測
+講演論文集, 9-12.
+
+
+大谷　崇，市橋秀友，長坂一徳，三好哲也
+ニューロ・ファジィＧＭＤＨによる関数近似
+講演論文集, 741-744.
+
+
+市橋秀友，長坂一徳，三好哲也，野崎大輔，北口嘉亮，喜田義宏
+ニューロ・ファジィ射影追跡による密度推定
+講演論文集, 141-144.
+
+
+島内正裕，市橋秀友，三好哲也，吉本富士市
+射影追跡ＩＤ３によるファジィルールの削減
+講演論文集, 123-126.
+
+
+橘　佳孝，市橋秀友，李　九炯，三好哲也
+高い確率で最適解を得るためのホップフィールド・エネルギーに対する最急降下法
+講演論文集, 235-238.
+
+
+
+
+■第５回インテリジェントＦＡシンポジウム（7月，大阪）
+
+島内正裕，市橋秀友，三好哲也，吉本富士市
+射影追跡ＩＤ３によるスプライン関数の節点の決定
+講演論文集, 115-116.
+
+北川善也，市橋秀友，三好哲也，上久保典明
+階層／木構造適応学習ネットワークによる大規模熱源システムの負荷予測
+講演論文集, 117-118.
+ 
+
+■バイオメディカル・ファジィ・システム学会第8回年次大会（11月，盛岡）
+
+市橋秀友
+Bernstein 多項式を用いた従業員の医療費データからのルール抽出
+抄録集, 31-32.
+</pre>
+
+</BODY>
+
