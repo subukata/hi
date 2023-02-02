@@ -1,0 +1,197 @@
+<HEAD>
+<TITLE> Table of Gyoseki Home Page(1994)</TITLE>
+</HEAD>
+
+<BODY>
+<BODY Bgcolor="black"  TEXT="Aqua" LINK="Aqua" VLINK="red">
+<h2>
+１９９４年発表論文一覧<p>
+</h2>
+
+<HR>
+<pre>
+<h3>
+1.学術論文，国際会議Proc.
+
+<a name="j-jounal">
+■ニューロ・ファジィ逆解析による断層撮影法
+(Computer Tomography by Neuro-Fuzzy Inversion)
+市橋秀友，三好哲也，長坂一徳，木村尚博
+日本ファジィ学会誌,6-2,333-341(1994).
+(Neuro-Fuzzy, Radial basis functions, Computer tomography )
+
+<IMG  SRC="../gif/label_t.gif"><a href="./maniscript/ct/ct.zip">TeX sorce Download</a><IMG  SRC="../gif/label_e.gif"> <a href="./maniscript/ct/ct.ps">EPS file Download</a><IMG  SRC="../gif/label_p.gif"> <a href="./maniscript/ct/ct.pdf">PDF file Download</a>
+
+
+■Fuzzy  Finite Element Methods with Gaussian RBFs Network
+(Gaussian RBFs Networkを用いたファジィ有限要素法)
+Y. Satoh, T. Miyoshi  K. Nagasaka and H. Ichihashi
+Proc. of 16th International Conference on Computers and Industrial Engineering,
+329-332(1994).
+(Finite element method, Radial basis function, Gaussian function, Fuzzy set)
+
+<IMG  SRC="../gif/label_t.gif"> <a href="./maniscript/asikaga94/fem.zip">TeX sorce Download</a>　<IMG  SRC="../gif/label_e.gif"> <a href="./maniscript/asikaga94/fem.ps">EPS file Download</a> <IMG  SRC="../gif/label_p.gif"> <a href="./maniscript/asikaga94/fem.pdf">PDF file Download</a>
+
+
+■Adaptive Learning Networks of Multi-Stage Fuzzy Production Rules in Expert 
+System of Grinding Characteristics
+(切削システムのエキスパートシステムにおける多段階ファジィ生産ルールの適応学習ネットワーク)
+K. Nagasaka, N.Harada, H.Ichihashi and R.Leonard
+Proc. of 16th International Conference on Computers and Industrial Engineering,
+229-232(1994).
+(Adaptive learning networks, Cross validation, AIC, Grinding characteristics)
+
+NO TeX sorce 
+NO EPS file 
+
+
+■Path Tracking Control of a Mobile Robot by a Linearization Using RBFs Neural Network
+(RBFs Neural Networkを用いた線形化による移動ロボットの軌道追従制御)
+H. Ichihashi, T. Miyoshi and K. Nagasaka
+Proc. of Japan-U.S.A Symposium on Flexible Automation; A Pacific Rim Conference,305-308(1994).
+(Mobile robot, Linearization, RBFs neural network, Path tracking, Feedback controler)
+
+<IMG  SRC="../gif/label_t.gif"> <a href="./maniscript/fa-sympo94/fa-sympo.zip">TeX sorce Download</a>　<IMG  SRC="../gif/label_e.gif"> <a href="./maniscript/fa-sympo94/fa-sympo.ps">EPS file  Download</a>　<IMG  SRC="../gif/label_p.gif"> <a href="./maniscript/fa-sympo94/fa-sympo.pdf">PDF file Download</a>
+
+
+■Neuro-Fuzzy ID3 Using Maximum Entropy Algorithms
+(エントロピー最大化を用いたニューロ・ファジィID3)
+H. Ichihashi, T. Shirai and K. Nagasaka
+Proc. of Japan-U.S.A Symposium on Flexible Automation; A Pacific Rim Conference,1449-1452(1994).
+(Neuro-Fuzzy, ID3, Entropy)
+
+NO TeX sorce 
+NO EPS file 
+
+
+■Effectiveness of Regularization in Neuro-Fuzzy Computerized Tomography 
+(ニューロ・ファジィコンピュータトモグラフィにおける正則化の効果)
+H. Ichihashi, T. Miyoshi, K. Nagasaka and A. Shibata
+Proc. of 3rd International Conference on Fuzzy Logic, Neural Nets and Soft Compouting IIZUKA'94,91-92(1994).
+(Regularization,  Neuro-Fuzzy, Computerized tomography)
+
+<IMG  SRC="../gif/label_t.gif"><a href="./maniscript/ct2_iizu/ct2_iizu.zip"> TeX sorce Download</a>　<IMG  SRC="../gif/label_e.gif"><a href="./maniscript/ct2_iizu/ct2_iizu.ps"> EPS file Download</a>　<IMG  SRC="../gif/label_p.gif"> <a href="./maniscript/ct2_iizu/ct2_iizu.pdf">PDF file Download</a>
+
+
+■Differential Minimum Bias Criterion for Neuro-Fuzzy GMDH
+(ニューロ・ファジィGMDHに対する差分の不変性規範)
+H. Ichihashi and K. Nagasaka
+Proc. of 3rd International Conference on Fuzzy Logic, Neural Nets and Soft Compouting IIZUKA'94,171-172(1994).
+(Neuro-Fuzzy, GMDH, Differential minimum bias criterion)
+
+NO TeX sorce
+NO EPS file 
+
+■Neuro-Fuzzy ID3
+(ニューロ・ファジィＩＤ３)
+H. Ichihashi, T. Shirai, K. Nagasaka  and T. Miyoshi
+Proc. of IEEE-World Wisemen/womem Workshop(WWW'94) on Fuzzy Logic and Neural Networks/Genetic Algrithms; Architecture and Applicatons for Knowledge Acquisition /Adaptation,23-33(1994).
+(Neuro-Fuzzy, ID3)
+
+NO TeX sorce
+NO EPS file 
+
+
+<a name="kaisetu">
+<HR>
+2.解説，総説
+■有限要素法
+市橋秀友，古田均
+日本ファジィ学会誌，6-2，pp.246-249(1994)
+
+■ニューロファジィによるジオトモグラフィー
+市橋秀友
+第2回ファジィ土木応用シンポジウム講演論文集，pp.43-46
+
+
+
+
+<HR>
+3.学術著書
+■A Neuro-Fuzzy Approach to Optimization and Inverse Problems 
+H. Ichihashi
+Simulation and Design of Applied Electromagnetic Systems,(ed. by T. Honma),
+Elsevier, 143-146 (1994).
+
+
+<a name="j-proc">
+
+<HR>
+5.学術講演発表
+
+■第38回システム制御情報学会研究発表講演会（5月，大阪）
+
+市橋秀友，三好哲也，長坂一徳
+RBFネットワークによる非線形システムの線形化
+講演論文集，pp.131-132.
+
+市橋秀友，白井正志，長坂一徳
+Ｄ－Ｓ理論の不確実性測度によるファジィＩＤ３
+講演論文集，pp.117-118.
+
+
+市橋秀友，谷口龍一，橘佳孝，北川善也 
+RBFネットワークによるオンライン手書き漢字認識
+講演論文集，pp.83-84.
+
+
+■第10回ファジィシステムシンポジウム（6月，大阪）
+市橋秀友，三好哲也，長坂一徳 
+ニューロ・ファジィ線形化による非線形システムの安定化 
+ －　移動ロボットの軌道追従制御への応用　－
+講演論文集，147-150.
+
+市橋秀友，三好哲也，長坂一徳，柴田綾子
+ニューロ・ファジィ断層撮影法における正則化の効果 
+講演論文集，701-702.
+
+
+市橋秀友，佐藤禎浩，三好哲也，長坂一徳 
+ニューロ・ファジィ有限要素法における誤差解析 
+講演論文集，309-312.
+
+
+市橋秀友，白井正史，長坂一徳 
+ニューロ・ファジィＩＤ３ ースプライン関数による多次元射像の近似法ー
+講演論文集，337-340.
+
+
+
+市橋秀友，原田尚彦，長坂一徳 
+ニューロ・ファジィＧＭＤＨの階層数の選択
+講演論文集，379-382.
+
+鳶敏和，外山薫，安部次郎，市橋秀友
+臨床データに基づく体外循環制御アルゴリズムの学習
+その１ー体外循環臨床モデルの検討
+講演論文集，669-671.
+
+市橋秀友，谷口龍一，橘佳孝，北川善也 
+ニューロ・ファジィ・オンライン手書き漢字認識
+講演論文集，251-252.
+
+
+
+■第37回自動制御連合講演会講演（10月，大阪）
+ニューロ・ファジイ射影追跡回帰
+市橋秀友，三好哲也，長坂一徳，島内正裕
+前刷，417-418.
+
+
+■バイオメディカル・ファジィ・システム学会第7回年次大会（12月，大阪）
+
+ほぼ100％の確率でTSPの最適解を得るHopfield Energyの最小化法
+橘　佳孝，三好哲也，長坂一徳，市橋秀友
+講演論文集，1-4.
+
+
+<a name="news">
+<HR>
+6.新聞，雑誌等発表
+勘と感性を持った自動化システム
+市橋秀友
+商工振興，No.527，pp.36-39(1994).
+</pre>
+
+</BODY>
+
