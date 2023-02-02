@@ -1,0 +1,3250 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+  <title>Human Information Systems Lab.</title>
+
+  <link rel="stylesheet" type="text/css" href="histyle.css">
+
+
+
+  <!-- 折りたたみの設定 -->
+  <script language=javascript>
+    function show(inputData) {
+      var objID = document.getElementById("layer_" + inputData);
+      var buttonID = document.getElementById("category_" + inputData);
+      if (objID.className == 'close') {
+        objID.style.display = 'block';
+        objID.className = 'open';
+      } else {
+        objID.style.display = 'none';
+        objID.className = 'close';
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- ▼▼▼【左メニュー】▼▼▼ -->
+  <div id="menu">
+    <h1>Human Information Systems Lab.</h1>
+    <hr>
+    <table width="100%" cellpadding="2" valign="middle">
+
+      <tr>
+        <td>
+          <a class="btm" href="index.html" title="Top">Top</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <a class="btm" href="research.html" title="Research">Research</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <a class="btm" href="members.html" title="Members">Members</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <a class="btm" href="publications.html" title="Papers">Papers</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <a class="btm" href="events.html" title="Events">Events</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <a class="btm" href="links.html" title="Links">Links</a>
+        </td>
+      </tr>
+
+    </table>
+    <hr>
+
+    <p>
+      <a href="http://www.cs.osakafu-u.ac.jp/hi/honda/travel_recommender/recommender.html"
+        title="Word-of-Mouth Travel Navigator">
+        Word-of-Mouth Travel Navigator
+        <img src="womtra.gif" width="100%" height="40"></a>
+    </p>
+    <hr>
+
+  </div><!-- ▲▲▲【左メニュー】▲▲▲ -->
+
+
+
+  <!-- ▼▼▼【左下リンク】▼▼▼ -->
+  <div id="links">
+    <p>
+      <a href="https://www.omu.ac.jp/" target="_blank" title="大阪公立大学">大阪公立大学</a>
+    </p>
+    <p>
+      <a href="https://www.omu.ac.jp/i/">情報学研究科</a>
+    </p>
+    <p>
+      <a href="https://www.omu.ac.jp/i/ci/" target="_blank" title="基幹情報学専攻">基幹情報学専攻</a>
+    </p>
+    <p>
+      Copyright &copy; 2012<br>
+      Human Information Systems Lab.<br>
+      All rights Reserved
+    </p>
+  </div><!-- ▲▲▲【左下リンク】▲▲▲ -->
+
+
+
+  <!-- ▼▼▼【本文】▼▼▼ -->
+  <div class="column">
+
+
+    <center>
+
+      <!-- ▼▼【就職】▼▼ -->
+      <p>
+      <h4>当研究室では大半の学生が大学院博士前期課程（２年間）に進学しています．</h4>
+
+      <a href="javascript:void(0)" id="category_syusyoku" onclick="show('syusyoku');">大学院生の就職先を見る</a>
+      <div id="layer_syusyoku" style="display: none;position:relative;margin-left:0pt" class="close">
+
+        <table border="10">
+
+          <tr>
+            <td valign="middle">
+              2021年度<br>
+              パナソニック，ダイキン工業，ヤフー，サイバーエージェント(2)，京セラドキュメントソリューションズ
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="middle">
+              2020年度<br>
+              NTT西日本(2)，パナソニック，シャープ(2)，イーソル
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="middle">
+              2019年度<br>
+              ヤフー，NTT西日本(2)，パナソニック(2)，ダイキン工業
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="middle">
+              2018年度<br>
+              トヨタ自動車，ダイキン工業，住友電気工業(2)，シャープ
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="middle">
+              平成２９年度<br>
+              三菱電機，本田技研工業，ダイキン工業，シンプレクス
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="middle">
+              平成２８年度<br>
+              三菱電機，長谷川鉄工
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="middle">
+              平成２７年度<br>
+              日立製作所（２），NTT西日本，日本電気，野村総合研究所
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成２６年度<br>
+              トヨタ自動車（２），大和総研，日立製作所，日興システムソリューションズ，三菱自動車工業，住友電気工業
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成２５年度<br>
+              日立製作所（２），楽天，阪急電鉄，ダイキン工業，野村総合研究所，沖アドバンストコミュニケーションズ
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成２４年度<br>
+              関西電力，日立製作所，三菱東京UFJ，ダイキン工業，データスタジアム
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成２３年度<br>
+              朝日新聞社，NTTコミュニケーションズ
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成２２年度<br>
+              パナソニック，シャープ
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成２１年度<br>
+              関西電力，シャープ（２），キーエンス
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成２０年度<br>
+              松下電器（２），松下電工，シャープ，日本電気，デンソー
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成１９年度<br>
+              デンソー，シャープ，三菱電機
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成１８年度<br>
+              シャープ，関西電力，大和証券ＳＭＢＣ，オリエンタルランド
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成１７年度<br>
+              松下電器，日本電気，東レ
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成１６年度<br>
+              松下電器，西日本電信電話，住友信託銀行，日本総研，日本電気，三菱商事<br>
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成１５年度<br>
+              シャープ，住友電気工業，三井住友海上火災，日本IBM，KDDI<br>
+            </td>
+          </tr>
+          <tr>
+            <td valign="middle">
+              平成１４年度<br>
+              日本生命，富士通，三菱電機，松下電器，日本総研，日本電気<br>
+            </td>
+          </tr>
+        </table>
+      </div>
+      </p>
+      <!-- ▲▲【就職】▲▲ -->
+
+
+
+      <!-- ▼▼【タイトル】▼▼ -->
+      <p>
+        大阪公立大学　大学院情報学研究科<br>
+        基幹情報学専攻　知能情報学分野<br>
+        <br>
+        <img src="lablogo4.png" alt="人間情報システム研究グループ" , width="800"><br>
+        <br>
+        <small>
+          〒599-8531　大阪府堺市中区学園町1-1<br>
+          B4棟東側4階，E413～E416室，E422室<br>
+          TEL: 072-254-9355</small>
+      </p>
+
+      <!-- ▲▲【タイトル】▲▲ -->
+
+      <!-- ▼▼【What's New】▼▼ -->
+
+      <table cellSpacing="0" cellPadding="1" width="600" border="0">
+
+        <tr>
+          <td bgColor="ecffff">
+            <table align="center">
+              <tr>
+                <td>
+                  <h3>What's New</h3>
+                </td>
+              </tr>
+
+            </table>
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2021年9月21日～23日にオンラインで開催された<a href="https://sites.google.com/view/fan2021online/"
+                    target="_blank">FAN2021<a>に参加しました．（学生参加者
+                      M2: 杉本，野岳，干飯，M1: 宮平）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2021年9月19日～24日にオンラインで開催された<a href="http://www.ifsa-eusflat2021.eu/"
+                    target="_blank">IFSA-EUSFLAT 2021<a>に参加しました．（学生参加者
+                      M1: 古川）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2021年9月13日～15日にオンラインで開催された<a href="http://fss.j-soft.org/2021/"
+                    target="_blank">FSS2021<a>に参加しました．（学生参加者
+                      M2: 髙橋，安永，M1: 國澤，百武，古川）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2021年9月8日～10日にオンラインで開催された<a href="https://www.sice.jp/siceac/sice2021/"
+                    target="_blank">SICE2021<a>に参加しました．（学生参加者
+                      M1: 畑中，林 昂佑）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2021年9月8日～10日にオンラインで開催された<a href="http://kes2021.kesinternational.org/"
+                    target="_blank">KES2021<a>に参加しました．（学生参加者
+                      M1: 國澤）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2021年8月16日～20日にオンラインで開催された<a href="http://cennser.org/ICIEV/"
+                    target="_blank">ICIEV2021<a>に参加しました．（学生参加者
+                      M1: 百武）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2021年5月26日～28日にオンラインで開催された<a href="https://sci21.iscie.or.jp/"
+                    target="_blank">SCI'21<a>に参加しました．（学生参加者
+                      M1: 國澤，林 昂佑，百武，宮平）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2021年1月8日にオンラインで開催された<a href="https://www.sice.or.jp/org/kansai/20/sice-iscie-symp2020/"
+                    target="_blank">2020年度 計測自動制御学会関西支部・システム制御情報学会シンポジウム<a>に参加しました．（学生参加者
+                      B4: キム）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2020年12月5日～7日にオンラインで開催された<a href="http://scis.j-soft.org/2020/"
+                    target="_blank">SCIS&ISIS2020<a>に参加しました．（学生参加者
+                      M1: 杉本，髙橋，鍔本）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2020年11月21日～22日にオンラインで開催された<a href="https://www.sice.jp/rengo63//"
+                    target="_blank">第63回自動制御連合講演会<a>に参加しました．（学生参加者
+                      B4: 林，百武）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20201111-170108.jpg" width="120"></td>
+                <td><img src="pic/20201111-181152.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2020年11月11日～13日にオンラインで開催された<a href="https://www.jaist.ac.jp/IUKM/IUKM2020//"
+                    target="_blank">IUKM2020<a>に参加しました．（学生参加者
+                      D: 西田，M1: 野岳）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20200923-0.jpg" width="120"></td>
+                <td><img src="pic/20200923-1.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2020年9月23日～26日にオンラインで開催された<a href="https://www.comp.sd.tmu.ac.jp/CcS2020/"
+                    target="_blank">CcS2020<a>に参加しました．（学生参加者
+                      M1: 林）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20200908-150110-0.jpg" width="120"></td>
+                <td><img src="pic/20200908-160916-0.jpg" width="120"></td>
+                <td><img src="pic/20200909-130058-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2020年9月7日～9日にオンラインで開催された<a href="http://fss.j-soft.org/2020/"
+                    target="_blank">第36回ファジィシステムシンポジウム(FSS2020)<a>に参加しました．（学生参加者
+                      M1: 鍔本，林，國澤）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20200727-130353.jpg" width="120"></td>
+                <td><img src="pic/20200727-130400.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2020年7月19日～24日にオンラインで開催された<a href="https://wcci2020.org/" target="_blank">IEEE WCCI
+                    2020<a>に参加しました．（学生参加者
+                      M2: 鍔本，M1: 干飯）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20200520-094623-0.jpg" width="120"></td>
+                <td><img src="pic/20200520-133333-0.jpg" width="120"></td>
+                <td><img src="pic/20200520-141000-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2020年5月20日～22日にオンラインで開催された<a href="https://sci20.iscie.or.jp/"
+                    target="_blank">第64回システム制御情報学会研究発表講演会(SCI'20)<a>に参加しました．（学生参加者
+                      M1: 杉本，干飯，安永）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20191222-084541-0.jpg" width="120"></td>
+                <td><img src="pic/20191222-141539-0.jpg" width="120"></td>
+                <td><img src="pic/20191222-155419-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2019年12月21日～23日に神戸大学で開催された<a href="http://www.aiccc.net/" target="_blank">AICCC 2019<a>に参加しました．（学生参加者
+                      M1: 上野）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20191205-082100-0.jpg" width="120"></td>
+                <td><img src="pic/20191205-083440-0.jpg" width="120"></td>
+                <td><img src="pic/20191205-094809-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2019年12月4日～7日に韓国・済州島で開催された<a href="http://isis2019.org/"
+                    target="_blank">ISIS2019&ICBAKE2019<a>に参加しました．（学生参加者 M2: 松崎，安田，M1: 鍔本）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20191205-100401-0.jpg" width="120"></td>
+                <td><img src="pic/20191205-100618-0.jpg" width="120"></td>
+                <td><img src="pic/20191205-102156-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20191108-101356-0.jpg" width="120"></td>
+                <td><img src="pic/20191108-102747-0.jpg" width="120"></td>
+                <td><img src="pic/20191108-104118-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2019年11月7日～10日に台湾・淡水で開催された<a href="http://web.ite.mcu.edu.tw/ifuzzy2019/"
+                    target="_blank">iFUZZY2019<a>に参加しました．（学生参加者 M2: 木田，清水，M1: 名定，楊）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20191108-105429-0.jpg" width="120"></td>
+                <td><img src="pic/20191108-111009-0.jpg" width="120"></td>
+                <td><img src="pic/20191108-152017-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="top">
+                <td><img src="pic/20191101.jpg" width="120"></td>
+                <td colspan="2" width="240">
+                  2019年11月1日に柳澤君が学長顕彰を受賞しました．
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="top">
+                <td><img src="pic/20191002-175610-0.jpg" width="120"></td>
+                <td colspan="2" width="240">
+                  2019年10月2日に生方助教が JACIII Young Researcher Award 2019 を受賞しました．
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20190917-103254-0.jpg" width="120"></td>
+                <td><img src="pic/20190917-103317-0.jpg" width="120"></td>
+                <td><img src="pic/20190917-143442-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2019年9月17日～18日に富山国際会議場で開催された<a href="https://sites.google.com/mrsglab.org/fan2019"
+                    target="_blank">第29回インテリジェント・システム・シンポジウム(FAN2019)<a>に参加しました．（学生参加者 M2: 伯井，安田，柳澤）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20190917-145511-0.jpg" width="120"></td>
+                <td><img src="pic/20190917-171508-0.jpg" width="120"></td>
+                <td><img src="pic/20190917-204811-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="top">
+                <td><img src="pic/20190918.jpg" width="120"></td>
+                <td colspan="2" width="240">
+                  柳澤君がFANプレゼンテーション賞を受賞しました．
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20190903-223108-0.jpg" width="120"></td>
+                <td><img src="pic/20190904-164415-0.jpg" width="120"></td>
+                <td><img src="pic/20190904-164433-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2019年9月4日～6日にイタリア・ミラノで開催された<a href="http://www.mdai.cat/mdai2019/"
+                    target="_blank">MDAI2019<a>に参加しました．（学生参加者 M1: 関谷，要川）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20190906-183430-0.jpg" width="120"></td>
+                <td><img src="pic/20190906-185333-0.jpg" width="120"></td>
+                <td><img src="pic/20190907-173105-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20190829-080220-0.jpg" width="120"></td>
+                <td><img src="pic/20190829-154005-0.jpg" width="120"></td>
+                <td><img src="pic/20190829-155701-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2019年8月29日～31日に大阪大学で開催された<a href="http://fss.j-soft.org/2019/"
+                    target="_blank">第35回ファジィシステムシンポジウム(FSS2019)<a>に参加しました．（学生参加者 M1: 鍔本，名定，B4: 尾花）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20190830-093857-0.jpg" width="120"></td>
+                <td><img src="pic/20190830-100404-0.jpg" width="120"></td>
+                <td><img src="pic/20190830-100931-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20190523-090031-0.jpg" width="120"></td>
+                <td><img src="pic/20190523-090058-0.jpg" width="120"></td>
+                <td><img src="pic/20190523-093121-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2019年5月22日～24日に大阪・中央電気倶楽部で開催された<a href="https://sci19.iscie.or.jp/"
+                    target="_blank">第63回システム制御情報学会研究発表講演会(SCI'19)<a>に参加しました．（学生参加者 M1: 鍔本，楊，要川，上野）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20190523-154744-0.jpg" width="120"></td>
+                <td><img src="pic/20190523-160436-0.jpg" width="120"></td>
+                <td><img src="pic/20190523-165345-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20190327-092901-0.jpg" width="120"></td>
+                <td><img src="pic/20190328-093209-0.jpg" width="120"></td>
+                <td><img src="pic/20190328-112429-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2019年3月27日～29日に奈良・東大寺で開催された<a href="http://www-inulab.sys.es.osaka-u.ac.jp/iukm2019/"
+                    target="_blank">IUKM2019<a>に参加しました．（学生参加者 D1: 西田，B4: 楊）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20190328-183618-0.jpg" width="120"></td>
+                <td><img src="pic/20190328-200107-0.jpg" width="120"></td>
+                <td><img src="pic/20190328-200549-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="top">
+                <td><img src="pic/20190205.jpg" width="120"></td>
+                <td colspan="2" width="240">
+                  2019年2月5日に馬戸君が電気学会 電子・情報・システム部門より技術委員会奨励賞を受賞しました．
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20190204-144411-0.jpg" width="120"></td>
+                <td><img src="pic/20190204-144419-0.jpg" width="120"></td>
+                <td><img src="pic/20190204-144919-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2019年2月4日に大阪府立大学で開催された<a href="https://www.osakafu-u.ac.jp/event/evt20190204/"
+                    target="_blank">第116回テクノラボツアー<a>にて生方助教が講演を行いました．
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20190121-091143-0.jpg" width="120"></td>
+                <td><img src="pic/20190121-091155-0.jpg" width="120"></td>
+                <td><img src="pic/20190121-091349-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2019年1月21日に大阪工業大学・梅田キャンパスで開催された<a href="http://is.eei.eng.osaka-u.ac.jp/siceksympo18/"
+                    target="_blank">平成30年度 計測自動制御学会関西支部・システム制御情報学会若手研究発表会<a>に参加しました．（学生参加者 B4：関谷，名定）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20190121-100459-0.jpg" width="120"></td>
+                <td><img src="pic/20190121-102238-0.jpg" width="120"></td>
+                <td><img src="pic/20190121-171347-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20190112-123928-0.jpg" width="120"></td>
+                <td><img src="pic/20190112-124141-0.jpg" width="120"></td>
+                <td><img src="pic/20190112-165620-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2019年1月12日に東京工業大学キャンパス・イノベーションセンターで開催された<a
+                    href="http://www2.iee.or.jp/eiss/index.php?%E6%8A%80%E8%A1%93%E5%A7%94%E5%93%A1%E4%BC%9A%2FST%2F%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%8A%80%E8%A1%93%E8%AC%9B%E6%BC%94%E4%BC%9A"
+                    target="_blank">2018年システム研究会優秀論文発表会 <a>に参加しました．（学生参加者 M2：馬戸）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20181206-084554-0.jpg" width="120"></td>
+                <td><img src="pic/20181206-084647-0.jpg" width="120"></td>
+                <td><img src="pic/20181206-090428-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2018年12月5日～8日に富山国際会議場で開催された<a href="http://scis2018.j-soft.org/" target="_blank">SCIS&ISIS2018 in
+                    conjunction with ISWS2018<a>に参加しました．（学生参加者 D：西田，M1：柳澤）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20181206-174755-0.jpg" width="120"></td>
+                <td><img src="pic/20181207-102501-0.jpg" width="120"></td>
+                <td><img src="pic/20181208-101250-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20181119-141320-0.jpg" width="120"></td>
+                <td><img src="pic/20181119-143530-0.jpg" width="120"></td>
+                <td><img src="pic/20181119-145138-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2018年11月19日に阪大・乾口研との研究交流会が行われました．（学生参加者 M2，M1，B4全員）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20181119-152617-0.jpg" width="120"></td>
+                <td><img src="pic/20181119-160046-0.jpg" width="120"></td>
+                <td><img src="pic/20181119-162529-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20181114-174226-0.jpg" width="120"></td>
+                <td><img src="pic/20181115-102436-0.jpg" width="120"></td>
+                <td><img src="pic/20181115-104504-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2018年11月14日～17日に韓国・大邱で開催された<a href="http://ifuzzy2018.org/"
+                    target="_blank">iFUZZY2018<a>に参加しました．（学生参加者 M2：榊原，佐古，M1：木田，清水）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20181115-111950-0.jpg" width="120"></td>
+                <td><img src="pic/20181115-143245-0.jpg" width="120"></td>
+                <td><img src="pic/20181115-145528-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20181016-121005-0.jpg" width="120"></td>
+                <td><img src="pic/20181016-124652-0.jpg" width="120"></td>
+                <td><img src="pic/20181016-125747-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2018年10月15日～18日にスペイン・マヨルカ島で開催された<a href="http://www.mdai.cat/mdai2018/"
+                    target="_blank">MDAI2018<a>に参加しました．（学生参加者 M1：伯井，松崎）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20181017-112046-0.jpg" width="120"></td>
+                <td><img src="pic/20181017-154359-0.jpg" width="120"></td>
+                <td><img src="pic/20181018-122754-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20180926-122811-0.jpg" width="120"></td>
+                <td><img src="pic/20180926-122841-0.jpg" width="120"></td>
+                <td><img src="pic/20180926-163456-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2018年9月26日～27日に横浜国立大学で開催された<a href="http://hamagamilab.ynu.ac.jp/fan2018/"
+                    target="_blank">第28回インテリジェント・システム・シンポジウム(FAN2018)<a>に参加しました．（学生参加者 M2：馬戸，加藤，M1：安田）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20180926-165814-0.jpg" width="120"></td>
+                <td><img src="pic/20180926-174406-0.jpg" width="120"></td>
+                <td><img src="pic/20180926-194741-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20180903-113611-0.jpg" width="120"></td>
+                <td><img src="pic/20180903-132432-0.jpg" width="120"></td>
+                <td><img src="pic/20180904-090342-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2018年9月3日～5日に名古屋・名古屋大学で開催された<a href="http://fss2018.j-soft.org/"
+                    target="_blank">第34回ファジィシステムシンポジウム(FSS2018)<a>に参加しました．（学生参加者 M2：小池，榊原，M1：清水，伯井，B4：楊，要川）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20180904-092459-0.jpg" width="120"></td>
+                <td><img src="pic/20180904-094546-0.jpg" width="120"></td>
+                <td><img src="pic/20180905-094613-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20180517-084738-0.jpg" width="120"></td>
+                <td><img src="pic/20180517-084853-0.jpg" width="120"></td>
+                <td><img src="pic/20180517-094753-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2018年5月16日～18日に京都・京都テルサで開催された<a href="https://sci18.iscie.or.jp/"
+                    target="_blank">第62回システム制御情報学会研究発表講演会(SCI'18)<a>に参加しました．（学生参加者 M1：木田，松崎，安田）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20180517-100338-0.jpg" width="120"></td>
+                <td><img src="pic/20180517-111708-0.jpg" width="120"></td>
+                <td><img src="pic/20180517-135052-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20180112-093019-0.jpg" width="120"></td>
+                <td><img src="pic/20180112-103218-0.jpg" width="120"></td>
+                <td><img src="pic/20180112-110530-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2018年1月12日に大阪大学・銀杏会館で開催された<a href="http://is.eei.eng.osaka-u.ac.jp/siceksympo17/"
+                    target="_blank">平成29年度計測自動制御学会関西支部・システム制御情報学会若手研究発表会<a>に参加しました．（学生参加者 M1：メツ，B4：清水，伯井，松崎，柳澤）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20180112-112233-0.jpg" width="120"></td>
+                <td><img src="pic/20180112-123247-0.jpg" width="120"></td>
+                <td><img src="pic/20180112-130406-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20180105-135017-0.jpg" width="120"></td>
+                <td><img src="pic/20180105-140353-0.jpg" width="120"></td>
+                <td><img src="pic/20180105-151404-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2018年1月5日に神戸大・小澤研との研究交流会が行われました．(学生参加者: M2,M1,B4 全員)
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20180105-151751-0.jpg" width="120"></td>
+                <td><img src="pic/20180105-151943-0.jpg" width="120"></td>
+                <td><img src="pic/20180105-152032-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20171122-134659-0.jpg" width="120"></td>
+                <td><img src="pic/20171122-140107-0.jpg" width="120"></td>
+                <td><img src="pic/20171122-141148-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2017年11月22日に阪大・乾口研との研究交流会が行われました．(学生参加者: M2,M1,B4 全員)
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20171122-143430-0.jpg" width="120"></td>
+                <td><img src="pic/20171122-143538-0.jpg" width="120"></td>
+                <td><img src="pic/20171122-144348-0.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20171111-122114-0.JPG" width="120"></td>
+                <td><img src="pic/20171111-122518-0.JPG" width="120"></td>
+                <td><img src="pic/20171111-135744-0.JPG" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2017年11月10-12日に東京・調布で開催された<a href="http://www.sice.or.jp/rengo60/"
+                    target="_blank">第60回自動制御連合講演会<a>に参加しました．
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20171108-125022-0.JPG" width="120"></td>
+                <td><img src="pic/20171108-133028-0.JPG" width="120"></td>
+                <td><img src="pic/20171108-141440-0.JPG" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2017年11月7-8日に岡山・岡山大学で開催された<a href="http://www.usmv.sys.okayama-u.ac.jp/fan2017/"
+                    target="_blank">FAN2017<a>に参加しました．（学生参加者 M2：鈴木，B4：木田）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20171108-141450-0.JPG" width="120"></td>
+                <td><img src="pic/20171108-143432-0.JPG" width="120"></td>
+                <td><img src="pic/20171108-145620-0.JPG" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20171011-171612-0.jpg" width="120"></td>
+                <td><img src="pic/20171012-115120-0.jpg" width="120"></td>
+                <td><img src="pic/20171012-121120-0.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2017年10月11-14日に韓国・大邱で開催された<a href="http://isis2017.org/" target="_blank">ISIS2017<a>に参加しました．（学生参加者
+                      M2：五島，坂本，M1：馬戸，加藤，榊原）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20171013-094340-0.jpg" width="120"></td>
+                <td><img src="pic/20171013-103019-0.jpg" width="120"></td>
+                <td><img src="pic/20171016all.jpg" width="120"></td>
+              </tr>
+              <tr valign="top">
+                <td><img src="pic/20171120-181118-0.JPG" width="120"></td>
+                <td colspan="2" width="240">
+                  榊原君がISIS2017 Best Paper Award を受賞しました．
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20170917-1.jpg" width="120"></td>
+                <td><img src="pic/20170917-2.jpg" width="52"></td>
+                <td><img src="pic/20170917-3.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2017年9月16-18日に奈良・明日香で開催された<a href="http://mvl.jpn.org/forum/40/index.html"
+                    target="_blank">第40回多値論理フォーラム<a>に参加しました．（学生参加者 M1：小池）
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20170913-1.jpg" width="120"></td>
+                <td><img src="pic/20170913-2.jpg" width="120"></td>
+                <td><img src="pic/20170913-3.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2017年9月13-15日に山形・米沢で開催された<a href="http://fss2017.j-soft.org/"
+                    target="_blank">第33回ファジィシステムシンポジウム(FSS2017)<a>に参加しました．（学生参加者 M2：五島，山本，M1：佐古）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/20170913-4.jpg" width="120"></td>
+                <td><img src="pic/20170913-5.jpg" width="120"></td>
+                <td><img src="pic/20170913-6.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2017年8月21-25日に京都・京都女子大学で開催された<a href="http://www.amie-tw.org/amie2017/" target="_blank">AmI&E
+                    2017<a>に参加しました．
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/20170808-1.jpg" width="120"></td>
+                <td><img src="pic/20170808-2.jpg" width="120"></td>
+                <td><img src="pic/20170808-3.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2017年8月8-10日に東京・東海大学高輪キャンパスで開催された<a
+                    href="http://ifcs.boku.ac.at/_conference/index.php/ifcs2017/ifcs2017"
+                    target="_blank">IFCS-2017<a>に参加しました．
+                </td>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/hiwebpic390.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic391.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic392.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2017年7月9-12日にイタリア・ナポリで開催された<a href="https://www.fuzzieee2017.org/" target="_blank">FUZZ-IEEE
+                    2017<a>に参加しました．（学生参加者 M2：鈴木，山本）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/hiwebpic393.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic394.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic395.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/hiwebpic384.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic385.jpg" width="70" hspace="25"></td>
+                <td><img src="pic/hiwebpic386.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="310">
+                  2017年6月27-30日に滋賀・ピアザ淡海で開催された<a href="http://ifsa-scis2017.j-soft.org/" target="_blank">IFSA-SCIS
+                    2017<a>に参加しました．（学生参加者 M1：小池，佐古）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/hiwebpic387.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic388.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic389.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/hiwebpic378.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic379.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic380.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2017年5月23-25日に京都テルサで開催された<a href="https://sci17.iscie.or.jp/"
+                    target="_blank">第61回システム制御情報学会研究発表講演会(SCI'17)<a>に参加しました．（学生参加者 M1：馬戸，加藤，小池，榊原，佐古）
+                </td>
+              </tr>
+              <tr valign="bottom">
+                <td><img src="pic/hiwebpic381.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic382.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic383.jpg" width="120"></td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <tr valign="bottom">
+                <td><img src="pic/hiwebpic375.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic376.jpg" width="120"></td>
+                <td><img src="pic/hiwebpic377.jpg" width="120"></td>
+              </tr>
+              <tr valign="bottom">
+                <td colspan="3" width="360">
+                  2017年3月3日に開催された日本経営工学会関西支部・日本経営システム学会関西支部共催 学生論文発表会で小池君と榊原君が優秀学生発表賞を受賞しました．<br>
+                  2017年3月21日に開催された平成28年度後期学生団体・個人顕彰(学長顕彰)表彰式で佐古君が学長顕彰を受賞しました．
+                </td>
+              </tr>
+            </table>
+            <hr width="550">
+            <!-- ▲【News】▲ -->
+
+            <!-- ▼【News】▼ -->
+            <table align="center">
+              <table align="center">
+                <tr valign="center">
+                  <td><img src="pic/hiwebpic373.jpg" width="120">
+                  </td>
+                  <td><img src="pic/hiwebpic374.jpg" width="120">
+                  </td>
+                  <td width="180">
+                    2017年1月13日に大阪大学吹田キャンパスで開催された<a href="http://www-dsc.mech.eng.osaka-u.ac.jp/siceksympo16/"
+                      target="_blank">平成28年度 計測自動制御学会関西支部・システム制御情報学会 若手研究発表会<a>に参加しました．（学生参加者 B4：加藤）
+                  </td>
+                </tr>
+              </table>
+              <hr width="550">
+              <!-- ▲【News】▲ -->
+
+              <!-- ▼【News】▼ -->
+              <table align="center">
+                <tr valign="bottom">
+                  <td><img src="pic/hiwebpic367.jpg" width="120"></td>
+                  <td><img src="pic/hiwebpic368.jpg" width="120"></td>
+                  <td><img src="pic/hiwebpic369.jpg" width="120"></td>
+                </tr>
+                <tr valign="bottom">
+                  <td colspan="3" width="360">
+                    2017年1月11日に神戸大・小澤研との研究交流会が行われました．(学生参加者: M2,M1,B4 全員)
+                  </td>
+                </tr>
+                <tr valign="bottom">
+                  <td><img src="pic/hiwebpic370.jpg" width="120"></td>
+                  <td><img src="pic/hiwebpic371.jpg" width="120"></td>
+                  <td><img src="pic/hiwebpic372.jpg" width="120"></td>
+                </tr>
+              </table>
+              <hr width="550">
+              <!-- ▲【News】▲ -->
+
+              <!-- ▼【News】▼ -->
+              <table align="center">
+                <tr valign="bottom">
+                  <td><img src="pic/hiwebpic361.jpg" width="120"></td>
+                  <td><img src="pic/hiwebpic362.jpg" width="120"></td>
+                  <td><img src="pic/hiwebpic363.jpg" width="120"></td>
+                </tr>
+                <tr valign="bottom">
+                  <td colspan="3" width="360">
+                    2016年11月30日-12月2日にベトナム・ダナンで開催されたIUKM2016に参加しました．本多教授の招待講演がありました．(学生参加者: M2:中野,M1:五島)
+                  </td>
+                </tr>
+                <tr valign="bottom">
+                  <td><img src="pic/hiwebpic364.jpg" width="120"></td>
+                  <td><img src="pic/hiwebpic365.jpg" width="120"></td>
+                  <td><img src="pic/hiwebpic366.jpg" width="120"></td>
+                </tr>
+              </table>
+              <hr width="550">
+              <!-- ▲【News】▲ -->
+
+              <!-- ▼【News】▼ -->
+              <table align="center">
+                <tr valign="middle">
+                  <td><img src="pic/hiwebpic360.jpg" width="120">
+                  </td>
+                  <td width="240">2016年11月4日に開催された平成28年度前期学生団体・個人顕彰（学長顕彰）表彰式で山本さんが学長顕彰を受賞しました．</td>
+          </td>
+        </tr>
+      </table>
+      <hr width="550">
+      <!-- ▲【News】▲ -->
+
+      <!-- ▼【News】▼ -->
+      <table align="center">
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic354.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic355.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic356.jpg" width="120"></td>
+        </tr>
+        <tr valign="bottom">
+          <td colspan="3" width="360">
+            2016年11月2日に阪大・乾口研との研究交流会が行われました．(学生参加者: M2,M1,B4 全員)
+          </td>
+        </tr>
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic357.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic358.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic359.jpg" width="120"></td>
+        </tr>
+      </table>
+      <hr width="550">
+      <!-- ▲【News】▲ -->
+
+      <!-- ▼【News】▼ -->
+      <table align="center">
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic348.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic349.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic350.jpg" width="120"></td>
+        </tr>
+        <tr valign="bottom">
+          <td colspan="3" width="360">
+            2016年10月27-28日に大阪大学吹田キャンパスで開催された<a href="http://fss2016.j-soft.org/"
+              target="_blank">第26回インテリジェント・システム・シンポジウム(FAN2016)<a>に参加しました．佐古君が優秀論文賞を受賞しました．（学生参加者 B4：馬戸，小池，佐古）
+          </td>
+        </tr>
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic351.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic352.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic353.jpg" width="120"></td>
+        </tr>
+      </table>
+      <hr width="550">
+      <!-- ▲【News】▲ -->
+
+      <!-- ▼【News】▼ -->
+      <table align="center">
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic342.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic343.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic344.jpg" width="120"></td>
+        </tr>
+        <tr valign="bottom">
+          <td colspan="3" width="360">
+            2016年8月31日-9月2日に佐賀・佐賀大学本庄キャンパスで開催された<a href="http://fss2016.j-soft.org/"
+              target="_blank">第32回ファジィシステムシンポジウム(FSS2016)<a>に参加しました．（学生参加者 M2：中野，M1：鈴木，山本）
+          </td>
+        </tr>
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic345.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic346.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic347.jpg" width="120"></td>
+        </tr>
+      </table>
+      <hr width="550">
+      <!-- ▲【News】▲ -->
+
+      <!-- ▼【News】▼ -->
+      <table align="center">
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic335.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic336.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic337.jpg" width="120"></td>
+        </tr>
+        <tr valign="bottom">
+          <td colspan="3" width="360">
+            2016年8月25-28日に札幌・北海学園大学で開催された<a href="http://scis2016.j-soft.org/"
+              target="_blank">SCIS&ISIS2016<a>に参加しました．本多教授がSCIS&ISIS2016 Best Paper Awardを受賞しました．（学生参加者 M2：中野，M1：鈴木，山本）
+          </td>
+        </tr>
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic338.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic339.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic340.jpg" width="120"></td>
+        </tr>
+        <tr align="center" valign="bottom">
+          <td colspan="3" width="360">
+            <img src="pic/hiwebpic341.jpg" width="200">
+          </td>
+        </tr>
+      </table>
+      <hr width="550">
+      <!-- ▲【News】▲ -->
+
+      <!-- ▼【News】▼ -->
+      <table align="center">
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic332.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic333.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic334.jpg" width="120"></td>
+        </tr>
+        <tr valign="bottom">
+          <td colspan="3" width="360">
+            2016年7月24-29日にカナダ・バンクーバーで開催された<a href="http://www.wcci2016.org/" target="_blank">IEEE WCCI
+              2016<a>に参加しました．（学生参加者 M1：五島，坂本）
+          </td>
+        </tr>
+      </table>
+      <hr width="550">
+      <!-- ▲【News】▲ -->
+
+      <!-- ▼【News】▼ -->
+      <table align="center">
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic326.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic327.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic328.jpg" width="120"></td>
+        </tr>
+        <tr valign="bottom">
+          <td colspan="3" width="360">
+            2016年5月25-27日に京都・京都テルサで開催された<a href="http://sci16.org/"
+              target="_blank">第60回システム制御情報学会研究発表講演会(SCI’16)<a>に参加しました．（学生参加者 M1：五島，坂本，鈴木，山本）
+          </td>
+        </tr>
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic329.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic330.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic331.jpg" width="120"></td>
+        </tr>
+      </table>
+      <hr width="550">
+      <!-- ▲【News】▲ -->
+
+
+      <!-- ▼【News】▼ -->
+      <table align="center">
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic323.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic324.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic325.jpg" width="120"></td>
+        </tr>
+        <tr valign="bottom">
+          <td colspan="3" width="360">
+            2016年1月8日に大阪大学で開催されたSICE関西支部・ISCIE 若手研究発表会に参加しました．（学生参加者 B4：五島，坂本）
+          </td>
+        </tr>
+      </table>
+      <hr width="550">
+      <!-- ▲【News】▲ -->
+
+      <!-- ▼【News】▼ -->
+      <table align="center">
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic317.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic318.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic319.jpg" width="120"></td>
+        </tr>
+        <tr valign="bottom">
+          <td colspan="3" width="360">
+            2016年1月6日に神戸大との研究交流会が行われました．（学生参加者: M2,M1,B4,B3 全員)
+          </td>
+        </tr>
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic320.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic321.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic322.jpg" width="120"></td>
+        </tr>
+      </table>
+      <hr width="550">
+      <!-- ▲【News】▲ -->
+
+      <!-- ▼【News】▼ -->
+      <table align="center">
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic314.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic315.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic316.jpg" width="120"></td>
+        </tr>
+        <tr valign="bottom">
+          <td colspan="3" width="360">
+            2015年12月9-11日にフロリダ・マイアミで開催されたICMLA 2015に参加しました．（学生参加者 M2：斉藤）
+          </td>
+        </tr>
+      </table>
+      <hr width="550">
+      <!-- ▲【News】▲ -->
+
+      <!-- ▼【News】▼ -->
+      <table align="center">
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic306.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic307.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic308.jpg" width="120"></td>
+        </tr>
+        <tr valign="bottom">
+          <td colspan="3" width="360">
+            2015年11月25日に阪大・乾口研との研究交流会が行われました．（学生参加者: M2,M1,B4 全員)
+          </td>
+        </tr>
+        <tr valign="bottom">
+          <td><img src="pic/hiwebpic309.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic310.jpg" width="120"></td>
+          <td><img src="pic/hiwebpic311.jpg" width="120"></td>
+        </tr>
+      </table>
+      <hr width="550">
+      <!-- ▲【News】▲ -->
+
+      <!-- ▼【News】▼ -->
+      <table align="center">
+        <table align="center">
+          <tr valign="center">
+            <td><img src="pic/hiwebpic312.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic313.jpg" width="120">
+            </td>
+            <td width="180">
+              2015年11月20-22日に台湾・台南で開催された<a href="http://taai2015.nutn.edu.tw/" target="_blank">TAAI
+                2015<a>に参加しました．（学生参加者 M2：小田，田中）
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="center">
+            <td><img src="pic/hiwebpic304.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic305.jpg" width="120">
+            </td>
+            <td width="180">2015年11月20-23日に中国・天津で開催された<a href="http://pandit.tju.edu.cn/IJCRS2015/"
+                target="_blank">IJCRS 2015<a>に参加しました．
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="center">
+            <td><img src="pic/hiwebpic302.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic303.jpg" width="120">
+            </td>
+            <td width="180">2015年11月13-15日に福岡で開催された<a href="http://www.mirlabs.org/socpar15/"
+                target="_blank">SoCPaR2015<a>に参加しました．
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic296.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic297.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic298.jpg" width="120"></td>
+          </tr>
+          <tr valign="bottom">
+            <td colspan="3" width="360">
+              2015年10月15-17日に Nha Trang, Vietnam で開催された<a href="http://www.jaist.ac.jp/IUKM/IUKM2015/"
+                target="_blank">IUKM 2015<a>に参加しました．（学生参加者 M2：大塩，斉藤，服部，M1：中野）
+            </td>
+          </tr>
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic299.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic300.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic301.jpg" width="120"></td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic291.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic292.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic293.jpg" width="120"></td>
+          </tr>
+          <tr valign="bottom">
+            <td colspan="3" width="360">
+              2015年9月24-25日に仙台で開催された<a href="http://www.ecei.tohoku.ac.jp/fan2015/" target="_blank">FAN
+                2015<a>に参加しました．服部君が優秀論文賞，大塩君がベストプレゼンテーション賞・和田賞を受賞しました．（学生参加者 M2：大塩，小田，斉藤，服部）
+            </td>
+          </tr>
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic294.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic295.jpg" width="120"></td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic284.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic285.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic286.jpg" width="120"></td>
+          </tr>
+          <tr valign="bottom">
+            <td colspan="4" width="360">
+              2015年9月2-4日に東京・調布で開催された<a href="http://fss2015.j-soft.org/" target="_blank">FSS2015<a>に参加しました．生方助教が IEEE
+                  CIS Japan Chapter Young Researcher Award を受賞しました．（学生参加者 M2：田中，服部，斉藤，M1：大森，中野）
+            </td>
+          </tr>
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic287.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic288.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic289.jpg" width="120"></td>
+            <td><img src="pic/hiwebpic290.jpg" width="68"></td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic279.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic280.jpg" width="120">
+            </td>
+            <td width="240">
+              2015年6月15-18日に福岡・北九州国際会議場で開催された<a href="http://cennser.org/ICIEV/"
+                target="_blank">ICIEV15<a>に参加しました．（学生参加者 M1：大森，中野）
+            </td>
+          </tr>
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic281.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic282.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic283.jpg" width="120">
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td width="240">
+              2015年5月20-22日に大阪・中央電気倶楽部で開催された<a href="http://sci15.sys.es.osaka-u.ac.jp/"
+                target="_blank">第59回システム制御情報学会研究発表講演会(SCI’15)<a>に参加しました．（学生参加者 M1：大森，中野）
+            </td>
+            <td><img src="pic/hiwebpic277.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic278.jpg" width="120">
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+
+        <table align="center">
+          <tr valign="bottom">
+            <td align="right"><img src="pic/hiwebpic272.jpg" width="120">
+            </td>
+            <td align="left"><img src="pic/hiwebpic270.jpg" width="120">
+            </td>
+            <td align="right"><img src="pic/hiwebpic273.jpg" width="120">
+            </td>
+          </tr>
+          <tr valign="bottom">
+            <td align="right"><img src="pic/hiwebpic269.jpg" width="120">
+            </td>
+            <td align="left"><img src="pic/hiwebpic275.jpg" width="120">
+            </td>
+            <td align="right"><img src="pic/hiwebpic274.jpg" width="120">
+            </td>
+          </tr>
+          <tr valign="top">
+
+            <td><img src="pic/hiwebpic271.jpg" width="120">
+            </td>
+            <td align="left"><img src="pic/hiwebpic276.jpg" width="120">
+            </td>
+            <td width="120">2015年03月24日に卒業証書・学位記授与式が行われました．
+            </td>
+
+
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td align="center"><a href="iten.pdf" target="_blank">移転のお知らせ<a>：2015年2月4日に研究室が移転しました．
+            </td>
+          </tr>
+          <tr valign="top">
+            <td align="center"><a href="iten.pdf" target="_blank"><img src="iten.jpg" alt="移転" width="240"><a>
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td align="right"><img src="pic/hiwebpic264.jpg" width="120">
+            </td>
+            <td align="left"><img src="pic/hiwebpic268.jpg" width="120">
+            </td>
+            <td colspan="3" width="180">2015年1月6日に神戸大・小澤研との研究交流会が行われました．
+              （学生参加者: M2,M1,B4,B3 全員）</td>
+          </tr>
+          <tr valign="top">
+            <td align="right"><img src="pic/hiwebpic265.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic267.jpg" width="120">
+            </td>
+            <td align="left"><img src="pic/hiwebpic266.jpg" width="120">
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td width="240">2014年12月9日に大阪で開催された第6回コンピューテーショナル・インテリジェンス研究会に参加しました．（学生参加者: B4 中野）
+            </td>
+            <td><img src="pic/hiwebpic255.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic256.jpg" width="120">
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic261.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic262.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic263.jpg" width="120">
+            </td>
+
+          </tr>
+          <tr>
+            <td><img src="pic/hiwebpic260.jpg" width="120">
+            </td>
+            <td colspan="2" width="240">2014年12月3-6日に小倉で開催された<a href="http://www.scis2014.org/" target="_blank">SCIS &
+                ISIS 2014<a>に参加しました．（学生参加者 M2：岩田，諏訪，村西，手塚，M1：田中，服部，斉藤）
+            </td>
+          </tr>
+          <tr valign="top">
+            <td><img src="pic/hiwebpic257.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic258.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic259.jpg" width="120">
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="middle">
+            <td width="360">2014年11月27-11月29日に沖縄で開催された<a href="http://mirlabs.net/isda14/" target="_blank">ISDA
+                2014<a>に参加しました．（学生参加者 M2：村西）</td>
+
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td align="right"><img src="pic/hiwebpic250.jpg" width="90">
+            </td>
+            <td align="left"><img src="pic/hiwebpic251.jpg" width="120">
+            </td>
+            <td colspan="3" width="180">2014年11月19日に阪大・乾口研との研究交流会が行われました．
+              （学生参加者: M2,M1,B4 全員,B3 一部）</td>
+          </tr>
+          <tr valign="top">
+            <td align="right"><img src="pic/hiwebpic252.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic253.jpg" width="120">
+            </td>
+            <td align="left"><img src="pic/hiwebpic254.jpg" width="120">
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic247.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic248.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic249.jpg" width="120">
+            </td>
+            <td width="180">2014年10月22-24日に北海道・登別で開催された<a href="http://ieee-grc2014.org/"
+                target="_blank">GrC2014<a>に参加しました．
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic246.jpg" width="120"></td>
+            <td align="right"><img src="pic/hiwebpic245.jpg" width="120">
+            </td>
+            <td align="right"><img src="pic/hiwebpic244.jpg" width="120">
+            </td>
+          </tr>
+          <tr valign="middle">
+            <td colspan="2" align="left" width="240">2014年09月1-3日に高知で開催された<a href="http://fss2014.j-soft.org/"
+                target="_blank">FSS2014</a>に参加しました．市橋名誉教授の特別講演がありました！（学生参加者 M2：村西，手塚，M1：服部，斉藤，大塩，小田）</td>
+            </td>
+            <td align="right"><img src="pic/hiwebpic242.jpg" width="120">
+            </td>
+          </tr>
+          <tr valign="top">
+            <td align="right"><img src="pic/hiwebpic241.jpg" width="120">
+            </td>
+            <td align="right"><img src="pic/hiwebpic240.jpg" width="120">
+            </td>
+            <td align="right"><img src="pic/hiwebpic239.jpg" width="120">
+            </td>
+          </tr>
+
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td align="right"><img src="pic/hiwebpic238.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic233.jpg" width="120">
+            </td>
+            <td align="left"><img src="pic/hiwebpic237.jpg" width="120">
+            </td>
+          </tr>
+          <tr valign="top">
+            <td colspan="3" width="240">2014年07月6-11日に中国の北京で開催された<a href="http://www.ieee-wcci2014.org/"
+                target="_blank">FUZZ-IEEE2014</a>に参加しました．（学生参加者 M1：大塩，田中，小田）</td>
+
+          </tr>
+          <tr valign="top">
+            <td align="right"><img src="pic/hiwebpic236.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic235.jpg" width="120">
+            </td>
+            <td align="left"><img src="pic/hiwebpic234.jpg" width="120">
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="middle">
+            <td><img src="pic/hiwebpic232.jpg" width="120">
+            </td>
+
+            <td width="240">2014年06月05-06日に開催された<a href="http://www.kecl.ntt.co.jp/openhouse/2014/"
+                target="_blank">NTTオープンハウス2014</a>に行きました．</td>
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td><img src="pic/hiwebpic230.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic231.jpg" width="120">
+            </td>
+            <td width="320">2014年05月21-23日に京都テルサで開催された<a href="http://www.sci14.org/"
+                target="_blank">第58回システム制御情報学会研究発表講演会 (SCI’14) <a>に参加しました．（学生参加者 M1：大塩，田中，小田，服部，斉藤）
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <!-- ▼【News】▼ -->
+        <table align="center">
+          <tr valign="bottom">
+            <td width="320">2014年05月14日に<a href="http://www.change-jp.com/"
+                target="_blank">株式会社チェンジ<a>の取締役，高橋範光氏を迎えて，研究交流会を行いました．情報系人材の育成とキャリアビ
+                  ジョンについてのお話を伺いました．（高橋氏は本学の卒業生で，大学時代は本多と同級生でした．）
+            </td>
+            <td><img src="pic/hiwebpic228.jpg" width="120">
+            </td>
+            <td><img src="pic/hiwebpic229.jpg" width="120">
+            </td>
+          </tr>
+        </table>
+        <hr width="550">
+        <!-- ▲【News】▲ -->
+
+        <a href="javascript:void(0)" id="category_tuduki" onclick="show('tuduki');">
+          続きを読む</a>
+        <div id="layer_tuduki" style="display: none;position:relative;margin-left:0pt" class="close">
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td colspan="2" rowspan="2"><img src="pic/hiwebpic217.jpg" width="240" height="190"></td>
+              <td align="right"><img src="pic/hiwebpic216.jpg" width="120">
+              </td>
+              <td align="right"><img src="pic/hiwebpic226.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="middle">
+              <td align="left" width="120">2014年03月24日に卒業証書・学位記授与式が行われました．
+              </td>
+              <td align="right"><img src="pic/hiwebpic225.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/hiwebpic218.jpg" width="120">
+              </td>
+              <td align="right"><img src="pic/hiwebpic219.jpg" width="120">
+              </td>
+              <td align="right"><img src="pic/hiwebpic220.jpg" width="120">
+              </td>
+              <td align="right"><img src="pic/hiwebpic221.jpg" width="120">
+              </td>
+            </tr>
+
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td align="right"><img src="pic/hiwebpic213.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic214.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic215.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td colspan="2" width="240">2014年03月05日に近畿大学で開催された平成25年度日本経営工学会関西支部卒業論文・修士論文発表会に参加しました．（学生参加者
+                M2：中尾，B4：田中）田中君が優秀学生発表賞を受賞しました．</td>
+              <td align="right"><img src="pic/hiwebpic227.jpg" height="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+
+              <td><img src="pic/hiwebpic211.jpg" height="120">
+              </td>
+              <td width="320">2014年1月14日に，2013年9月に開催された第23回インテリジェント・システム・シンポジウム（FANシンポジウム）での発表に
+                対して，M1の岩田君が，電気学会より，平成25年度電子・情報・システム部門技術委員会奨励賞を受賞しました．
+              </td>
+              <td><img src="pic/hiwebpic212.jpg" height="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="320">2014年01月17日に常翔学園 大阪センターで開催された<a href="http://mechatro.osakac.ac.jp/wakate/"
+                  target="_blank">計測自動制御学会関西支部・システム制御情報学会　若手研究発表会<a>に参加しました．（学生参加者 M2：荻田，M1：Samy）
+              </td>
+              <td><img src="pic/hiwebpic209.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic210.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+
+              <td width="360">2013年12月26日に研究室忘年会が行われました．
+              </td>
+
+            </tr>
+          </table>
+
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+
+            <tr valign="bottom">
+              <td align="right"><img src="pic/hiwebpic208.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic207.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic206.jpg" width="120">
+              </td>
+
+            </tr>
+
+            <tr>
+              <td colspan="2" width="240">2013年12月11日に神戸大・小澤研との研究交流会が行われました．
+                （学生参加者: M2,M1,B4,B3 全員）
+              </td>
+              <td align="left"><img src="pic/hiwebpic205.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/hiwebpic204.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic203.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic202.jpg" width="120">
+              </td>
+
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+
+            <tr valign="bottom">
+              <td align="right"><img src="pic/hiwebpic196.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic197.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic198.jpg" width="120">
+              </td>
+
+            </tr>
+
+            <tr>
+              <td align="left"><img src="pic/hiwebpic195.jpg" width="90">
+              </td>
+              <td colspan="2" width="240">2013年11月27日に阪大・乾口研との研究交流会が行われました．
+                （学生参加者: M2,M1,B4,B3 全員）</td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/hiwebpic199.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic200.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic201.jpg" width="120">
+              </td>
+
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+          <!-- ▼【News】▼ -->
+          <table align="center">
+
+            <tr valign="bottom">
+              <td align="right"><img src="pic/hiwebpic192.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic193.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic194.jpg" width="120">
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td colspan="2" width="240">2013年11月13-16日に韓国大田で開催された<a href="http://www.isis2013.org/main/"
+                  target="_blank">ISIS2013</a>に参加しました．村西さんがセッションベストペーパー賞をいただきました！（学生参加者 M1：岩田，河上，手塚，村西）</td>
+
+              <td align="left"><img src="pic/hiwebpic190.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/hiwebpic191.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic189.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic188.jpg" width="120">
+              </td>
+
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+
+
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+
+              <td align="right">
+                <img src="pic/hiwebpic184.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic185.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic186.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="left"><img src="pic/hiwebpic187.jpg" width="90">
+              </td>
+              <td colspan="2" width="200" align="left">2013年11月03-07日に韓国の大邱で開催された<a href="http://iconip2013.org/"
+                  target="_blank">ICONIP2013<a>に参加しました．<br>（学生参加者 M2：小林，中尾）</td>
+            </tr>
+          </table>
+
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+
+              <td colspan="2" width="240">2013年09月25-26日に九州大学医学部　百年講堂 で開催された<a
+                  href="http://cig.ees.kyushu-u.ac.jp/~FAN2013/"
+                  target="_blank">第23回インテリジェント・システム・シンポジウム</a>に参加しました．（学生参加者 M2：中尾，M1：岩田，上野）</td>
+
+              <td align="left"><img src="pic/hiwebpic180.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+
+              <td align="right"><img src="pic/hiwebpic181.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic182.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic183.jpg" width="120">
+              </td>
+
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td><img src="pic/hiwebpic178.jpg" width="90">
+              </td>
+              <td width="240">2013年09月10-13日に早稲田大学 西早稲田キャンパス で開催された<a href="https://www.his.gr.jp/sympo/his2013.html"
+                  target="_blank">ヒューマンインタフェースシンポジウム2013<a>に参加しました．（学生参加者 M1：河上）
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="240">2013年09月09-11日に小倉で開催された<a href="http://kes2013.kesinternational.org/"
+                  target="_blank">KES-2013<a>に参加しました．（学生参加者 M2：川野，M1：河上，手塚）
+              </td>
+              <td><img src="pic/hiwebpic176.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic177.jpg" width="120">
+              </td>
+
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td><img src="pic/hiwebpic175.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic179.jpg" width="120">
+              </td>
+              <td width="240">2013年09月09-11日に 大阪国際大学 枚方キャンパス で開催された<a href="http://fss2013.j-soft.org/"
+                  target="_blank">第29回ファジィ システム シンポジウム<a>に参加しました．（学生参加者 M1：上野，手塚，B4：大塩，小田，田中）
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td align="right"><img src="pic/hiwebpic172.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic174.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic173.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td colspan="3" width="240">2013年07月7-10日にインドのハイデラバードで開催された<a
+                  href="http://www.isical.ac.in/~fuzzieee2013/" target="_blank">FUZZ-IEEE2013</a>に参加しました．（学生参加者
+                M1：岩田，春日井，諏訪，村西）</td>
+
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+
+              <td width="180">2013年06月06日に<a href="http://www.kecl.ntt.co.jp/openhouse/2013/"
+                  target="_blank">NTTオープンハウス</a>に行きました．</td>
+              <td><img src="pic/hiwebpic169.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic170.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic171.jpg" width="120">
+              </td>
+
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td><img src="pic/hiwebpic166.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic167.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic168.jpg" width="120">
+              </td>
+              <td width="160">2013年05月31日に研究室でバーベキューを行いました．市橋名誉教授も参加されました．</td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="middle">
+              <td width="240">2013年05月15-17日に兵庫県民会館で開催された<a href="http://www.iscie.or.jp/sci13/"
+                  target="_blank">第57回システム制御情報学会研究発表講演会<a>に参加しました．（学生参加者 M1：岩田，春日井，諏訪，村西，河上）</td>
+              <td><img src="pic/hiwebpic165.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="middle">
+              <td width="360">2013年04月08日に合同お花見会がありました．</td>
+
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="middle">
+              <td width="200">2013年03月29日に市橋先生が大阪府立大学名誉教授の称号を授与されました！！</td>
+              <td><img src="pic/hiwebpic164.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td align="right"><img src="pic/hiwebpic159.jpg" width="120">
+              </td>
+              <td width="120">2013年03月22日に学位記授与式が行われました．
+              </td>
+              <td><img src="pic/hiwebpic157.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic158.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+
+              <td align="right"><img src="pic/hiwebpic162.jpg" width="90">
+              </td>
+              <td><img src="pic/hiwebpic160.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic161.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic163.jpg" width="120">
+              </td>
+
+            </tr>
+          </table>
+
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="240">2013年03月22日に松本さんが工学研究科足立一馬基金顕彰のTECHNOVATION奨励賞の表彰を受けました．</td>
+              <td><img src="pic/hiwebpic155.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic156.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td><img src="pic/hiwebpic154.jpg" width="120">
+              </td>
+              <td width="360">2013年01月18日に学校法人 常翔学園 大阪センターで開催された<a href="http://www.robot.kuass.kyoto-u.ac.jp/symp/"
+                  target="_blank">計測自動制御学会関西支部・システム制御情報学会若手研究発表会<a>に参加しました．（学生参加者 B3：手塚，村西）
+              </td>
+
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+
+              <td align="right">
+                <img src="pic/hiwebpic148.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic149.jpg" width="120">
+              </td>
+              <td colspan="2" width="240" align="left">2013年1月8日に神戸大・小澤研との研究交流会が行われました．<br>（学生参加者: M2,M1,B4,B3）
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/hiwebpic150.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic151.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic152.jpg" width=120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic153.jpg" width="120"></td>
+            </tr>
+          </table>
+
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+
+              <td align="right"><img src="pic/hiwebpic141.jpg" width="90">
+              </td>
+              <td><img src="pic/hiwebpic142.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic143.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic145.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+
+
+              <td align="right"><img src="pic/hiwebpic146.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic147.jpg" width="120">
+              </td>
+
+
+              <td width="120">2012年12月28日に研究室忘年会が行われました．
+              </td>
+              <td align="left"><img src="pic/hiwebpic144.jpg" width="90">
+              </td>
+
+            </tr>
+          </table>
+
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+
+              <td align="right">
+                <img src="pic/hiwebpic134.jpg" width="90">
+              </td>
+              <td><img src="pic/hiwebpic135.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic136.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic137.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td width="200" align="right">2012年12月3日に大阪大学 国際棟セミナー室で阪大・乾口研との研究交流会が行われました．<br>（学生参加者: M2,M1,B4全員）
+              </td>
+              <td><img src="pic/hiwebpic140.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic139.jpg" width=120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic138.jpg" width="90"></td>
+            </tr>
+          </table>
+
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+
+              <td align="right">
+                <img src="pic/hiwebpic128.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic126.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic127.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic132.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/hiwebpic129.jpg" width="90">
+              </td>
+              <td><img src="pic/hiwebpic131.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic130.jpg" width=120">
+              </td>
+              <td width="200" align="left">2012年11月20-24日に神戸で開催された<a href="http://scis2012.j-soft.org/"
+                  target="_blank">SCIS-ISIS2012<a>に参加しました．<br>（学生参加者 M2：松本，野々口，小森，別府　M1：小林，中尾，大坂，川野，井戸）</td>
+            </tr>
+          </table>
+
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="200" align="right">2012年9月12-14日に名古屋で開催された<a href="http://fss2012.j-soft.org/"
+                  target="_blank">FSS2012<a>に参加しました．論文賞を受賞しました！<br>（学生参加者 M2：松本，野々口　M1：小林，中尾，大坂）
+              </td>
+              <td><img src="pic/hiwebpic122.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic123.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/hiwebpic124.jpg" width=120">
+              </td>
+              <td><img src="pic/hiwebpic125.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic121.jpg" width="90">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td><img src="pic/hiwebpic115.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic116.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic117.jpg" width="120">
+              </td>
+              <td width="240">2012年08月30-31日に沖縄県浦添市てだこホールで開催された<a href="http://ie.u-ryukyu.ac.jp/fan2012/"
+                  target="_blank">FAN2012<a>に参加しました．（学生参加者 M2：小森，別府　M1：川野）
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="240">2012年08月20-23日に北海学園大学で開催された<a href="http://isciia2012.eli.hokkai-s-u.ac.jp/"
+                  target="_blank">ISCIIA2012<a>に参加しました．中尾君が学生論文賞を受賞しました！（学生参加者 M1：小林，中尾，岩元）
+              </td>
+              <td><img src="pic/hiwebpic118.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic119.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic120.jpg" width="120">
+              </td>
+
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="480">2012年07月30-31日に立命館大学 情報理工学部 びわこ・くさつキャンパス で開催された<a
+                  href="http://www.ieice.org/ken/program/index.php?tgs_regid=f8e297120b37f568f1808a5c048c6c465454836c23a3f4f22645b9633a58af51&tgid=IEICE-NC&lang=jpn"
+                  target="_blank">電子情報通信学会 ニューロコンピューティング研究会（NC）<a>に参加しました．（学生参加者 M2：松本，小森）
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="top">
+
+              <td><img src="pic/hiwebpic114.jpg" width="120">
+              <td width="440">2012年07月02日にビブリオバトルが開催されました．<br>
+                （チャンプ本： １００の思考実験: あなたはどこまで考えられるか [単行本]
+                ジュリアン バジーニ (著), 河井美咲 (イラスト), 向井 和美 (翻訳)<br>
+                （参加者 教員：野津，能島 M2：小森 M1：川野，岩元，井戸，古殿（１Ｇ），川市（３Ｇ），鈴木（３Ｇ） B4：上野，河上）
+              </td>
+
+
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="200" align="right">2012年6月10-15日にBrisbane，Australiaで開催された<a
+                  href="http://www.ieee-wcci2012.org/ieee-wcci2012/" target="_blank">WCCI2012<a>に参加しました．<br>（学生参加者
+                    M2：松本，小森，別府　M1：荻田，中尾，川野）
+              </td>
+              <td><img src="pic/hiwebpic103.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic104.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic105.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/hiwebpic106.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic107.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic108.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic109.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/hiwebpic110.jpg" width=120">
+              </td>
+              <td><img src="pic/hiwebpic111.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic112.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic113.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td><img src="pic/hiwebpic101.jpg" width="90">
+              </td>
+              <td><img src="pic/hiwebpic102.jpg" width="120">
+              </td>
+              <td width="240">2012年06月07-08日にNTT京阪奈ビルで開催された<a href="http://www.kecl.ntt.co.jp/openhouse/2012/index.html"
+                  target="_blank">NTT コミュニケーション科学基礎研究所オープンハウス2012<a>を見学しました．
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="120" align="right">2012年5月28日にバーベキュー大会をおこないました．
+              </td>
+              <td><img src="pic/hiwebpic096.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic094.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic097.jpg" width="90">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/hiwebpic100.jpg" width="90">
+              </td>
+              <td><img src="pic/hiwebpic098.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic099.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic095.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td><img src="pic/hiwebpic090.jpg" width="120">
+              </td>
+              <td colspan="3" width="240">2012年05月21-23日に京都で開催された<a href="http://www.iscie.or.jp/sci12/committee.htm"
+                  target="_blank">SCI'12第56回システム制御情報学会研究発表講演会<a>に参加しました．<br>（学生参加者 M1：中尾，川野，大坂，岩元，井戸）
+              </td>
+            </tr>
+            <tr valign="top">
+              <td><img src="pic/hiwebpic091.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic092.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic093.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="top">
+              <td width="280">川野さんが経営工学会優秀学生賞を受賞しました．
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="top">
+              <td><img src="pic/hiwebpic087.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic086.jpg" width="90">
+              </td>
+              <td><img src="pic/hiwebpic088.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic089.jpg" width="90">
+              </td>
+              <td width=120">2012年04月09日に合同お花見会がありました．
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td align="right"><img src="pic/hiwebpic079.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic080.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic084.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic082.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td width="140" align="right">2012年03月23日に学位記授与式が行われました．
+              </td>
+              <td><img src="pic/hiwebpic083.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic081.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic085.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="top">
+              <td><img src="pic/hiwebpic078.jpg" width="120">
+              </td>
+              <td width="280">2012年03月09日に摂南大学で開催された平成23年度日本経営工学会関西支部卒業論文・修士論文発表会において，中尾君が優秀発表賞を受賞しました．
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="top">
+              <td width="440" align="right">2012年03月22日にビブリオバトルが開催されました．<br>
+                （チャンプ本： 文体練習 [単行本]レーモン クノー (著), Raymond Queneau (原著), 朝比奈 弘治 (翻訳)<br>
+                （参加者 教員：野津，能島，佐賀 M2：山本，市川 <br>B4：川野，岩元，川市（３Ｇ），日野浦（６Ｇ））
+              </td>
+              <td><img src="pic/hiwebpic077.jpg" width="120">
+
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="top">
+              <td><img src="pic/hiwebpic074.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic075.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic076.jpg" width="120">
+              </td>
+              <td width="160">2012年2月21日に修論発表会，24日に卒論発表会が行われました．
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="200" align="right">2011年12月18日-21日にHonolulu，Hawaiiで開催された<a
+                  href="http://www.icmla-conference.org/icmla11/" target="_blank">ICMLA2011</a>に参加しました．<br>（学生参加者
+                M2：山本，<br> M1：小森，B4：岩元，井戸）
+              </td>
+              <td><img src="pic/hiwebpic068.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic069.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic073.jpg" width="120">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/hiwebpic067.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic070.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic071.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic072.jpg" width="90">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="top">
+              <td><img src="pic/hiwebpic066.jpg" width="120">
+
+              </td>
+              <td width="460">2011年12月14日にビブリオバトルが開催されました．<br>（チャンプ本： 28歳からのリアル[マネー編] ／人生戦略会議，平家物語／角川書店(編集)，カラー 小倉百人一首
+                二訂版／島津 忠夫）<br>（参加者 教員：野津，能島 M2：山本，市川 B4：川野，岩元，井戸）
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+
+          <table align="center">
+            <tr valign="top">
+              <td width="100"><img src="pic/hiwebpic065.jpg" width="100">
+              </td>
+              <td><img src="pic/hiwebpic063.jpg" width="120">
+              </td>
+              <td width="100"><img src="pic/hiwebpic062.jpg" width="100">
+              </td>
+              <td width="160">2011年12月5日に神戸大・小澤研との研究交流会が開催されました．
+              </td>
+              <td><img src="pic/hiwebpic064.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="160" align="right">山本君，松本さんが学長顕彰，小森さんがISIS2011ベストプレゼンテーション賞を受賞しました！
+              </td>
+              <td><img src="pic/hiwebpic059.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic060.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic061.jpg" width="130">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2011年9月28日-10月1日にSuwon, Koreaで開催された<a href="http://isis2011.fuzzy.or.kr/"
+                  target="_blank">ISIS2011</a>に参加しました．<br>（学生参加者 M2：山本，<br> M1：松本，小森，B4：荻田）
+              </td>
+              <td><img src="pic/hiwebpic056.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic057.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic058.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="360">2011年9月1日-2日に神戸で開催されたFAN2011にて野津助教が<a
+                  href="http://www.cs.kobe-u.ac.jp/events/fan2011/award-winner.html"
+                  target="_blank">FANプレゼンテーション賞</a>を受賞しました！
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="200" align="right">2011年9月12日-14日に福井で開催された<a href="http://www.ir.his.u-fukui.ac.jp/fss2011/"
+                  target="_blank">FSS2011</a>に参加しました．表彰式にて論文賞を受賞しました！<br>（学生参加者 M2：山本，吉田<br> M1：松本，野々口）
+              </td>
+              <td><img src="pic/hiwebpic053.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic054.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic055.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2011年9月10日にAurelieさんのFarewell Partyが開催されました．
+              </td>
+              <td><img src="pic/hiwebpic050.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic051.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic052.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2011年9月8日に阪大・乾口研との研究交流会が開催されました．
+              </td>
+              <td><img src="pic/hiwebpic047.jpg" width="90">
+              </td>
+              <td><img src="pic/hiwebpic044.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic045.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic046.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">山本君が<a href="http://www.ccm.media.kyoto-u.ac.jp/alcon2011/"
+                  target="_blank">第15回 パターン認識・メディア理解研究会(PRMU) アルゴリズムコンテスト</a>にて審査員特別賞を受賞しました．
+              </td>
+              <td><img src="pic/hiwebpic043.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic049.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic048.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="260" align="right">2011年9月1日-2日に神戸で開催された<a href="http://www.cs.kobe-u.ac.jp/events/fan2011/"
+                  target="_blank">FAN2011</a>に参加しました．<br>（学生参加者 B4：中尾，川野）
+              </td>
+              <td><img src="pic/hiwebpic041.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic042.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2011年8月25日-26日に林間学校が高野山の赤松院で開催されました．
+              </td>
+              <td><img src="pic/hiwebpic038.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic039.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic040.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2011年8月9日にビブリオバトルが開催されました．<br> （参加者 教員：野津，能島<br> M2：山本，市川<br>
+                B4：川野，岩元，井戸<br> 図書館の方々）
+              </td>
+              <td><img src="pic/hiwebpic035.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic036.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic037.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2011年8月6日-7日にオープンキャンパスが開催されました．
+              </td>
+              <td><img src="pic/hiwebpic031.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic032.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic033.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic034.jpg" width="90">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2011年6月27日-30日にTaipei, Taiwanで開催された<a
+                  href="http://fuzzieee2011.nutn.edu.tw/" target="_blank">FUZZ-IEEE 2011</a>, 2011 IEEE International
+                Conference on Fuzzy Systemsに参加しました．<br>（学生参加者 M2：山本，吉田<br> M1：松本，野々口，小森）
+              </td>
+              <td><img src="pic/hiwebpic028.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic030.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic029.jpg" width="90">
+              </td>
+            </tr>
+            <tr valign="top">
+              <td align="right"><img src="pic/withBezdek.jpg" width=200">
+              </td>
+              <td><img src="pic/hiwebpic026.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic024.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic025.jpg" width="90">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="top">
+              <td width="280">2011年5月17日-19日に大阪で開催された<a href="http://www.iscie.or.jp/sci11/index.htm"
+                  target="_blank">SCI'11 第55回システム制御情報学会研究発表講演会</a>に参加しました．（学生参加者 M1：松本，野々口，小森）
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2011年4月22日に学科の新入生歓迎会が開催されました．
+              </td>
+              <td><img src="pic/hiwebpic011.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic012.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic013.jpg" width="90">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="260" align="right">2011年4月14日に研究室のお花見会が開催されました．
+              </td>
+              <td><img src="pic/hiwebpic016.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic017.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2011年3月23日に学位記授与式がありました．
+              </td>
+              <td><img src="pic/hiwebpic021.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic022.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic023.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2010年12月21日に神大・阿部研との研究交流会が開催されました．
+              </td>
+              <td><img src="pic/hiwebpic018.jpg" width="120">
+              </td>
+              <td><img src="pic/hiwebpic019.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic020.jpg" width="90">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="360" align="right">2010年12月17日野津助教が<a href="josei.jpg"
+                  target="_blank">2011年国際科学技術財団研究助成贈呈式</a>に出席しました．<a href="http://www.japanprize.jp/"
+                  target="_blank">国際科学技術財団HP</a>
+              </td>
+              <td align="left"><img src="pic/hiwebpic014.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="200" align="right">2010年12月13日にDAVE教授特別講義が開催されました．
+              </td>
+              <td><img src="pic/hiwebpic001.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic002.jpg" width="90">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="280" align="right">2010年12月9日-12日に岡山で開催されたSCIS&ISIS2010に参加しました．
+              </td>
+              <td align="left"><img src="pic/hiwebpic008.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2010年10月20日に阪大・乾口研との研究交流会が開催されました．
+              </td>
+              <td><img src="pic/hiwebpic003.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic004.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2010年9月25日-26日に八王子で開催された第20回インテリジェントシステムシンポジウムに参加しました．
+              </td>
+              <td><img src="pic/hiwebpic005.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic006.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="360" align="right">2010年9月19日-22日に兵庫で開催されたWorld Automation Congress 2010に参加しました???
+              </td>
+              <td align="left"><img src="pic/hiwebpic007.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2010年9月13日-15日に広島で開催された第26回ファジィシステムシンポジウムに参加しました．
+              </td>
+              <td align="left"><img src="pic/hiwebpic008.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="180" align="right">2010年8月18日-21日にTaipei, Taiwanで開催されたSICE Annual Conference 2010に参加しました．
+              </td>
+              <td><img src="pic/hiwebpic009.jpg" width="120">
+              </td>
+              <td align="left"><img src="pic/hiwebpic010.jpg" width="120">
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="360" align="left">2010年7月18日-23日にBarcelona, Spainで開催されたFUZZ-IEEE 2010に参加しました．
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="360" align="left">2009年8月17日-19日にBusan, Koreaで開催されたISIS2009に参加しました．<br>
+                野津助教らのグループが <a href="ISIS2009BPA.html" target="_blank">Best Paper Award</a> を受賞しました．
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+
+          <!-- ▼【News】▼ -->
+          <table align="center">
+            <tr valign="bottom">
+              <td width="360" align="left">2008年6月1日-6日にHong Kong, Chinaで開催されたWCCI2008に参加しました．<br>
+                市橋教授らのグループがFUZZ-IEEE 2008の Best Paper Award を受賞しました．<a
+                  href="http://www.cs.osakafu-u.ac.jp/hi/ichi/WCCI08Award.pdf" target="_blank">WCCI08Award.pdf</a>
+              </td>
+            </tr>
+          </table>
+          <hr width="550">
+          <!-- ▲【News】▲ -->
+          <ul>
+
+
+
+            </tr>
+      </table>
+      <!-- ▲▲【What's New】▲▲ -->
+      <br>
+
+    </center>
+  </div><!-- ▲▲▲【本文】▲▲▲ -->
+</body>
+
+</html>
