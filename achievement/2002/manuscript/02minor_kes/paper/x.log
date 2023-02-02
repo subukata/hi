@@ -1,0 +1,25 @@
+This is pTeX, Version p2.1.8, based on TeX, Version 3.14159 (SJIS) (Web2C 7.2) (format=platex 1998.9.11)  27 SEP 2002 12:09
+**d:/htpd/lab_work_j/2002/manuscript/02minor_kes/paper/lminor_em.tex
+(d:/htpd/lab_work_j/2002/manuscript/02minor_kes/paper/lminor_em.tex
+pLaTeX2e <1998/09/01>+1 (based on LaTeX2e <1998/06/01> patch level 0)
+
+! LaTeX Error: File `pl209.def' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: x
+
+ )
+(\end occurred when \ifx on line 9 was incomplete)
+(\end occurred when \ifx on line 9 was incomplete) 
+Here is how much of TeX's memory you used:
+ 6 strings out of 10663
+ 139 string characters out of 69804
+ 46261 words of memory out of 263001
+ 3190 multiletter control sequences out of 10000+0
+ 7519 words of font info for 31 fonts, out of 200000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 6i,0n,3p,144b,7s stack positions out of 300i,100n,500p,30000b,4000s
+
+No pages of output.
