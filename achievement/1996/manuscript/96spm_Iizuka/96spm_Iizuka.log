@@ -1,0 +1,115 @@
+This is PTeX, C Version 2.99 j1.7 p1.0.9G (preloaded format=plplain 98.2.24)  1 SEP 1998 18:49
+**&PLPLAIN \input iizuka96
+(iizuka96.tex (C:\WINTEX\INPUTS/article.sty
+Document Style `article' <16 Mar 88>.
+(C:\WINTEX\INPUTS/art10.sty)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+) (C:\WINTEX\INPUTS/fleqn.sty
+\mathindent=\dimen119
+)
+(C:\WINTEX\INPUTS2/epsbox.sty
+EPSbox version 1.5 - Released May 5, 1992 (for LaTeX/jdvi2kps2.1)
+Based on EPSF macro package. version 1.2 - Released July 16, 1990
+\@darg=\dimen120
+\eps@xdim=\dimen121
+\eps@ydim=\dimen122
+\eps@width=\dimen123
+\eps@height=\dimen124
+\eps@tempdima=\dimen125
+\eps@tempdimb=\dimen126
+\eps@cnta=\count87
+\eps@cntb=\count88
+\eps@cntc=\count89
+\eps@cntd=\count90
+\ps@stream=\read0
+) (iizuka96.aux) <./figs/Hier.eps(206.5667pt,93.89409pt)>
+Overfull \vbox (28.45274pt too high) has occurred while \output is active
+\vbox(-28.45274+0.0)x483.69684
+.\glue 0.0 plus 1.0fil
+.\hbox(0.0+0.0)x483.69684, yoko direction
+
+
+[1
+
+
+]
+Overfull \hbox (0.89836pt too wide) detected at line 207
+$ \egtsy r\egtmi y[] \egtrm = \egtsy ^^@\egtrm 2 [] \egtsy r\egtmi y[] [] w[]^^
+V[][]$ \egtrm (9)
+
+\hbox(16.8667+14.16673)x234.73523
+.\mathon
+.\glue 8.53581
+.\egtsy r
+.\egtmi y
+.\kern0.28703
+.etc.
+
+
+Overfull \vbox (28.45274pt too high) has occurred while \output is active
+\vbox(-28.45274+0.0)x483.69684
+.\glue 0.0 plus 1.0fil
+.\hbox(0.0+0.0)x483.69684, yoko direction
+
+
+[2] <./figs/cpm1.eps(218.02809pt,142.26378pt)>
+<./figs/cpm2.eps(224.56863pt,142.26378pt)>
+<./figs/cpm3.eps(236.34941pt,142.26378pt)>
+Overfull \hbox (1.61418pt too wide) in paragraph at lines 410--412
+ [] 
+
+\hbox(142.26378+0.0)x234.73523
+.\glue(\leftskip) 0.0 plus 1.0fil
+.\vbox(142.26378+0.0)x236.34941, glue set 142.26378fil, yoko direction
+..\glue 0.0 plus 1.0fil minus 1.0fil
+..\hbox(0.0+0.0)x236.34941, glue set 236.34941fil, yoko direction
+...\special{postscriptbox{236.34941pt}{142.26378pt}{./figs/cpm3.eps}}
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\rightskip) 0.0 plus 1.0fil
+
+<./figs/Hpm1.eps(231.36102pt,133.72795pt)>
+<./figs/Hpm2.eps(226.1332pt,133.72795pt)>
+<./figs/Hpm3.eps(226.1332pt,133.72795pt)>
+Overfull \hbox (2.29185pt too wide) in paragraph at lines 487--488
+\tenrm LMS are al-most same, but the learn-ing con-verged faster
+
+\hbox(6.94444+1.94444)x234.73523, glue set - 1.0
+.\tenrm L
+.\tenrm M
+.\tenrm S
+.\glue 3.33333 plus 1.66498 minus 1.11221
+.\tenrm a
+.etc.
+
+
+Overfull \vbox (28.45274pt too high) has occurred while \output is active
+\vbox(-28.45274+0.0)x483.69684
+.\glue 0.0 plus 1.0fil
+.\hbox(0.0+0.0)x483.69684, yoko direction
+
+
+[3]
+Overfull \vbox (28.45274pt too high) has occurred while \output is active
+\vbox(-28.45274+0.0)x483.69684
+.\glue 0.0 plus 1.0fil
+.\hbox(0.0+0.0)x483.69684, yoko direction
+
+
+[4] (iizuka96.aux) 
+Here is how much of TeX's memory you used:
+ 297 strings out of 4151
+ 2683 string characters out of 60876
+ 45722 words of memory out of 262141
+ 2418 multiletter control sequences out of 9500
+ 30851 words of font info for 123 fonts, out of 72000 for 255
+ 14 hyphenation exceptions out of 607
+ 15i,10n,15p,828b,418s stack positions out of 300i,40n,60p,4096b,4000s
+
+Output written on iizuka96.dvi (4 pages, 20932 bytes).

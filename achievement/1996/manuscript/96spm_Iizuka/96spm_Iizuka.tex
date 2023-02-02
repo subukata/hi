@@ -1,0 +1,599 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   4th International Conference on Soft Computing
+%
+%                     IIZUKA '96
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentstyle[fleqn,epsbox]{article}
+\setlength{\mathindent}{3mm}      %êîéÆÇç∂Ç©ÇÁÇRÉ~Éä
+\setlength{\jot}{3mm}             %êîéÆÇ∆êîéÆÇÃä‘äu
+\setlength{\topsep}{3mm}          %ï∂èÕÇ∆éÆÇÃè„â∫ïùÇRÉ~Éä 
+\setlength{\oddsidemargin}{-8mm}  % -5mm
+\setlength{\textheight}{225mm}    % 
+\setlength{\textwidth}{170mm}     % 
+\setlength{\headheight}{-10mm}    % ÉwÉbÉ_Å[Ç™égópÇ∑ÇÈçÇÇ≥
+\setlength{\headsep}{10mm}         % 
+\setlength{\columnsep}{5mm}      % ìÒíiëgÇÃíÜâõó]îí
+\renewcommand{\topfraction}{1.0}         %ê}Ç≈ÇPÇOÇOÅìñÑÇﬂÇƒÇ‡ÇÊÇµ 
+\renewcommand{\textfraction}{0.0}        %ï∂èÕÇ™ÇOÅìÇ≈Ç‡ÇÊÇµ 
+\renewcommand{\floatpagefraction}{ 0.0}  %ï∂èÕÇ™ÇOÅìÇ≈Ç‡ÇÊÇµ 
+\setlength{\floatsep}{5mm}               %ÉtÉçÅ[ÉgÇ∆ï∂èÕÇÃä‘ÇOÉ~Éä
+\setcounter{totalnumber}{10}             %ÇPÉyÅ[ÉWÇÃÉtÉçÅ[Égêî
+\setcounter{topnumber}{5}                %ÇPÉyÅ[ÉWÇÃÉtÉçÅ[Égêî
+\setcounter{bottomnumber}{5}             %ÇPÉyÅ[ÉWÇÃÉtÉçÅ[Égêî
+
+
+\newcommand{\vctr}[1]{\mbox{\boldmath $#1$}}
+\newenvironment{indention}[1]{\par
+\addtolength{\leftskip}{#1}
+\begingroup}{\endgroup\par}
+
+
+\begin{document}
+%text start
+
+\pagestyle{empty}
+
+\twocolumn[%
+\begin{center}
+{\Large\bf Successive Projection Method for\\
+Fast Learning Algorithm of Neurofuzzy GMDH \\}
+
+\vspace{5mm}
+{\bf Takashi OHTANI, Hidetomo ICHIHASHI, Kazunori NAGASAKA and Tetsuya MIYOSHI\\}
+%Corresponding Author:H.Ichihashi,
+Department of Industrial Engineering, College of Engineering, Osaka Prefecture University, 1-1 Gakuencho, Sakai, Osaka 593, JAPAN\\
+e-mail:ichi@center.osakafu-u.ac.jp, TEL:0722-52-1161, FAX:0722-59-3340\\
+
+\vspace{4mm}
+%{\bf Topics:} {\it Fuzzy Modeling, Fuzzy Neural Networks, Fuzzy Neural Computing Systems} \\
+{\bf Key words:} {\it RBF networks, LMS learning, Successive projection method} \\
+%{\bf Session:} {\it regular} \\
+\end{center}
+\vspace{4mm}
+]
+
+{\small
+\begin{flushleft}
+{\it\bf Abstract }
+Neurofuzzy GMDH, whose partial descriptions are represented by Radial Basis Function networks, has been proposed. In this paper,
+a generalized successive projection method for fast learning algorithm of Neurofuzzy GMDH is developed and compared with 
+%the instantaneous learning algorithms such as 
+the Least Mean Square rule. 
+(1) For the multilayered models, an algorithm is derived as the solution of an optimization problem in which the Chebyshev norm of distance travelled(step size) is minimized. (2) For the single layered models, a combined algorithm of the Successive Projection Method and Orthogonal Projection Method is developed. Several examples show the validity of the methods.
+
+
+
+\end{flushleft}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushleft}
+{\bf 1. INTRODUCTION} 
+\end{flushleft}
+
+
+\begin{sloppypar}
+
+Neurofuzzy GMDH (NF-GMDH) \cite{nagasaka,ichi} is a kind of adaptive learning network (i.e., a network type of GMDH) in the hierarchical structure. In the net, two input variables are introduced in each partial description. Fig.~\ref{hier} shows the model structure. In the figure, the output from each partial description in a layer becomes the input variable in the next layer, respectively. The final output is given by the average of the outputs in the last layer. Since the input of the $m$-th model in the $p$-th layer is the output variables of the $(m-1)$-th and the $m$-th models in the $(p-1)$-th layer, the number of Gaussian functions being $K$, then
+%
+\footnotesize
+\begin{equation}
+y^{pm} = F(y^{p-1,m-1},y^{p-1,m}) = \sum^4_{k=1} \mu_k^{pm} w_k^{pm}
+\end{equation}
+\begin{equation}
+\mu_k^{pm} = \exp\left[ - \frac{(y^{p-1,m-1} - a_{k,1}^{pm})^2}
+				{b_{k,1}^{pm}} 
+		   - \frac{(y^{p-1,m} - a_{k,2}^{pm})^2}
+		   		{b_{k,2}^{pm}} \right]
+\end{equation}
+\normalsize
+%
+where $\mu_k^{pm}$ and $w_k^{pm}$ are the $k$-th Gaussian function and its corresponding weight parameter, respectively, of the $m$-th model in the $p$-th layer, and $a_{ki}^{pm}$ and $b_{ki}^{pm}$  are the parameters of the Gaussian  function applied to the $i$-th input variables $(i = 1, 2)$ of the $m$-th model  in the $p$-th layer. Let the number of partial descriptions in each layer be $M$ and the number of layers be $P$. The final output $y$ is the average of outputs in the last layer.
+%
+\begin{equation}
+	y = \frac{1}{M} \sum^M_{m=1} y^{Pm}
+\end{equation}
+
+In this paper, a Successive Projection Method (SPM) based on the Chebyshev norm for fast learning algorithm is developed for multilayered models. A combined algorithm of the SPM and Orthogonal Projection Method(OPM) is developed for singlelayered models. These algorithms are compared with the Least Mean Square(LMS) rule.
+
+
+\end{sloppypar}
+
+\begin{figure}[t]
+%  \vspace{33mm}
+	\begin{center}
+		\epsfile{file=./figs/Hier.eps,height=33mm} 
+		\vspace{-7mm}
+	\end{center}
+  \caption{Structure of Neurofuzzy GMDH with six input variables}
+  \label{hier}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushleft}
+{\bf 2. 
+\begin{minipage}[t]{75mm}
+SUCCESSIVE PROJECTION METHOD \\
+FOR MULTI LAYERED NF-GMDH
+\end{minipage}
+}
+\end{flushleft}
+
+
+\begin{sloppypar}
+
+The learning rate is one of heuristic constants in LMS rule. The cost function will not converge if the bigger learning rate is employed, and it will not converge easily if the smaller learning rate is employed. This motivated the development of the Successive Projection Method (SPM)\cite{NLMS}, which always stores the training pair exactly. The directions of parameter updates (search directions) are the same for each learning rule, it is only the distance traveled (step size) which distinguishes them. In SPM rule, the step size is calculated at each time step, such that the $j$-th input / output information presented to is stored exactly by the network. And it updates the network parameter vector to reduce the error in the output after each training pair is presented to the network.
+
+The derivation of SPM rule is achieved to solve the following nonlinear optimization problem.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\footnotesize
+\begin{eqnarray}
+min. & & 
+\sum^P_{p=1} \sum^M_{m=1} \sum^4_{k=1} 
+		\Bigl[ \left( \Delta w^{pm}_k \right)^s + \nonumber \\
+&& \hspace{10mm}	\sum^2_{i=1} 
+				\left\{ \left( \Delta a^{pm}_{ki} \right)^s +
+			                \left( \Delta b^{pm}_{ki} \right)^s 
+				\right\}
+		\Bigl] \\
+%
+s.t. & &
+\sum^P_{p=1} \sum^M_{m=1} \sum^4_{k=1} 
+	\Bigl[
+	  \left| \nabla y^w_{pmk} \right| \Delta w^{pm}_k + \nonumber \\
+&& \hspace{5mm} \sum^2_{i=1} 
+		\left\{ 
+		\left| \nabla y^a_{pmki} \right| \Delta a^{pm}_{ki} 
+ 	      + \left| \nabla y^b_{pmki} \right| \Delta b^{pm}_{ki}  
+		\right\}
+	\Bigl]	\nonumber \\
+& & 	 = |\rho| \\
+\hspace{3mm} 
+&& \Delta w^{pm}_kÅÜ0 , 
+\hspace{3mm}
+%
+\Delta a^{pm}_{ki}ÅÜ0 , 
+\hspace{3mm}
+%
+\Delta b^{pm}_{ki}ÅÜ0 
+\end{eqnarray}
+\normalsize
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+where $\rho = y(\vctr{w},\vctr{a},\vctr{b},\vctr{x}) - y^* $ , $\nabla y^w_{pmk} = \partial y / \partial w^{pm}_k$. Since $s$ is a positive real number, the nonnegativity restrictions are added to the constraint. From the above optimization problem we can derive the following learning rule.
+%%%%%%%%%%%%%%%%%%%%%%
+%\footnotesize
+\begin{eqnarray}
+%wÇÃäwèKë•
+&& w_k^{pm NEW} = w_k^{pm OLD} \nonumber \\
+ 			&& \hspace{5mm}+ \eta sgn \left(\rho \nabla y^w_{pmk} \right)
+                \frac{|\rho|}{\Sigma} \left| \nabla y^w_{pmk} \right|^{1/(s-1)}
+\end{eqnarray}
+%\normalsize
+%%%%%%%%%%%%%%%%%%%%%%
+where, $\eta$ is a relaxation rate, and
+%
+\small
+\begin{eqnarray}
+&&\hspace{-5mm}\Sigma = \sum^P_{p=1} \sum^M_{m=1} \sum^4_{k=1} 
+\Bigg[
+	\left| \Delta y^w_{pmk} 
+	\right|^{s/(s-1)} \nonumber \\
+&& \hspace{1mm}
+	+ \sum^2_{i=1} 
+	\bigg\{ 
+		\left| \Delta y^a_{pmki} 
+		\right|^{s/(s-1)} 
+%\nonumber \\
+%&& \hspace{13mm}
+		+ \left| \Delta y^b_{pmki} 
+		\right|^{s/(s-1)} 
+	\bigg\}
+\Bigg]
+\end{eqnarray}
+\normalsize
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%And $\nabla y^w_{pmk}$ can get from $\partial y / \partial y^{pm}$ . 
+$\nabla y^{pm}$ denotes $\partial y / \partial y^{pm}$ . $\nabla y^{Pm} = 1/M$ for the last layer and
+%
+\footnotesize
+\begin{equation}
+\nabla y^{pm} = -2\sum^{m+1}_{l=m} \nabla y^{p+1,l} \sum^4_{q=1} w_q^{p+1,l} 
+	\mu_q^{p+1,l} \frac{(y^{pm} - a_{qr}^{p+1,l})}{b_{qr}^{p+1,l}}
+\end{equation}
+\normalsize
+%
+for intermediate layers, where $r$ is 1 if $l = m + 1$, and 2 if $l = m$, and $m + 1$ is 1 if $m = M$. 
+
+We can derive the learning rule for $a^{pm}_{ki}$ and $b^{pm}_{ki}$ in a similar manner. The above operation is performed for each training data, which thus implies one iteration of learning.  The operations are repeated for a fixed number of learning sessions.
+
+
+\end{sloppypar}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushleft}
+{\bf 3. 
+\begin{minipage}[t]{75mm}
+ORTHOGONAL PROJECTION \\
+METHOD FOR SINGLE LAYERED NF-GMDH
+\end{minipage}
+}
+\end{flushleft}
+
+
+The RBF networks depend linearly on a set of weights $\vctr{w}$ which are updated using gradient descent rules. Since the single layered NF-GMDH is simply the sum of several RBF networks, it performs a fixed nonlinear transformation of the input, mapping to a high - dimensional sparse internal representation. The Orthogonal Projection Method (OPM) \cite{Shao} using Gram - Schmidt Orthogonalisation process is based on culculating successive orthogonal search directions for the last $j$ training samples. This produces the following update rule
+%
+\begin{equation}
+\Delta \vctr{w}_j = \nabla y(\vctr{w}_j,\vctr{x}_j)
+ - \sum_{i=1}^{j-1} \frac{\nabla y(\vctr{w}_j,\vctr{x}_j)^T \Delta \vctr{w}_i}{\Delta \vctr{w}_i^T \Delta \vctr{w}_i} \Delta \vctr{w}_i
+\end{equation}
+%
+The conbined algorithm of OPM and SPM is developed for updating all parameters including $\vctr{a}$ and $\vctr{b}$ and we call it the Hybrid Projection Method (HPM). The proposed algorithm is shown as follows.
+
+
+{\bf{[Algorithm HPM]}}
+
+Step-0.
+\begin{indention}{1cm}
+The initial values of parameters are set as follows.
+$a_{ki}$'s are uniformly spaced on the actual map. 
+The values of parameter $b_{ki}$'s in Gaussian functions are chosen as to approximate triangular membership functions(i.e., B-spline of degree  one). $\vctr{w}_1 := \vctr{0}$ , $i:=1$.
+\end{indention}
+\noindent
+
+Step-1.
+\begin{indention}{1cm}
+%Calculate $\Delta \vctr{w}$ with $i$-th data.
+Compute
+\begin{eqnarray}
+\hspace{10mm}
+\Delta \vctr{w} = \frac{ - \delta}{ \| \nabla y(\vctr{w}_j,\vctr{x}_j) \|^2} \nabla y(\vctr{w}_j,\vctr{x}_j)
+\end{eqnarray}
+and
+\begin{eqnarray}
+\hspace{10mm} \vctr{w}_{2} = \vctr{w}_1 + \Delta \vctr{w}
+\end{eqnarray}
+%
+$\vctr{a}$ ÅC $\vctr{b}$ are updated in the same manner. 
+
+$j := 2$ ,$i:=i+1$ÅD
+\end{indention}
+\noindent
+
+Step-2.
+\begin{indention}{1cm}
+%Calculate $\Delta \vctr{w}_j $ with $i$-th data.
+Compute $\Delta \vctr{w}_j $ using Eq.(10).
+%
+If
+\begin{eqnarray}
+\hspace{10mm} \Delta \vctr{w}_j^T \Delta \vctr{w}_j < \varepsilon \label{eq:zyuzoku}
+\end{eqnarray}
+%
+then  $j:=1$ , $\vctr{w}_1 := \vctr{w}_j$ and proceed from Step-1ÅD
+\end{indention}
+\noindent
+
+Step-3.
+\begin{indention}{1cm}
+%Calculate $\Delta \vctr{w}$
+Compute
+\begin{eqnarray}
+\hspace{10mm} \Delta \vctr{w} = \frac{ - \delta_j \Delta \vctr{w}_j}{\nabla y(\vctr{w}_j,\vctr{x}_j)^T \Delta \vctr{w}_j}  \label{eq:ort_gs2}
+\end{eqnarray}
+%
+and
+%
+\begin{eqnarray}
+\hspace{10mm} \vctr{w}_{j+1} = \vctr{w}_j + \Delta \vctr{w}
+\end{eqnarray}
+%
+\end{indention}
+\noindent
+
+Step-4.
+\begin{indention}{1cm}
+$j:=j+1$ , $i:=i+1$ and proceed from Step-2.
+\end{indention}
+\noindent
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushleft}
+{\bf 5. NUMERICAL EXAMPLES }
+\end{flushleft}
+
+
+In order to examine the effectiveness of SPM and HPM, 
+%which is the combined algorithm of SPM and OPM, 
+the simulation of supervised learning is performed using two set of three different nonlinear mappings. The input variables take their values randomly chosen from unit interval [0,1].
+
+For the multilayered model, 200 input and output pairs of data are obtained as a training set. In two cases of the followings, $x_6$ is considered in the network but does not exist in the functions.
+
+$\cdot$ Sine function
+\begin{eqnarray}
+\hspace{10mm}
+%y^* = \frac{1}{20}(x_1 + x_2 + x_3 + x_4 + x_5)^2
+y^* = 0.5 + 0.5 \prod^5_{i=1} \sin ( \pi x_i)
+\end{eqnarray}
+
+$\cdot$ Strongly nonlinear function 1
+\begin{eqnarray}
+\hspace{10mm}
+y^* &=& \frac{1}{20} 
+\{  
+	\cos \left( \pi x_1 \right) + \sin \left( \pi x_2 \right) \nonumber \\
+	&& \hspace{6mm}
+	+ \cos \left( \pi x_3 \right) + \cos \left( \pi x_4 \right)  \nonumber \\
+	&& \hspace{12mm}
+	+ \sin \left( \pi x_5 \right)
+\}
+\end{eqnarray}
+
+$\cdot$ Strongly nonlinear function 2
+\begin{eqnarray}
+\hspace{10mm}
+y^* &=& 0.2 (0.5 + 0.5 \cos (2 \pi x_1) \nonumber \\
+&& \hspace{3mm} + x_2 x_3 + x_4 \sin (\pi x_5) +0.5 x_6)^2
+\end{eqnarray}
+
+From simulation results, shown in figs. 2, 3 and 4, the learning by SPM converges faster than by LMS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the singlelayered model, The mean squared errors, shown in figs. 5, 6 and 7, are calculated with 600 checking data which have not been used during the training, when every training data is presented to the network.
+
+
+
+
+
+
+
+
+
+
+
+%Å@ÇfÇlÇcÇgÇÃäwèKåãâ ÇÃê}
+\begin{figure}
+	\begin{center}
+		\epsfile{file=./figs/cpm1.eps,height=50mm} 
+		\vspace{-7mm}
+	\end{center}
+%  \vspace{50mm}
+  \caption{Mean squared error during training for the sine function, $y^* = 0.5 + 0.5 \prod^5_{i=1} \sin ( \pi x_i)$ .}
+  \label{square1}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\epsfile{file=./figs/cpm2.eps,height=50mm} 
+		\vspace{-7mm}
+	\end{center}
+%  \vspace{50mm}
+  \caption{Mean squared error during training for the strongly nonlinear function  with five input variables, $y^* = \{ \cos \left( \pi x_1 \right) + \sin \left( \pi x_2 \right) + \cos \left( \pi x_3 \right) + \cos \left( \pi x_4 \right) + \sin \left( \pi x_5 \right)\} / 20$ .}
+  \label{nl_1st}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\epsfile{file=./figs/cpm3.eps,height=50mm} 
+		\vspace{-7mm}
+	\end{center}
+%  \vspace{50mm}
+  \caption{Mean squared error during training for the strongly nonlinear function with six input variables, $y^* = 0.2 (0.5 + 0.5 \cos (2 \pi x_1) + x_2 x_3 + x_4 \sin (\pi x_5) +0.5 x_6)^2$ .}
+  \label{nl_2nd}
+\end{figure}
+
+
+
+
+%Å@ÇgÇoÇlÇ≈äwèKÇµÇΩåãâ ÇÃê}ÅiÇQéüå≥Åj
+\begin{figure}[t]
+	\begin{center}
+		\epsfile{file=./figs/Hpm1.eps,height=47mm} 
+		\vspace{-7mm}
+	\end{center}
+%  \vspace{49mm}
+  \caption{Mean squared error during training for the quadratic function, $y^* = \left\{ x_1 + x_2 \right\}^2 / 4$ .}
+  \label{square2}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\epsfile{file=./figs/Hpm2.eps,height=47mm} 
+		\vspace{-7mm}
+	\end{center}
+%  \vspace{49mm}
+  \caption{Mean  squared  error  during  training  for  the  nonlinear  function, $y^* = \{ \cos ( \pi x_1 ) + \sin ( \pi x_2 ) \}^2 / 4 + 1$ .}
+  \label{nl2}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\epsfile{file=./figs/Hpm3.eps,height=47mm} 
+		\vspace{-7mm}
+	\end{center}
+%  \vspace{49mm}
+  \caption{Mean squared error during training for the sine function, $y^* = 0.5 + 0.5 \sin \left( 1.5 \pi x_1 \right) \sin \left( 1.5 \pi x_2 \right)$ .}
+  \label{sin2}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$\cdot$ Quadratic function
+\begin{eqnarray}
+\hspace{10mm}
+y^* = \frac{1}{4} \left\{ x_1 + x_2 \right\}^2
+\end{eqnarray}
+
+
+$\cdot$ Nonlinear function
+\begin{eqnarray}
+\hspace{10mm}
+y^* = \frac{1}{4} \left\{ \cos \left( \pi x_1 \right) + \sin \left( \pi x_2 \right) \right\}^2 + 1
+\end{eqnarray}
+
+$\cdot$ Sine function
+\begin{eqnarray}
+\hspace{10mm}
+y^* = 0.5 + 0.5 \sin \left( 1.5 \pi x_1 \right) \sin \left( 1.5 \pi x_2 \right)
+\end{eqnarray}
+
+
+
+
+In figs. 5, 6 and 7, the results of combined algorithm are plotted as HPM. The results of SPM and LMS are almost same, but the learning converged faster than others by HPM.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushleft}
+{\bf 5. CONCLUSION }
+\end{flushleft}
+
+The convergence of the learning has been improved by the proposed algorithms especially for the early stage of learning. For on-line modelling and control, this advantage is important to prevent initial defects of the products in any production systems.  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\small
+\begin{thebibliography}{9}
+\bibitem{nagasaka}
+  K.Nagasaka, H.Ichihashi, and R.Leonard, 
+  Neuro-Fuzzy GMDH and Its Application 
+  to Modelling Grinding Characteristics,
+  Int. J. Prod. Res., 
+  Vol. 33,
+  No. 5,
+  (1995)
+  1229-1240
+
+
+\bibitem{ichi}
+	H.Ichihashi, N.Harada and K.Nagasaka,
+	Selection of the Optimum Number of Hidden Layers in Neuro-fuzzy GMDH,
+	Proc. FUZZ-IEEE/IFES'95,
+	Vol.3,
+	(1995)
+	1519-1526
+	
+\bibitem{NLMS}
+	M. Brown and C. Harris,
+  Neurofuzzy Adaptive Modelling and Control,
+  Prentice Hall,
+  New York
+  (1994)
+
+\bibitem{Shao}
+	 J. Shao, Y. C. Lee and R.Jones,
+	Orthogonal Projection Method for Fast On-line Learning Algorithm of Radial Basis Function Neural Networks,
+  Proc. INNS World Congress on Neural Networks,
+  Portland OR,
+  Vol. 3
+  (1993)
+  520-535
+  
+\end{thebibliography}
+%\normalsize
+
+
+
+
+\end{document}
+
+
+\bibitem{ref0}
+  Brown M. and Harris C.:
+  Neurofuzzy Adaptive Modelling and Control,
+  Prentice Hall,
+  New York
+  (1994)
+
+
+Selection of the Optimum Number of Hidden Layers in Neuro-fuzzy GMDH
+H.Ichihashi, N.Harada and K.Nagasaka
+Proceeding of FUZZ-IEEE/IFES'95Å@Vol.3,pp.1519-1526, 1995
+
+%
+\begin{equation}
+y^* = 0.3 \sin \left( 2.5 \pi x \right) + 0.5
+\end{equation}
+%
+\begin{center}
+{\bf{Table 1. Apploximation of $\sin$ function}} \\
+\begin{tabular}{|r||c||c|c|c|} \hline
+\multicolumn{1}{|c||}{ } &
+\multicolumn{1}{|c||}{LMS} &
+\multicolumn{3}{|c|}{SPM} \\ 
+\cline{3-5}
+Data No. &  & s=2.0 & s=2.2 & s=2.4 \\ \hline \hline
+0 & 0.30738 & 0.19396 & 0.17733 & 0.17025 \\
+1 & 0.28941 & 0.15374 & 0.14213 & 0.13670 \\
+2 & 0.24012 & 0.06607 & 0.06511 & 0.06483 \\
+3 & 0.19751 & 0.06769 & 0.07033 & 0.07020 \\
+4 & 0.16525 & 0.08037 & 0.10327 & 0.11611 \\
+5 & 0.14534 & 0.05572 & 0.05785 & 0.06072 \\
+6 & 0.12201 & 0.05276 & 0.05401 & 0.05686 \\
+7 & 0.10142 & 0.06865 & 0.07422 & 0.08055 \\
+8 & 0.08932 & 0.05385 & 0.05616 & 0.05715 \\
+9 & 0.09314 & 0.06104 & 0.06944 & 0.07053 \\
+10 & 0.07835 & 0.04997 & 0.05624 & 0.05718 \\ \hline
+20 & 0.03376 & 0.03935 & 0.04646 & 0.05027 \\ \hline
+30 & 0.02240 & 0.04976 & 0.06526 & 0.07542 \\ \hline
+40 & 0.01747 & 0.03245 & 0.03148 & 0.03476 \\ \hline
+50 & 0.01245 & 0.03410 & 0.02894 & 0.03283 \\ \hline
+100 & 0.00524 & 0.06007 & 0.06825 & 0.08394 \\ \hline \hline
+$ parameter $ & 0.1 & 0.8 & 0.9 & 0.9 \\ \hline
+\end{tabular}
+\end{center}
+
+
+
+%
+\begin{equation}
+y^* = 0.5 + 0.5 \sin \left( 1.5 \pi x_1 \right) \sin \left( 1.5 \pi x_2 \right) 
+\end{equation}

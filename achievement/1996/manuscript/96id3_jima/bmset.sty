@@ -1,0 +1,480 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+%       === bmset.sty  ver 1.15 ===   created '92.12.16
+%
+%         以下のコマンドを使用可能にします
+%
+%            \bi                : ボ－ルドイタリック
+%            \bcal              : ボ－ルドキャリグラフィック
+%            \boldmath          : 全てのサイズで使用可能な \boldmath
+%            \bs or \boldsymbol : ボ－ルドシンボル
+%
+%         使用可能範囲
+%
+%            \bi   : テキスト・数式モ－ド共に可能
+%            \bcal : 数式モ－ドのみ，テキストモ－ドで宣言しても効力はない
+%            \boldmath : 宣言はどこで行っても良い，グロ－バルに宣言すれば
+%                       その後の数式モ－ドでも効力を持つ．
+%            \bs or \boldsymbol : 数式モ－ドのみ，必ず数式モ－ド内で使用
+%                                しなければならない．
+%
+%
+%         フォントファミリ－が２つ以上残っていることを仮定しています
+%
+%         以下のフォントファイルの存在を仮定しています(各定義にある max_num
+%         を変更すれば必要なフォントファイルは変わります)
+%
+%            tfmファイル : (cmbxti10.tfm),cmmib10.tfm,cmbsy10.tfm,lasyb10.tfm
+%
+%            印字用ファイル : (cmbxti10),cmmib10,cmbsy10,lasyb10 の各マグ
+%                   (0.5,0.6,0.7,0.8,0.9,1 倍および halfmag,magstep1～5)
+%
+%
+%         制限 : 次のような場合はうまくいきません
+%
+%           \normalsize \boldmath $A$ {\Huge \boldmath $B$} $C$
+%           \normalsize \boldmath $A$ {\Huge \bi B} $C$
+%           \normalsize {\bi A} {\Huge \bi B} $\fam\bifam C$
+%           \normalsize ${\bcal A}$ {\Huge ${\bcal B}$} $\fam\bsfam C$
+%
+%          これらの場合 'C' は全て "Huge" size になります．
+%          (\bs は問題ありません．)
+%
+%          また，\boldmath を数式モ－ド内でロ－カルに用いた場合
+%          有効になるのは 英数字・ギリシャ文字のみです．
+%          (\cal A は文字ではなく記号です．)
+%
+%           $A^{\boldmath A}$      : 有効  A はボ－ルドになる
+%           $A^{\boldmath \pm}$    : 無効  \pm    はボ－ルドにはならない
+%           $A^{\boldmath \cal A}$ : 無効  \cal A はボ－ルドにはならない
+%
+%          シンボルをロ－カルにボ－ルドにするには \bs or \boldsymbol
+%          キャリグラフィックをロ－カルにボ－ルドにするには \bcal
+%          をそれぞれ使用して下さい．
+%
+%           $A^{\bs \pm}$           : 有効  \pm    はボ－ルドになる
+%           $A^{\bcal A}$           : 有効  \bcal A はボ－ルドで出力される
+%
+%          \bs は直後の文字・記号一つのみをボ－ルドにします．従って
+%          $\bs \pm \mp$ の場合ボ－ルドになるのは \pm のみです，両方
+%          ともボ－ルドにするには$\bs {\pm \mp}$ とグル－プ指定して下さい．
+%
+%          またギリシャ文字の小文字(\alpha)はこのスタイルファイルを
+%          用いた場合，文字(class 7 : 変数)として取り扱われます．そのため
+%          \rm \alpha などと指定するとおかしな結果になります．
+%
+
+% mathchar-num of lower Greek letters are changed to class 7.
+% Change made '91.8.5
+\mathchardef\alpha="710B
+\mathchardef\beta="710C
+\mathchardef\gamma="710D
+\mathchardef\delta="710E
+\mathchardef\epsilon="710F
+\mathchardef\zeta="7110
+\mathchardef\eta="7111
+\mathchardef\theta="7112
+\mathchardef\iota="7113
+\mathchardef\kappa="7114
+\mathchardef\lambda="7115
+\mathchardef\mu="7116
+\mathchardef\nu="7117
+\mathchardef\xi="7118
+\mathchardef\pi="7119
+\mathchardef\rho="711A
+\mathchardef\sigma="711B
+\mathchardef\tau="711C
+\mathchardef\upsilon="711D
+\mathchardef\phi="711E
+\mathchardef\chi="711F
+\mathchardef\psi="7120
+\mathchardef\omega="7121
+\mathchardef\varepsilon="7122
+\mathchardef\vartheta="7123
+\mathchardef\varpi="7124
+\mathchardef\varrho="7125
+\mathchardef\varsigma="7126
+\mathchardef\varphi="7127
+
+%=== basic macros ===
+
+%
+% usage : \@fname{\@textnum}{mbi}
+%
+\def\@fname#1#2{\csname#1#2\endcsname}
+
+%
+% usage : \@gfont{\@scriptnum}{mbi}{cmmib10\@ptscale7}
+%
+\def\@gfont#1#2#3{\global\expandafter\font\csname#1#2\endcsname #3\relax}
+
+%
+% usage : \@gsetfam{\tenmbi}{\sevmbi}{\fivmbi}{\bifam}
+%
+\def\@gsetfam#1#2#3#4{%
+\global\textfont#4#1\global\scriptfont#4#2\global\scriptscriptfont#4#3}
+
+%
+% usage : \@gloadfont{mbi}{cmmib}{10}
+%
+\def\@gloadfont#1#2#3{%
+\@@gloadfont{#1}{#2}{#3}{\@textnum}{\@textsi}%
+\@@gloadfont{#1}{#2}{#3}{\@scriptnum}{\@scriptsi}%
+\@@gloadfont{#1}{#2}{#3}{\@sscriptnum}{\@sscriptsi}%
+}%
+
+%
+% usage : \@@gloadfont{mbi}{cmmib}{10}{\@ttextnum}{\@ttextsi}
+%
+\def\@@gloadfont#1#2#3#4#5{%
+\@ifundefined{#4#1}{%
+\@@@gloadfont{#1}{#2}{#3}{#4}{#5}%
+}{}%
+}%
+
+%
+% usage : \@@@gloadfont{mbi}{cmmib}{10}{\@ttextnum}{\@ttextsi}
+%
+\def\@@@gloadfont#1#2#3#4#5{%
+\def\@tmppt{#5}%
+\if#3e%
+\@chkfontex{#2}{#5}{\@tmppt}%
+\else\if#3v%
+\@setmag{#5}\def\@tmppt{\@tmpmag}%
+\else%
+\ifnum#3<#5 \@setmag{#5}\def\@tmppt{10\@tmpmag}%
+\fi\fi\fi%
+\@gfont{#4}{#1}{#2\@tmppt}%
+}%
+
+%
+% usage : \@chkfontex{cmmib}{\@ttextsi}{\@tmppt}
+%
+\def\@chkfontex#1#2#3{%
+\openin1 #1#2.tfm \closein1%
+\ifeof1\@setmag{#2}\def#3{10\@tmpmag}\fi%
+}%
+
+
+%=== \boldmath and \unboldmath ===
+
+%
+% usage : @@unboldmath{\@textnum}{\@scriptnum}{\@sscriptnum}
+%
+\def\@@unboldmath#1#2#3{\everymath{}\everydisplay{}%
+\@setfam{\@fname{#1}{sy}}{\@fname{#2}{sy}}{\@fname{#3}{sy}}\tw@%
+\@setfam{\@fname{#1}{ly}}{\@fname{#2}{ly}}{\@fname{#3}{ly}}\lyfam%
+\mit\@boldfalse}
+
+%
+% usage : \@@boldmath{\@textnum}{\@scriptnum}{\@sscriptnum}
+% default max_num = 0 (use cmmib10,cmbsy10,lasyb10 for all size)
+%
+\def\@@boldmath#1#2#3{%
+\@ifundefined{bifam}{\newfam\bifam}{}%
+\@gloadfont{mbi}{cmmib}{0}%
+\@gloadfont{syb}{cmbsy}{0}%
+\@gloadfont{lyb}{lasyb}{0}%
+\everymath{\fam\bifam}\everydisplay{\fam\bifam}%
+\@gsetfam{\@fname{#1}{mbi}}{\@fname{#2}{mbi}}{\@fname{#3}{mbi}}\bifam%
+\@setfam{\@fname{#1}{syb}}{\@fname{#2}{syb}}{\@fname{#3}{syb}}\tw@%
+\@setfam{\@fname{#1}{lyb}}{\@fname{#2}{lyb}}{\@fname{#3}{lyb}}\lyfam%
+\fam\bifam\@boldtrue}%
+
+%
+% usage : \@unboldmath
+%
+\def\@unboldmath{%
+\protect%
+\@@unboldmath{\@textnum}{\@scriptnum}{\@sscriptnum}%
+}%
+
+%
+% usage : \@boldmath
+%
+\def\@boldmath{%
+\protect%
+\@@boldmath{\@textnum}{\@scriptnum}{\@sscriptnum}%
+}%
+
+%=== \bs and \boldsymbol ===
+
+%(original macro codes of \boldsymbol is by amsbsy.sty)
+%
+% usage : \bs{A},\bsymbol{A}
+%
+\def\boldsymbol{\protect\p@boldsymbol}%      original
+\def\bs{\protect\p@boldsymbol}%              added by ymt
+\def\p@boldsymbol#1{%
+\begingroup
+%%  \let\@nomath\@gobble \mathversion{bold}% original
+\@setbsym%                                   changed by ymt
+\math@atom{#1}{%
+\mathchoice%
+  {\hbox{$\m@th\displaystyle#1$}}%
+  {\hbox{$\m@th\textstyle#1$}}%
+  {\hbox{$\m@th\scriptstyle#1$}}%
+  {\hbox{$\m@th\scriptscriptstyle#1$}}}%
+\endgroup%
+}%
+
+%
+% usage : \@setbsym
+%
+\def\@setbsym{%
+\@@setbsym{\@textnum}{\@scriptnum}{\@sscriptnum}%
+}%
+
+%
+% usage : \@@setbsym{\@textnum}{\@scriptnum}{\@sscriptnum}
+% default max_num = 0 (use cmmib10,cmbsy10,lasyb10 for all size)
+%
+\def\@@setbsym#1#2#3{%
+\@gloadfont{mbi}{cmmib}{0}%
+\@gloadfont{syb}{cmbsy}{0}%
+\@gloadfont{lyb}{lasyb}{0}%
+\@setfam{\@fname{#1}{mbi}}{\@fname{#2}{mbi}}{\@fname{#3}{mbi}}\@ne%
+\@setfam{\@fname{#1}{syb}}{\@fname{#2}{syb}}{\@fname{#3}{syb}}\tw@%
+\@setfam{\@fname{#1}{lyb}}{\@fname{#2}{lyb}}{\@fname{#3}{lyb}}\lyfam%
+}%
+
+
+%=== \@defstylewop,\exmathfont and \@exmathfont ===
+
+%
+% usage : \@defstylewop{bi}{\@exmathfont{mbi}{cmmib}{10}}\rm
+%
+\def\@defstylewop#1#2#3{%
+\expandafter\def\csname#1\endcsname##1{%
+\expandafter\ifx\csname @no#1\endcsname\null#3##1%
+\else\protect#2##1\fi}%
+\expandafter\def\csname no#1\endcsname{%
+\expandafter\let\csname @no#1\endcsname=\null}%
+}%
+
+%
+% usage : \exmathfont{bi}{mbi}{cmmib}{10}\rm
+%
+\def\exmathfont#1#2#3#4#5{%
+\@defstylewop{#1}{\@exmathfont{#2}{#3}{#4}}{#5}
+}%
+
+%
+% usage : \@exmathfont{mbi}{cmmib}{10}
+%
+\def\@exmathfont#1#2#3#4{%
+\begingroup
+\@exsfont{#1}{#2}{z@}{#3}%
+\math@atom{#4}{%
+\mathchoice%
+  {\hbox{$\m@th\displaystyle\fam\z@#4$}}%
+  {\hbox{$\m@th\textstyle\fam\z@#4$}}%
+  {\hbox{$\m@th\scriptstyle\fam\z@#4$}}%
+  {\hbox{$\m@th\scriptscriptstyle\fam\z@#4$}}}%
+\endgroup%
+}%
+
+
+%=== used in \@exmathfont and \p@boldsymbol ===
+%(following macro codes are from amsbsy.sty)
+
+\def\setboxz@h{\setbox\z@\hbox}
+\def\wdz@{\wd\z@}
+%\def\boxz@{\box\z@}
+\def\setbox@ne{\setbox\@ne}
+\def\wd@ne{\wd\@ne}
+\def\math@atom#1#2{\binrel@{#1}\binrel@@{#2}}
+\def\binrel@#1{\setboxz@h{\thinmuskip0mu
+  \medmuskip\m@ne mu\thickmuskip\@ne mu$#1\m@th$}%
+ \setbox@ne\hbox{\thinmuskip0mu\medmuskip\m@ne mu\thickmuskip
+  \@ne mu${}#1{}\m@th$}%
+ \setbox\tw@\hbox{\hskip\wd@ne\hskip-\wdz@}}
+\def\binrel@@#1{\ifdim\wd2<\z@\mathbin{#1}\else\ifdim\wd\tw@>\z@
+ \mathrel{#1}\else{#1}\fi\fi}
+
+
+%=== \@exfont,\@extfont,\@exmfont and \@exsfont ===
+
+%
+% usage : \@exfont{tbi}{cmbxti}{mbi}{cmmib}{bifam}{10}
+%
+\def\@exfont#1#2#3#4#5#6{%
+\@exmfont{#3}{#4}{#5}{#6}%
+\@extfont{#1}{#2}{#6}%
+}%
+
+%
+% usage : \@extfont{tbi}{cmbxti}{10}
+%
+\def\@extfont#1#2#3{%
+\@@gloadfont{#1}{#2}{#3}{\@ttextnum}{\@ttextsi}%
+\@fname{\@ttextnum}{#1}%
+}%
+
+%
+% usage : \@exmfont{mbi}{cmmib}{bifam}{10}
+%
+\def\@exmfont#1#2#3#4{%
+\@ifundefined{#3}{\expandafter\newfam\csname#3\endcsname}{}%
+\@gloadfont{#1}{#2}{#4}%
+\@gsetfam{\@fname{\@textnum}{#1}}{\@fname{\@scriptnum}{#1}}{\@fname{\@sscrip
+tnum}{#1}}{\csname#3\endcsname}%
+\expandafter\fam\csname#3\endcsname%
+}%
+
+%
+% usage : \@exsfont{mbi}{cmmib}{bifam}{10}
+%
+\def\@exsfont#1#2#3#4{%
+\@gloadfont{#1}{#2}{#4}%
+\@setfam{\@fname{\@textnum}{#1}}{\@fname{\@scriptnum}{#1}}{\@fname{\@sscript
+num}{#1}}{\csname#3\endcsname}%
+}%
+
+
+%=== \exfont,\extfont,\exmfont and \@defstyle ===
+
+%
+% usage : \exfont{bi}{tbi}{cmbxti}{mbi}{cmmib}{bifam}{10}\rm
+%
+\def\exfont#1#2#3#4#5#6#7#8{%
+\@defstyle{#1}{\@exfont{#2}{#3}{#4}{#5}{#6}{#7}}{#8}
+}%
+
+%
+% usage : \extfont{bi}{tbi}{cmbxti}{10}\rm
+%
+\def\extfont#1#2#3#4#5{%
+\@defstyle{#1}{\@extfont{#2}{#3}{#4}}{#5}
+}%
+
+%
+% usage : \exmfont{bi}{mbi}{cmmib}{bifam}{10}\rm
+%
+\def\exmfont#1#2#3#4#5#6{%
+\@defstyle{#1}{\@exmfont{#2}{#3}{#4}{#5}}{#6}
+}%
+
+%
+% usage : \@defstyle{bi}{\@exfont{tbi}{cmbxti}{mbi}{cmmib}{bifam}{10}}\rm
+%
+\def\@defstyle#1#2#3{%
+\expandafter\def\csname#1\endcsname{%
+\expandafter\ifx\csname @no#1\endcsname\null#3%
+\else\protect#2\fi}%
+\expandafter\def\csname no#1\endcsname{%
+\expandafter\let\csname @no#1\endcsname=\null}%
+}%
+
+
+%=== \@setmag,\@setnum and \@@setnum ===
+
+%
+% usage : \@setmag{10}
+%
+\def\@setmag#1{%
+\ifcase#1\or\or\or\or\or%
+\def\@tmpmag{ at5pt}\or%
+\def\@tmpmag{ at6pt}\or%
+\def\@tmpmag{ at7pt}\or%
+\def\@tmpmag{ at8pt}\or%
+\def\@tmpmag{ at9pt}\or%
+\def\@tmpmag{ at10pt}\or%
+\def\@tmpmag{ at10.95pt}\or%
+\def\@tmpmag{ at12pt}\or\or%
+\def\@tmpmag{ at14.4pt}\or\or\or%
+\def\@tmpmag{ at17.28pt}\or\or\or%
+\def\@tmpmag{ at20.74pt}\or\or\or\or\or%
+\def\@tmpmag{ at24.88pt}%
+\else{}\fi}
+
+%
+% usage : \@setnum{10}
+%
+\def\@setnum#1{%
+\ifcase#1\or\or\or\or\or%
+\@@setnum{5}{5}{5}{5}{fiv}{fiv}{fiv}{fiv}%
+\or%
+\@@setnum{6}{6}{6}{6}{six}{six}{six}{six}%
+\or%
+\@@setnum{7}{7}{5}{5}{sev}{sev}{fiv}{fiv}%
+\or%
+\@@setnum{8}{8}{6}{5}{egt}{egt}{six}{fiv}%
+\or%
+\@@setnum{9}{9}{6}{5}{nin}{nin}{six}{fiv}%
+\or%
+\@@setnum{10}{10}{7}{5}{ten}{ten}{sev}{fiv}%
+\or%
+\@@setnum{11}{11}{8}{6}{elv}{elv}{egt}{six}%
+\or%
+\@@setnum{12}{12}{8}{6}{twl}{twl}{egt}{six}%
+\or\or%
+\@@setnum{14}{14}{10}{7}{frtn}{frtn}{ten}{sev}%
+\or\or\or%
+\@@setnum{17}{17}{12}{10}{svtn}{svtn}{twl}{ten}%
+\or\or\or%
+\@@setnum{20}{20}{14}{12}{twty}{twty}{frtn}{twl}%
+\or\or\or\or\or%
+\@@setnum{25}{20}{20}{17}{twfv}{twty}{twty}{svtn}%
+\else{}\fi}
+
+%
+% usage : \@@setnum{10}{10}{7}{5}{ten}{ten}{sev}{fiv}%
+%
+\def\@@setnum#1#2#3#4#5#6#7#8{%
+\def\@ttextsi{#1}%
+\def\@textsi{#2}%
+\def\@scriptsi{#3}%
+\def\@sscriptsi{#4}%
+\def\@ttextnum{#5}%
+\def\@textnum{#6}%
+\def\@scriptnum{#7}%
+\def\@sscriptnum{#8}%
+}%
+
+
+%============================================================
+
+% If you want to use above macro set in external macro (style file),
+% use \@setbm as \@addfontinfo{\@xpt}{\@setbm{10}}
+
+%
+% usage : \@setbm{10}
+%
+\def\@setbm#1{%
+\@prtct\@setnum{#1}%
+\everymath{}\everydisplay{}%
+\def\unboldmath{\@prtct\@unboldmath}%
+\def\boldmath{\@prtct\@boldmath}%
+}%
+
+
+\@addfontinfo{\@vpt}{\@setbm{5}}%
+\@addfontinfo{\@vipt}{\@setbm{6}}%
+\@addfontinfo{\@viipt}{\@setbm{7}}%
+\@addfontinfo{\@viiipt}{\@setbm{8}}%
+\@addfontinfo{\@ixpt}{\@setbm{9}}%
+\@addfontinfo{\@xpt}{\@setbm{10}}%
+\@addfontinfo{\@xipt}{\@setbm{11}}%
+\@addfontinfo{\@xiipt}{\@setbm{12}}%
+\@addfontinfo{\@xivpt}{\@setbm{14}}%
+\@addfontinfo{\@xviipt}{\@setbm{17}}%
+\@addfontinfo{\@xxpt}{\@setbm{20}}%
+\@addfontinfo{\@xxvpt}{\@setbm{25}}%
+
+%=== font definitions ===
+
+% font names
+\exfont{bi}{mbi}{cmmib}{mbi}{cmmib}{bifam}{0}{}%
+%\exfont{bi}{mbi}{cmmib}{mbi}{cmmib}{bifam}{0}\rm%
+%\exfont{bi}{tbi}{cmbxti}{mbi}{cmmib}{bifam}{10}\rm%
+%\exfont{bi}{tbi}{cmbxti}{mbi}{cmmib}{bifam}{e}\rm%
+%\extfont{bi}{mbi}{cmmib}{e}\bf%
+\exmfont{bcal}{mbs}{cmbsy}{bsfam}{0}{}%
+
+%\exmathfont{bi}{mbi}{cmmib}{0}{}%
+%\exmathfont{bcal}{mbs}{cmbsy}{0}{}%
+
+\endinput
+

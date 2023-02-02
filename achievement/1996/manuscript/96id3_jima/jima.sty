@@ -1,0 +1,1237 @@
+\typeout{JIMA.STY Ver.1.02 <18 Dec. 96>.}
+
+\newif\ifNTTfont
+\@ifundefined{kanjiskip}{\NTTfonttrue
+ \let\kanjiskip=\jintercharskip
+ \let\xkanjiskip=\jasciikanjiskip
+ \def\bf{\protect\pdg\protect\pbf}
+ }{\NTTfontfalse}
+
+\newif\ifProof
+%       \Prooftrue
+%       \Prooffalse
+\newif\iftombow
+%       \tombowtrue
+        \tombowfalse
+
+
+\def\@ptsize{0} \@namedef{ds@11pt}{\def\@ptsize{1}}
+\@namedef{ds@12pt}{\def\@ptsize{2}}
+\def\ds@twoside{\@twosidetrue \@mparswitchtrue} \def\ds@draft{\overfullrule 5pt}
+\@options
+
+\@twosidetrue
+\@mparswitchtrue
+
+\newdimen\h
+  \h=0.25mm
+\newdimen\JQ % for SK fonts
+  \JQ=0.7392507pt
+\newdimen\Q % for SE fonts
+  \Q=0.71144pt
+\newdimen\@bs
+  \@bs=18\h
+
+\lineskip 1pt \normallineskip 1pt
+\def\baselinestretch{1}
+
+\ifNTTfont
+ \jfont\fivmin = dm5
+ \jfont\sixmin = dm6
+ \jfont\sevmin = dm7
+ \jfont\egtmin = dm8
+ \jfont\ninmin = dm9
+ \jfont\tenmin = dm10
+ \jfont\elvmin = dm10 at 16\JQ
+ \jfont\twlmin = dm10 at 18\JQ
+ \jfont\frtnmin = dm10 at 20\JQ
+ %\jfont\elvmin = dm10 scaled 1095 % about 15\JQ
+ %\jfont\twlmin = dm10 scaled 1200 % about 18\JQ
+
+ \jfont\fivgt = dg5
+ \jfont\sixgt = dg6
+ \jfont\sevgt = dg7
+ \jfont\egtgt = dg8
+ \jfont\ningt = dg9
+ \jfont\tengt = dg10
+ \jfont\elvgt = dg10 at 16\JQ
+ \jfont\twlgt = dg10 at 18\JQ
+ \jfont\frtngt = dg10 at 20\JQ
+
+  \font\EFnomble=cmbx8
+  \font\EFhead=cmbx8
+  \font\EFrmhead=cmr8
+  \font\KFhead=dg8
+  \jfont\sixtymin = dm10 at 16\JQ
+
+ %\let\EFhead\relax
+ %\font\EFnomble=cmss8
+ %\font\EFfoot=cmss8
+ %\jfont\KFsec=dg10 % about 14\JQ
+ %\font\EFsec=cmbx10
+ %\jfont\KFtype=dm10 scaled 1728 % about 24\JQ
+\let\<\relax
+\else
+ \let\dg\gt
+ \let\dm\mc
+ \let\pdg\pgt
+ \let\pdm\pmc
+
+  \font\EFnomble=cmbx10 at 12\Q
+  \font\EFhead=cmbx10 at 12\Q
+  \font\EFrmhead=cmr10 at 12\Q
+  \font\KFhead=goth10 at 12\JQ
+  %\font\EFfoot=cmss8
+  %\font\KFsec=goth10 at 14\JQ
+  %\font\EFsec=cmbx10
+  %\font\KFtype=min10 at 24\JQ
+
+  \font\sixtymin = min10 at 16\JQ
+
+  \font\fivmin = min10 at 7\JQ
+  \font\sixmin = min10 at 9\JQ
+  \font\sevmin = min10 at 10\JQ
+  \font\egtmin = min10 at 11\JQ
+  \font\ninmin = min10 at 12\JQ
+  \font\tenmin = min10 at 13\JQ
+  \font\elvmin = min10 at 16\JQ
+  \font\twlmin = min10 at 18\JQ
+  \font\frtnmin = min10 at 20\JQ
+
+  \font\fivgt = goth10 at 7\JQ
+  \font\sixgt = goth10 at 9\JQ
+  \font\sevgt = goth10 at 10\JQ
+  \font\egtgt = goth10 at 11\JQ
+  \font\ningt = goth10 at 12\JQ
+  \font\tengt = goth10 at 13\JQ
+  \font\elvgt = goth10 at 16\JQ
+  \font\twlgt = goth10 at 18\JQ
+  \font\frtngt = goth10 at 20\JQ
+\fi
+
+
+%%% normalsize -->9pt 12Q 18h
+\def\@normalsize{\@setsize\normalsize{18\h}\ixpt\@ixpt
+\abovedisplayskip 9pt plus2pt minus5pt\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip \z@ plus3pt\belowdisplayshortskip 6pt plus3pt
+minus3pt\let\@listi\@listI}
+\def\normalsize{\ifx\@currsize\normalsize\rm\ninmin\else \@normalsize\fi}
+
+%%% small-->8pt 11Q 16h
+\def\small{\@setsize\small{16\h}\viiipt\@viiipt
+\abovedisplayskip 8.5pt plus 3pt minus 4pt\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip \z@ plus2pt\belowdisplayshortskip 4pt plus2pt minus 2pt
+\def\@listi{\leftmargin\leftmargini \topsep 4pt plus 2pt minus 2pt\parsep 2pt
+plus 1pt minus 1pt
+\itemsep \parsep}}
+
+%%% footnotesize-->7pt 10Q 14h
+\def\footnotesize{\@setsize\footnotesize{14\h}\viipt\@viipt
+\abovedisplayskip 6pt plus 2pt minus 4pt\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip \z@ plus 1pt\belowdisplayshortskip 3pt plus 1pt minus 2pt
+\def\@listi{\leftmargin\leftmargini \topsep 3pt plus 1pt minus 1pt\parsep 2pt
+plus 1pt minus 1pt
+\itemsep \parsep}}
+
+%%% Footnotesize-->7pt 10Q 15h  for table
+\def\Footnotesize{\@setsize\Footnotesize{15\h}\viipt\@viipt
+\abovedisplayskip 6pt plus 2pt minus 4pt\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip \z@ plus 1pt\belowdisplayshortskip 3pt plus 1pt minus 2pt
+\def\@listi{\leftmargin\leftmargini \topsep 3pt plus 1pt minus 1pt\parsep 2pt
+plus 1pt minus 1pt
+\itemsep \parsep}}
+
+\def\scriptsize{\@setsize\scriptsize{12\h}\vipt\@vipt}
+\def\tiny{\@setsize\tiny{10\h}\vpt\@vpt}
+\def\large{\@setsize\large{16\h}\xpt\@xpt}%10pt 13Q 16h
+\def\largefoot{\@setsize\largefoot{13\h}\viiipt\@viiipt}%8pt 11Q 13h
+\def\Large{\@setsize\Large{24\h}\xipt\@xipt}%11pt 16Q 24h
+\def\LARGE{\@setsize\LARGE{22\h}\xiipt\@xiipt}%12pt 18Q 22h
+\def\huge{\@setsize\huge{25\h}\xivpt\@xivpt}%14pt 20Q 25h
+\def\Huge{\@setsize\Huge{32\h}\xivpt\@xivpt}%14pt 20Q 32h
+%\def\Huge{\@setsize\Huge{33pt}\xxvpt\@xxvpt}
+\normalsize
+
+
+
+%%% 組体裁の定義
+ \oddsidemargin\z@
+ \evensidemargin\z@
+ \marginparwidth 0pt%107pt
+ \baselineskip=18\h
+ \marginparsep=11pt
+ \topmargin\z@
+ \headheight\z@
+ \headsep=\z@
+ \footheight=12\JQ
+ \footskip=9mm
+ \textheight=46\@bs
+ \advance \textheight by \topskip % \textheight= 207mm + 3mm = 210mm
+ \textwidth=150mm %12zw × 24字 × 2column = 144mm, 144 + 24\h(6mm) = 150mm
+ \columnsep=24\h
+ \columnseprule=0pt
+ \parskip\z@
+ \parindent=1zw%12\h
+
+\footnotesep 6.65pt
+\skip\footins 9pt plus 4pt minus 2pt
+
+\floatsep 12pt plus 6pt minus 2pt
+\textfloatsep 12pt plus 6pt minus 2pt
+\intextsep 12pt plus 6pt minus 2pt
+\@maxsep 18pt
+\dblfloatsep 12pt plus 6pt minus 2pt
+\dbltextfloatsep 12pt plus 6pt minus 2pt
+\@dblmaxsep 18pt
+\@fptop 0pt plus 1fil
+\@fpsep 8pt plus 2fil
+\@fpbot 0pt plus 1fil
+\@dblfptop 0pt plus 1fil
+\@dblfpsep 8pt plus 2fil
+\@dblfpbot 0pt plus 1fil
+\marginparpush 5pt
+
+\partopsep 2pt plus 1pt minus 1pt
+\@lowpenalty 51 \@medpenalty 151 \@highpenalty 301
+\@beginparpenalty -\@lowpenalty \@endparpenalty -\@lowpenalty \@itempenalty
+-\@lowpenalty
+
+
+
+\def\part{\par \addvspace{4ex} \@afterindenttrue \secdef\@part\@spart}
+\def\@part[#1]#2{\ifnum \c@secnumdepth >\m@ne \refstepcounter{part}
+\addcontentsline{toc}{part}{\thepart \hspace{1em}#1}\else
+\addcontentsline{toc}{part}{#1}\fi { \parindent 0pt \raggedright
+ \ifnum \c@secnumdepth >\m@NE \Large \bf Part \thepart \par \nobreak \fi \huge
+\bf #2\markboth{}{}\par } \nobreak \vskip 3ex \@afterheading }
+\def\@spart#1{{\parindent 0pt \raggedright
+ \huge \bf
+ #1\par} \nobreak \vskip 3ex \@afterheading }
+
+
+\def\@startsection#1#2#3#4#5#6{\if@noskipsec \leavevmode \fi
+   \par \@tempskipa #4\relax
+   \@afterindenttrue
+   \ifdim \@tempskipa <\z@ \@tempskipa -\@tempskipa \@afterindentfalse\fi
+   \if@nobreak \everypar{}\else
+     \addpenalty{\@secpenalty}
+%% section頁頭時でも2行取りセンターにする
+        \ifnum#2=\@ne
+            \vskip-\prevdepth \prevdepth\z@ \vskip\baselineskip
+        \advance\@tempskipa-\baselineskip \vspace*{\@tempskipa}%%この行消すとsection頁頭時天付きになる
+        \else\addvspace{\@tempskipa}\fi\fi
+%%
+\@ifstar
+     {\@ssect{#3}{#4}{#5}{#6}}{\@dblarg{\@sect{#1}{#2}{#3}{#4}{#5}{#6}}}}
+
+
+\newbox\Secbox
+\newbox\Subsecbox
+
+%%% section（番号付き）の内部マクロ
+% \@sect{NAME}{LEVEL}{INDENT}{BEFORESKIP}{AFTERSKIP}{STYLE}[ARG1]{ARG2} ==
+\def\@sect#1#2#3#4#5#6[#7]#8{\ifnum #2>\c@secnumdepth
+     \def\@svsec{}\else
+     \refstepcounter{#1}\edef\@svsec{\csname the#1\endcsname\hskip1zw}\fi
+     \@tempskipa #5\relax
+      \ifdim \@tempskipa>\z@
+        \begingroup #6\relax
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% section,subsection,subsubsection の字取り
+    \ifnum #2=\@ne %1 section
+      \setbox\Secbox\hbox{#8}%
+      \ifdim \wd\Secbox > 7zw
+          \@hangfrom{\hskip #3\relax\@svsec}{\interlinepenalty \@M #8\par}%
+      \else
+          \@hangfrom{\hskip #3\relax\@svsec}{\interlinepenalty \@M \kintou{7zw}{#8}\par}%
+      \fi
+    \else%1
+     \ifnum #2 > \@ne %2 subsection,subsebsection
+        \setbox\Subsecbox\hbox{#8}%
+        \ifdim \wd\Subsecbox > 4zw
+           \@hangfrom{\hskip #3\relax\@svsec}{\interlinepenalty \@M #8\par}%
+        \else
+           \@hangfrom{\hskip #3\relax\@svsec}{\interlinepenalty \@M \kintou{4zw}{#8}\par}%
+        \fi
+     \else%2
+     \fi%2
+    \fi%1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \endgroup
+       \csname #1mark\endcsname{#7}\addcontentsline
+         {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                      \protect\numberline{\csname the#1\endcsname}\fi
+                    #7}\else
+        \def\@svsechd{#6\hskip #3\@svsec #8\csname #1mark\endcsname
+                      {#7}\addcontentsline
+                           {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                             \protect\numberline{\csname the#1\endcsname}\fi
+                       #7}}\fi
+     \@xsect{#5}}
+
+%%% section*（番号無し）の内部マクロ
+\def\@ssect#1#2#3#4#5{\@tempskipa #3\relax
+   \ifdim \@tempskipa>\z@
+     \begingroup #4\@hangfrom{\hskip #1}{\interlinepenalty \@M #5\par}\endgroup
+   \else \def\@svsechd{#4\hskip #1\relax #5}\fi
+    \@xsect{#3}}
+
+
+%%% サブタイトル ----> \title{xxxxxxx\\{\Large xxxxxx}} とする（16Q）
+
+
+\def\section{\@startsection {section}{1}{\z@}
+ {.5\baselineskip plus .5mm minus .5mm}
+ {.5\baselineskip plus .5mm minus .5mm}{\bf}}
+\def\subsection{\@startsection{subsection}{2}{\z@}
+ {1\baselineskip plus .5mm minus .5mm}
+ {0.001\baselineskip plus .1mm minus .1mm}{\bf}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}
+ {0.001\baselineskip plus .1mm minus .1mm}
+ {0.001\baselineskip plus .1mm minus .1mm}{\bf}}
+\def\paragraph{\@startsection {paragraph}{4}{\z@}
+ {3.25ex plus 1ex minus .2ex}{-1em}{\normalsize\bf}}
+\def\subparagraph{\@startsection {subparagraph}{4}{\parindent}
+ {3.25ex plus 1ex minus .2ex}{-1em}{\normalsize\bf}}
+
+\setcounter{secnumdepth}{3}
+
+%%% 付録
+\def\appendix{\@ifstar{\STARappendix}{\NSTARappendix}}
+\def\STARappendix{\par% appendix* （番号無し）
+ \setcounter{section}{0}
+ \setcounter{subsection}{0}
+ \def\thesection{付録}}
+\def\NSTARappendix{\par% appendix （番号付き）
+ \setcounter{section}{0}
+ \setcounter{subsection}{0}
+ \def\thesection{付録\arabic{section}}}
+
+
+\leftmargini 25pt
+\leftmarginii 22pt \leftmarginiii 18.7pt \leftmarginiv 17pt \leftmarginv 10pt
+\leftmarginvi 10pt
+\leftmargin\leftmargini
+\labelwidth\leftmargini\advance\labelwidth-\labelsep
+\labelsep 5pt
+
+\def\@listI{\leftmargin\leftmargini \parsep 4pt plus 2pt minus 1pt\topsep 8pt
+plus 2pt minus 4pt\itemsep 4pt plus 2pt minus 1pt}
+\let\@listi\@listI
+\@listi
+\def\@listii{\leftmargin\leftmarginii
+ \labelwidth\leftmarginii\advance\labelwidth-\labelsep
+ \topsep 4pt plus 2pt minus 1pt
+ \parsep 2pt plus 1pt minus 1pt
+ \itemsep \parsep}
+\def\@listiii{\leftmargin\leftmarginiii
+ \labelwidth\leftmarginiii\advance\labelwidth-\labelsep
+ \topsep 2pt plus 1pt minus 1pt
+ \parsep \z@ \partopsep 1pt plus 0pt minus 1pt
+ \itemsep \topsep}
+\def\@listiv{\leftmargin\leftmarginiv
+ \labelwidth\leftmarginiv\advance\labelwidth-\labelsep}
+\def\@listv{\leftmargin\leftmarginv
+ \labelwidth\leftmarginv\advance\labelwidth-\labelsep}
+\def\@listvi{\leftmargin\leftmarginvi
+ \labelwidth\leftmarginvi\advance\labelwidth-\labelsep}
+
+
+\def\labelenumi{\theenumi}
+\def\theenumi{\arabic{enumi}}
+\def\labelenumii{(\theenumii)}
+\def\theenumii{\alph{enumii}}
+\def\p@enumii{\theenumi}
+\def\labelenumiii{\theenumiii.}
+\def\theenumiii{\roman{enumiii}}
+\def\p@enumiii{\theenumi(\theenumii)}
+\def\labelenumiv{\theenumiv.}
+\def\theenumiv{\Alph{enumiv}}
+\def\p@enumiv{\p@enumiii\theenumiii}
+
+\def\labelitemi{$\bullet$}
+\def\labelitemii{\bf --}
+\def\labelitemiii{$\ast$}
+\def\labelitemiv{$\cdot$}
+
+
+\def\verse{\let\\=\@centercr
+ \list{}{\itemsep\z@ \itemindent -1.5em\listparindent \itemindent
+ \rightmargin\leftmargin\advance\leftmargin 1.5em}\item[]}
+\let\endverse\endlist
+\def\quotation{\list{}{\listparindent 1.5em
+ \itemindent\listparindent
+ \rightmargin\leftmargin \parsep 0pt plus 1pt}\item[]}
+\let\endquotation=\endlist
+\def\quote{\list{}{\rightmargin\leftmargin}\item[]}
+\let\endquote=\endlist
+
+\def\descriptionlabel#1{\hspace\labelsep \bf #1}
+\def\description{\list{}{\labelwidth\z@ \itemindent-\leftmargin
+ \let\makelabel\descriptionlabel
+\partopsep=0pt\itemsep=0pt\topsep=0pt\parsep=0pt}}
+\let\enddescription\endlist
+
+\def\freedescriptionlabel#1{\hspace\labelsep \bf #1}
+\def\freedescription#1{\list{}{\labelwidth\z@
+\leftmargin=#1
+\itemindent-\leftmargin
+ \let\makelabel\freedescriptionlabel
+\partopsep=0pt\itemsep=0pt\topsep=0pt\parsep=0pt}}
+\let\endfreedescription\endlist
+%use \begin{freedescription}{2zw} .... \end{freedescription} インデント調整
+
+\def\enumerate{%
+\def\labelenumi{（\makebox[1zw][c]{\theenumi}）}
+\ifnum \@enumdepth >3 \@toodeep\else
+      \advance\@enumdepth \@ne
+      \edef\@enumctr{enum\romannumeral\the\@enumdepth}\list
+      {\csname label\@enumctr\endcsname}{\usecounter
+        {\@enumctr}\def\makelabel##1{\hss\llap{##1}}
+        %\itemindent=-.5zw
+        \labelsep=1zw
+%------- '96 12/10 追加 -----------------------
+        \listparindent=1zw%
+%----------------------------------------------
+        \partopsep=0pt\itemsep=0pt\topsep=0pt\parsep=0pt}\fi}
+\let\endenumerate =\endlist
+
+\def\freeenumerate#1{%
+\def\labelenumi{#1}
+\ifnum \@enumdepth >3 \@toodeep\else
+      \advance\@enumdepth \@ne
+      \edef\@enumctr{enum\romannumeral\the\@enumdepth}\list
+      {\csname label\@enumctr\endcsname}{\usecounter
+        {\@enumctr}\def\makelabel##1{\hss\llap{##1}}
+        %\itemindent=-.5zw
+        \labelsep=1zw
+        \partopsep=0pt\itemsep=0pt\topsep=0pt\parsep=0pt}\fi}
+\let\endfreeenumerate =\endlist
+%use \begin{freeenumerate}{\theenumi）} .... \end{freeenumerate} → 1）,2）....
+
+\def\itemize{\ifnum \@itemdepth >3 \@toodeep\else \advance\@itemdepth \@ne
+  \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
+  \list{\csname\@itemitem\endcsname}{\def\makelabel##1{\hss\llap{##1}}
+  %\itemindent=.5zw
+  \leftmargin\itemindent
+  \advance\leftmargin by 1.2zw
+  \partopsep=0pt\itemsep=0pt\topsep=0pt\parsep=0pt}\fi}
+\let\enditemize =\endlist
+
+%%% 別行立て数式     \mathindent by SATO工房
+\def\[{\relax\ifmmode\@badmath\else
+ \parsep 3pt plus 1pt minus 1pt \topsep 5pt plus 2pt minus 2pt
+ \itemsep 3pt plus 1pt minus 1pt
+\begin{trivlist}\item[]\leavevmode
+ \hbox to\linewidth\bgroup$ \displaystyle
+ \hskip\mathindent\bgroup\fi}
+\def\]{\relax\ifmmode \egroup $\hfil \egroup \end{trivlist}\else \@badmath \fi}
+
+\def\equation{\refstepcounter{equation}
+ \parsep 3pt plus 1pt minus 1pt \topsep 5pt plus 2pt minus 2pt
+ \itemsep 3pt plus 1pt minus 1pt
+\trivlist \item[]\leavevmode
+ \hbox to\linewidth\bgroup $ \displaystyle
+\hskip\mathindent}
+\def\endequation{$\hfil \displaywidth\linewidth\@eqnnum\egroup \endtrivlist}
+
+\def\eqnarray{\stepcounter{equation}
+ \parsep 3pt plus 1pt minus 1pt \topsep 5pt plus 2pt minus 2pt
+ \itemsep 3pt plus 1pt minus 1pt
+\let\@currentlabel=\theequation
+\global\@eqnswtrue
+\global\@eqcnt\z@\tabskip\mathindent\let\\=\@eqncr
+\abovedisplayskip\topsep\ifvmode\advance\abovedisplayskip\partopsep\fi
+\belowdisplayskip\abovedisplayskip
+\belowdisplayshortskip\abovedisplayskip
+\abovedisplayshortskip\abovedisplayskip
+$$\halign to
+\linewidth\bgroup\@eqnsel\hskip\@centering$\displaystyle\tabskip\z@
+ {##}$&\global\@eqcnt\@ne \hskip .8\arraycolsep \hfil${##}$\hfil%% 2\arraycolsep
+ &\global\@eqcnt\tw@ \hskip .8\arraycolsep $\displaystyle{##}$\hfil
+ \tabskip\@centering&\llap{##}\tabskip\z@\cr}
+\def\endeqnarray{\@@eqncr\egroup
+ \global\advance\c@equation\m@ne$$\global\@ignoretrue }
+\newdimen\mathindent
+\mathindent = 6mm
+
+%%% 数式番号出力
+\def\@eqnnum{{\rm (\theequation)\hskip1zw}}
+
+\def\theequation{\arabic{equation}}
+
+\def\titlepage{\@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
+ \else \newpage \fi \thispagestyle{empty}\c@page\z@}
+\def\endtitlepage{\if@restonecol\twocolumn \else \newpage \fi}
+
+\arraycolsep 5pt
+\tabcolsep 0.5zw
+\arrayrulewidth .4pt
+\doublerulesep 0pt %\hline\hlineで中細罫にする
+\tabbingsep \labelsep
+
+\skip\@mpfootins = \skip\footins
+\fboxsep = 3pt \fboxrule = .4pt
+
+\newcounter{part}
+\newcounter {section}
+\newcounter {subsection}[section]
+\newcounter {subsubsection}[subsection]
+\newcounter {paragraph}[subsubsection]
+\newcounter {subparagraph}[paragraph]
+
+\def\thepart{\Roman{part}}
+\def\thesection {\arabic{section}.}
+\def\thesubsection {\thesection\arabic{subsection}}
+\def\thesubsubsection {\thesubsection .\arabic{subsubsection}}
+\def\theparagraph {\thesubsubsection.\arabic{paragraph}}
+\def\thesubparagraph {\theparagraph.\arabic{subparagraph}}
+
+\def\@pnumwidth{1.55em}
+\def\@tocrmarg {2.55em}
+\def\@dotsep{4.5}
+\setcounter{tocdepth}{3}
+
+%\def\tableofcontents{\section*{Contents\markboth{CONTENTS}{CONTENTS}}
+\def\tableofcontents{\section*{目 次\markboth{目 次}{目 次}}
+ \@starttoc{toc}}
+\def\l@part#1#2{\addpenalty{\@secpenalty}
+ \addvspace{2.25em plus 1pt} \begingroup
+ \@tempdima 3em \parindent \z@ \rightskip \@pnumwidth \parfillskip
+-\@pnumwidth
+ {\large \bf \leavevmode #1\hfil \hbox to\@pnumwidth{\hss #2}}\par
+ \nobreak \endgroup}
+\def\l@section#1#2{\addpenalty{\@secpenalty} \addvspace{1.0em plus 1pt}
+\@tempdima 1.5em \begingroup
+ \parindent \z@ \rightskip \@pnumwidth
+ \parfillskip -\@pnumwidth
+ \bf \leavevmode \advance\leftskip\@tempdima \hskip -\leftskip #1\nobreak\hfil
+\nobreak\hbox to\@pnumwidth{\hss #2}\par
+ \endgroup}
+\def\l@subsection{\@dottedtocline{2}{1.5em}{2.3em}}
+\def\l@subsubsection{\@dottedtocline{3}{3.8em}{3.2em}}
+\def\l@paragraph{\@dottedtocline{4}{7.0em}{4.1em}}
+\def\l@subparagraph{\@dottedtocline{5}{10em}{5em}}
+%\def\listoffigures{\section*{List of Figures\markboth
+\def\listoffigures{\section*{図 目 次\markboth
+ {図 目 次}{図 目 次}}\@starttoc{lof}}
+\def\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
+%\def\listoftables{\section*{List of Tables\markboth
+\def\listoftables{\section*{表 目 次\markboth
+ {表 目 次}{表 目 次}}\@starttoc{lot}}
+\let\l@table\l@figure
+
+
+\def\thebibliography#1{\section*{参\hskip1zw 考\hskip1zw 文\hskip1zw 献\markboth
+ {参 考 文 献}{参 考 文 献}}\small
+\list{〔\makebox[1zw][c]{\arabic{enumi}}〕}{\settowidth\labelwidth{〔\makebox[1zw]{#1}〕}%
+\itemindent=-.5zw
+%\leftmargin\labelwidth
+\labelsep=1zw
+% \advance\leftmargin\labelsep
+\itemsep=0pt\topsep=0pt\parsep=0pt
+ \usecounter{enumi}}
+ \def\newblock{\hskip .11em plus .33em minus .07em}
+ \sloppy
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+
+\def\@cite#1#2{〔{#1\if@tempswa , #2\fi}〕}
+
+%%% CITESORT.STY
+\newcount\@minsofar
+\newcount\@min
+\newcount\@cite@temp
+\def\@citex[#1]#2{%
+\if@filesw \immediate \write \@auxout {\string \citation {#2}}\fi
+\@tempcntb\m@ne \let\@h@ld\relax \def\@citea{}%
+\@min\m@ne%
+\@cite{%
+  \@for \@citeb:=#2\do {\@ifundefined {b@\@citeb}%
+    {\@h@ld\@citea\@tempcntb\m@ne{\bf ?}%
+    \@warning {Citation `\@citeb ' on page \thepage \space undefined}}%
+{\@minsofar\z@ \@for \@scan@cites:=#2\do {%
+  \@ifundefined{b@\@scan@cites}%
+    {\@cite@temp\m@ne}
+    {\@cite@temp\number\csname b@\@scan@cites \endcsname \relax}%
+\ifnum\@cite@temp > \@min% select the next one to list
+    \ifnum\@minsofar = \z@
+      \@minsofar\number\@cite@temp
+      \edef\@scan@copy{\@scan@cites}\else
+    \ifnum\@cite@temp < \@minsofar
+      \@minsofar\number\@cite@temp
+      \edef\@scan@copy{\@scan@cites}\fi\fi\fi}\@tempcnta\@min
+  \ifnum\@minsofar > \z@ % some more
+    \advance\@tempcnta\@ne
+    \@min\@minsofar
+    \ifnum\@tempcnta=\@minsofar %   Number follows previous--hold on to it
+      \ifx\@h@ld\relax
+        \edef \@h@ld{\@citea\csname b@\@scan@copy\endcsname}%
+      \else \edef\@h@ld{\ifmmode{〕-\allowbreak〔}\else〕\<～\allowbreak\<〔\fi
+         \csname b@\@scan@copy\endcsname}%
+      \fi
+    \else \@h@ld\@citea\csname b@\@scan@copy\endcsname
+          \let\@h@ld\relax
+  \fi % no more
+\fi}%
+\def\@citea{〕\<，\<\penalty\@highpenalty 〔}}\@h@ld}{#1}}
+%% end of citesort.sty
+
+
+
+\newif\if@restonecol
+\def\theindex{\@restonecoltrue\if@twocolumn\@restonecolfalse\fi
+\columnseprule \z@
+\columnsep 35pt\twocolumn[\section*{索 引}]
+ \markboth{索 引}{索 引}\thispagestyle{plain}\parindent\z@
+ \parskip\z@ plus .3pt\relax\let\item\@idxitem}
+\def\@idxitem{\par\hangindent 40pt}
+\def\subitem{\par\hangindent 40pt \hspace*{20pt}}
+\def\subsubitem{\par\hangindent 40pt \hspace*{30pt}}
+\def\endtheindex{\if@restonecol\onecolumn\else\clearpage\fi}
+\def\indexspace{\par \vskip 10pt plus 5pt minus 3pt\relax}
+
+\def\footnoterule{\kern-3\p@
+ \hrule width \columnwidth
+ \kern 2.6\p@}
+
+\long\def\@makefntext#1{\parindent 1zw\noindent
+ \hbox to 1.8em{\hss$^{\@thefnmark}$}#1}
+
+
+\setcounter{topnumber}{4}
+\def\topfraction{1}
+\setcounter{bottomnumber}{4}
+\def\bottomfraction{1}
+\setcounter{totalnumber}{5}
+\def\textfraction{0}
+\def\floatpagefraction{.5}
+\setcounter{dbltopnumber}{5}
+\def\dbltopfraction{1}
+\def\dblfloatpagefraction{1}%.9
+
+%%% center環境の前後のアキを取る by SATO工房
+\def\Center{\itemsep\z@\topsep\z@\parsep\z@\trivlist\Centering\item[]}
+\def\Centering{\let\\=\@centercr\rightskip\@flushglue\leftskip\@flushglue
+\parindent\z@\parfillskip\z@}
+\let\endCenter=\endtrivlist
+
+\newdimen\@abovecapskip
+\newdimen\@belowcapskip
+
+\newbox\capnumberbox
+\newbox\capbox
+
+\long\def\@makecaption#1#2{{\small%
+ \vskip\@abovecapskip
+ %
+ \setbox\capnumberbox\hbox{{\bf #1}\hskip1zw}
+ \setbox\capbox\hbox{{\bf #1}\hskip1zw #2}
+ %
+ \ifdim\wd\capbox < \hsize
+  \hbox to\hsize{\hfil\box\capbox\hfil}
+  \vspace{\@belowcapskip}
+ \else
+  \hfil\begin{minipage}[t]{\hsize}%
+  \hangindent=\wd\capnumberbox\hangafter=1%
+  {\bf #1}\hskip1zw{}#2%
+  \end{minipage}
+  \vspace{\@belowcapskip}
+ \fi}}
+
+%%% by STYLE USE
+\newsavebox{\@parc@ption}
+\def\parcaption#1{\small%
+    \sbox{\@parc@ption}{\shortstack[l]{#1}}%
+    \setbox\@tempboxa\hbox{\csname fnum@\@captype\endcsname\hskip1zw}%\hskip1zw追加
+    \@tempdima\hsize \advance\@tempdima-\wd\@tempboxa%
+    \@tempdimb .97\@tempdima%<-- maximum length is set here
+    \ifdim\wd\@parc@ption>\@tempdimb \@tempdima\@tempdimb%
+     \else\@tempdima\wd\@parc@ption\fi%
+    \sbox{\@tempboxa}{\parbox[t]{\@tempdima}{#1}}%
+    \caption{\usebox{\@tempboxa}}\Footnotesize}
+
+\newcounter{figure}
+\def\thefigure{\@arabic\c@figure}
+\def\fps@figure{tbp}
+\def\ftype@figure{1}
+\def\ext@figure{lof}
+\def\fnum@figure{図\,\thefigure}
+\def\figure{\bgroup\footnotesize\let\center\Center%
+\@abovecapskip=1mm\@belowcapskip\z@\@float{figure}}
+\def\endfigure{\end@float\egroup}
+\@namedef{figure*}{\bgroup\footnotesize\let\center\Center%
+\@abovecapskip=1mm\@belowcapskip\z@\@dblfloat{figure}}
+\@namedef{endfigure*}{\end@dblfloat\egroup}
+
+\newcounter{table}
+\def\thetable{\@arabic\c@table}
+\def\fps@table{tbp}
+\def\ftype@table{2}
+\def\ext@table{lot}
+\def\fnum@table{表\,\thetable}
+\def\table{\bgroup\Footnotesize\let\center\Center%
+\@abovecapskip\z@\@belowcapskip=0.5mm\@float{table}}
+\def\endtable{\end@float\egroup}
+\@namedef{table*}{\bgroup\Footnotesize\let\center\Center%
+\@abovecapskip\z@\@belowcapskip=0.5mm\@dblfloat{table}}
+\@namedef{endtable*}{\end@dblfloat\egroup}
+
+
+%% force "{figure*}" at the bottom by SATO工房
+\newdimen\capwidth%%%!!!
+\capwidth=\wd\capbox%%%!!!
+\newbox\@dummyfigbox
+\def\twocolcaption#1{\vskip\@abovecapskip
+\def\test@captype{figure}
+\ifx \@captype\test@captype
+ \refstepcounter{figure}%
+\else
+ \refstepcounter{table}%
+\fi
+\setbox\@dummyfigbox\hbox{{\small\bf \csname fnum@\@captype\endcsname}%
+ \hskip1zw{\small #1}}
+\capwidth=\textwidth
+\divide \capwidth by 3
+\multiply \capwidth by 2
+\ifdim \wd\@dummyfigbox < \capwidth%
+\noindent\hbox to \columnwidth{\hbox to \textwidth{\hss\copy\@dummyfigbox\hss}\hss}\par
+\else
+\setbox\@dummyfigbox\hbox{%
+\begin{minipage}[t]{\capwidth}%
+{\small\bf \csname fnum@\@captype\endcsname}\hskip1zw{\small #1}%
+\end{minipage}}%
+\noindent\hbox to \columnwidth{\hbox to \textwidth{\hss\copy\@dummyfigbox\hss}\hss}\par
+\fi}
+
+\def\dummyfigure#1{%
+\begin{figure}[b]
+\vspace{#1}
+\vskip\@abovecapskip
+\phantom{\box\@dummyfigbox}\par
+\end{figure}
+}
+
+%%% example figure
+% \begin{figure}[b] % left column
+% \vspace{10mm}
+% \twocolcaption{}
+% \end{figure}
+% \dummyfigure{10mm} % right column
+%%% example table
+% \begin{table}[b] % left column
+% \twocolcaption{}
+% \vspace{2mm}
+% \hbox to \textwidth{\hss
+% \begin{tabular}{}
+% \end{tabular}
+% \hss}
+% \end{table}
+% \dummyfigure{tabular height, XXmm} % right column
+
+
+%%% \etitle 関連の定義
+\def\etitle#1{\gdef\@etitle{#1}}
+\def\eauthor#1{\gdef\@eauthor{#1}}
+\def\edate#1{\gdef\@edate{#1}}
+\def\eabstract#1{\gdef\@eabstract{#1}}
+\def\ekeyword#1{\gdef\@ekeyword{#1}}
+\def\ethanks#1{\footnotemark\begingroup
+\def\protect{\noexpand\protect\noexpand}\xdef\@ethanks{\@ethanks
+  \protect\footnotetext[\the\c@footnote]{\protect\largefoot#1}}\endgroup}
+\def\@ethanks{}
+
+\def\keyword#1{\gdef\@keyword{#1}}
+\def\and{\hskip3mm}
+\def\AND{\hskip3mm and\hskip2mm}
+\def\footnum#1{\hbox to 0pt{$^{#1}$\hss}}
+\def\Arabic#1{\@Arabic{\@nameuse{c@#1}}}
+\def\@Arabic#1{\ifcase#1\or 1\or 2\or 3\or
+   4\or 5\or 6\or 7\or 8 \or 9 \else\@ctrerr\fi\relax}
+
+\long\def\@footnotetext#1{\insert\footins{\footnotesize
+    \interlinepenalty\interfootnotelinepenalty
+    \splittopskip\footnotesep
+    \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+    \hsize\columnwidth \@parboxrestore
+   \edef\@currentlabel{\csname p@footnote\endcsname\@thefnmark}\@makefntext
+    {\rule{\z@}{\footnotesep}\ignorespaces
+      \hangafter=1\hangindent=2zw#1\strut}}}
+
+%%%注マクロ
+% バグあり → \cite,equation,\taublar等は使えない
+% 改行は \hfill\break を使う
+\long\def\@Makefntext#1{\<（\makebox[1zw][c]{\@thefnmark}）\hskip.5zw#1}
+\def\notice#1{%
+%%%
+\def\@makefnmark{（注\@thefnmark）}
+%%%
+\long\gdef\@footnotetext##1{%\insert\footins{\footnotesize
+    \interlinepenalty\interfootnotelinepenalty
+    \splittopskip\footnotesep
+    \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+    \hsize\columnwidth \@parboxrestore
+   \edef\@currentlabel{\csname p@footnote\endcsname\@thefnmark}\@Makefntext
+    {\rule{\z@}{\footnotesep}\ignorespaces
+      \hangafter=1\hangindent=3zw##1\strut\par}}%}
+%%%
+\footnotemark\begingroup
+\def\protect{\noexpand\protect\noexpand}\xdef\@notice{\@notice
+  \protect\footnotetext[\the\c@footnote]{\protect#1}}\endgroup}
+\def\@notice{}
+
+\newif\ifEtitle\Etitletrue
+
+\def\maketitle{\par
+ \begingroup
+ \def\thefootnote{\Arabic{footnote}}
+ \def\@makefnmark{\hbox
+ to 0pt{$^{\@thefnmark}$\hss}}
+ \if@twocolumn
+%%% 英文タイトル
+\ifEtitle
+\def\footnoterule{\kern-3\p@
+ \hrule width 70mm%\columnwidth
+ \kern 2.6\p@}
+ \onecolumn
+\null
+\vskip-12mm
+%{\Large Original}　{\Large\it Original}　{\Large\sl Original}\par
+{\Large\sl Original}\par
+%\vspace*{1mm}%タイトル天付き調整
+\vskip1.5\baselineskip%%%!!!寸法未定
+ \begin{Center}
+  {\huge\bf \@etitle \par} \vskip6.5mm  %32Q 8mmアキ
+{\LARGE%\lineskip .5em
+           %\begin{tabular}[t]{c}\@eauthor   \end{tabular}\par}
+           %\begin{tabular}[t]{c}
+\@eauthor\par
+           %\end{tabular}\par
+}
+ \end{Center}
+  \par
+  \vskip5mm %32Q 8mmアキ
+\centerline{{\large Abstract}}
+  \vskip4.5mm %24Q 6mmアキ
+\centerline{\large\parbox[t]{132mm}{{\hspace*{2zw}\@eabstract}}}
+\par\vskip7mm %32Q 8mmアキ
+%\centerline
+\hspace*{6mm}{\large\parbox[t]{120mm}{\noindent{Keywords:\hskip.5zw\@ekeyword}}}
+\par
+\thispagestyle{etitlehead}
+\@ethanks
+\@ereceived%欧文受付出力
+\@eaccepted%欧文受理出力
+ \setcounter{footnote}{0}
+\else\fi
+%%% 和文タイトル
+ \twocolumn[\@maketitle]
+ \else \newpage
+ \global\@topnum\z@ \@maketitle \fi
+\thispagestyle{headings}
+\@thanks
+\@received%受付出力
+\@accepted%受理出力
+ \endgroup
+ \setcounter{footnote}{0}
+ \let\maketitle\relax
+ \let\@maketitle\relax
+ \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\gdef\@subtitle{}\let\thanks\relax}
+%%% 和文タイトルの内容
+\def\@maketitle{\newpage
+\vskip-7mm
+\hbox to 23mm{\hss{\large\bf 論\hskip3zw 文}\hss}\par
+\vspace*{1mm}%タイトル天付き調整
+\begin{Center}
+ {\Huge \@title \par}
+\vskip 5mm%28Q 7mm アキ
+ {\Large\@author\par}
+\end{Center}
+ \par
+\vskip3.5mm %24Q 6mm アキ
+\hfil\parbox[t]{132.5mm}{%10Q 14h 53字詰め
+\footnotesize\@abstract}
+\par\vspace{\baselineskip}
+\hfil{\normalsize\parbox[t]{132.5mm}{\noindent{キーワード：\hskip.5zw\@keyword}}}
+\par\vskip2\baselineskip
+}
+%%% 和文アブスト
+\def\abstract#1{\gdef\@abstract{\hskip1zw#1}}
+
+\mark{{}{}}
+
+%%% 欧文受付マクロ
+\def\ereceived#1#2#3{\begingroup
+\def\protect{\noexpand\protect\noexpand}\xdef\@ereceived{\@ereceived
+  \protect\footnotetext[0]{Received\hskip.5mm: #1\hskip2mm #2\hskip2mm #3}}\endgroup}
+\def\@ereceived{}
+
+%%% 欧文受理マクロ
+\def\eaccepted#1#2#3{\begingroup
+\def\protect{\noexpand\protect\noexpand}\xdef\@eaccepted{\@eaccepted
+  \protect\footnotetext[0]{Accepted: #1\hskip2mm #2\hskip2mm #3}}\endgroup}
+\def\@eaccepted{}
+
+%%% 受付マクロ
+\def\received#1{\begingroup
+\def\protect{\noexpand\protect\noexpand}\xdef\@received{\@received
+  \protect\footnotetext[0]{受付：#1}}\endgroup}
+\def\@received{}
+
+%%% 受理マクロ
+\def\accepted#1{\begingroup
+\def\protect{\noexpand\protect\noexpand}\xdef\@accepted{\@accepted
+  \protect\footnotetext[0]{受理：#1}}\endgroup}
+\def\@accepted{}
+
+
+%%% headings 関連の定義
+\def\VOL#1{\gdef\@VOL{#1}}
+\def\NO#1{\gdef\@NO{#1}}
+\def\YEAR#1{\gdef\@YEAR{#1}}
+
+\newdimen\@Headsep
+\@Headsep=\headsep \advance \@Headsep by 1mm
+\def\@Rtop{\rlap{\smash{\raisebox{-1\@Headsep}{\rule{0.01mm}{10mm}\rule{10mm}{0.01mm}}}}}
+\def\@Ltop{\llap{\smash{\raisebox{-1\@Headsep}{\rule{10mm}{0.01mm}\rule{0.01mm}{10mm}}}}}
+\def\@Rbot{\rlap{\smash{\raisebox{1\footskip}{\rule[-10mm]{0.01mm}{10mm}\rule{10mm}{0.01mm}}}}}
+\def\@Lbot{\llap{\smash{\raisebox{1\footskip}{\rule{10mm}{0.01mm}\rule[-10mm]{0.01mm}{10mm}}}}}
+
+\def\ps@headings{%
+\def\@oddfoot{\ifProof\@Lbot\else\fi\hspace*{1zw}{\EFhead
+Vol.\,\@VOL\hskip1zw No.\,\@NO\hskip2mm(\@YEAR)}
+ \hfill{\EFnomble\thepage}\hskip1zw\mbox{}\ifProof\@Rbot\else\fi}
+\def\@evenfoot{\ifProof\@Lbot\else\fi\hspace*{1zw}{\EFnomble\thepage}
+ \hfill{\KFhead 日本経営工学会論文誌}\hskip1zw\mbox{}\ifProof\@Rbot\else\fi}
+\def\@evenhead{\ifProof\@Ltop\else\fi\hfill\ifProof\@Rtop\else\fi}
+\def\@oddhead{\ifProof\@Ltop\else\fi\hfill\ifProof\@Rtop\else\fi}
+\def\sectionmark##1{\markboth {\uppercase{\ifnum \c@secnumdepth>\z@
+ \thesection\hskip 1em\relax \fi ##1}}{}}
+\def\subsectionmark##1{\markright{\ifnum \c@secnumdepth >\@ne
+ \thesubsection\hskip 1em\relax \fi ##1}}}
+
+\def\ps@myheadings{\def\@oddhead{\hbox{}\sl\rightmark \hfil
+\rm\thepage}\def\@oddfoot{}\def\@evenhead{\rm \thepage\hfil\sl\leftmark\hbox
+{}}\def\@evenfoot{}\def\sectionmark##1{}\def\subsectionmark##1{}}
+
+\def\ps@etitlehead{\let\@mkboth\@gobbletwo
+\def\@oddhead{}
+\def\@evenhead{}%
+%------- '96 12/10 修正 -----------------------
+\def\@oddfoot{\hfill{\EFrmhead J\hskip.5zw Jpn\hskip.5zw Ind\hskip.5zw Manage\hskip.5zw Assoc}\hskip1zw\mbox{}}
+\def\@evenfoot{\hfill{\EFrmhead J\hskip.5zw Jpn\hskip.5zw Ind\hskip.5zw Manage\hskip.5zw Assoc}\hskip1zw\mbox{}}}
+%---------------------------------------------
+%\def\@oddfoot{\hfill{\EFrmhead J\hskip1zw Jpn\hskip1zw Ind\hskip1zw Manage\hskip1zw Assoc}\hskip1zw\mbox{}}
+%\def\@evenfoot{\hfill{\EFrmhead J\hskip1zw Jpn\hskip1zw Ind\hskip1zw Manage\hskip1zw Assoc}\hskip1zw\mbox{}}}
+%---------------------------------------------
+
+\def\ps@empty{\let\@mkboth\@gobbletwo\def\@oddhead{}\def\@oddfoot{}%
+\def\@evenhead{}\def\@evenfoot{}}
+
+%\def\ps@empty{\let\@mkboth\@gobbletwo%
+%\def\@oddhead{\ifProof\@Ltop\else\fi\hfill\ifProof\@Rtop\else\fi}%
+%\def\@oddfoot{\ifProof\@Lbot\else\fi\hfill\ifProof\@Rbot\else\fi}%
+%\def\@evenhead{\ifProof\@Ltop\else\fi\hfill\else\fi\@Rtop\else\fi}%
+%\def\@evenfoot{\ifProof\@Lbot\else\fi\hfill\ifProof\@Rbot\else\fi}}
+
+\newif\if西暦\let\if西暦=\iffalse \def\西暦{\let\if西暦=\iftrue}
+\def\today{{\if西暦\count0=\year\else%
+\count0=\year\advance\count0 -1988 平成\,\fi%
+\ifnum\count0=1 元\else\number\count0\fi\,年\hspace{.5em}\nobreak%
+\number\month\,月\hspace{.5em}\nobreak\number\day\,日}}
+
+
+%%% その他のマクロ
+\def\kintou#1#2{\@ifundefined{jintercharskip}%
+ {\makebox[#1]{\kanjiskip\z@ plus 1fill minus 1fill\xkanjiskip=\kanjiskip #2}}%
+ {\makebox[#1]{\jintercharskip=0pt plus 1fill minus 1fill
+ \jasciikanjiskip=\jintercharskip #2}}}
+\def\MARU#1{\raisebox{0.1zh}{{\rm\ooalign{\hfil \lower.168ex\hbox{#1}\hfil\crcr\mathhexbox20D}}}}
+\def\ruby#1#2{%
+\leavevmode\vbox{\baselineskip\z@skip\lineskip.25ex
+\ialign{##\crcr\tiny\hfill#1\hfill\crcr\hfill#2\hfill\crcr}}}
+\def\doubledash{\leavevmode\hbox to 2zw{---\hss ---}}
+
+
+%注 出力
+\def\NOTICE{%
+\pagebreak[2]\vbox to 2\baselineskip{\vss\noindent{\bf 注}\vss}%
+\nopagebreak\par{\small\@notice}\par}
+
+\newenvironment{Hangpar}[1]{\parindent=0zw\everypar{\hangafter=1\hangindent=#1}}{\par}
+
+\newlength{\namelistindent}
+\setlength{\namelistindent}{\z@}%% \parindent
+\def\namelistlabel#1{\hspace\labelsep
+\hspace\namelistindent \mbox{#1}\hfil}
+%%%
+\newenvironment{namelist}[1]{%
+\parindent=0zw
+\begin{list}{}{%
+\settowidth{\labelwidth}{{#1 \hfil}}
+\addtolength{\labelwidth}{\labelsep}
+\addtolength{\labelwidth}{\namelistindent}
+\setlength{\leftmargin}{\labelwidth}
+\itemsep0pt\topsep0pt\parsep0pt
+\let\makelabel\namelistlabel}}{%
+\end{list}}
+
+%%% from indent.sty
+\newenvironment{indention}[1]%
+{%
+  \parindent\z@
+  \setlength{\leftmargin}{#1}%
+  \setlength{\rightmargin}{\z@}%
+  \advance\linewidth -\leftmargin
+  \advance\linewidth -\rightmargin
+  \advance\@totalleftmargin\leftmargin
+  \@setpar{{\@@par}}%
+  \parshape 1 \@totalleftmargin \linewidth
+  \ignorespaces
+}%
+{\par\noindent\global\@ignoretrue}
+
+
+% mytombow.sty;  based on tstombow.sty (東京書籍印刷)
+% based tombow.sty by ASCII Corp.
+% \pagewidth & \pageheight
+
+\iftombow
+\newdimen\pagewidth \newdimen\pageheight
+\newdimen\tombowrule
+\pagewidth=182mm
+\pageheight=257mm
+\oddsidemargin=\pagewidth
+\advance \oddsidemargin by -\textwidth
+\divide \oddsidemargin by \tw@
+\evensidemargin=\oddsidemargin
+\topmargin=\pageheight
+\advance \topmargin by -\textheight
+\advance \topmargin by -24mm
+\advance \topmargin by -\headheight
+\advance \topmargin by -\headsep
+% \advance \topmargin by ??mm
+\tombowrule 0.1mm
+%%
+\newbox\@RH\newbox\@LH\newbox\@RB\newbox\@LB
+%% revised
+\newbox\@RC\newbox\@LC\newbox\@TC\newbox\@BC
+%%
+\newdimen\@pph \newdimen\@ppw
+\def\@RH{\hbox to0pt{\vbox to0pt{\offinterlineskip\vss
+ \hbox{\vrule height10mm width\tombowrule\kern3mm
+  \vrule height10mm width\tombowrule\vrule width10mm height\tombowrule}\kern3mm
+ \hbox{\kern3mm\vrule width10mm height\tombowrule}}\hss}}
+\def\@LH{\hbox to0pt{\vbox to0pt{\offinterlineskip\vss\hsize0pt
+ \hbox to0pt{\hss\vrule width10mm height\tombowrule
+  \vrule height10mm width\tombowrule\kern3mm
+  \vrule height10mm width\tombowrule}\kern3mm
+ \hbox to0pt{\hss\vrule width10mm height\tombowrule\kern3mm}}}}
+\def\@RB{\hbox to0pt{\vbox to0pt{\offinterlineskip\hbox{\kern3mm
+ \vrule width10mm height\tombowrule}\kern3mm
+ \hbox{\vrule depth10mm width\tombowrule\kern3mm
+  \vrule depth10mm width\tombowrule\vrule width10mm depth\tombowrule}\vss}\hss}}
+\def\@LB{\hbox to0pt{\vbox to0pt{\offinterlineskip\hsize0pt
+ \hbox to0pt{\hss\vrule width10mm height\tombowrule\kern3mm}\kern3mm
+ \hbox to0pt{\hss\vrule width10mm depth\tombowrule
+  \vrule depth10mm width\tombowrule\kern3mm
+  \vrule depth10mm width\tombowrule}\vss}}}
+%% revised
+\def\@TC{\vbox to0pt{
+\hbox to0pt{\hss\raisebox{3mm}[0pt][0pt]{\rule{\tombowrule}{10mm}}\hss}
+\hbox to0pt{\hss\raisebox{3mm}[0pt][0pt]{\rule{20mm}{\tombowrule}}\hss}
+}}
+\def\@BC{\vbox to0pt{\vss
+\hbox to0pt{\hss\raisebox{-13mm}[0pt][0pt]{\rule{\tombowrule}{10mm}}\hss}
+\hbox to0pt{\hss\raisebox{-3mm}[0pt][0pt]{\rule{20mm}{\tombowrule}}\hss}
+\vss}}
+\def\@LC{\vbox to0pt{\vss
+\hbox to0pt{\kern-3mm\raisebox{0.5\pageheight}[0pt][0pt]{\llap{\rule{10mm}{\tombowrule}}}\hss}
+\hbox to0pt{\kern-3mm\raisebox{0.5\pageheight}[0pt][0pt]{\rule[-10mm]{\tombowrule}{20mm}}\hss}
+\vss}}
+\def\@RC{\vbox to0pt{\vss
+\hbox to0pt{\kern3mm\raisebox{0.5\pageheight}[0pt][0pt]{\rule{10mm}{\tombowrule}}\hss}
+\hbox to0pt{\kern3mm\raisebox{0.5\pageheight}[0pt][0pt]{\rule[-10mm]{\tombowrule}{20mm}}\hss}
+\vss}}
+%%
+\def\@outputpage{\begingroup\catcode`\ =10 \if@specialpage
+     \global\@specialpagefalse\@nameuse{ps@\@specialstyle}\fi
+     \if@twoside
+       \ifodd\count\z@ \let\@thehead\@oddhead \let\@thefoot\@oddfoot
+            \let\@themargin\oddsidemargin
+          \else \let\@thehead\@evenhead
+          \let\@thefoot\@evenfoot \let\@themargin\evensidemargin
+     \fi\fi %%\advance\@themargin1in
+      \@pph\topmargin   %\advance\@pph 1in
+     \shipout
+     \vbox{\normalsize \baselineskip\z@ \lineskip\z@
+           \hbox to\pagewidth{\@LH\hfill\@TC\hfill\@RH}
+           \vbox to\pageheight{\vskip \@pph
+           \hbox to\pagewidth{\kern\@themargin \vbox{
+                 \setbox\@tempboxa \vbox to\headheight{
+                        \vfil \hbox to\textwidth{\@thehead}}
+                 \dp\@tempboxa\z@
+                 \box\@tempboxa
+                 \vskip \headsep
+                 \box\@outputbox
+                 \baselineskip\footskip
+                 \hbox to\textwidth{\@thefoot}
+                 }\hss}\vss}
+%          \hbox to\pagewidth{\@LB\hfill\@BC\hfill\@RB}
+%          \hbox to\pagewidth{\@LC\hfill\@BC\hfill\@RC}
+%% revised
+           \hbox to\pagewidth{\@LB\@LC\hfill\@BC\hfill\@RB\@RC}
+           }\global\@colht\textheight
+           \endgroup\stepcounter{page}\let\firstmark\botmark}
+\else\fi
+%% end of mytombow macro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% borrowed from "ipsjpaper.sty", "ieicejl.sty"
+%%% To balance the final page, following code is borrowed from nicetwocolumn style
+\newif\if@lastpagebalancing
+% \@lastpagebalancingfalse
+  \@lastpagebalancingtrue
+
+\newdimen\dimen@@
+\newdimen\lastofletter
+
+\def\balancecolumns{\setbox0\vbox{\unvbox\@outputbox} \dimen@@=\ht0
+   \advance\dimen@@ by\topskip \advance\dimen@@ by-\baselineskip
+   \divide\dimen@@ by2 \splittopskip=\topskip
+   {\vbadness=10000 \loop \global\setbox3=\copy0
+     \global\setbox1=\vsplit3 to\dimen@@
+     \ifdim\ht3>\dimen@@ \global\advance\dimen@@ by1pt\repeat}
+   \ifdim\dimen@@>\textheight \dimen@@=\textheight\fi
+   \setbox0=\vbox to \dimen@@{\unvbox1} \setbox2=\vbox to \dimen@@{\unvbox3}
+   \if\ht0>\ht2 \setbox2=\vbox to\ht0{\unvbox2}\dimen@@=\ht0\else
+   \if\ht2>\ht0 \setbox0=\vbox to\ht2{\unvbox0}\dimen@@=\ht2\fi\fi
+  \wd0=\hsize \wd2=\hsize
+\ifdim\dp0>\dp2\advance\dimen@@ by\dp0\else\advance\dimen@@ by\dp2\fi
+\setbox\@outputbox\vbox to \textheight{%%!! modified
+\vbox to\dimen@@{\hbox to\textwidth{\box0\hfil\box2}
+%\lastofletter=\textheight%
+%\advance \lastofletter by -\dimen@@%
+%\ifdim \lastofletter>11mm%
+%\vskip7.375mm%
+%\hbox to \textwidth{\hfill\rule{70.5mm}{0.1mm}\hfill}
+%\else\fi
+\vss}\vss}}
+
+% incorporate balanced output to \enddocument
+\def\enddocument{%%
+%%%\if@lastpagebalancing
+\global\let\@outputdblcol=\balancing@outputdblcol
+%%%\fi
+\label{lastpage}\@checkend{document}\clearpage
+\begingroup
+\if@filesw \immediate\closeout\@mainaux
+\def\global\@namedef##1##2{}\def\newlabel{\@testdef r}%
+\def\bibcite{\@testdef b}\@tempswafalse \makeatletter\input \jobname.aux
+\if@tempswa \@warning{Label(s) may have changed.  Rerun to get
+cross-references right}\fi\fi\endgroup
+\deadcycles\z@\@@end}
+
+\newlength{\@interlinegap}
+% to change \interlinegap appropriately at appropriate time
+\def\@outputdblcol{\if@firstcolumn \global\@firstcolumnfalse
+    \global\setbox\@leftcolumn\box\@outputbox
+% Following interlinegap value may be wrong!!
+% It is set to gap+depth for normalsize, and depth(2.031999Q) for footnotesize.
+% This setting is inconsistent, but seems to work properly now.
+%\ifx \@currsize\normalsize \global\@interlinegap 8.54815pt\else% setup
+% reset to 10Q after final page footnote hack!
+\ifx \@currsize\normalsize \global\@interlinegap 2.5mm\else% setup
+ \ifx \@currsize\footnotesize \global\@interlinegap 0.5078875mm\else% 2.03199\Q appropriate
+  \ifx \@currsize\small \global\@interlinegap 3.08713pt\fi\fi\fi% gap here!
+  \else \global\@firstcolumntrue
+\if@leftfootnoteexist\setbox\@leftcolumn\vbox to\@colht{\boxmaxdepth\maxdepth
+\@texttop\dimen128=\dp\@leftcolumn
+\unvbox\@leftcolumn\vskip\skip\footins\footnoterule%
+\unvbox\@leftcolumnfootnote
+\vskip-\dimen128\@textbottom}
+\global\maxdepth\@maxdepth\else
+\setbox\@leftcolumn\vbox to\@colht{\boxmaxdepth\maxdepth
+\@texttop\dimen128=\dp\@leftcolumn
+\unvbox\@leftcolumn\vfill%
+\vskip-\dimen128\@textbottom}
+\global\maxdepth\@maxdepth\fi
+\if@rightfootnoteexist\setbox\@outputbox\vbox to\@colht{\boxmaxdepth\maxdepth
+\@texttop\dimen128=\dp\@outputbox
+\unvbox\@outputbox\vskip\skip\footins\footnoterule%
+\unvbox\@rightcolumnfootnote
+\vskip-\dimen128\@textbottom}
+\global\maxdepth\@maxdepth\else
+\setbox\@outputbox\vbox to\@colht{\boxmaxdepth\maxdepth
+\@texttop\dimen128=\dp\@outputbox
+\unvbox\@outputbox\vfill%
+\vskip-\dimen128\@textbottom}
+\global\maxdepth\@maxdepth\fi
+    \setbox\@outputbox\vbox{\hbox to\textwidth{\hbox to\columnwidth
+      {\box\@leftcolumn \hss}\hfil \vrule width\columnseprule\hfil
+       \hbox to\columnwidth{\box\@outputbox \hss}}}\@combinedblfloats
+       \@outputpage \begingroup \@dblfloatplacement \@startdblcolumn
+       \@whilesw\if@fcolmade \fi{\@outputpage\@startdblcolumn}\endgroup
+    \fi}
+
+\def\balancing@outputdblcol{\if@firstcolumn %\global\@firstcolumnfalse
+ \else \global\@firstcolumntrue
+  \setbox\@outputbox\vbox{\unvbox\@leftcolumn\vskip\@interlinegap%
+   \penalty\interlinepenalty\unvbox\@outputbox}
+ \fi
+ \balancecolumns \@combinedblfloats
+\if@leftfootnoteexist\setbox\@outputbox\vbox to\@colht{\boxmaxdepth\maxdepth
+\@texttop\dimen128=\dp\@outputbox
+\unvbox\@outputbox\vfill\vskip\skip\footins\footnoterule%
+\unvbox\@leftcolumnfootnote
+\if@rightfootnoteexist
+\unvbox\@rightcolumnfootnote\fi
+\vskip-\dimen128
+\@textbottom}
+\global\maxdepth\@maxdepth\fi
+ \@outputpage \begingroup \@dblfloatplacement \@startdblcolumn
+ \@whilesw\if@fcolmade \fi{\@outputpage\@startdblcolumn}\endgroup}
+
+\newbox\@leftcolumnfootnote \newbox\@rightcolumnfootnote
+\newif\if@leftfootnoteexist \newif\if@rightfootnoteexist
+
+% Extra \@texttop somehow found its way into \@makecol.  Deleted
+% 1 Dec 86.  (Found by Mike Harrison)
+
+%このマクロがあると1ページの \ethanks が出力できない
+%%% \def\@makecol{\if@firstcolumn
+%%% \ifvoid\footins \setbox\@outputbox\box\@cclv
+%%% \global\@leftfootnoteexistfalse
+%%%    \else\global\@leftfootnoteexisttrue
+%%% \setbox\@outputbox\box\@cclv
+%%% \global\setbox\@leftcolumnfootnote\box\footins
+%%% \fi
+%%%      \xdef\@freelist{\@freelist\@midlist}\gdef\@midlist{}\@combinefloats
+%%% \else
+%%% \ifvoid\footins \setbox\@outputbox\box\@cclv
+%%% \global\@rightfootnoteexistfalse
+%%%    \else\global\@rightfootnoteexisttrue
+%%% \setbox\@outputbox\box\@cclv
+%%% \global\setbox\@rightcolumnfootnote\box\footins
+%%% \fi
+%%%      \xdef\@freelist{\@freelist\@midlist}\gdef\@midlist{}\@combinefloats
+%%% \fi
+%%% }
+
+% end of balancing columns
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hbadness4000
+\vbadness10001
+\tolerance 9999 \pretolerance\m@ne
+
+\hoffset=-10mm
+
+\pagenumbering{arabic}
+\twocolumn
+\sloppy
+\flushbottom
+%\raggedbottom
+\pagestyle{headings}
+

@@ -1,0 +1,2895 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 52 113 452 374 
+%%Title:  \\Army\taka\IIZUKA96\FIGURE\Cpm1.cvs
+%%Creator: Canvas 
+%%CreationDate: 911998
+%%DocumentResources: procset Deneba_CanvasCustomColors
+%%+ procset Deneba_CanvasGraphics
+%%DocumentFonts: lr2-1
+%%+ lr2
+%%DocumentSuppliedResources: procset Deneba_CanvasCustomColors
+%%+ procset Deneba_CanvasGraphics
+%%+ font lr2-1
+%%+ font lr2
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%%Copyright: (C) 1994 Deneba Systems. All Rights Reserved
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Deneba_CanvasCustomColors
+%%Title: Deneba custom colors
+%%Version: 1.0
+%%CreationDate: 10/1/92
+%%Copyright: (C) 1994 Deneba Systems. All Rights Reserved
+/setcustomcolor where {pop true}{false}ifelse
+dup{save exch}if
+dup not{
+userdict /Deneba_CanvasCustomColors 15 dict put
+Deneba_CanvasCustomColors begin
+/initialize
+{
+Deneba_CanvasCustomColors
+{dup xcheck{bind}if pop pop}forall
+Deneba_CanvasCustomColors begin
+}def
+/terminate
+{currentdict Deneba_CanvasCustomColors eq{end}if}def
+
+/_tcust 5 array def
+
+/findcmykcustomcolor
+{Deneba_CanvasCustomColors begin _tcust astore end}def
+
+/setcustomcolor
+{
+exch
+aload pop pop
+4{4 index mul 4 1 roll}repeat
+5 -1 roll pop
+/setcmykcolor where{pop setcmykcolor}
+{
+4 1 roll 3{3 index add 1.0 exch sub 0.0 2 copy lt{exch}if pop 1.0 2 copy gt{exch}if pop 3 1 roll}repeat setrgbcolor pop
+}ifelse
+}def
+
+/setoverprint where {pop}
+{/setoverprint
+{pop}def}ifelse
+
+/currentoverprint where {pop}
+{/currentoverprint
+{false}def}ifelse
+
+/setseparationgray
+{setgray}def
+
+/setcmykoverprint
+{	4{dup -1 eq{pop 0.0}if 4 1 roll}repeat
+/setcmykcolor where{pop setcmykcolor}
+{
+4 1 roll 3{3 index add 1.0 exch sub 0.0 2 copy lt{exch}if pop 1.0 2 copy gt{exch}if pop 3 1 roll}repeat setrgbcolor pop
+}ifelse
+}def
+
+/customcolorimage
+{pop image}def
+
+/separationimage
+{image}def
+
+end
+}if
+{restore}if
+%%EndResource
+%%BeginResource: procset Deneba_CanvasGraphics
+%%Title: Deneba standard graphics
+%%Version: 1.0
+%%CreationDate: 10/1/92
+%%Copyright: (C) 1994 Deneba Systems. All Rights Reserved
+userdict /Deneba_CanvasGraphics 300 dict put
+Deneba_CanvasGraphics begin
+/initialize
+{
+Deneba_CanvasGraphics
+{dup xcheck{bind}if pop pop}forall
+Deneba_CanvasGraphics begin
+
+currentscreen
+/_screenProc xdf
+/_screenAng xdf
+/_screenFreq xdf
+
+/setstrokeadjust where{pop true}{false}ifelse
+{
+/sa /setstrokeadjust load def
+/li /lineto load def
+/mt /moveto load def
+/ct /curveto load def
+/lh { currentpoint exch pop lineto}bind def
+/lv { currentpoint pop exch lineto}bind def
+}
+{
+/sa{{currentdict StrokeAdjustDict ne{StrokeAdjustDict begin}if}{ currentdict StrokeAdjustDict eq{end}if}ifelse} bind def
+userdict /StrokeAdjustDict 10 dict put
+StrokeAdjustDict begin
+/_xl
+{
+transform
+.25 sub round .25 add exch
+.25 sub round .25 add exch
+itransform
+}bind def
+
+/li{ _xl lineto}bind def
+/mt{ _xl moveto}bind def
+/ct{ _xl curveto}bind def
+/lh { dup _xl pop currentpoint exch pop lineto}bind def
+/lv { dup _xl pop currentpoint pop exch lineto}bind def
+/rp
+{
+_xl/cv_b xdf/cv_r xdf
+_xl/cv_t xdf/cv_l xdf
+cv_l cv_t moveto
+cv_r cv_t lineto
+cv_r cv_b lineto
+cv_l cv_b lineto
+closepath
+} bind def
+
+end
+
+}ifelse
+
+}def
+
+/terminate
+{
+userdict /StrokeAdjustDict known {currentdict StrokeAdjustDict eq{end}if}if
+currentdict Deneba_CanvasGraphics eq{end}if
+}def
+/_cvmtx matrix def
+/_rotlevel 0 def
+/_rotmatrix [ 5{matrix}repeat ] def
+/_txtmtx matrix def
+/_initmtx matrix def
+/xdf{exch def}def
+/min{2 copy gt{exch}if pop}def
+/max{2 copy lt{exch}if pop}def
+/CVvec 256 array def
+/T true def
+/F false def
+
+/_screens null def
+/_numscreens 0 def
+/_screenProc null def
+/_screenAng 0 def
+/_screenFreq 60 def
+/_id 0 def
+/_encodindex 0 def
+/_encodArr 10 array def
+/_fd 0 def
+/_textSave null def
+/_letterSpace 0 def
+/_spaceXtra 0 def
+/_PageSave null def
+
+/_fstr null def
+/_sstr null def
+
+/_ft 0 def
+/_st 0 def
+
+/_fp null def
+/_bp null def
+/_fs null def
+/_ps null def
+/_fg 1 def
+/_frgb 3 array def
+/_fcmyk 4 array def
+/_fcust 5 array def
+/_pg 0 def
+/_prgb 3 array def
+/_pcmyk 4 array def
+/_pcust 5 array def
+/_bkg 1 def
+/_bkrgb 3 array def
+/_bkcmyk 4 array def
+/_bkcust 5 array def
+/_fkg 0 def
+/_fkrgb 3 array def
+/_fkcmyk 4 array def
+/_fkcust 5 array def
+
+/_penh 1.0 def
+/_penv 1.0 def
+/_penv2 0.5 def
+/_penh2 0.5 def
+/save0 null def
+/_w 0 def
+/_h 0 def
+/st0 null def
+/st1 null def
+/st2 null def
+/st3 null def
+/stb 256 string def
+/pw 0 def
+/wdif 0 def
+/temp 0 def
+/currot 0 def
+/savehandler null def
+
+/debug
+{
+{
+/savehandler errordict /handleerror get def
+errordict
+/handleerror
+{
+$error begin
+newerror
+{
+/newerror false def
+showpage
+
+72 72 scale
+/Helvetica findfont .2 scalefont setfont
+.25 9.6 moveto
+(Error: )show
+errorname
+{
+dup type/stringtype ne
+{(converted error name will end up in this string)cvs}if
+show
+}exec
+
+.25 9.4 moveto
+(Offending Command: )show
+/command load
+{
+dup type/stringtype ne
+{(converted command name will end up in this string)cvs}if
+show
+}exec
+
+.25 9.2 moveto
+(Stack: )show
+ostack
+{
+.25 currentpoint .2 sub exch pop moveto
+dup type/stringtype ne
+{
+dup type/integertype eq
+1 index type/realtype eq or
+1 index type/nametype eq or
+not {type}if
+(converted stack will end up in this string)cvs
+}if
+show
+}forall
+showpage
+Deneba_CanvasGraphics /savehandler get exec
+}if
+end
+}put
+}if
+
+}def
+
+/lc
+{setlinecap}def
+
+/lj
+{setlinejoin}def
+
+/lm
+{setmiterlimit}def
+
+/lf
+{setflat}def
+
+/cp
+{closepath}def
+
+/np
+{newpath}def
+
+/gs
+{gsave}def
+
+/gr
+{grestore}def
+
+/printinfo{ FontDirectory /GothicBBB-Medium-83pv-RKSJ-H known
+{/GothicBBB-Medium-83pv-RKSJ-H}
+%% -- 16 bit Windows && Windows 95
+{/Times-Roman}ifelse findfont 9 scalefont setfont 0 setseparationgray show}def
+%% -- Windows NT
+%%{/Times-Roman}ifelse 9 fts sf 0 setseparationgray show}def
+
+/li
+{ lineto} def
+/lh
+{ currentpoint exch pop lineto}def
+/lv
+{ currentpoint pop exch lineto}def
+/mt
+{ moveto} def
+/mh
+{ currentpoint exch pop moveto}def
+/mv
+{ currentpoint pop exch moveto}def
+/ct
+{ curveto} def
+/rt
+{
+4 -2 roll moveto
+dup 0 exch rlineto
+exch 0 rlineto
+neg 0 exch rlineto
+closepath
+}def
+
+/sd
+{setdash}def
+
+/cd
+{[] 0 setdash}def
+/impat
+{
+/save0 save def
+currot 0 ne{currot neg rotate}if
+currentflat
+/_hr load _fm get exec
+{
+dup{gsave{flattenpath}stopped{grestore 2 mul dup setflat dup 200 ge{pop pop false exit}if}{grestore setflat true exit}ifelse}loop
+{
+flattenpath
+setflat
+pathbbox
+3 -1 roll exch
+8 div ceiling 8 mul dup 5 1 roll exch 8 div floor 8 mul
+sub abs cvi/_h xdf
+exch 8 div floor 8 mul dup 4 1 roll exch 8 div ceiling 8 mul
+sub abs cvi/_w xdf
+transform
+.25 sub round .25 add exch
+.25 sub round .25 add exch
+itransform
+translate
+_w _h scale
+/_h _h 8 mul def
+/st0 _w string def
+/temp 0 def
+_w _h T [_w 0 0 _h 0 _h]
+{
+_patstr
+temp 8 mod
+get/st1 xdf
+0 1
+st0 length 1 sub dup 0 le{pop 1}if
+{st0 exch st1 put}for
+/temp temp 1 add def
+st0
+}
+imagemask
+}if
+}{pop}ifelse
+save0 restore
+newpath
+}def
+/_fr
+{
+{
+/_fmp load _fm get exec
+}
+
+{_bp _fp impat}bind
+
+{}
+
+{}
+}def
+/_sr{
+
+{
+_cvmtx currentmatrix pop
+_penh _penv eq{_penh setlinewidth}{_penh _penv mul dup 1.0 lt{pop 1.0}if dup setlinewidth dup _penh exch div _penv exch div scale}ifelse
+currentflat
+dup{gsave{stroke}stopped{grestore 2 mul dup setflat dup 200 ge{pop exit}if}{grestore setflat exit}ifelse}loop stroke
+setflat
+_cvmtx setmatrix
+}
+
+{
+_cvmtx currentmatrix pop
+sk
+_bp _cvmtx setmatrix _fp _fm /_fm 1 def impat /_fm exch def
+}
+{}
+
+{}
+}def
+/_hr
+{
+{currentflat dup{gsave{eoclip}stopped{grestore 2 mul dup setflat dup 200 ge{pop false exit}if}{grestore setflat true exit}ifelse}loop dup {eoclip}if exch setflat}
+{currentflat dup{gsave{clip}stopped{grestore 2 mul dup setflat dup 200 ge{pop false exit}if}{grestore setflat true exit}ifelse}loop dup {clip}if exch setflat}
+}def
+/_fmp
+{
+{
+currentflat dup{gsave{eofill}stopped{grestore 2 mul dup setflat dup 200 ge{pop exit}if}{grestore setflat exit}ifelse}loop
+setflat
+newpath
+}
+{
+currentflat
+dup{gsave{fill}stopped{grestore 2 mul dup setflat dup 200 ge{pop exit}if}{grestore setflat exit}ifelse}loop
+setflat
+newpath
+}
+}def
+
+/_fill{ /_fr load _ft get exec}def
+/_stroke{ /_sr load _st get exec}def
+/fm
+{ /_fm exch def}def
+/fg{/_fg xdf /_ft 0 def/_fs{_fg setgray}def}def
+
+/fsg{/_fg xdf/_ft 0 def/_fs{_fg setseparationgray}def}def
+/f3{_frgb astore pop /_ft 0 def /_fs{_frgb aload pop setrgbcolor}def}def
+/f4{_fcmyk astore pop /_ft 0 def /_fs{_fcmyk aload pop setcmykoverprint}def}def
+/fc{/_fg xdf findcmykcustomcolor aload pop _fcust astore pop /_ft 0 def /_fs{_fcust _fg setcustomcolor}def}def
+/pg{/_pg xdf /_st 0 def/_ps{_pg setgray}def}def
+
+/psg{/_pg xdf /_st 0 def/_ps{_pg setseparationgray}def}def
+/p3{_prgb astore pop /_st 0 def/_ps{_prgb aload pop setrgbcolor}def}def
+/p4{_pcmyk astore pop /_st 0 def/_ps{_pcmyk aload pop setcmykoverprint}def}def
+/pc{/_pg xdf findcmykcustomcolor aload pop _pcust astore pop /_st 0 def /_ps{_pcust _pg setcustomcolor}def}def
+/fp
+{/_fstr xdf /_ft 1 def /_fs{/_patstr _fstr def}def}def
+/pp
+{/_sstr xdf/_st 1 def /_ps{/_patstr _sstr def}def}def
+/bg
+{/_bkg xdf /_bp{gsave _bkg setgray /_fr load 0 get exec grestore}def}def
+/b3
+{_bkrgb astore pop/_bp{gsave _bkrgb aload pop setrgbcolor /_fr load 0 get exec grestore}def}def
+/b4
+{_bkcmyk astore pop/_bp{gsave _bkcmyk aload pop setcmykoverprint /_fr load 0 get exec grestore}def}def
+/bc
+{/_bkg xdf findcmykcustomcolor aload pop _bkcust astore pop/_bp{gsave _bkcust _bkg setcustomcolor /_fr load 0 get exec grestore}def}def
+/kg
+{/_fkg xdf /_fp{_fkg setgray}def}def
+/k3
+{_fkrgb astore pop/_fp{_fkrgb aload pop setrgbcolor}def}def
+/k4
+{_fkcmyk astore pop/_fp{_fkcmyk aload pop setcmykoverprint}def}def
+/kc
+{/_fkg xdf findcmykcustomcolor aload pop _fkcust astore pop/_fp{_fkcust _fkg setcustomcolor}def}def
+/sp
+{/_penv xdf/_penh xdf/_penv2 _penv 2.0 div def/_penh2 _penh 2.0 div def}def
+/rp
+{
+/cv_b xdf/cv_r xdf
+/cv_t xdf/cv_l xdf
+cv_l cv_t moveto
+cv_r cv_t lineto
+cv_r cv_b lineto
+cv_l cv_b lineto
+closepath
+}def
+/rr
+{
+/yradius xdf
+/xradius xdf
+/cv_b xdf
+/cv_r xdf
+/cv_t xdf
+/cv_l xdf
+cv_l xradius add cv_t moveto
+cv_r xradius sub cv_t lineto
+
+_cvmtx currentmatrix pop
+currentpoint translate
+xradius yradius scale
+1 0 1 1 1 arcto 4{pop}repeat
+_cvmtx setmatrix
+
+cv_r cv_b yradius sub lineto
+
+_cvmtx currentmatrix pop
+currentpoint translate
+xradius yradius scale
+0 1 -1 1 1 arcto 4{pop}repeat
+_cvmtx setmatrix
+
+cv_l xradius add cv_b lineto
+
+_cvmtx currentmatrix pop
+currentpoint translate
+xradius yradius scale
+-1 0 -1 -1 1 arcto 4{pop}repeat
+_cvmtx setmatrix
+
+cv_l cv_t yradius add lineto
+
+_cvmtx currentmatrix pop
+currentpoint translate
+xradius yradius scale
+0 -1 1 -1 1 arcto 4{pop}repeat
+_cvmtx setmatrix
+
+closepath
+}def
+/ep
+{
+_cvmtx currentmatrix pop
+translate
+scale
+1 0 moveto
+0 0 1 0 360 arc
+closepath
+_cvmtx setmatrix
+}def
+/wd
+{
+_cvmtx currentmatrix pop
+translate
+scale
+0 0 moveto
+0 0 1 5 -2 roll arcn
+closepath
+_cvmtx setmatrix
+} def
+/as
+{
+newpath
+_cvmtx currentmatrix pop
+translate
+scale
+0 0 1 5 -2 roll arcn
+_cvmtx setmatrix
+} def
+/ds
+{_ps _stroke}def
+/df
+{_fs _fill}def
+/db
+{
+_fs gsave _fill grestore
+currentdash pop length 0 ne
+{
+gsave
+[] 0 setdash
+_st /_st _ft def
+_stroke
+/_st xdf
+grestore
+}if
+_ps _stroke
+}def
+/dp
+{_ps _ft/_ft _st def _fill/_ft xdf}def
+/sk
+{
+_penh _penv eq{_penh setlinewidth}{_penh _penv mul dup 1.0 lt{pop 1.0}if dup setlinewidth dup _penh exch div _penv exch div scale}ifelse
+currentpoint
+currentflat dup{gsave{strokepath}stopped{grestore 2 mul dup setflat dup 200 ge{pop pop exit}if}{grestore setflat exit}ifelse}loop strokepath setflat
+moveto
+}def
+/ef{_bp newpath}def
+/hs{gsave newpath}def
+/hc{ /_hr load exch get exec pop newpath}def
+/he{grestore}def
+/id
+{ /_id xdf}def
+/_imatrix
+{_w 0 0 _h _id 0 ne{neg 0 _h}{0 0}ifelse _cvmtx astore}def
+%!
+% Copyright (C) 1990, 1991 by Adobe Systems Incorporated.
+% All rights reserved.
+%
+/invalidcolortable? true def   
+/level2 /languagelevel where {pop languagelevel 2 ge}{false} ifelse def
+level2 { save /dontloadlevel1 xdf }if
+/startnoload 
+{ 
+{/noload save def} if
+}def
+/endnoload
+{
+{ noload restore } if
+}def
+/testsystemdict
+{
+where
+{
+systemdict eq
+{
+true
+}{
+false
+}ifelse
+}{
+false
+}ifelse
+}def
+/ncolors 1 def
+/colorimage where { pop true}{false} ifelse
+{
+/ncolors 0
+statusdict begin
+/processcolors where
+{
+pop
+pop
+processcolors
+}{
+/deviceinfo where
+{ pop deviceinfo /Colors known
+{ pop {deviceinfo /Colors get} } if
+}if
+}ifelse
+end
+def
+ncolors 0 ne
+{
+/colorimage testsystemdict
+/setcolortransfer testsystemdict
+/currentcolortransfer testsystemdict
+/currentcmykcolor testsystemdict
+and and and not
+{
+/ncolors 0 def
+} if
+}if
+}if
+ncolors dup 1 ne exch dup 3 ne exch 4 ne and and {/ncolors 0 def}if
+ncolors 1 eq dup dup not startnoload
+{
+/doclutimage
+{
+pop /bwclut xdf
+[
+{255 mul round cvi bwclut exch get 255 div} /exec load dup
+currenttransfer exch
+] cvx bind settransfer
+_w _h 8 _imatrix {currentfile st0 readhexstring pop}
+image
+}def
+}if
+not endnoload
+ncolors dup 3 eq exch 4 eq or
+dup dup not startnoload
+{
+/nullproc { {} }def
+/concatutil
+{
+/exec load
+7 -1 roll /exec load
+}def
+/defsubclut
+{
+1 add getinterval def
+}def
+/spconcattransfer
+{
+/Dclut exch def
+/Cclut exch def
+/Bclut exch def
+/Aclut exch def
+/ncompute exch load def
+currentcolortransfer
+[
+{
+Aclut ncompute
+}
+concatutil
+] cvx
+[
+{
+Bclut ncompute
+}
+concatutil
+] cvx
+[
+{
+Cclut ncompute
+}
+concatutil
+] cvx
+[
+{
+Dclut ncompute
+}
+concatutil
+] cvx
+setcolortransfer
+}def
+/setuprgbcluts
+{
+/bit3x
+rgbclut length
+3 sub
+def
+/bit1x bit3x 3 idiv def
+/rclut rgbclut def
+/gclut rclut 1 bit3x defsubclut
+/bclut rclut 2 bit3x defsubclut
+}def
+}if
+not
+endnoload
+ncolors 3 eq
+dup dup not startnoload
+{
+/3compute
+{
+exch bit3x
+mul
+round
+cvi
+get 255 div
+} def
+/doclutimage
+{
+/rgbclut xdf
+pop
+setuprgbcluts
+/3compute rclut gclut bclut dup
+spconcattransfer
+_w _h 8 _imatrix
+[
+{currentfile st0 readhexstring pop} /exec load
+/dup load dup
+] cvx
+nullproc nullproc true 3 colorimage
+}def
+}if
+not endnoload
+ncolors 4 eq
+dup dup not startnoload
+{
+/stuffclut
+{
+cmykindex 3 -1 roll put
+}def
+/ftoint
+{
+1 exch sub 255 mul round cvi
+}def
+/4compute { exch bit4x mul round cvi get 255 div } def
+/computecmykclut
+{
+setuprgbcluts
+/bit4x
+rgbclut length
+3 idiv
+4 mul
+4 sub
+def
+/cmykclut bit4x 4 add string def
+/cclut cmykclut def
+/mclut cclut 1 bit4x defsubclut
+/yclut cclut 2 bit4x defsubclut
+/kclut cclut 3 bit4x defsubclut
+/cmykindex 0 def
+0 1 bit1x
+{
+dup /cmykindex exch
+bit1x exch sub
+4 mul def
+3 mul dup
+rclut exch get 255 div
+exch dup
+gclut exch get 255 div
+exch
+bclut exch get 255 div
+setrgbcolor currentcmykcolor
+ftoint
+kclut stuffclut
+ftoint
+yclut stuffclut
+ftoint
+mclut stuffclut
+ftoint
+cclut stuffclut
+}for
+}def
+/doclutimage
+{
+/rgbclut xdf
+pop
+invalidcolortable?
+{
+computecmykclut
+}if
+/4compute cclut mclut yclut kclut spconcattransfer
+_w _h 8 _imatrix
+[
+{currentfile st0 readhexstring pop} /exec load
+/dup load dup dup
+] cvx
+nullproc nullproc nullproc
+true 4 colorimage
+}def
+}if
+not endnoload
+ncolors 0 eq
+dup dup not startnoload
+{
+/colorexpand
+{
+mystringexp 0 rgbclut
+3 copy
+7 -1 roll
+{
+3 mul
+3 getinterval
+putinterval exch
+3 add exch 3 copy
+}
+forall
+pop pop pop pop pop
+}def
+/createexpandstr
+{
+/mystringexp exch st0 length mul string def
+}def
+/doclutimage
+{
+/rgbclut xdf
+pop
+3 createexpandstr
+_w _h 8 _imatrix
+[ {currentfile st0 readhexstring pop} /exec load /colorexpand load /exec load] cvx
+false 3 colorimage
+}def
+}if
+not endnoload
+level2 { dontloadlevel1 restore }if
+level2 not{ save /dontloadlevel2 xdf }if
+/_imagedict 9 dict dup
+begin
+/ImageType 1 def
+/MultipleDataSource false def
+end
+def
+/rgbclut 0 def
+/doclutimage
+{
+/rgbclut xdf
+pop
+/hival 255 def
+[/Indexed /DeviceRGB hival rgbclut] setcolorspace
+_imagedict dup begin
+/Width _w def
+/Height _h def
+/Decode [0 hival] def
+/ImageMatrix _imatrix def
+/DataSource {currentfile st0 readhexstring pop} def
+/BitsPerComponent 8 def
+/Interpolate false def
+end
+image
+}def
+level2 not{ dontloadlevel2 restore }if
+%%EndProcSet
+
+/cl
+{
+translate
+scale
+cvi/_h xdf
+cvi/_w xdf
+/st0 _w string def
+doclutimage
+}def
+
+/c3
+{
+translate
+scale
+cvi/_h xdf
+cvi/_w xdf
+/st0 _w 3 mul string def
+_w _h 8 _imatrix
+{currentfile st0 readhexstring pop}
+false 3 DSIColorImage
+}def
+
+/colorimage where
+{
+pop
+/DSIColorImage {colorimage} def
+}
+{
+/DSIColorImage
+{
+/ncolors xdf
+not
+{
+2 index
+8 eq
+{
+ncolors 1 gt
+{
+/proc0 xdf
+3 index 2 index mul 7 add 8 div cvi string /st1 xdf
+ncolors 3 eq
+{
+{
+proc0 dup/st0 xdf
+0 exch 3 exch
+length
+3 sub
+{
+dup
+st0 exch get .3 mul
+1 index 1 add st0 exch get .59 mul add
+1 index 2 add st0 exch get .11 mul add
+cvi
+exch 3 div cvi exch
+st1 3 1 roll put
+}for
+st1
+}
+}
+{
+{
+proc0 dup/st0 xdf
+0 exch 4 exch
+length
+4 sub
+{
+dup
+st0 exch get .3 mul
+1 index 1 add st0 exch get .59 mul add
+1 index 2 add st0 exch get .11 mul add
+1 index 3 add st0 exch get add dup 255.0 gt{pop 255.0}if
+255.0 exch sub cvi
+exch 4 div cvi exch
+st1 3 1 roll put
+}for
+st1
+}
+}ifelse
+}if
+image
+}{(Incompatable color bitimage)print flush stop}ifelse
+
+}{(Incompatable color bitimage)print flush stop}ifelse
+}def
+}ifelse
+/c4
+{
+translate
+scale
+cvi/_h xdf
+cvi dup/_w xdf
+dup string/st0 xdf
+dup string/st1 xdf
+dup string/st2 xdf
+string/st3 xdf
+_w _h 8 _imatrix
+{currentfile st0 readhexstring pop}
+{currentfile st1 readhexstring pop}
+{currentfile st2 readhexstring pop}
+{currentfile st3 readhexstring pop}
+true 4 DSIColorImage
+}def
+/im
+{
+translate
+scale
+cvi/_h xdf
+cvi/_w xdf
+/st0 _w string def
+_w _h 8 _imatrix
+{currentfile st0 readhexstring pop}
+image
+}def
+/ik
+{
+translate
+scale
+_fp
+cvi/_h xdf
+cvi/_w xdf
+/st0 _w 7 add 8 div cvi string def
+_w _h false _imatrix
+{currentfile st0 readhexstring pop}
+imagemask
+}def
+/rs
+{
+ _rotmatrix _rotlevel get currentmatrix pop
+ /_rotlevel _rotlevel 1 add def
+2 copy translate
+3 -1 roll neg rotate
+neg exch neg exch translate
+}def
+/re
+{
+/_rotlevel _rotlevel 1 sub def
+_rotmatrix _rotlevel get setmatrix
+}def
+
+/fd
+{
+/_fd xdf
+}def
+
+/_fontMatrix
+{
+1 0 0 _fd 0 ne{-1 0 0}{1 0 0}ifelse _cvmtx astore
+}def
+/rf{
+/_encodindex xdf
+FontDirectory 2 index known
+not{
+findfont dup length 1 add dict begin
+{1 index/FID ne{def}{pop pop}ifelse}forall
+dup /FontName exch def
+/Encoding Encoding 256 array copy def
+_encodindex 0 ge
+{
+0 _encodArr _encodindex get
+{
+dup type/nametype eq
+{
+Encoding 2 index 2 index put pop 1 add
+}
+{exch pop}ifelse
+}forall pop
+}if
+currentdict end definefont pop
+}if
+cleartomark
+}def
+/sf{
+findfont ftSize 0 0 ftSize _fd 0 ne{-1 mul}if 0 0 _cvmtx astore makefont setfont
+}def
+/mf{
+3 -1 roll findfont 3 1 roll exch ftSize mul exch ftSize mul 0 exch 0 exch _fd 0 ne{-1 mul}if 0 0 _cvmtx astore makefont setfont
+}def
+
+/wrk1 ( ) def
+/wdict 16 dict def
+/Work75 75 string def
+/Nmk{Work75 cvs dup}def
+/Npt{put cvn}def
+/dhOdh{Nmk 2 79 Npt}def
+/dhodh{Nmk 2 111 Npt}def
+/dhSdh{Nmk 2 83 Npt}def
+/sfWidth{gsave 0 0 moveto 0 0 lineto 0 0 lineto 0 0 lineto closepath clip stringwidth grestore}def
+/fts{/ftSize exch def}def
+/mkFT{
+dup/FontType get 0 eq
+{
+dup maxlength dict begin
+
+{1 index/FID ne 2 index /UniqueID ne and{def}{pop pop}ifelse}forall
+currentdict end
+dup/FDepVector 2 copy get
+[
+exch 6 index
+exch 6 index
+exch{mkFT 3 1 roll}forall pop pop
+] put dup
+}
+{
+/tempFT 12 dict def
+tempFT begin
+/FontMatrix [1 0 0 1 0 0] def
+/FontType 3 def
+dup/Encoding get/Encoding exch def
+/proc2 2 index def
+dup/ft1 exch def
+/ft2 1 array def
+/FontBBox [0 0 1 1] def
+/BuildChar
+{
+exch dup/ftdt xdf begin
+wdict begin
+/chr xdf
+/chrst wrk1 dup 0 chr put def
+ft2 0 get null eq
+{
+ft1 dup length 2 add dict begin
+{1 index/FID ne 2 index /UniqueID ne and{def}{pop pop}ifelse}forall
+/PaintType 2 def
+/StrokeWidth .24 1000 mul ftSize div dup 12 lt{pop 12}if def
+currentdict end
+/q exch definefont
+ft2 exch 0 exch put
+}if
+ftdt/proc2 get exec
+end
+end
+}def
+end
+tempFT
+}ifelse
+3 index exch
+definefont exch pop
+}def
+
+/mo{
+/_textstyle 1 def
+dup dhOdh
+FontDirectory 1 index known
+{exch pop}
+{
+dup 3 -1 roll
+findfont
+{outproc} exch
+mkFT
+pop pop pop
+}ifelse
+}def
+
+/ms{
+/_textstyle 2 def
+dup dhSdh
+FontDirectory 1 index known
+{exch pop}
+{
+dup 3 -1 roll
+findfont
+{ShadChar} exch
+mkFT
+pop pop pop
+}ifelse
+}def
+
+/outproc{
+ft1 setfont
+gsave chrst sfWidth grestore
+setcharwidth dblsh
+}def
+
+/dblsh{
+currentgray 1.0 setgray
+chrst 0 0 moveto show setgray
+ft2 0 get setfont chrst 0 0 moveto show
+}def
+
+/ShadChar{
+ft1 setfont
+gsave
+chrst sfWidth 1 index 0 ne{exch .05 add exch}if
+grestore
+setcharwidth
+chrst .06 0 moveto show
+0 .05 translate dblsh
+}def
+/tb{
+_txtmtx currentmatrix pop
+currentpoint pop /_underlinpt xdf
+/_textstyle 0 def
+}def
+
+
+/_textline
+{
+_textstyle 2 eq{
+gsave
+_underlinpt currentpoint pop sub
+currentlinewidth 2.0 div dup rmoveto
+0 rlineto
+stroke
+grestore
+}if
+
+_underlinpt currentpoint pop sub 0 rlineto
+_textstyle 0 ne
+{
+currentlinecap
+0 setlinecap
+currentpoint
+currentflat dup{gsave{strokepath}stopped{grestore 2 mul dup setflat dup 200 ge{pop pop exit}if}{grestore setflat exit}ifelse}loop strokepath setflat
+moveto
+setlinecap
+gsave 1.0 setgray eofill grestore
+setlinewidth stroke
+}
+{pop stroke}ifelse
+
+}def
+
+/_sp
+{
+{
+gsave
+currentpoint newpath moveto
+[] 0 setdash
+currentfont dup /ft1 known
+{
+dup /ft1 get begin
+/FontMatrix get FontMatrix _cvmtx concatmatrix pop
+}
+{
+begin FontMatrix _cvmtx copy pop
+}ifelse
+
+currentdict dup /StrokeWidth known
+{/StrokeWidth get dup _cvmtx dtransform pop}
+{pop .24}ifelse
+
+currentdict /FontInfo known
+{
+FontInfo /UnderlineThickness get dup _cvmtx dtransform pop setlinewidth
+FontInfo /UnderlinePosition get dup _cvmtx dtransform pop neg
+}
+{ 1 setlinewidth -100}ifelse
+0 exch _textstyle 2 eq{ 3 sub}if rmoveto
+end
+_textline
+grestore
+}
+{
+gsave
+currentpoint newpath moveto
+[] 0 setdash
+currentfont dup /ft1 known
+{
+dup /ft1 get begin
+/FontMatrix get FontMatrix _cvmtx concatmatrix pop
+}
+{
+begin FontMatrix _cvmtx copy pop
+}ifelse
+
+currentdict dup /StrokeWidth known{/StrokeWidth get dup _cvmtx dtransform pop}{pop .24}ifelse
+currentdict /FontInfo known
+{
+FontInfo /StrikeoutPosition known
+{
+FontInfo /StrikeoutThickness get dup _cvmtx dtransform pop setlinewidth
+FontInfo /StrikeoutPosition get dup _cvmtx dtransform pop neg
+}
+{
+FontInfo /UnderlineThickness get dup _cvmtx dtransform pop 2.0 div setlinewidth
+300 dup _cvmtx dtransform pop neg
+}ifelse
+}
+{ .5 setlinewidth 300}ifelse
+0 exch rmoveto
+end
+_textline
+grestore
+}
+
+{}
+
+{}
+
+{}
+
+{}
+
+{}
+
+{}
+
+}def
+
+/xe
+{
+%%/_textstyle exch def
+0 1 15
+{
+dup 1 exch bitshift
+2 index and 0 ne
+{
+/_sp load exch get exec
+}
+{pop}ifelse
+}for
+}def
+
+
+/te{ _txtmtx setmatrix}def
+
+/ta
+{
+/_letterSpace xdf /_spaceXtra xdf
+}def
+
+/ts
+{
+_ps
+show
+}def
+
+/tf
+{
+/_textWidth xdf
+/_numSpaces xdf
+/_stringLength xdf
+
+dup	stringwidth pop
+
+_letterSpace _stringLength mul add
+_spaceXtra _numSpaces mul add
+_textWidth exch sub /wdif xdf
+_ps
+_spaceXtra 0 32
+wdif _stringLength div
+_letterSpace add
+0 6 -1 roll awidthshow
+}def
+
+/pb
+{
+/_PageSave save def
+/showpage {} def
+}def
+
+/pm {_pm currentmatrix pop} def
+/_pm matrix def
+
+/ps
+{
+showpage
+_pm setmatrix
+}def
+
+/pe
+{
+_PageSave restore
+}def
+end
+%%EndResource
+%%EndProlog
+/copyfont{findfont dup length 1 add dict begin
+{1 index/FID ne{def}{pop pop}ifelse}forall
+dup /FontName exch def
+/Encoding Encoding 256 array copy def
+currentdict end}bind def
+%%BeginResource: font lr2-1
+14 dict begin
+/FontName /lr2-1 def
+/FontInfo 10 dict dup begin
+/FullName (lr2-1) def
+/FamilyName (lr2-1) def
+/UnderlinePosition -100 def
+/UnderlineThickness 50 def
+/StrikeoutPosition 300 def
+/StrikeoutThickness 25 def
+/Weight (Medium) def
+/ItalicAngle 0 def
+/isFixedPitch false def
+end def
+/_glyph (X  ) def
+/gx
+{
+	1 exch{
+		dup 16 (  ) cvrs _glyph exch 1 exch putinterval 1 index exch
+		_glyph cvn put
+		}for
+}def
+/PaintType 0 def
+/FontType 1 def
+/FontMatrix [0.001 0 0 0.001 0 0] def
+/Encoding 256 array
+0 1 255 { 1 index exch /.notdef put } for
+30 255 gx
+def
+/FontBBox [ 0 0 0 0 ] def
+currentdict end
+dup /Private 8 dict dup begin
+/RD{string currentfile exch readhexstring pop}def
+/ND{def}def
+/NP{put}def
+/BlueValues[ -250 0 2200 2200] def
+/MinFeature { 16 16} def
+/password 5839 def
+/Subrs 43 array
+ND
+2 index /CharStrings 256 dict dup begin
+/.notdef 8 RD 24ECBD053ECAD3D7 ND
+/X2E 24 RD 24ECBD053EB6173D032980F0B1D8998BA25807F9BEC30E39 ND
+/X30 167 RD 24ECBD053EB9E88A59B07399E4B0EDF10CB96A104CF6D5BE59FE9DEA2A2BAC266E534A1F056C374D23111D1EC8E0544917899DBC3AD3121F0959B3176781F11905964E89964E7C5F776B98E34C0B8853A7EA9BD3DA78B74DCB2C134BEBC89597FF4FB970E327567F1D5A2A1E3FC1C1AC5839062B4D7B428A2B0CE51B
+574E2F320CD446A41AA1BF5AA9036293F6759F3C9C883336E3D0CF3D4E6475709E8713C7063917A7ED42EE ND
+/X31 49 RD 24ECBD053EB9E88A56B687FD8EBF1510130CF8CCE89FFC283BE19F9C7AC27D4304E7D8D0F79221E3FBBD6DF384CC0C6D92 ND
+/X32 147 RD 24ECBD053EB9E88A562552C7B880FD7A97DBE5D605BD014C1861EE0EA6034C603D3D69533C8EC94D544C7A0C61E5F7B6FE13CED4A2B151B961FB252DD37FC0AB13F6CBEFF3AE4D346FBFA1E18C434B6FDE33180196308390B0A2B04A87A4E4898FBD2ECC8D369FB3C9481C920A27B6CE06934B867AED148638A05C72
+D43F5F0AF7E8532CADCB8D7C85E34C9501213B38895616 ND
+/X33 203 RD 24ECBD053EB9E88A1FA5FDF500F27B039D4217A4C5069ED3978BDF73FA68977A5547975478696AB2327C7D57DFE83916C110DB0F9FD6B4731220CE173B856F294E99544F8B58EA96E332D153208829A717CB471D495928739D633A8823DCB280FEF02287D26C39A66BB220CCF0DE6B1573274E2FF88A5F5AA8883C96
+D461166D6119DF30018492CF065CC1BD0A8ADB3E4012B74A5BBE38E2BABBC73C53A90B2960E5A8DB93867EA38375AF1823C46B4C134FA639D461CFA5BE5DC28891D0786493C634237E6882620AC76C ND
+/X34 61 RD 24ECBD053EB9E88A59DC12A70C7AD26B0E16E5740E9AB6E5F32C284BDA5B01CFD0A414436B837BBBB4B496175EA8E4965E724A6D82F308BE5A61940148 ND
+/X35 139 RD 24ECBD053EB9E88A198CA489BDE564B6D13358D468C5110641FD9445F3D865D9011BEA367F7DB3D88F3C5D39C3A1B8684BF19B39B1BEA07688826984A35E28983CBCDB4402430A1F0D3D167973273D11D51EE93E144E357FEF06BD75B212A575646BC0E89702077EE92393BEBF8768319F46C19452DA6B6E71B32D45
+FD843CED2F6939822D1B543B6C187C ND
+/X36 192 RD 24ECBD053EB9E88A56242FB0DC2C548F837312383199D315ABB51D92744322209321700F7AB077BCA612EED99E8CD1560F0B1E82F8D5D099508342836FD252FDB89FC83088D0C12E8ED595337075256C1ED2B8F365827DC9C44475CADF5074359BB87410CFC268DFC675EBD623FD565A8D81602AB882F9EC479C3507
+F81BCAC600EE660485A518A2DE86AA0ED1F0B563881D8E432D3F06CC6C7BA9F5E9EA86A165F6D24314854D183A0019C4AFD5005655580A53357B0E5D60F152008214F79E ND
+/X37 63 RD 24ECBD053EB9E88A1BE00145F9E2191185D282EC269F1C2E6D3306D5AFD7489D585444D4D2BBBE5B622DB26882A1FC549C76F809C4DB1B6863EFCFEF63EB67 ND
+/X38 255 RD 24ECBD053EB9E88A59232013714F1529D218950DE63EE8118ED36100628025D465E19FFE0DDF67CCEB315D2EDED2C9D761C2C408FD9B0C99995B13299EC42DB1EEDD54BF70CB094E3EFC38E4A87AE62E4FDC74BE714AF9315CDF7EC1E01303E48F57931611CF6DB360BB45B668BDFBDA888FEF4C686468AC51297A22
+257F30769BE00A82B326E88E029F752CBC01A7A879C9D7975EAC2553FC7A1BC887370ED4564B95AECA3E6A0C83B957CB20F3EE77321EBFFE75E8BE27E337073E2A9133D00FCBD9C0A75C5C88A7CB6C0F4F15A0A657636CE383ED4B57C71B1FC1C523FA15A560886E8B0710BE1B542D017A09C2D80F265B4D767D3854F8
+56FDE475591E ND
+/X39 191 RD 24ECBD053EB9E88A14844BC0638FA5B31CC7558D52B7488FAA549CF9DD9D26363E244D183B83967AB35577EFB4A87CC9058DDE11C577E890BC138755ECE0E1490DE59B5D17281C5A3FC78B00DE51B72924E7A1ACEB37D1E530E7DCC0294E08A5CB0CB7045BBAFDAF033DC02FCF1C81F29A33734BAB0A930600D8B320
+FD1DC6C414238C590D1C5CE3225B9A53F7DA4A94C4197E048997032ECE1F41E4F8A8F33CDD21C3BC500363F94B4DA6875D5F6278A6F7C3C32A4C0C52F87066F0D6278B ND
+/X45 48 RD 24ECBD053EB8753CFBF1B70F2171C9D9A745E6F2951AA98580D64F9BA2AD56A98CA003B1A169055AB6C3E59E60339384 ND
+/X63 137 RD 24ECBD053EB9E88A560B565E570289746273324B27B5FE08FEA3D467D57FB871DD580B20F145629BBA8E8718BFB3B278A7D4368CBBF986E62BCE805442EE839DAE864A5A0A68F0596F4E761D0E3AEC2E6D77EFD774ED8CB6079C4D3C78B179FF5FD4C50F95F21205E28ED898920CE8B91C43440A3D94006561836F35
+43D931CD085B305A6898E31F50 ND
+/X68 116 RD 24ECBD053EB9DF48FF638C25F2DC5611B43682A273E6B07F73311118BAC5F8F3A858A362A23C04B866791B6EE3857E3767B5146276525CA6B19B545A003A0FC38CD831CD91B264F9FB76DA44F1F3F8A1FFD7C93893657EA45A38388A6B558D519CBDD1C241A876BC52DFD36393B037F1DE55D8BB ND
+/X6F 149 RD 24ECBD053EB9DF48BBDC9C12A758429DD6B39C3CE0C377C728FE1F4B8F2D1958D61EE06C2C488D42361A88D31E0E2A0746065E4BE2C23A7FDED1724C3FDF26F5C9EBD4D00087740F3D60727D8F269532AC51B414B7984BEA624509B6E0D519AA2292E70533AE099A830E93E3DA9280F7F6FB148A82AE19DDB6616D42
+AEC47BFF504330DF71E02032E545B1493EA1F0C33545A7FFDF ND
+/X70 148 RD 24ECBD053EB9DF48C7203C0731733819B0F13DF7E6B5467BE9EAE2176C7EEE108042FEBCF48C8D1006232B110847D38B821CC64F703D27E21D123513F8981FC462A32F4ABDDFA4066474C7313497EC17B239CB83E13A0CD7B6B5388C24DC801CCEFCB7A39B5B6BA6E00E8482FCF28B6ACB754D96B771A7FEBBC82465
+68B587BE68E857DBA483393494E9ED55CB921821D513FDC6 ND
+/X73 193 RD 24ECBD053EB9E88A0CF77E79937C2F0AD00667B6BC53CFBC57DB7EE028E3AD89F702701ED3CDC007BEE61EC45D167D39FF369CAB144A389720CF021F9DF62103A3897E5316862EECFD5B92D7C2AF701E4B9DC982567093C905756749C820C575C573EB11760A645570E60FD097E6DEA4405B2A9B22E8E1769392AE2B
+5E7F7B488321564FB6D28BF9CC44979C63A8DFD70E9234FF87F450A0DD5735244B6881BBD3F40161A7C0CEB5D43FCED87224E049108667664316AE493AC2318F51B8C0B16A ND
+end
+end
+put
+put
+dup /FontName get exch definefont pop
+%%EndResource
+
+%%BeginResource: font lr2
+14 dict begin
+/FontName /lr2 def
+/FontInfo 10 dict dup begin
+/FullName (lr2) def
+/FamilyName (lr2) def
+/UnderlinePosition -100 def
+/UnderlineThickness 50 def
+/StrikeoutPosition 300 def
+/StrikeoutThickness 25 def
+/Weight (Medium) def
+/ItalicAngle 0 def
+/isFixedPitch false def
+end def
+/_glyph (X  ) def
+/gx
+{
+	1 exch{
+		dup 16 (  ) cvrs _glyph exch 1 exch putinterval 1 index exch
+		_glyph cvn put
+		}for
+}def
+/PaintType 0 def
+/FontType 1 def
+/FontMatrix [0.001 0 0 0.001 0 0] def
+/Encoding 256 array
+0 1 255 { 1 index exch /.notdef put } for
+30 255 gx
+def
+/FontBBox [ 0 0 0 0 ] def
+currentdict end
+dup /Private 8 dict dup begin
+/RD{string currentfile exch readhexstring pop}def
+/ND{def}def
+/NP{put}def
+/BlueValues[ -250 0 2200 2200] def
+/MinFeature { 16 16} def
+/password 5839 def
+/Subrs 43 array
+ND
+2 index /CharStrings 256 dict dup begin
+/.notdef 8 RD 24ECBD053ECAD3D7 ND
+/X2E 20 RD 24ECBD053EB6173D373802B30AFE214CD0757862 ND
+/X30 167 RD 24ECBD053EB9E88A1BEF04DD76C65F9749F66851D8FAE5FCB5950992663239BD1FC0DEB1CEC611A212B83B08967A831E3E3EB3606AF2CF6FC70A2DC696B44BCF28989BE2337A230C38A86C0BD14EE3B65BDA8142BD60D02ADA557B0DA9948E01E9ED50D010014EF8CFAC1EFE62B14928D192B609E17164C883E3686D
+BFBB800CF745B41A5503D9F807F3630268F00B1AC8CF5552B5CC27A043362EC5B26A048CB5835E004D0815 ND
+/X32 151 RD 24ECBD053EB9E88A562042FCA33A75DC3F99EEA4360FE10818CE8E378CCFAE417759EA4DD8E9F459DEE773684A0F54DF5541D41D2E32C697A65107859E27EC4D3ADFFAFFF9B28A2913DCEF1921B3DF7FB8574AE05BA0AFD0B07D57A8A98058C6C29454C8ACBBC82B61CA05DDC2FEC4B2BB4901C88EEC37712DF1599A
+EEFAABD2D558599E87DFCC731F0D43FD7AB9CD903688F9F7B6DE14 ND
+/X34 57 RD 24ECBD053EB9E88A59C067001F508A21EEC8BEB3ED55AC0AD375E394409CC3C2A6F2D9D70D320EECDE20D9ABE31756F3C5167AEFF82506D67C ND
+/X3D 39 RD 24ECBD053EB9F43962F217D7419D59C40979C840EFA22214582D9AA13FF3627D7718F6282987F8 ND
+/X4C 28 RD 24ECBD053EB9E88A7AA56A8CCA20CC80D7E024A86ACBF79A95870C98 ND
+/X4D 70 RD 24ECBD053EB88F25842BAB689D70A32DA9AA6E5D444D4EDBE1E2274A414010CFED9CEE1CB647E146C9B864B24B78159A444B6A4F7E4BBB37FE03942F4A354C59FC987C2128F9 ND
+/X53 253 RD 24ECBD053EB8753C9681691D57FC64CA8F0A762D55CA04AFF8371876336FEEAA8D403EDDCFD4FB62384D5EA33FE7FECD2010E28E345C9B288FADD7A118BB1395AFED9E8016D5EFC47C51940A913ECC6D51C828140CCE7DF57AECFE8E83A7B8FDD60405D1FD4AF910BBF55538FB38C86BA2F25B8C4715B757E04C6F8B
+1E5DFCE6FBB8687124D572FF3817290D6E448C528391D88F14F18B33EECBE0837018F7C6AC88AF169AFFFB76D342E8B46DB6054FDB96CFF4A7CFED7B2F68F24F4E50CBAFBBB11D114CC56FD8CC494E91D651592AF87EB984FF0ABB3E4AFEE8B5B10274780C42DEA060C33D99AAE7C1D624B71A0837802FBE283DCFEEAB
+B27586D1 ND
+/X73 239 RD 24ECBD053EB9A075FB0D363C5DAD5072141948E7E1754E0FA3AC319C5D112D34313856F8BB6868A3DAF2E607F4852D6A068D2F18988BDD35DF74C9670E679E0CBDA898B51F9637EDC00B1E2B3ABA53F21E13B46676BCFD4C35B8F31275833367A190FF9C05256035667E88E27A5FE706D86790585FE88405E89D71B6
+0383ACB267E7E27BCA33BBC8FB340BE8A976C6F2A6451ACCBF24BFEED8A7C6D46AC5AC8FED699342ADAD075F61D9747255E7B8DA0815F167A768C00630A03A443D79B647191A56139DD6BAF7E5F1B201C42D3AA4E6BE2FC3D3230B184464EAC1D2729E18E0886728BF4126E78E65E9614830D4 ND
+end
+end
+put
+put
+dup /FontName get exch definefont pop
+%%EndResource
+
+/Deneba_CanvasCustomColors where{/Deneba_CanvasCustomColors get/initialize get exec}if
+/Deneba_CanvasGraphics where{/Deneba_CanvasGraphics get/initialize get exec}if
+_encodArr 0
+[
+39/quotesingle 96/grave
+128/bullet/bullet/quotesinglbase/florin/quotedblbase/ellipsis/dagger/daggerdbl/circumflex/perthousand/Scaron/guilsinglleft/OE/bullet/bullet/bullet
+/bullet/quoteleft/quoteright/quotedblleft/quotedblright/bullet/endash/emdash/tilde/trademark
+/scaron
+/guilsinglright/oe/bullet/bullet/Ydieresis
+/bullet/exclamdown/cent/sterling/currency/yen/brokenbar/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot/hyphen/registered/macron
+/degree/plusminus/twosuperior/threesuperior/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine/guillemotright/onequarter/onehalf/threequarters/questiondown
+/Agrave/Aacute/Acircumflex/Atilde/Adieresis
+/Aring
+/AE/Ccedilla/Egrave/Eacute/Egrave/Edieresis/Igrave/Iacute/Icircumflex/Idieresis
+/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls
+/agrave/aacute/acircumflex/atilde/adieresis
+/aring
+/ae/ccedilla/egrave/eacute/ecircumflex/edieresis
+/igrave
+/iacute
+/icircumflex
+/idieresis
+/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis
+] put
+mark /___FN2-1 /lr2-1 -1 rf
+mark /___FN2 /lr2 -1 rf
+1 id
+1 fd
+0 fm
+%%BeginSetup
+userdict /canvassave save put
+%%EndSetup
+1. 1. sp
+0. pg
+1. fg
+cd
+F setoverprint
+0 fm
+0 lj
+2 lc
+0 487 translate 1 -1 scale%%BeginObject: Group
+%%BeginObject: Line
+0.5039 pg
+2. 2. sp
+1 lc
+1 lj
+356. 257.54919 mt
+94.99987 257.55175 li
+ds
+%%EndObject
+%%BeginObject: Polygon
+%%EndObject
+%%BeginObject: Line
+1. pg
+95. 325.2301 mt
+355.99987 325.23278 li
+ds
+%%EndObject
+%%BeginObject: Line
+95. 123.2788 mt
+355.99987 123.28137 li
+ds
+%%EndObject
+%%BeginObject: Line
+0.5039 pg
+95. 123.2788 mt
+355.99987 123.28137 li
+ds
+%%EndObject
+%%BeginObject: Line
+356. 123.2788 mt
+325.23278 lv
+ds
+%%EndObject
+%%BeginObject: Line
+356.5 191.50561 mt
+95.49987 191.50817 li
+ds
+%%EndObject
+%%BeginObject: Line
+0. pg
+95. 123.00585 mt
+324.95983 lv
+ds
+%%EndObject
+%%BeginObject: Line
+95. 325.2301 mt
+99.99987 325.23278 li
+ds
+%%EndObject
+%%BeginObject: Line
+95. 257.54919 mt
+99.99987 257.55175 li
+ds
+%%EndObject
+%%BeginObject: Line
+95. 190.95983 mt
+99.99987 190.9624 li
+ds
+%%EndObject
+%%BeginObject: Line
+95. 123.2788 mt
+99.99987 123.28137 li
+ds
+%%EndObject
+%%BeginObject: Line
+104. 190.95983 mt
+111.99987 190.9624 li
+ds
+%%EndObject
+%%BeginObject: Line
+112. 190.95983 mt
+120.99987 192.05395 li
+ds
+%%EndObject
+%%BeginObject: Line
+121. 192.05139 mt
+129.99987 192.05395 li
+ds
+%%EndObject
+%%BeginObject: Line
+130. 192.05139 mt
+138.99987 192.05395 li
+ds
+%%EndObject
+%%BeginObject: Line
+139. 192.05139 mt
+146.99987 193.14562 li
+ds
+%%EndObject
+%%BeginObject: Line
+147. 193.14306 mt
+155.99987 193.14562 li
+ds
+%%EndObject
+%%BeginObject: Line
+156. 193.14306 mt
+164.99987 194.2373 li
+ds
+%%EndObject
+%%BeginObject: Line
+165. 194.23461 mt
+172.99987 194.2373 li
+ds
+%%EndObject
+%%BeginObject: Line
+173. 194.23461 mt
+181.99987 196.42053 li
+ds
+%%EndObject
+%%BeginObject: Line
+182. 196.41796 mt
+190.99987 197.51208 li
+ds
+%%EndObject
+%%BeginObject: Line
+191. 197.50952 mt
+198.99987 199.69543 li
+ds
+%%EndObject
+%%BeginObject: Line
+199. 199.69287 mt
+207.99987 201.87866 li
+ds
+%%EndObject
+%%BeginObject: Line
+208. 201.87609 mt
+216.99987 204.06188 li
+ds
+%%EndObject
+%%BeginObject: Line
+217. 204.05932 mt
+225.99987 206.24511 li
+ds
+%%EndObject
+%%BeginObject: Line
+226. 206.24255 mt
+233.99987 208.42846 li
+ds
+%%EndObject
+%%BeginObject: Line
+234. 208.4259 mt
+242.99987 210.61169 li
+ds
+%%EndObject
+%%BeginObject: Line
+243. 210.60913 mt
+251.99987 212.79492 li
+ds
+%%EndObject
+%%BeginObject: Line
+252. 212.79235 mt
+259.99987 214.97814 li
+ds
+%%EndObject
+%%BeginObject: Line
+260. 214.97558 mt
+268.99987 217.16149 li
+ds
+%%EndObject
+%%BeginObject: Line
+269. 217.15893 mt
+277.99987 220.4364 li
+ds
+%%EndObject
+%%BeginObject: Line
+278. 220.43371 mt
+285.99987 223.71118 li
+ds
+%%EndObject
+%%BeginObject: Line
+286. 223.70861 mt
+294.99987 228.07775 li
+ds
+%%EndObject
+%%BeginObject: Line
+295. 228.07519 mt
+303.99987 233.53588 li
+ds
+%%EndObject
+%%BeginObject: Line
+304. 233.53332 mt
+312.99987 240.08569 li
+ds
+%%EndObject
+%%BeginObject: Line
+313. 240.08312 mt
+320.99987 246.63549 li
+ds
+%%EndObject
+%%BeginObject: Line
+321. 246.63281 mt
+329.99987 253.18518 li
+ds
+%%EndObject
+%%BeginObject: Line
+330. 253.18261 mt
+338.99987 257.55175 li
+ds
+%%EndObject
+%%BeginObject: Line
+339. 257.54919 mt
+346.99987 259.73498 li
+ds
+%%EndObject
+%%BeginObject: Line
+347. 259.73242 mt
+355.99987 263.00988 li
+ds
+%%EndObject
+%%BeginObject: Line
+104. 180.04345 mt
+111.99987 180.04614 li
+ds
+%%EndObject
+%%BeginObject: Line
+112. 180.04345 mt
+120.99987 181.13769 li
+ds
+%%EndObject
+%%BeginObject: Line
+121. 181.13513 mt
+129.99987 182.22937 li
+ds
+%%EndObject
+%%BeginObject: Line
+130. 182.2268 mt
+138.99987 183.32092 li
+ds
+%%EndObject
+%%BeginObject: Line
+139. 183.31835 mt
+146.99987 186.59582 li
+ds
+%%EndObject
+%%BeginObject: Line
+147. 186.59326 mt
+155.99987 189.87072 li
+ds
+%%EndObject
+%%BeginObject: Line
+156. 189.86816 mt
+164.99987 193.14562 li
+ds
+%%EndObject
+%%BeginObject: Line
+165. 193.14306 mt
+172.99987 195.32885 li
+ds
+%%EndObject
+%%BeginObject: Line
+173. 195.32629 mt
+181.99987 197.51208 li
+ds
+%%EndObject
+%%BeginObject: Line
+182. 197.50952 mt
+190.99987 201.87866 li
+ds
+%%EndObject
+%%BeginObject: Line
+191. 201.87609 mt
+198.99987 209.52001 li
+ds
+%%EndObject
+%%BeginObject: Line
+199. 209.51745 mt
+207.99987 219.34472 li
+ds
+%%EndObject
+%%BeginObject: Line
+208. 219.34216 mt
+216.99987 225.89453 li
+ds
+%%EndObject
+%%BeginObject: Line
+217. 225.89196 mt
+225.99987 231.35266 li
+ds
+%%EndObject
+%%BeginObject: Line
+226. 231.35009 mt
+233.99987 235.71911 li
+ds
+%%EndObject
+%%BeginObject: Line
+234. 235.71655 mt
+242.99987 238.99401 li
+ds
+%%EndObject
+%%BeginObject: Line
+243. 238.99145 mt
+251.99987 243.36059 li
+ds
+%%EndObject
+%%BeginObject: Line
+252. 243.35803 mt
+259.99987 246.63549 li
+ds
+%%EndObject
+%%BeginObject: Line
+260. 246.63281 mt
+268.99987 251.00195 li
+ds
+%%EndObject
+%%BeginObject: Line
+269. 250.99938 mt
+277.99987 253.18518 li
+ds
+%%EndObject
+%%BeginObject: Line
+278. 253.18261 mt
+285.99987 256.46008 li
+ds
+%%EndObject
+%%BeginObject: Line
+286. 256.45751 mt
+294.99987 258.64331 li
+ds
+%%EndObject
+%%BeginObject: Line
+295. 258.64074 mt
+303.99987 260.82666 li
+ds
+%%EndObject
+%%BeginObject: Line
+304. 260.82409 mt
+312.99987 263.00988 li
+ds
+%%EndObject
+%%BeginObject: Line
+313. 263.00732 mt
+320.99987 265.19311 li
+ds
+%%EndObject
+%%BeginObject: Line
+321. 265.19055 mt
+329.99987 267.37634 li
+ds
+%%EndObject
+%%BeginObject: Line
+330. 267.37377 mt
+338.99987 268.46801 li
+ds
+%%EndObject
+%%BeginObject: Line
+339. 268.46545 mt
+346.99987 269.55969 li
+ds
+%%EndObject
+%%BeginObject: Line
+347. 269.55712 mt
+355.99987 269.55969 li
+ds
+%%EndObject
+%%BeginObject: Line
+104. 183.31835 mt
+111.99987 183.32092 li
+ds
+%%EndObject
+%%BeginObject: Line
+112. 183.31835 mt
+120.99987 184.41259 li
+ds
+%%EndObject
+%%BeginObject: Line
+121. 184.41003 mt
+129.99987 185.50427 li
+ds
+%%EndObject
+%%BeginObject: Line
+130. 185.50158 mt
+138.99987 186.59582 li
+ds
+%%EndObject
+%%BeginObject: Line
+139. 186.59326 mt
+146.99987 188.77905 li
+ds
+%%EndObject
+%%BeginObject: Line
+146.75 188.77648 mt
+155.74987 192.05395 li
+ds
+%%EndObject
+%%BeginObject: Line
+156. 192.05139 mt
+164.99987 195.32885 li
+ds
+%%EndObject
+%%BeginObject: Line
+165. 195.32629 mt
+172.99987 200.78698 li
+ds
+%%EndObject
+%%BeginObject: Line
+173. 200.78442 mt
+181.99987 206.24511 li
+ds
+%%EndObject
+%%BeginObject: Line
+182. 206.24255 mt
+190.99987 211.70336 li
+ds
+%%EndObject
+%%BeginObject: Line
+191. 211.70068 mt
+198.99987 217.16149 li
+ds
+%%EndObject
+%%BeginObject: Line
+199. 217.15893 mt
+207.99987 221.52795 li
+ds
+%%EndObject
+%%BeginObject: Line
+208. 221.52539 mt
+216.99987 225.89453 li
+ds
+%%EndObject
+%%BeginObject: Line
+217. 225.89196 mt
+225.99987 230.26098 li
+ds
+%%EndObject
+%%BeginObject: Line
+226. 230.25842 mt
+233.99987 233.53588 li
+ds
+%%EndObject
+%%BeginObject: Line
+234. 233.53332 mt
+242.99987 237.90246 li
+ds
+%%EndObject
+%%BeginObject: Line
+243. 237.89978 mt
+251.99987 241.17724 li
+ds
+%%EndObject
+%%BeginObject: Line
+252. 241.17468 mt
+259.99987 245.54382 li
+ds
+%%EndObject
+%%BeginObject: Line
+260. 245.54125 mt
+268.99987 251.00195 li
+ds
+%%EndObject
+%%BeginObject: Line
+269. 250.99938 mt
+277.99987 255.36853 li
+ds
+%%EndObject
+%%BeginObject: Line
+278. 255.36584 mt
+285.99987 258.64331 li
+ds
+%%EndObject
+%%BeginObject: Line
+286. 258.64074 mt
+294.99987 261.91821 li
+ds
+%%EndObject
+%%BeginObject: Line
+295. 261.91564 mt
+303.99987 264.10156 li
+ds
+%%EndObject
+%%BeginObject: Line
+304. 264.09887 mt
+312.99987 265.19311 li
+ds
+%%EndObject
+%%BeginObject: Line
+313. 265.19055 mt
+320.99987 266.28479 li
+ds
+%%EndObject
+%%BeginObject: Line
+321. 266.28222 mt
+329.99987 267.37634 li
+ds
+%%EndObject
+%%BeginObject: Line
+330. 267.37377 mt
+338.99987 268.46801 li
+ds
+%%EndObject
+%%BeginObject: Line
+339. 268.46545 mt
+346.99987 269.55969 li
+ds
+%%EndObject
+%%BeginObject: Line
+347. 269.55712 mt
+355.99987 270.65124 li
+ds
+%%EndObject
+%%BeginObject: Line
+104. 183.31835 mt
+111.99987 183.32092 li
+ds
+%%EndObject
+%%BeginObject: Line
+112. 183.31835 mt
+120.99987 184.41259 li
+ds
+%%EndObject
+%%BeginObject: Line
+121. 184.41003 mt
+129.99987 185.50427 li
+ds
+%%EndObject
+%%BeginObject: Line
+130. 185.50158 mt
+138.99987 186.59582 li
+ds
+%%EndObject
+%%BeginObject: Line
+139. 186.59326 mt
+146.99987 186.59582 li
+ds
+%%EndObject
+%%BeginObject: Line
+147. 186.59326 mt
+155.99987 187.6875 li
+ds
+%%EndObject
+%%BeginObject: Line
+156. 187.68493 mt
+164.99987 192.05395 li
+ds
+%%EndObject
+%%BeginObject: Line
+165. 192.05139 mt
+172.99987 198.60375 li
+ds
+%%EndObject
+%%BeginObject: Line
+173. 198.60119 mt
+181.99987 205.15356 li
+ds
+%%EndObject
+%%BeginObject: Line
+182. 205.151 mt
+190.99987 210.61169 li
+ds
+%%EndObject
+%%BeginObject: Line
+191. 210.60913 mt
+198.99987 214.97814 li
+ds
+%%EndObject
+%%BeginObject: Line
+199. 214.97558 mt
+207.99987 220.4364 li
+ds
+%%EndObject
+%%BeginObject: Line
+208. 220.43371 mt
+216.99987 224.80285 li
+ds
+%%EndObject
+%%BeginObject: Line
+217. 224.80029 mt
+225.99987 229.16943 li
+ds
+%%EndObject
+%%BeginObject: Line
+226. 229.16674 mt
+233.99987 232.44421 li
+ds
+%%EndObject
+%%BeginObject: Line
+234. 232.44165 mt
+242.99987 234.62756 li
+ds
+%%EndObject
+%%BeginObject: Line
+243. 234.625 mt
+251.99987 236.81079 li
+ds
+%%EndObject
+%%BeginObject: Line
+252. 236.80822 mt
+259.99987 240.08569 li
+ds
+%%EndObject
+%%BeginObject: Line
+260. 240.08312 mt
+268.99987 242.26892 li
+ds
+%%EndObject
+%%BeginObject: Line
+269. 242.26635 mt
+277.99987 244.45214 li
+ds
+%%EndObject
+%%BeginObject: Line
+278. 244.44958 mt
+285.99987 246.63549 li
+ds
+%%EndObject
+%%BeginObject: Line
+286. 246.63281 mt
+294.99987 248.81872 li
+ds
+%%EndObject
+%%BeginObject: Line
+295. 248.81616 mt
+303.99987 252.09362 li
+ds
+%%EndObject
+%%BeginObject: Line
+304. 252.09106 mt
+312.99987 253.18518 li
+ds
+%%EndObject
+%%BeginObject: Line
+313. 253.18261 mt
+320.99987 255.36853 li
+ds
+%%EndObject
+%%BeginObject: Line
+321. 255.36584 mt
+329.99987 256.46008 li
+ds
+%%EndObject
+%%BeginObject: Line
+330. 256.45751 mt
+338.99987 258.64331 li
+ds
+%%EndObject
+%%BeginObject: Line
+339. 258.64074 mt
+346.99987 259.73498 li
+ds
+%%EndObject
+%%BeginObject: Line
+347. 259.73242 mt
+355.99987 260.82666 li
+ds
+%%EndObject
+%%BeginObject: Rectangle
+2 lc
+0 lj
+0. fg
+289. 259.18664 294.99987 265.73889 rp
+db
+%%EndObject
+%%BeginObject: Polygon
+1 lc
+1 lj
+%%NumPoints: 5 
+301.99987 254.54711 mt
+304.99987 261.09948 li
+299. lh
+301.99987 254.54711 li
+254.54711 lv
+cp
+db
+%%EndObject
+%%BeginObject: Polygon
+%%NumPoints: 6 
+287.99987 243.35803 mt
+290.99987 246.63415 li
+287.99987 249.91027 li
+285. 246.63415 li
+287.99987 243.35803 li
+243.35803 lv
+cp
+db
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+0. pg
+1. 1. sp
+241. 1320. mt
+tb
+60 fts
+/___FN2-1 1. 1.09167 mf
+0. -10.66674 ta
+241.9375 1320. mt
+(0.01) 4 0 101.33337 tf
+241. 1320. mt
+(0.01) 4 0 101.33337 tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+265. 1052. mt
+tb
+60 fts
+/___FN2-1 1. 1.09167 mf
+0. -11.5 ta
+265.9375 1052. mt
+(0.1) 3 0 68.5 tf
+265. 1052. mt
+(0.1) 3 0 68.5 tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+321. 784. mt
+tb
+60 fts
+/___FN2-1 1. 1.09167 mf
+321.9375 784. mt
+(1) ts
+321. 784. mt
+(1) ts
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+293. 516. mt
+tb
+60 fts
+/___FN2-1 1. 1.09167 mf
+0. -18. ta
+293.9375 516. mt
+(10) 2 0 46. tf
+293. 516. mt
+(10) 2 0 46. tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+817. 1477. mt
+tb
+60 fts
+/___FN2-1 0.99987 1.09167 mf
+0. -17.60009 ta
+817.9375 1477. mt
+(Epochs) 6 0 154.40002 tf
+817. 1477. mt
+(Epochs) 6 0 154.40002 tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Rectangle
+0. pg
+2. 2. sp
+2 lc
+0 lj
+1. fg
+375. 175.677 451. 272.83459 rp
+db
+%%EndObject
+%%BeginObject: Line
+1 lc
+1 lj
+382. 188.77648 mt
+408.99987 188.77917 li
+ds
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+0. pg
+1. 1. sp
+1647. 776. mt
+tb
+60 fts
+/___FN2 1. 1.09155 mf
+0. -16. ta
+(LMS) 3 0 116. tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+1647. 872. mt
+tb
+60 fts
+/___FN2 0.99987 1.09155 mf
+0. -15.25 ta
+(s=2.0) 5 0 116.75 tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+1647. 968. mt
+tb
+60 fts
+/___FN2 0.99987 1.09155 mf
+0. -15.25 ta
+(s=2.2) 5 0 116.75 tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+1647. 1064. mt
+tb
+60 fts
+/___FN2 0.99987 1.09155 mf
+0. -15.25 ta
+(s=2.4) 5 0 116.75 tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Line
+0. pg
+2. 2. sp
+382. 212.79235 mt
+408.99987 212.79492 li
+ds
+%%EndObject
+%%BeginObject: Rectangle
+2 lc
+0 lj
+0. fg
+392. 209.51745 397.99987 216.06982 rp
+db
+%%EndObject
+%%BeginObject: Line
+1 lc
+1 lj
+382. 236.80822 mt
+408.99987 236.81079 li
+ds
+%%EndObject
+%%BeginObject: Polygon
+%%NumPoints: 5 
+394.99987 233.53332 mt
+397.99987 240.08569 li
+392. lh
+394.99987 233.53332 li
+233.53332 lv
+cp
+db
+%%EndObject
+%%BeginObject: Line
+382. 260.82409 mt
+408.99987 260.82666 li
+ds
+%%EndObject
+%%BeginObject: Polygon
+%%NumPoints: 6 
+394.99987 257.54919 mt
+397.99987 260.82531 li
+394.99987 264.10144 li
+392. 260.82531 li
+394.99987 257.54919 li
+257.54919 lv
+cp
+db
+%%EndObject
+%%BeginObject: Line
+95. 325.23266 mt
+100. 325.23266 li
+ds
+%%EndObject
+%%BeginObject: Line
+95. 325.23266 mt
+356. 325.23266 li
+ds
+%%EndObject
+%%BeginObject: Line
+95. 325.23266 mt
+94.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+104. 325.23266 mt
+103.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+112. 325.23266 mt
+111.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+121. 325.23266 mt
+120.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+130. 325.23266 mt
+129.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+139. 325.23266 mt
+138.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+147. 325.23266 mt
+146.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+156. 325.23266 mt
+155.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+165. 325.23266 mt
+164.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+173. 325.23266 mt
+172.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+182. 325.23266 mt
+181.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+191. 325.23266 mt
+190.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+199. 325.23266 mt
+198.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+208. 325.23266 mt
+207.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+217. 325.23266 mt
+216.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+226. 325.23266 mt
+225.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+234. 325.23266 mt
+233.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+243. 325.23266 mt
+242.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+252. 325.23266 mt
+251.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+260. 325.23266 mt
+259.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+269. 325.23266 mt
+268.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+278. 325.23266 mt
+277.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+286. 325.23266 mt
+285.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+295. 325.23266 mt
+294.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+304. 325.23266 mt
+303.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+313. 325.23266 mt
+312.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+321. 325.23266 mt
+320.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+330. 325.23266 mt
+329.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+339. 325.23266 mt
+338.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+347. 325.23266 mt
+346.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+356. 325.23266 mt
+355.99987 319.77209 li
+ds
+%%EndObject
+%%BeginObject: Line
+104. 325.23266 mt
+112. 325.23266 li
+ds
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+0. pg
+1. 1. sp
+362. 1374. mt
+tb
+60 fts
+/___FN2-1 1.00036 1.09167 mf
+362.9375 1374. mt
+(0) ts
+362. 1374. mt
+(0) ts
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+466. 1374. mt
+tb
+60 fts
+/___FN2-1 1.00036 1.09167 mf
+466.9375 1374. mt
+(3) ts
+466. 1374. mt
+(3) ts
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+570. 1374. mt
+tb
+60 fts
+/___FN2-1 1.00036 1.09167 mf
+570.9375 1374. mt
+(6) ts
+570. 1374. mt
+(6) ts
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+762. 1374. mt
+tb
+60 fts
+/___FN2-1 1.00012 1.09167 mf
+0. -18. ta
+762.9375 1374. mt
+(12) 2 0 46. tf
+762. 1374. mt
+(12) 2 0 46. tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+870. 1374. mt
+tb
+60 fts
+/___FN2-1 1.00012 1.09167 mf
+0. -18. ta
+870.9375 1374. mt
+(15) 2 0 46. tf
+870. 1374. mt
+(15) 2 0 46. tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+974. 1374. mt
+tb
+60 fts
+/___FN2-1 1.00012 1.09167 mf
+0. -18. ta
+974.9375 1374. mt
+(18) 2 0 46. tf
+974. 1374. mt
+(18) 2 0 46. tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+1078. 1374. mt
+tb
+60 fts
+/___FN2-1 1.00012 1.09167 mf
+0. -18. ta
+1078.9375 1374. mt
+(21) 2 0 46. tf
+1078. 1374. mt
+(21) 2 0 46. tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+1182. 1374. mt
+tb
+60 fts
+/___FN2-1 1.00012 1.09167 mf
+0. -18. ta
+1182.9375 1374. mt
+(24) 2 0 46. tf
+1182. 1374. mt
+(24) 2 0 46. tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+1286. 1374. mt
+tb
+60 fts
+/___FN2-1 1.00012 1.09167 mf
+0. -18. ta
+1286.9375 1374. mt
+(27) 2 0 46. tf
+1286. 1374. mt
+(27) 2 0 46. tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+1390. 1374. mt
+tb
+60 fts
+/___FN2-1 1.00024 1.09167 mf
+0. -18. ta
+1390.9375 1374. mt
+(30) 2 0 46. tf
+1390. 1374. mt
+(30) 2 0 46. tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+674. 1368. mt
+tb
+60 fts
+/___FN2-1 1.00036 1.09167 mf
+674.9375 1368. mt
+(9) ts
+674. 1368. mt
+(9) ts
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+244.88403 677.77185 mt
+239.25964 lh
+260.61596 640.31518 li
+260.05346 640.31518 li
+231.94787 677.77185 li
+227.44836 677.77185 li
+242.05541 640.31518 li
+241.49304 640.31518 li
+220.13671 677.77185 li
+214.51232 677.77185 li
+244.44201 625.27111 li
+253.15979 625.27111 li
+239.57104 659.96459 li
+240.13354 659.96459 li
+266.09594 625.27111 li
+274.81372 625.27111 li
+244.88403 677.77185 li
+cp
+dp
+F sa
+T sa
+253.00439 739.03479 mt
+250.30029 743.77917 246.86657 747.45629 242.53955 750.24108 ct
+238.21264 753.02587 233.7926 754.38586 229.06896 754.38586 ct
+224.34545 754.38586 221.55078 752.97546 220.55187 750.08752 ct
+219.5531 747.19958 220.27038 743.6737 222.73779 739.34179 ct
+223.9663 737.19262 li
+230.43432 737.19262 li
+229.38195 739.03479 li
+227.61865 742.12902 227.12854 744.44604 227.88818 746.09631 ct
+228.64794 747.74658 230.12622 748.55249 232.39355 748.55249 ct
+235.41662 748.55249 238.07348 747.69616 240.4906 745.94274 ct
+242.90759 744.18933 244.77722 742.12414 246.18847 739.6488 ct
+247.36303 737.58605 247.59448 735.72229 246.89392 733.96887 ct
+246.19348 732.21557 244.68432 730.65405 242.29467 729.21008 ct
+238.81921 727.35351 236.78442 725.33874 236.09338 723.06958 ct
+235.40234 720.80053 235.92736 718.18127 237.6936 715.08703 ct
+240.16101 710.75512 243.45104 707.32995 247.72021 704.64831 ct
+251.9895 701.96667 255.91992 700.65698 259.69885 700.65698 ct
+264.61145 700.65698 267.18176 702.2185 267.5321 705.41589 ct
+267.88256 708.61315 267.01916 711.98803 264.90087 715.70104 ct
+258.43286 715.70104 li
+259.91467 713.432 260.50964 711.41723 260.24621 709.56066 ct
+259.98266 707.7041 258.65441 706.79748 256.19824 706.79748 ct
+253.9309 706.79748 251.80419 707.45227 249.71679 708.79309 ct
+247.62939 710.13391 245.97851 711.89685 244.68566 714.16601 ct
+243.62658 716.02246 243.24328 717.58398 243.5177 718.9248 ct
+243.79211 720.26562 245.53271 721.82714 248.82214 723.68371 ct
+251.91979 725.54016 253.82177 727.70617 254.61877 730.28466 ct
+255.41564 732.86315 254.88598 735.73425 253.00439 739.03479 ct
+253.00439 739.03479 li
+cp
+dp
+F sa
+T sa
+244.60278 829.77185 mt
+215.91833 lh
+245.84814 777.27111 li
+273.12634 777.27111 li
+269.80175 783.10449 li
+248.99157 783.10449 li
+239.71374 799.3767 li
+258.83666 799.3767 li
+255.51208 805.21008 li
+236.38916 805.21008 li
+225.71093 823.93847 li
+247.92724 823.93847 li
+244.60278 829.77185 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%EndGroup
+userdict /canvassave get restore
+%%Trailer
+/Deneba_CanvasGraphics where{/Deneba_CanvasGraphics get/terminate get exec}if
+/Deneba_CanvasCustomColors where{/Deneba_CanvasCustomColors get/terminate get exec}if
+showpage
+%%Trailer
+%%EOF

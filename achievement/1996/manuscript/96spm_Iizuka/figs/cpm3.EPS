@@ -1,0 +1,3453 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 37 31 454 282 
+%%Title:  \\Army\taka\IIZUKA96\FIGURE\CPM3.CVS
+%%Creator: Canvas 
+%%CreationDate: 911998
+%%DocumentResources: procset Deneba_CanvasCustomColors
+%%+ procset Deneba_CanvasGraphics
+%%DocumentFonts: lr2-1
+%%+ lr2
+%%DocumentSuppliedResources: procset Deneba_CanvasCustomColors
+%%+ procset Deneba_CanvasGraphics
+%%+ font lr2-1
+%%+ font lr2
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%%Copyright: (C) 1994 Deneba Systems. All Rights Reserved
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Deneba_CanvasCustomColors
+%%Title: Deneba custom colors
+%%Version: 1.0
+%%CreationDate: 10/1/92
+%%Copyright: (C) 1994 Deneba Systems. All Rights Reserved
+/setcustomcolor where {pop true}{false}ifelse
+dup{save exch}if
+dup not{
+userdict /Deneba_CanvasCustomColors 15 dict put
+Deneba_CanvasCustomColors begin
+/initialize
+{
+Deneba_CanvasCustomColors
+{dup xcheck{bind}if pop pop}forall
+Deneba_CanvasCustomColors begin
+}def
+/terminate
+{currentdict Deneba_CanvasCustomColors eq{end}if}def
+
+/_tcust 5 array def
+
+/findcmykcustomcolor
+{Deneba_CanvasCustomColors begin _tcust astore end}def
+
+/setcustomcolor
+{
+exch
+aload pop pop
+4{4 index mul 4 1 roll}repeat
+5 -1 roll pop
+/setcmykcolor where{pop setcmykcolor}
+{
+4 1 roll 3{3 index add 1.0 exch sub 0.0 2 copy lt{exch}if pop 1.0 2 copy gt{exch}if pop 3 1 roll}repeat setrgbcolor pop
+}ifelse
+}def
+
+/setoverprint where {pop}
+{/setoverprint
+{pop}def}ifelse
+
+/currentoverprint where {pop}
+{/currentoverprint
+{false}def}ifelse
+
+/setseparationgray
+{setgray}def
+
+/setcmykoverprint
+{	4{dup -1 eq{pop 0.0}if 4 1 roll}repeat
+/setcmykcolor where{pop setcmykcolor}
+{
+4 1 roll 3{3 index add 1.0 exch sub 0.0 2 copy lt{exch}if pop 1.0 2 copy gt{exch}if pop 3 1 roll}repeat setrgbcolor pop
+}ifelse
+}def
+
+/customcolorimage
+{pop image}def
+
+/separationimage
+{image}def
+
+end
+}if
+{restore}if
+%%EndResource
+%%BeginResource: procset Deneba_CanvasGraphics
+%%Title: Deneba standard graphics
+%%Version: 1.0
+%%CreationDate: 10/1/92
+%%Copyright: (C) 1994 Deneba Systems. All Rights Reserved
+userdict /Deneba_CanvasGraphics 300 dict put
+Deneba_CanvasGraphics begin
+/initialize
+{
+Deneba_CanvasGraphics
+{dup xcheck{bind}if pop pop}forall
+Deneba_CanvasGraphics begin
+
+currentscreen
+/_screenProc xdf
+/_screenAng xdf
+/_screenFreq xdf
+
+/setstrokeadjust where{pop true}{false}ifelse
+{
+/sa /setstrokeadjust load def
+/li /lineto load def
+/mt /moveto load def
+/ct /curveto load def
+/lh { currentpoint exch pop lineto}bind def
+/lv { currentpoint pop exch lineto}bind def
+}
+{
+/sa{{currentdict StrokeAdjustDict ne{StrokeAdjustDict begin}if}{ currentdict StrokeAdjustDict eq{end}if}ifelse} bind def
+userdict /StrokeAdjustDict 10 dict put
+StrokeAdjustDict begin
+/_xl
+{
+transform
+.25 sub round .25 add exch
+.25 sub round .25 add exch
+itransform
+}bind def
+
+/li{ _xl lineto}bind def
+/mt{ _xl moveto}bind def
+/ct{ _xl curveto}bind def
+/lh { dup _xl pop currentpoint exch pop lineto}bind def
+/lv { dup _xl pop currentpoint pop exch lineto}bind def
+/rp
+{
+_xl/cv_b xdf/cv_r xdf
+_xl/cv_t xdf/cv_l xdf
+cv_l cv_t moveto
+cv_r cv_t lineto
+cv_r cv_b lineto
+cv_l cv_b lineto
+closepath
+} bind def
+
+end
+
+}ifelse
+
+}def
+
+/terminate
+{
+userdict /StrokeAdjustDict known {currentdict StrokeAdjustDict eq{end}if}if
+currentdict Deneba_CanvasGraphics eq{end}if
+}def
+/_cvmtx matrix def
+/_rotlevel 0 def
+/_rotmatrix [ 5{matrix}repeat ] def
+/_txtmtx matrix def
+/_initmtx matrix def
+/xdf{exch def}def
+/min{2 copy gt{exch}if pop}def
+/max{2 copy lt{exch}if pop}def
+/CVvec 256 array def
+/T true def
+/F false def
+
+/_screens null def
+/_numscreens 0 def
+/_screenProc null def
+/_screenAng 0 def
+/_screenFreq 60 def
+/_id 0 def
+/_encodindex 0 def
+/_encodArr 10 array def
+/_fd 0 def
+/_textSave null def
+/_letterSpace 0 def
+/_spaceXtra 0 def
+/_PageSave null def
+
+/_fstr null def
+/_sstr null def
+
+/_ft 0 def
+/_st 0 def
+
+/_fp null def
+/_bp null def
+/_fs null def
+/_ps null def
+/_fg 1 def
+/_frgb 3 array def
+/_fcmyk 4 array def
+/_fcust 5 array def
+/_pg 0 def
+/_prgb 3 array def
+/_pcmyk 4 array def
+/_pcust 5 array def
+/_bkg 1 def
+/_bkrgb 3 array def
+/_bkcmyk 4 array def
+/_bkcust 5 array def
+/_fkg 0 def
+/_fkrgb 3 array def
+/_fkcmyk 4 array def
+/_fkcust 5 array def
+
+/_penh 1.0 def
+/_penv 1.0 def
+/_penv2 0.5 def
+/_penh2 0.5 def
+/save0 null def
+/_w 0 def
+/_h 0 def
+/st0 null def
+/st1 null def
+/st2 null def
+/st3 null def
+/stb 256 string def
+/pw 0 def
+/wdif 0 def
+/temp 0 def
+/currot 0 def
+/savehandler null def
+
+/debug
+{
+{
+/savehandler errordict /handleerror get def
+errordict
+/handleerror
+{
+$error begin
+newerror
+{
+/newerror false def
+showpage
+
+72 72 scale
+/Helvetica findfont .2 scalefont setfont
+.25 9.6 moveto
+(Error: )show
+errorname
+{
+dup type/stringtype ne
+{(converted error name will end up in this string)cvs}if
+show
+}exec
+
+.25 9.4 moveto
+(Offending Command: )show
+/command load
+{
+dup type/stringtype ne
+{(converted command name will end up in this string)cvs}if
+show
+}exec
+
+.25 9.2 moveto
+(Stack: )show
+ostack
+{
+.25 currentpoint .2 sub exch pop moveto
+dup type/stringtype ne
+{
+dup type/integertype eq
+1 index type/realtype eq or
+1 index type/nametype eq or
+not {type}if
+(converted stack will end up in this string)cvs
+}if
+show
+}forall
+showpage
+Deneba_CanvasGraphics /savehandler get exec
+}if
+end
+}put
+}if
+
+}def
+
+/lc
+{setlinecap}def
+
+/lj
+{setlinejoin}def
+
+/lm
+{setmiterlimit}def
+
+/lf
+{setflat}def
+
+/cp
+{closepath}def
+
+/np
+{newpath}def
+
+/gs
+{gsave}def
+
+/gr
+{grestore}def
+
+/printinfo{ FontDirectory /GothicBBB-Medium-83pv-RKSJ-H known
+{/GothicBBB-Medium-83pv-RKSJ-H}
+%% -- 16 bit Windows && Windows 95
+{/Times-Roman}ifelse findfont 9 scalefont setfont 0 setseparationgray show}def
+%% -- Windows NT
+%%{/Times-Roman}ifelse 9 fts sf 0 setseparationgray show}def
+
+/li
+{ lineto} def
+/lh
+{ currentpoint exch pop lineto}def
+/lv
+{ currentpoint pop exch lineto}def
+/mt
+{ moveto} def
+/mh
+{ currentpoint exch pop moveto}def
+/mv
+{ currentpoint pop exch moveto}def
+/ct
+{ curveto} def
+/rt
+{
+4 -2 roll moveto
+dup 0 exch rlineto
+exch 0 rlineto
+neg 0 exch rlineto
+closepath
+}def
+
+/sd
+{setdash}def
+
+/cd
+{[] 0 setdash}def
+/impat
+{
+/save0 save def
+currot 0 ne{currot neg rotate}if
+currentflat
+/_hr load _fm get exec
+{
+dup{gsave{flattenpath}stopped{grestore 2 mul dup setflat dup 200 ge{pop pop false exit}if}{grestore setflat true exit}ifelse}loop
+{
+flattenpath
+setflat
+pathbbox
+3 -1 roll exch
+8 div ceiling 8 mul dup 5 1 roll exch 8 div floor 8 mul
+sub abs cvi/_h xdf
+exch 8 div floor 8 mul dup 4 1 roll exch 8 div ceiling 8 mul
+sub abs cvi/_w xdf
+transform
+.25 sub round .25 add exch
+.25 sub round .25 add exch
+itransform
+translate
+_w _h scale
+/_h _h 8 mul def
+/st0 _w string def
+/temp 0 def
+_w _h T [_w 0 0 _h 0 _h]
+{
+_patstr
+temp 8 mod
+get/st1 xdf
+0 1
+st0 length 1 sub dup 0 le{pop 1}if
+{st0 exch st1 put}for
+/temp temp 1 add def
+st0
+}
+imagemask
+}if
+}{pop}ifelse
+save0 restore
+newpath
+}def
+/_fr
+{
+{
+/_fmp load _fm get exec
+}
+
+{_bp _fp impat}bind
+
+{}
+
+{}
+}def
+/_sr{
+
+{
+_cvmtx currentmatrix pop
+_penh _penv eq{_penh setlinewidth}{_penh _penv mul dup 1.0 lt{pop 1.0}if dup setlinewidth dup _penh exch div _penv exch div scale}ifelse
+currentflat
+dup{gsave{stroke}stopped{grestore 2 mul dup setflat dup 200 ge{pop exit}if}{grestore setflat exit}ifelse}loop stroke
+setflat
+_cvmtx setmatrix
+}
+
+{
+_cvmtx currentmatrix pop
+sk
+_bp _cvmtx setmatrix _fp _fm /_fm 1 def impat /_fm exch def
+}
+{}
+
+{}
+}def
+/_hr
+{
+{currentflat dup{gsave{eoclip}stopped{grestore 2 mul dup setflat dup 200 ge{pop false exit}if}{grestore setflat true exit}ifelse}loop dup {eoclip}if exch setflat}
+{currentflat dup{gsave{clip}stopped{grestore 2 mul dup setflat dup 200 ge{pop false exit}if}{grestore setflat true exit}ifelse}loop dup {clip}if exch setflat}
+}def
+/_fmp
+{
+{
+currentflat dup{gsave{eofill}stopped{grestore 2 mul dup setflat dup 200 ge{pop exit}if}{grestore setflat exit}ifelse}loop
+setflat
+newpath
+}
+{
+currentflat
+dup{gsave{fill}stopped{grestore 2 mul dup setflat dup 200 ge{pop exit}if}{grestore setflat exit}ifelse}loop
+setflat
+newpath
+}
+}def
+
+/_fill{ /_fr load _ft get exec}def
+/_stroke{ /_sr load _st get exec}def
+/fm
+{ /_fm exch def}def
+/fg{/_fg xdf /_ft 0 def/_fs{_fg setgray}def}def
+
+/fsg{/_fg xdf/_ft 0 def/_fs{_fg setseparationgray}def}def
+/f3{_frgb astore pop /_ft 0 def /_fs{_frgb aload pop setrgbcolor}def}def
+/f4{_fcmyk astore pop /_ft 0 def /_fs{_fcmyk aload pop setcmykoverprint}def}def
+/fc{/_fg xdf findcmykcustomcolor aload pop _fcust astore pop /_ft 0 def /_fs{_fcust _fg setcustomcolor}def}def
+/pg{/_pg xdf /_st 0 def/_ps{_pg setgray}def}def
+
+/psg{/_pg xdf /_st 0 def/_ps{_pg setseparationgray}def}def
+/p3{_prgb astore pop /_st 0 def/_ps{_prgb aload pop setrgbcolor}def}def
+/p4{_pcmyk astore pop /_st 0 def/_ps{_pcmyk aload pop setcmykoverprint}def}def
+/pc{/_pg xdf findcmykcustomcolor aload pop _pcust astore pop /_st 0 def /_ps{_pcust _pg setcustomcolor}def}def
+/fp
+{/_fstr xdf /_ft 1 def /_fs{/_patstr _fstr def}def}def
+/pp
+{/_sstr xdf/_st 1 def /_ps{/_patstr _sstr def}def}def
+/bg
+{/_bkg xdf /_bp{gsave _bkg setgray /_fr load 0 get exec grestore}def}def
+/b3
+{_bkrgb astore pop/_bp{gsave _bkrgb aload pop setrgbcolor /_fr load 0 get exec grestore}def}def
+/b4
+{_bkcmyk astore pop/_bp{gsave _bkcmyk aload pop setcmykoverprint /_fr load 0 get exec grestore}def}def
+/bc
+{/_bkg xdf findcmykcustomcolor aload pop _bkcust astore pop/_bp{gsave _bkcust _bkg setcustomcolor /_fr load 0 get exec grestore}def}def
+/kg
+{/_fkg xdf /_fp{_fkg setgray}def}def
+/k3
+{_fkrgb astore pop/_fp{_fkrgb aload pop setrgbcolor}def}def
+/k4
+{_fkcmyk astore pop/_fp{_fkcmyk aload pop setcmykoverprint}def}def
+/kc
+{/_fkg xdf findcmykcustomcolor aload pop _fkcust astore pop/_fp{_fkcust _fkg setcustomcolor}def}def
+/sp
+{/_penv xdf/_penh xdf/_penv2 _penv 2.0 div def/_penh2 _penh 2.0 div def}def
+/rp
+{
+/cv_b xdf/cv_r xdf
+/cv_t xdf/cv_l xdf
+cv_l cv_t moveto
+cv_r cv_t lineto
+cv_r cv_b lineto
+cv_l cv_b lineto
+closepath
+}def
+/rr
+{
+/yradius xdf
+/xradius xdf
+/cv_b xdf
+/cv_r xdf
+/cv_t xdf
+/cv_l xdf
+cv_l xradius add cv_t moveto
+cv_r xradius sub cv_t lineto
+
+_cvmtx currentmatrix pop
+currentpoint translate
+xradius yradius scale
+1 0 1 1 1 arcto 4{pop}repeat
+_cvmtx setmatrix
+
+cv_r cv_b yradius sub lineto
+
+_cvmtx currentmatrix pop
+currentpoint translate
+xradius yradius scale
+0 1 -1 1 1 arcto 4{pop}repeat
+_cvmtx setmatrix
+
+cv_l xradius add cv_b lineto
+
+_cvmtx currentmatrix pop
+currentpoint translate
+xradius yradius scale
+-1 0 -1 -1 1 arcto 4{pop}repeat
+_cvmtx setmatrix
+
+cv_l cv_t yradius add lineto
+
+_cvmtx currentmatrix pop
+currentpoint translate
+xradius yradius scale
+0 -1 1 -1 1 arcto 4{pop}repeat
+_cvmtx setmatrix
+
+closepath
+}def
+/ep
+{
+_cvmtx currentmatrix pop
+translate
+scale
+1 0 moveto
+0 0 1 0 360 arc
+closepath
+_cvmtx setmatrix
+}def
+/wd
+{
+_cvmtx currentmatrix pop
+translate
+scale
+0 0 moveto
+0 0 1 5 -2 roll arcn
+closepath
+_cvmtx setmatrix
+} def
+/as
+{
+newpath
+_cvmtx currentmatrix pop
+translate
+scale
+0 0 1 5 -2 roll arcn
+_cvmtx setmatrix
+} def
+/ds
+{_ps _stroke}def
+/df
+{_fs _fill}def
+/db
+{
+_fs gsave _fill grestore
+currentdash pop length 0 ne
+{
+gsave
+[] 0 setdash
+_st /_st _ft def
+_stroke
+/_st xdf
+grestore
+}if
+_ps _stroke
+}def
+/dp
+{_ps _ft/_ft _st def _fill/_ft xdf}def
+/sk
+{
+_penh _penv eq{_penh setlinewidth}{_penh _penv mul dup 1.0 lt{pop 1.0}if dup setlinewidth dup _penh exch div _penv exch div scale}ifelse
+currentpoint
+currentflat dup{gsave{strokepath}stopped{grestore 2 mul dup setflat dup 200 ge{pop pop exit}if}{grestore setflat exit}ifelse}loop strokepath setflat
+moveto
+}def
+/ef{_bp newpath}def
+/hs{gsave newpath}def
+/hc{ /_hr load exch get exec pop newpath}def
+/he{grestore}def
+/id
+{ /_id xdf}def
+/_imatrix
+{_w 0 0 _h _id 0 ne{neg 0 _h}{0 0}ifelse _cvmtx astore}def
+%!
+% Copyright (C) 1990, 1991 by Adobe Systems Incorporated.
+% All rights reserved.
+%
+/invalidcolortable? true def   
+/level2 /languagelevel where {pop languagelevel 2 ge}{false} ifelse def
+level2 { save /dontloadlevel1 xdf }if
+/startnoload 
+{ 
+{/noload save def} if
+}def
+/endnoload
+{
+{ noload restore } if
+}def
+/testsystemdict
+{
+where
+{
+systemdict eq
+{
+true
+}{
+false
+}ifelse
+}{
+false
+}ifelse
+}def
+/ncolors 1 def
+/colorimage where { pop true}{false} ifelse
+{
+/ncolors 0
+statusdict begin
+/processcolors where
+{
+pop
+pop
+processcolors
+}{
+/deviceinfo where
+{ pop deviceinfo /Colors known
+{ pop {deviceinfo /Colors get} } if
+}if
+}ifelse
+end
+def
+ncolors 0 ne
+{
+/colorimage testsystemdict
+/setcolortransfer testsystemdict
+/currentcolortransfer testsystemdict
+/currentcmykcolor testsystemdict
+and and and not
+{
+/ncolors 0 def
+} if
+}if
+}if
+ncolors dup 1 ne exch dup 3 ne exch 4 ne and and {/ncolors 0 def}if
+ncolors 1 eq dup dup not startnoload
+{
+/doclutimage
+{
+pop /bwclut xdf
+[
+{255 mul round cvi bwclut exch get 255 div} /exec load dup
+currenttransfer exch
+] cvx bind settransfer
+_w _h 8 _imatrix {currentfile st0 readhexstring pop}
+image
+}def
+}if
+not endnoload
+ncolors dup 3 eq exch 4 eq or
+dup dup not startnoload
+{
+/nullproc { {} }def
+/concatutil
+{
+/exec load
+7 -1 roll /exec load
+}def
+/defsubclut
+{
+1 add getinterval def
+}def
+/spconcattransfer
+{
+/Dclut exch def
+/Cclut exch def
+/Bclut exch def
+/Aclut exch def
+/ncompute exch load def
+currentcolortransfer
+[
+{
+Aclut ncompute
+}
+concatutil
+] cvx
+[
+{
+Bclut ncompute
+}
+concatutil
+] cvx
+[
+{
+Cclut ncompute
+}
+concatutil
+] cvx
+[
+{
+Dclut ncompute
+}
+concatutil
+] cvx
+setcolortransfer
+}def
+/setuprgbcluts
+{
+/bit3x
+rgbclut length
+3 sub
+def
+/bit1x bit3x 3 idiv def
+/rclut rgbclut def
+/gclut rclut 1 bit3x defsubclut
+/bclut rclut 2 bit3x defsubclut
+}def
+}if
+not
+endnoload
+ncolors 3 eq
+dup dup not startnoload
+{
+/3compute
+{
+exch bit3x
+mul
+round
+cvi
+get 255 div
+} def
+/doclutimage
+{
+/rgbclut xdf
+pop
+setuprgbcluts
+/3compute rclut gclut bclut dup
+spconcattransfer
+_w _h 8 _imatrix
+[
+{currentfile st0 readhexstring pop} /exec load
+/dup load dup
+] cvx
+nullproc nullproc true 3 colorimage
+}def
+}if
+not endnoload
+ncolors 4 eq
+dup dup not startnoload
+{
+/stuffclut
+{
+cmykindex 3 -1 roll put
+}def
+/ftoint
+{
+1 exch sub 255 mul round cvi
+}def
+/4compute { exch bit4x mul round cvi get 255 div } def
+/computecmykclut
+{
+setuprgbcluts
+/bit4x
+rgbclut length
+3 idiv
+4 mul
+4 sub
+def
+/cmykclut bit4x 4 add string def
+/cclut cmykclut def
+/mclut cclut 1 bit4x defsubclut
+/yclut cclut 2 bit4x defsubclut
+/kclut cclut 3 bit4x defsubclut
+/cmykindex 0 def
+0 1 bit1x
+{
+dup /cmykindex exch
+bit1x exch sub
+4 mul def
+3 mul dup
+rclut exch get 255 div
+exch dup
+gclut exch get 255 div
+exch
+bclut exch get 255 div
+setrgbcolor currentcmykcolor
+ftoint
+kclut stuffclut
+ftoint
+yclut stuffclut
+ftoint
+mclut stuffclut
+ftoint
+cclut stuffclut
+}for
+}def
+/doclutimage
+{
+/rgbclut xdf
+pop
+invalidcolortable?
+{
+computecmykclut
+}if
+/4compute cclut mclut yclut kclut spconcattransfer
+_w _h 8 _imatrix
+[
+{currentfile st0 readhexstring pop} /exec load
+/dup load dup dup
+] cvx
+nullproc nullproc nullproc
+true 4 colorimage
+}def
+}if
+not endnoload
+ncolors 0 eq
+dup dup not startnoload
+{
+/colorexpand
+{
+mystringexp 0 rgbclut
+3 copy
+7 -1 roll
+{
+3 mul
+3 getinterval
+putinterval exch
+3 add exch 3 copy
+}
+forall
+pop pop pop pop pop
+}def
+/createexpandstr
+{
+/mystringexp exch st0 length mul string def
+}def
+/doclutimage
+{
+/rgbclut xdf
+pop
+3 createexpandstr
+_w _h 8 _imatrix
+[ {currentfile st0 readhexstring pop} /exec load /colorexpand load /exec load] cvx
+false 3 colorimage
+}def
+}if
+not endnoload
+level2 { dontloadlevel1 restore }if
+level2 not{ save /dontloadlevel2 xdf }if
+/_imagedict 9 dict dup
+begin
+/ImageType 1 def
+/MultipleDataSource false def
+end
+def
+/rgbclut 0 def
+/doclutimage
+{
+/rgbclut xdf
+pop
+/hival 255 def
+[/Indexed /DeviceRGB hival rgbclut] setcolorspace
+_imagedict dup begin
+/Width _w def
+/Height _h def
+/Decode [0 hival] def
+/ImageMatrix _imatrix def
+/DataSource {currentfile st0 readhexstring pop} def
+/BitsPerComponent 8 def
+/Interpolate false def
+end
+image
+}def
+level2 not{ dontloadlevel2 restore }if
+%%EndProcSet
+
+/cl
+{
+translate
+scale
+cvi/_h xdf
+cvi/_w xdf
+/st0 _w string def
+doclutimage
+}def
+
+/c3
+{
+translate
+scale
+cvi/_h xdf
+cvi/_w xdf
+/st0 _w 3 mul string def
+_w _h 8 _imatrix
+{currentfile st0 readhexstring pop}
+false 3 DSIColorImage
+}def
+
+/colorimage where
+{
+pop
+/DSIColorImage {colorimage} def
+}
+{
+/DSIColorImage
+{
+/ncolors xdf
+not
+{
+2 index
+8 eq
+{
+ncolors 1 gt
+{
+/proc0 xdf
+3 index 2 index mul 7 add 8 div cvi string /st1 xdf
+ncolors 3 eq
+{
+{
+proc0 dup/st0 xdf
+0 exch 3 exch
+length
+3 sub
+{
+dup
+st0 exch get .3 mul
+1 index 1 add st0 exch get .59 mul add
+1 index 2 add st0 exch get .11 mul add
+cvi
+exch 3 div cvi exch
+st1 3 1 roll put
+}for
+st1
+}
+}
+{
+{
+proc0 dup/st0 xdf
+0 exch 4 exch
+length
+4 sub
+{
+dup
+st0 exch get .3 mul
+1 index 1 add st0 exch get .59 mul add
+1 index 2 add st0 exch get .11 mul add
+1 index 3 add st0 exch get add dup 255.0 gt{pop 255.0}if
+255.0 exch sub cvi
+exch 4 div cvi exch
+st1 3 1 roll put
+}for
+st1
+}
+}ifelse
+}if
+image
+}{(Incompatable color bitimage)print flush stop}ifelse
+
+}{(Incompatable color bitimage)print flush stop}ifelse
+}def
+}ifelse
+/c4
+{
+translate
+scale
+cvi/_h xdf
+cvi dup/_w xdf
+dup string/st0 xdf
+dup string/st1 xdf
+dup string/st2 xdf
+string/st3 xdf
+_w _h 8 _imatrix
+{currentfile st0 readhexstring pop}
+{currentfile st1 readhexstring pop}
+{currentfile st2 readhexstring pop}
+{currentfile st3 readhexstring pop}
+true 4 DSIColorImage
+}def
+/im
+{
+translate
+scale
+cvi/_h xdf
+cvi/_w xdf
+/st0 _w string def
+_w _h 8 _imatrix
+{currentfile st0 readhexstring pop}
+image
+}def
+/ik
+{
+translate
+scale
+_fp
+cvi/_h xdf
+cvi/_w xdf
+/st0 _w 7 add 8 div cvi string def
+_w _h false _imatrix
+{currentfile st0 readhexstring pop}
+imagemask
+}def
+/rs
+{
+ _rotmatrix _rotlevel get currentmatrix pop
+ /_rotlevel _rotlevel 1 add def
+2 copy translate
+3 -1 roll neg rotate
+neg exch neg exch translate
+}def
+/re
+{
+/_rotlevel _rotlevel 1 sub def
+_rotmatrix _rotlevel get setmatrix
+}def
+
+/fd
+{
+/_fd xdf
+}def
+
+/_fontMatrix
+{
+1 0 0 _fd 0 ne{-1 0 0}{1 0 0}ifelse _cvmtx astore
+}def
+/rf{
+/_encodindex xdf
+FontDirectory 2 index known
+not{
+findfont dup length 1 add dict begin
+{1 index/FID ne{def}{pop pop}ifelse}forall
+dup /FontName exch def
+/Encoding Encoding 256 array copy def
+_encodindex 0 ge
+{
+0 _encodArr _encodindex get
+{
+dup type/nametype eq
+{
+Encoding 2 index 2 index put pop 1 add
+}
+{exch pop}ifelse
+}forall pop
+}if
+currentdict end definefont pop
+}if
+cleartomark
+}def
+/sf{
+findfont ftSize 0 0 ftSize _fd 0 ne{-1 mul}if 0 0 _cvmtx astore makefont setfont
+}def
+/mf{
+3 -1 roll findfont 3 1 roll exch ftSize mul exch ftSize mul 0 exch 0 exch _fd 0 ne{-1 mul}if 0 0 _cvmtx astore makefont setfont
+}def
+
+/wrk1 ( ) def
+/wdict 16 dict def
+/Work75 75 string def
+/Nmk{Work75 cvs dup}def
+/Npt{put cvn}def
+/dhOdh{Nmk 2 79 Npt}def
+/dhodh{Nmk 2 111 Npt}def
+/dhSdh{Nmk 2 83 Npt}def
+/sfWidth{gsave 0 0 moveto 0 0 lineto 0 0 lineto 0 0 lineto closepath clip stringwidth grestore}def
+/fts{/ftSize exch def}def
+/mkFT{
+dup/FontType get 0 eq
+{
+dup maxlength dict begin
+
+{1 index/FID ne 2 index /UniqueID ne and{def}{pop pop}ifelse}forall
+currentdict end
+dup/FDepVector 2 copy get
+[
+exch 6 index
+exch 6 index
+exch{mkFT 3 1 roll}forall pop pop
+] put dup
+}
+{
+/tempFT 12 dict def
+tempFT begin
+/FontMatrix [1 0 0 1 0 0] def
+/FontType 3 def
+dup/Encoding get/Encoding exch def
+/proc2 2 index def
+dup/ft1 exch def
+/ft2 1 array def
+/FontBBox [0 0 1 1] def
+/BuildChar
+{
+exch dup/ftdt xdf begin
+wdict begin
+/chr xdf
+/chrst wrk1 dup 0 chr put def
+ft2 0 get null eq
+{
+ft1 dup length 2 add dict begin
+{1 index/FID ne 2 index /UniqueID ne and{def}{pop pop}ifelse}forall
+/PaintType 2 def
+/StrokeWidth .24 1000 mul ftSize div dup 12 lt{pop 12}if def
+currentdict end
+/q exch definefont
+ft2 exch 0 exch put
+}if
+ftdt/proc2 get exec
+end
+end
+}def
+end
+tempFT
+}ifelse
+3 index exch
+definefont exch pop
+}def
+
+/mo{
+/_textstyle 1 def
+dup dhOdh
+FontDirectory 1 index known
+{exch pop}
+{
+dup 3 -1 roll
+findfont
+{outproc} exch
+mkFT
+pop pop pop
+}ifelse
+}def
+
+/ms{
+/_textstyle 2 def
+dup dhSdh
+FontDirectory 1 index known
+{exch pop}
+{
+dup 3 -1 roll
+findfont
+{ShadChar} exch
+mkFT
+pop pop pop
+}ifelse
+}def
+
+/outproc{
+ft1 setfont
+gsave chrst sfWidth grestore
+setcharwidth dblsh
+}def
+
+/dblsh{
+currentgray 1.0 setgray
+chrst 0 0 moveto show setgray
+ft2 0 get setfont chrst 0 0 moveto show
+}def
+
+/ShadChar{
+ft1 setfont
+gsave
+chrst sfWidth 1 index 0 ne{exch .05 add exch}if
+grestore
+setcharwidth
+chrst .06 0 moveto show
+0 .05 translate dblsh
+}def
+/tb{
+_txtmtx currentmatrix pop
+currentpoint pop /_underlinpt xdf
+/_textstyle 0 def
+}def
+
+
+/_textline
+{
+_textstyle 2 eq{
+gsave
+_underlinpt currentpoint pop sub
+currentlinewidth 2.0 div dup rmoveto
+0 rlineto
+stroke
+grestore
+}if
+
+_underlinpt currentpoint pop sub 0 rlineto
+_textstyle 0 ne
+{
+currentlinecap
+0 setlinecap
+currentpoint
+currentflat dup{gsave{strokepath}stopped{grestore 2 mul dup setflat dup 200 ge{pop pop exit}if}{grestore setflat exit}ifelse}loop strokepath setflat
+moveto
+setlinecap
+gsave 1.0 setgray eofill grestore
+setlinewidth stroke
+}
+{pop stroke}ifelse
+
+}def
+
+/_sp
+{
+{
+gsave
+currentpoint newpath moveto
+[] 0 setdash
+currentfont dup /ft1 known
+{
+dup /ft1 get begin
+/FontMatrix get FontMatrix _cvmtx concatmatrix pop
+}
+{
+begin FontMatrix _cvmtx copy pop
+}ifelse
+
+currentdict dup /StrokeWidth known
+{/StrokeWidth get dup _cvmtx dtransform pop}
+{pop .24}ifelse
+
+currentdict /FontInfo known
+{
+FontInfo /UnderlineThickness get dup _cvmtx dtransform pop setlinewidth
+FontInfo /UnderlinePosition get dup _cvmtx dtransform pop neg
+}
+{ 1 setlinewidth -100}ifelse
+0 exch _textstyle 2 eq{ 3 sub}if rmoveto
+end
+_textline
+grestore
+}
+{
+gsave
+currentpoint newpath moveto
+[] 0 setdash
+currentfont dup /ft1 known
+{
+dup /ft1 get begin
+/FontMatrix get FontMatrix _cvmtx concatmatrix pop
+}
+{
+begin FontMatrix _cvmtx copy pop
+}ifelse
+
+currentdict dup /StrokeWidth known{/StrokeWidth get dup _cvmtx dtransform pop}{pop .24}ifelse
+currentdict /FontInfo known
+{
+FontInfo /StrikeoutPosition known
+{
+FontInfo /StrikeoutThickness get dup _cvmtx dtransform pop setlinewidth
+FontInfo /StrikeoutPosition get dup _cvmtx dtransform pop neg
+}
+{
+FontInfo /UnderlineThickness get dup _cvmtx dtransform pop 2.0 div setlinewidth
+300 dup _cvmtx dtransform pop neg
+}ifelse
+}
+{ .5 setlinewidth 300}ifelse
+0 exch rmoveto
+end
+_textline
+grestore
+}
+
+{}
+
+{}
+
+{}
+
+{}
+
+{}
+
+{}
+
+}def
+
+/xe
+{
+%%/_textstyle exch def
+0 1 15
+{
+dup 1 exch bitshift
+2 index and 0 ne
+{
+/_sp load exch get exec
+}
+{pop}ifelse
+}for
+}def
+
+
+/te{ _txtmtx setmatrix}def
+
+/ta
+{
+/_letterSpace xdf /_spaceXtra xdf
+}def
+
+/ts
+{
+_ps
+show
+}def
+
+/tf
+{
+/_textWidth xdf
+/_numSpaces xdf
+/_stringLength xdf
+
+dup	stringwidth pop
+
+_letterSpace _stringLength mul add
+_spaceXtra _numSpaces mul add
+_textWidth exch sub /wdif xdf
+_ps
+_spaceXtra 0 32
+wdif _stringLength div
+_letterSpace add
+0 6 -1 roll awidthshow
+}def
+
+/pb
+{
+/_PageSave save def
+/showpage {} def
+}def
+
+/pm {_pm currentmatrix pop} def
+/_pm matrix def
+
+/ps
+{
+showpage
+_pm setmatrix
+}def
+
+/pe
+{
+_PageSave restore
+}def
+end
+%%EndResource
+%%EndProlog
+/copyfont{findfont dup length 1 add dict begin
+{1 index/FID ne{def}{pop pop}ifelse}forall
+dup /FontName exch def
+/Encoding Encoding 256 array copy def
+currentdict end}bind def
+%%BeginResource: font lr2-1
+14 dict begin
+/FontName /lr2-1 def
+/FontInfo 10 dict dup begin
+/FullName (lr2-1) def
+/FamilyName (lr2-1) def
+/UnderlinePosition -100 def
+/UnderlineThickness 50 def
+/StrikeoutPosition 300 def
+/StrikeoutThickness 25 def
+/Weight (Medium) def
+/ItalicAngle 0 def
+/isFixedPitch false def
+end def
+/_glyph (X  ) def
+/gx
+{
+	1 exch{
+		dup 16 (  ) cvrs _glyph exch 1 exch putinterval 1 index exch
+		_glyph cvn put
+		}for
+}def
+/PaintType 0 def
+/FontType 1 def
+/FontMatrix [0.001 0 0 0.001 0 0] def
+/Encoding 256 array
+0 1 255 { 1 index exch /.notdef put } for
+30 255 gx
+def
+/FontBBox [ 0 0 0 0 ] def
+currentdict end
+dup /Private 8 dict dup begin
+/RD{string currentfile exch readhexstring pop}def
+/ND{def}def
+/NP{put}def
+/BlueValues[ -250 0 2200 2200] def
+/MinFeature { 16 16} def
+/password 5839 def
+/Subrs 43 array
+ND
+2 index /CharStrings 256 dict dup begin
+/.notdef 8 RD 24ECBD053ECAD3D7 ND
+/X45 48 RD 24ECBD053EB8753CFBF1B70F2171C9D9A745E6F2951AA98580D64F9BA2AD56A98CA003B1A169055AB6C3E59E60339384 ND
+/X63 137 RD 24ECBD053EB9E88A560B565E570289746273324B27B5FE08FEA3D467D57FB871DD580B20F145629BBA8E8718BFB3B278A7D4368CBBF986E62BCE805442EE839DAE864A5A0A68F0596F4E761D0E3AEC2E6D77EFD774ED8CB6079C4D3C78B179FF5FD4C50F95F21205E28ED898920CE8B91C43440A3D94006561836F35
+43D931CD085B305A6898E31F50 ND
+/X68 116 RD 24ECBD053EB9DF48FF638C25F2DC5611B43682A273E6B07F73311118BAC5F8F3A858A362A23C04B866791B6EE3857E3767B5146276525CA6B19B545A003A0FC38CD831CD91B264F9FB76DA44F1F3F8A1FFD7C93893657EA45A38388A6B558D519CBDD1C241A876BC52DFD36393B037F1DE55D8BB ND
+/X6F 149 RD 24ECBD053EB9DF48BBDC9C12A758429DD6B39C3CE0C377C728FE1F4B8F2D1958D61EE06C2C488D42361A88D31E0E2A0746065E4BE2C23A7FDED1724C3FDF26F5C9EBD4D00087740F3D60727D8F269532AC51B414B7984BEA624509B6E0D519AA2292E70533AE099A830E93E3DA9280F7F6FB148A82AE19DDB6616D42
+AEC47BFF504330DF71E02032E545B1493EA1F0C33545A7FFDF ND
+/X70 148 RD 24ECBD053EB9DF48C7203C0731733819B0F13DF7E6B5467BE9EAE2176C7EEE108042FEBCF48C8D1006232B110847D38B821CC64F703D27E21D123513F8981FC462A32F4ABDDFA4066474C7313497EC17B239CB83E13A0CD7B6B5388C24DC801CCEFCB7A39B5B6BA6E00E8482FCF28B6ACB754D96B771A7FEBBC82465
+68B587BE68E857DBA483393494E9ED55CB921821D513FDC6 ND
+/X73 193 RD 24ECBD053EB9E88A0CF77E79937C2F0AD00667B6BC53CFBC57DB7EE028E3AD89F702701ED3CDC007BEE61EC45D167D39FF369CAB144A389720CF021F9DF62103A3897E5316862EECFD5B92D7C2AF701E4B9DC982567093C905756749C820C575C573EB11760A645570E60FD097E6DEA4405B2A9B22E8E1769392AE2B
+5E7F7B488321564FB6D28BF9CC44979C63A8DFD70E9234FF87F450A0DD5735244B6881BBD3F40161A7C0CEB5D43FCED87224E049108667664316AE493AC2318F51B8C0B16A ND
+end
+end
+put
+put
+dup /FontName get exch definefont pop
+%%EndResource
+
+%%BeginResource: font lr2
+14 dict begin
+/FontName /lr2 def
+/FontInfo 10 dict dup begin
+/FullName (lr2) def
+/FamilyName (lr2) def
+/UnderlinePosition -100 def
+/UnderlineThickness 50 def
+/StrikeoutPosition 300 def
+/StrikeoutThickness 25 def
+/Weight (Medium) def
+/ItalicAngle 0 def
+/isFixedPitch false def
+end def
+/_glyph (X  ) def
+/gx
+{
+	1 exch{
+		dup 16 (  ) cvrs _glyph exch 1 exch putinterval 1 index exch
+		_glyph cvn put
+		}for
+}def
+/PaintType 0 def
+/FontType 1 def
+/FontMatrix [0.001 0 0 0.001 0 0] def
+/Encoding 256 array
+0 1 255 { 1 index exch /.notdef put } for
+30 255 gx
+def
+/FontBBox [ 0 0 0 0 ] def
+currentdict end
+dup /Private 8 dict dup begin
+/RD{string currentfile exch readhexstring pop}def
+/ND{def}def
+/NP{put}def
+/BlueValues[ -250 0 2200 2200] def
+/MinFeature { 16 16} def
+/password 5839 def
+/Subrs 43 array
+ND
+2 index /CharStrings 256 dict dup begin
+/.notdef 8 RD 24ECBD053ECAD3D7 ND
+/X2E 20 RD 24ECBD053EB6173D373802B30AFE214CD0757862 ND
+/X30 167 RD 24ECBD053EB9E88A1BEF04DD76C65F9749F66851D8FAE5FCB5950992663239BD1FC0DEB1CEC611A212B83B08967A831E3E3EB3606AF2CF6FC70A2DC696B44BCF28989BE2337A230C38A86C0BD14EE3B65BDA8142BD60D02ADA557B0DA9948E01E9ED50D010014EF8CFAC1EFE62B14928D192B609E17164C883E3686D
+BFBB800CF745B41A5503D9F807F3630268F00B1AC8CF5552B5CC27A043362EC5B26A048CB5835E004D0815 ND
+/X32 151 RD 24ECBD053EB9E88A562042FCA33A75DC3F99EEA4360FE10818CE8E378CCFAE417759EA4DD8E9F459DEE773684A0F54DF5541D41D2E32C697A65107859E27EC4D3ADFFAFFF9B28A2913DCEF1921B3DF7FB8574AE05BA0AFD0B07D57A8A98058C6C29454C8ACBBC82B61CA05DDC2FEC4B2BB4901C88EEC37712DF1599A
+EEFAABD2D558599E87DFCC731F0D43FD7AB9CD903688F9F7B6DE14 ND
+/X34 57 RD 24ECBD053EB9E88A59C067001F508A21EEC8BEB3ED55AC0AD375E394409CC3C2A6F2D9D70D320EECDE20D9ABE31756F3C5167AEFF82506D67C ND
+/X3D 39 RD 24ECBD053EB9F43962F217D7419D59C40979C840EFA22214582D9AA13FF3627D7718F6282987F8 ND
+/X4C 28 RD 24ECBD053EB9E88A7AA56A8CCA20CC80D7E024A86ACBF79A95870C98 ND
+/X4D 70 RD 24ECBD053EB88F25842BAB689D70A32DA9AA6E5D444D4EDBE1E2274A414010CFED9CEE1CB647E146C9B864B24B78159A444B6A4F7E4BBB37FE03942F4A354C59FC987C2128F9 ND
+/X53 253 RD 24ECBD053EB8753C9681691D57FC64CA8F0A762D55CA04AFF8371876336FEEAA8D403EDDCFD4FB62384D5EA33FE7FECD2010E28E345C9B288FADD7A118BB1395AFED9E8016D5EFC47C51940A913ECC6D51C828140CCE7DF57AECFE8E83A7B8FDD60405D1FD4AF910BBF55538FB38C86BA2F25B8C4715B757E04C6F8B
+1E5DFCE6FBB8687124D572FF3817290D6E448C528391D88F14F18B33EECBE0837018F7C6AC88AF169AFFFB76D342E8B46DB6054FDB96CFF4A7CFED7B2F68F24F4E50CBAFBBB11D114CC56FD8CC494E91D651592AF87EB984FF0ABB3E4AFEE8B5B10274780C42DEA060C33D99AAE7C1D624B71A0837802FBE283DCFEEAB
+B27586D1 ND
+/X73 239 RD 24ECBD053EB9A075FB0D363C5DAD5072141948E7E1754E0FA3AC319C5D112D34313856F8BB6868A3DAF2E607F4852D6A068D2F18988BDD35DF74C9670E679E0CBDA898B51F9637EDC00B1E2B3ABA53F21E13B46676BCFD4C35B8F31275833367A190FF9C05256035667E88E27A5FE706D86790585FE88405E89D71B6
+0383ACB267E7E27BCA33BBC8FB340BE8A976C6F2A6451ACCBF24BFEED8A7C6D46AC5AC8FED699342ADAD075F61D9747255E7B8DA0815F167A768C00630A03A443D79B647191A56139DD6BAF7E5F1B201C42D3AA4E6BE2FC3D3230B184464EAC1D2729E18E0886728BF4126E78E65E9614830D4 ND
+end
+end
+put
+put
+dup /FontName get exch definefont pop
+%%EndResource
+
+/Deneba_CanvasCustomColors where{/Deneba_CanvasCustomColors get/initialize get exec}if
+/Deneba_CanvasGraphics where{/Deneba_CanvasGraphics get/initialize get exec}if
+_encodArr 0
+[
+39/quotesingle 96/grave
+128/bullet/bullet/quotesinglbase/florin/quotedblbase/ellipsis/dagger/daggerdbl/circumflex/perthousand/Scaron/guilsinglleft/OE/bullet/bullet/bullet
+/bullet/quoteleft/quoteright/quotedblleft/quotedblright/bullet/endash/emdash/tilde/trademark
+/scaron
+/guilsinglright/oe/bullet/bullet/Ydieresis
+/bullet/exclamdown/cent/sterling/currency/yen/brokenbar/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot/hyphen/registered/macron
+/degree/plusminus/twosuperior/threesuperior/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine/guillemotright/onequarter/onehalf/threequarters/questiondown
+/Agrave/Aacute/Acircumflex/Atilde/Adieresis
+/Aring
+/AE/Ccedilla/Egrave/Eacute/Egrave/Edieresis/Igrave/Iacute/Icircumflex/Idieresis
+/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls
+/agrave/aacute/acircumflex/atilde/adieresis
+/aring
+/ae/ccedilla/egrave/eacute/ecircumflex/edieresis
+/igrave
+/iacute
+/icircumflex
+/idieresis
+/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis
+] put
+mark /___FN2-1 /lr2-1 -1 rf
+mark /___FN2 /lr2 -1 rf
+1 id
+1 fd
+0 fm
+%%BeginSetup
+userdict /canvassave save put
+%%EndSetup
+1. 1. sp
+0. pg
+1. fg
+cd
+F setoverprint
+0 fm
+0 lj
+2 lc
+0 313 translate 1 -1 scale%%BeginObject: Group
+%%BeginObject: Line
+0.5039 pg
+2. 2. sp
+1 lc
+1 lj
+86. 139.5736 mt
+356.99987 139.57385 li
+ds
+%%EndObject
+%%BeginObject: Polygon
+%%EndObject
+%%BeginObject: Line
+1. pg
+86. 40.91491 mt
+356.99987 40.91516 li
+ds
+%%EndObject
+%%BeginObject: Line
+0.5039 pg
+86. 40.91491 mt
+356.99987 40.91516 li
+ds
+%%EndObject
+%%BeginObject: Line
+357. 40.91491 mt
+237.04394 lv
+ds
+%%EndObject
+%%BeginObject: Line
+357. 237.0437 mt
+85.99987 237.04394 li
+ds
+%%EndObject
+%%BeginObject: Line
+86. 237.0437 mt
+85.99987 40.91503 li
+ds
+%%EndObject
+%%BeginObject: Line
+0. pg
+86. 40.91491 mt
+237.04394 lv
+ds
+%%EndObject
+%%BeginObject: Line
+86. 237.0437 mt
+90.99987 237.04394 li
+ds
+%%EndObject
+%%BeginObject: Line
+86. 139.5736 mt
+90.99987 139.57385 li
+ds
+%%EndObject
+%%BeginObject: Line
+86. 40.91491 mt
+90.99987 40.91516 li
+ds
+%%EndObject
+%%BeginObject: Line
+86. 237.0437 mt
+356.99987 237.04394 li
+ds
+%%EndObject
+%%BeginObject: Line
+86. 237.0437 mt
+85.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+100. 237.0437 mt
+99.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+113. 237.0437 mt
+112.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+127. 237.0437 mt
+126.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+140. 237.0437 mt
+139.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+154. 237.0437 mt
+153.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+167. 237.0437 mt
+166.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+181. 237.0437 mt
+180.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+194. 237.0437 mt
+193.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+208. 237.0437 mt
+207.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+222. 237.0437 mt
+221.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+235. 237.0437 mt
+234.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+249. 237.0437 mt
+248.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+262. 237.0437 mt
+261.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+276. 237.0437 mt
+275.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+289. 237.0437 mt
+288.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+303. 237.0437 mt
+302.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+316. 237.0437 mt
+315.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+330. 237.0437 mt
+329.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+343. 237.0437 mt
+342.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+357. 237.0437 mt
+356.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+100. 131.25305 mt
+112.99987 134.81921 li
+ds
+%%EndObject
+%%BeginObject: Line
+113. 134.81896 mt
+126.99987 139.57385 li
+ds
+%%EndObject
+%%BeginObject: Line
+127. 139.5736 mt
+139.99987 152.64904 li
+ds
+%%EndObject
+%%BeginObject: Line
+140. 152.64892 mt
+153.99987 171.6676 li
+ds
+%%EndObject
+%%BeginObject: Line
+154. 171.66748 mt
+166.99987 177.61096 li
+ds
+%%EndObject
+%%BeginObject: Line
+167. 177.61071 mt
+180.99987 179.98828 li
+ds
+%%EndObject
+%%BeginObject: Line
+181. 179.98803 mt
+193.99987 183.55419 li
+ds
+%%EndObject
+%%BeginObject: Line
+194. 183.55407 mt
+207.99987 185.93151 li
+ds
+%%EndObject
+%%BeginObject: Line
+208. 185.93139 mt
+221.99987 190.68615 li
+ds
+%%EndObject
+%%BeginObject: Line
+222. 190.68603 mt
+234.99987 195.44079 li
+ds
+%%EndObject
+%%BeginObject: Line
+235. 195.44067 mt
+248.99987 200.19543 li
+ds
+%%EndObject
+%%BeginObject: Line
+249. 200.19531 mt
+261.99987 206.13879 li
+ds
+%%EndObject
+%%BeginObject: Line
+262. 206.13854 mt
+275.99987 210.89343 li
+ds
+%%EndObject
+%%BeginObject: Line
+276. 210.89318 mt
+288.99987 214.45935 li
+ds
+%%EndObject
+%%BeginObject: Line
+289. 214.45922 mt
+302.99987 218.02539 li
+ds
+%%EndObject
+%%BeginObject: Line
+303. 218.02514 mt
+315.99987 220.4027 li
+ds
+%%EndObject
+%%BeginObject: Line
+316. 220.40246 mt
+329.99987 223.96862 li
+ds
+%%EndObject
+%%BeginObject: Line
+330. 223.9685 mt
+342.99987 226.34594 li
+ds
+%%EndObject
+%%BeginObject: Line
+343. 226.34582 mt
+356.99987 227.53466 li
+ds
+%%EndObject
+%%BeginObject: Line
+100. 139.5736 mt
+112.99987 177.61096 li
+ds
+%%EndObject
+%%BeginObject: Line
+113. 177.61071 mt
+126.99987 188.30883 li
+ds
+%%EndObject
+%%BeginObject: Line
+127. 188.30871 mt
+139.99987 190.68615 li
+ds
+%%EndObject
+%%BeginObject: Line
+140. 190.68603 mt
+153.99987 193.06347 li
+ds
+%%EndObject
+%%BeginObject: Line
+154. 193.06335 mt
+166.99987 195.44079 li
+ds
+%%EndObject
+%%BeginObject: Line
+167. 195.44067 mt
+180.99987 197.81811 li
+ds
+%%EndObject
+%%BeginObject: Line
+181. 197.81799 mt
+193.99987 200.19543 li
+ds
+%%EndObject
+%%BeginObject: Line
+194. 200.19531 mt
+207.99987 203.76147 li
+ds
+%%EndObject
+%%BeginObject: Line
+208. 203.76123 mt
+221.99987 206.13879 li
+ds
+%%EndObject
+%%BeginObject: Line
+222. 206.13854 mt
+234.99987 210.89343 li
+ds
+%%EndObject
+%%BeginObject: Line
+235. 210.89318 mt
+248.99987 214.45935 li
+ds
+%%EndObject
+%%BeginObject: Line
+249. 214.45922 mt
+261.99987 218.02539 li
+ds
+%%EndObject
+%%BeginObject: Line
+262. 218.02514 mt
+275.99987 220.4027 li
+ds
+%%EndObject
+%%BeginObject: Line
+276. 220.40246 mt
+288.99987 223.96862 li
+ds
+%%EndObject
+%%BeginObject: Line
+289. 223.9685 mt
+302.99987 226.34594 li
+ds
+%%EndObject
+%%BeginObject: Line
+303. 226.34582 mt
+315.99987 227.53466 li
+ds
+%%EndObject
+%%BeginObject: Line
+316. 227.53442 mt
+329.99987 228.72326 li
+ds
+%%EndObject
+%%BeginObject: Line
+330. 228.72314 mt
+342.99987 229.91198 li
+ds
+%%EndObject
+%%BeginObject: Line
+343. 229.91174 mt
+356.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+100. 139.5736 mt
+112.99987 175.23364 li
+ds
+%%EndObject
+%%BeginObject: Line
+113. 175.23339 mt
+126.99987 188.30883 li
+ds
+%%EndObject
+%%BeginObject: Line
+127. 188.30871 mt
+139.99987 191.87487 li
+ds
+%%EndObject
+%%BeginObject: Line
+140. 191.87463 mt
+153.99987 196.62951 li
+ds
+%%EndObject
+%%BeginObject: Line
+154. 196.62927 mt
+166.99987 201.38415 li
+ds
+%%EndObject
+%%BeginObject: Line
+167. 201.38391 mt
+180.99987 206.13879 li
+ds
+%%EndObject
+%%BeginObject: Line
+181. 206.13854 mt
+193.99987 212.08203 li
+ds
+%%EndObject
+%%BeginObject: Line
+194. 212.0819 mt
+207.99987 215.64807 li
+ds
+%%EndObject
+%%BeginObject: Line
+208. 215.64782 mt
+221.99987 219.21398 li
+ds
+%%EndObject
+%%BeginObject: Line
+222. 219.21386 mt
+234.99987 221.5913 li
+ds
+%%EndObject
+%%BeginObject: Line
+235. 221.59118 mt
+248.99987 223.96862 li
+ds
+%%EndObject
+%%BeginObject: Line
+249. 223.9685 mt
+261.99987 225.15734 li
+ds
+%%EndObject
+%%BeginObject: Line
+262. 225.1571 mt
+275.99987 226.34594 li
+ds
+%%EndObject
+%%BeginObject: Line
+276. 226.34582 mt
+288.99987 227.53466 li
+ds
+%%EndObject
+%%BeginObject: Line
+289. 227.53442 mt
+302.99987 228.72326 li
+ds
+%%EndObject
+%%BeginObject: Line
+303. 228.72314 mt
+315.99987 228.72338 li
+ds
+%%EndObject
+%%BeginObject: Line
+316. 228.72314 mt
+329.99987 229.91198 li
+ds
+%%EndObject
+%%BeginObject: Line
+330. 229.91174 mt
+342.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Line
+343. 231.10046 mt
+356.99987 231.1007 li
+ds
+%%EndObject
+%%BeginObject: Line
+100. 138.385 mt
+112.99987 172.85632 li
+ds
+%%EndObject
+%%BeginObject: Line
+113. 172.85607 mt
+126.99987 185.93151 li
+ds
+%%EndObject
+%%BeginObject: Line
+127. 185.93139 mt
+139.99987 193.06347 li
+ds
+%%EndObject
+%%BeginObject: Line
+140. 193.06335 mt
+153.99987 197.81811 li
+ds
+%%EndObject
+%%BeginObject: Line
+154. 197.81799 mt
+166.99987 203.76147 li
+ds
+%%EndObject
+%%BeginObject: Line
+167. 203.76123 mt
+180.99987 209.70471 li
+ds
+%%EndObject
+%%BeginObject: Line
+181. 209.70458 mt
+193.99987 214.45935 li
+ds
+%%EndObject
+%%BeginObject: Line
+194. 214.45922 mt
+207.99987 218.02539 li
+ds
+%%EndObject
+%%BeginObject: Line
+208. 218.02514 mt
+221.99987 220.4027 li
+ds
+%%EndObject
+%%BeginObject: Line
+222. 220.40246 mt
+234.99987 221.5913 li
+ds
+%%EndObject
+%%BeginObject: Line
+235. 221.59118 mt
+248.99987 222.78002 li
+ds
+%%EndObject
+%%BeginObject: Line
+249. 222.77978 mt
+261.99987 223.96862 li
+ds
+%%EndObject
+%%BeginObject: Line
+262. 223.9685 mt
+275.99987 225.15734 li
+ds
+%%EndObject
+%%BeginObject: Line
+276. 225.1571 mt
+288.99987 226.34594 li
+ds
+%%EndObject
+%%BeginObject: Line
+289. 226.34582 mt
+302.99987 227.53466 li
+ds
+%%EndObject
+%%BeginObject: Line
+303. 227.53442 mt
+315.99987 228.72326 li
+ds
+%%EndObject
+%%BeginObject: Line
+316. 228.72314 mt
+329.99987 229.91198 li
+ds
+%%EndObject
+%%BeginObject: Line
+330. 229.91174 mt
+342.99987 229.91198 li
+ds
+%%EndObject
+%%BeginObject: Line
+343. 229.91174 mt
+356.99987 231.10058 li
+ds
+%%EndObject
+%%BeginObject: Rectangle
+2 lc
+0 lj
+0. fg
+208.5 200.78967 214.49987 207.92175 rp
+db
+%%EndObject
+%%BeginObject: Polygon
+1 lc
+1 lj
+%%NumPoints: 5 
+180.74987 199.89807 mt
+183.74987 207.03027 li
+177.75 lh
+180.74987 199.89807 li
+199.89807 lv
+cp
+db
+%%EndObject
+%%BeginObject: Polygon
+%%NumPoints: 6 
+203.49987 215.94506 mt
+206.49987 219.5111 li
+203.49987 223.07714 li
+200.5 219.5111 li
+203.49987 215.94506 li
+215.94506 lv
+cp
+db
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+0. pg
+1. 1. sp
+T sa
+282.0625 966.95996 mt
+277.03125 lh
+277.03125 932.38073 li
+270.46875 932.38073 li
+270.46875 929.26074 li
+273.11425 929.26074 275.1239 928.66357 276.59375 927.44079 ct
+278.06347 926.21801 278.99645 924.42651 279.4375 921.98095 ct
+282.0625 921.98095 li
+282.0625 966.95996 li
+cp
+dp
+284.0625 966.95996 mt
+279.03125 lh
+279.03125 932.38073 li
+272.46875 932.38073 li
+272.46875 929.26074 li
+275.11425 929.26074 277.1239 928.66357 278.59375 927.44079 ct
+280.06347 926.21801 280.99645 924.42651 281.4375 921.98095 ct
+284.0625 921.98095 li
+284.0625 966.95996 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+254.0625 574.95996 mt
+249.03125 lh
+249.03125 540.38073 li
+242.46875 540.38073 li
+242.46875 537.26074 li
+245.11425 537.26074 247.1239 536.66357 248.59375 535.44079 ct
+250.06347 534.21801 250.99645 532.42651 251.4375 529.98095 ct
+254.0625 529.98095 li
+254.0625 574.95996 li
+cp
+dp
+256.0625 574.95996 mt
+251.03125 lh
+251.03125 540.38073 li
+244.46875 540.38073 li
+244.46875 537.26074 li
+247.11425 537.26074 249.1239 536.66357 250.59375 535.44079 ct
+252.06347 534.21801 252.99645 532.42651 253.4375 529.98095 ct
+256.0625 529.98095 li
+256.0625 574.95996 li
+cp
+dp
+298.03125 552.60046 mt
+298.03125 558.88903 297.09814 564.17834 295.1875 568.72009 ct
+293.27673 573.26184 290.2622 575.47998 286. 575.47998 ct
+281.73767 575.47998 278.68725 573.26184 276.70312 568.72009 ct
+274.71887 564.17834 273.75 558.88903 273.75 552.60046 ct
+273.75 546.31176 274.71887 541.06518 276.70312 536.61071 ct
+278.68725 532.15637 281.73767 529.98095 286. 529.98095 ct
+290.2622 529.98095 293.27673 532.15637 295.1875 536.61071 ct
+297.09814 541.06518 298.03125 546.31176 298.03125 552.60046 ct
+298.03125 552.60046 li
+cp
+292.78125 552.60046 mt
+292.78125 547.01049 292.24291 542.74499 291.14062 539.6007 ct
+290.0382 536.45642 288.35156 534.92077 286. 534.92077 ct
+283.64831 534.92077 281.92578 536.45642 280.75 539.6007 ct
+279.57409 542.74499 279. 547.01049 279. 552.60046 ct
+279. 558.1903 279.57409 562.49853 280.75 565.7301 ct
+281.92578 568.96179 283.64831 570.54003 286. 570.54003 ct
+288.35156 570.54003 290.0382 568.96179 291.14062 565.7301 ct
+292.24291 562.49853 292.78125 558.1903 292.78125 552.60046 ct
+292.78125 552.60046 li
+cp
+dp
+300.03125 552.60046 mt
+300.03125 558.88903 299.09814 564.17834 297.1875 568.72009 ct
+295.27673 573.26184 292.2622 575.47998 288. 575.47998 ct
+283.73767 575.47998 280.68725 573.26184 278.70312 568.72009 ct
+276.71887 564.17834 275.75 558.88903 275.75 552.60046 ct
+275.75 546.31176 276.71887 541.06518 278.70312 536.61071 ct
+280.68725 532.15637 283.73767 529.98095 288. 529.98095 ct
+292.2622 529.98095 295.27673 532.15637 297.1875 536.61071 ct
+299.09814 541.06518 300.03125 546.31176 300.03125 552.60046 ct
+300.03125 552.60046 li
+cp
+294.78125 552.60046 mt
+294.78125 547.01049 294.24291 542.74499 293.14062 539.6007 ct
+292.0382 536.45642 290.35156 534.92077 288. 534.92077 ct
+285.64831 534.92077 283.92578 536.45642 282.75 539.6007 ct
+281.57409 542.74499 281. 547.01049 281. 552.60046 ct
+281. 558.1903 281.57409 562.49853 282.75 565.7301 ct
+283.92578 568.96179 285.64831 570.54003 288. 570.54003 ct
+290.35156 570.54003 292.0382 568.96179 293.14062 565.7301 ct
+294.24291 562.49853 294.78125 558.1903 294.78125 552.60046 ct
+294.78125 552.60046 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+230.06127 182.95996 mt
+225.03039 lh
+225.03039 148.38073 li
+218.46826 148.38073 li
+218.46826 145.26074 li
+221.11364 145.26074 223.12329 144.66357 224.59289 143.44079 ct
+226.0625 142.21801 226.9956 140.42651 227.4364 137.98095 ct
+230.06127 137.98095 li
+230.06127 182.95996 li
+cp
+dp
+232.06127 182.95996 mt
+227.03039 lh
+227.03039 148.38073 li
+220.46826 148.38073 li
+220.46826 145.26074 li
+223.11364 145.26074 225.12329 144.66357 226.59289 143.44079 ct
+228.0625 142.21801 228.9956 140.42651 229.4364 137.98095 ct
+232.06127 137.98095 li
+232.06127 182.95996 li
+cp
+dp
+267.02941 160.60046 mt
+267.02941 166.88903 266.09631 172.17834 264.18579 176.72009 ct
+262.27526 181.26184 259.26086 183.47998 254.99902 183.47998 ct
+250.73706 183.47998 247.68676 181.26184 245.70275 176.72009 ct
+243.71875 172.17834 242.74987 166.88903 242.74987 160.60046 ct
+242.74987 154.31176 243.71875 149.06518 245.70275 144.61071 ct
+247.68676 140.15637 250.73706 137.98095 254.99902 137.98095 ct
+259.26086 137.98095 262.27526 140.15637 264.18579 144.61071 ct
+266.09631 149.06518 267.02941 154.31176 267.02941 160.60046 ct
+267.02941 160.60046 li
+cp
+261.77978 160.60046 mt
+261.77978 155.01049 261.24145 150.74499 260.13928 147.6007 ct
+259.03698 144.45642 257.35034 142.92077 254.99902 142.92077 ct
+252.64758 142.92077 250.92504 144.45642 249.74938 147.6007 ct
+248.5736 150.74499 247.99951 155.01049 247.99951 160.60046 ct
+247.99951 166.1903 248.5736 170.49853 249.74938 173.7301 ct
+250.92504 176.96179 252.64758 178.54003 254.99902 178.54003 ct
+257.35034 178.54003 259.03698 176.96179 260.13928 173.7301 ct
+261.24145 170.49853 261.77978 166.1903 261.77978 160.60046 ct
+261.77978 160.60046 li
+cp
+dp
+269.02941 160.60046 mt
+269.02941 166.88903 268.09631 172.17834 266.18579 176.72009 ct
+264.27526 181.26184 261.26086 183.47998 256.99902 183.47998 ct
+252.73706 183.47998 249.68676 181.26184 247.70275 176.72009 ct
+245.71875 172.17834 244.74987 166.88903 244.74987 160.60046 ct
+244.74987 154.31176 245.71875 149.06518 247.70275 144.61071 ct
+249.68676 140.15637 252.73706 137.98095 256.99902 137.98095 ct
+261.26086 137.98095 264.27526 140.15637 266.18579 144.61071 ct
+268.09631 149.06518 269.02941 154.31176 269.02941 160.60046 ct
+269.02941 160.60046 li
+cp
+263.77978 160.60046 mt
+263.77978 155.01049 263.24145 150.74499 262.13928 147.6007 ct
+261.03698 144.45642 259.35034 142.92077 256.99902 142.92077 ct
+254.64758 142.92077 252.92504 144.45642 251.74938 147.6007 ct
+250.5736 150.74499 249.99951 155.01049 249.99951 160.60046 ct
+249.99951 166.1903 250.5736 170.49853 251.74938 173.7301 ct
+252.92504 176.96179 254.64758 178.54003 256.99902 178.54003 ct
+259.35034 178.54003 261.03698 176.96179 262.13928 173.7301 ct
+263.24145 170.49853 263.77978 166.1903 263.77978 160.60046 ct
+263.77978 160.60046 li
+cp
+dp
+295.02941 160.60046 mt
+295.02941 166.88903 294.09631 172.17834 292.18579 176.72009 ct
+290.27526 181.26184 287.26086 183.47998 282.99902 183.47998 ct
+278.73706 183.47998 275.68676 181.26184 273.70275 176.72009 ct
+271.71875 172.17834 270.74987 166.88903 270.74987 160.60046 ct
+270.74987 154.31176 271.71875 149.06518 273.70275 144.61071 ct
+275.68676 140.15637 278.73706 137.98095 282.99902 137.98095 ct
+287.26086 137.98095 290.27526 140.15637 292.18579 144.61071 ct
+294.09631 149.06518 295.02941 154.31176 295.02941 160.60046 ct
+295.02941 160.60046 li
+cp
+289.77978 160.60046 mt
+289.77978 155.01049 289.24145 150.74499 288.13928 147.6007 ct
+287.03698 144.45642 285.35034 142.92077 282.99902 142.92077 ct
+280.64758 142.92077 278.92504 144.45642 277.74938 147.6007 ct
+276.5736 150.74499 275.99951 155.01049 275.99951 160.60046 ct
+275.99951 166.1903 276.5736 170.49853 277.74938 173.7301 ct
+278.92504 176.96179 280.64758 178.54003 282.99902 178.54003 ct
+285.35034 178.54003 287.03698 176.96179 288.13928 173.7301 ct
+289.24145 170.49853 289.77978 166.1903 289.77978 160.60046 ct
+289.77978 160.60046 li
+cp
+dp
+297.02941 160.60046 mt
+297.02941 166.88903 296.09631 172.17834 294.18579 176.72009 ct
+292.27526 181.26184 289.26086 183.47998 284.99902 183.47998 ct
+280.73706 183.47998 277.68676 181.26184 275.70275 176.72009 ct
+273.71875 172.17834 272.74987 166.88903 272.74987 160.60046 ct
+272.74987 154.31176 273.71875 149.06518 275.70275 144.61071 ct
+277.68676 140.15637 280.73706 137.98095 284.99902 137.98095 ct
+289.26086 137.98095 292.27526 140.15637 294.18579 144.61071 ct
+296.09631 149.06518 297.02941 154.31176 297.02941 160.60046 ct
+297.02941 160.60046 li
+cp
+291.77978 160.60046 mt
+291.77978 155.01049 291.24145 150.74499 290.13928 147.6007 ct
+289.03698 144.45642 287.35034 142.92077 284.99902 142.92077 ct
+282.64758 142.92077 280.92504 144.45642 279.74938 147.6007 ct
+278.5736 150.74499 277.99951 155.01049 277.99951 160.60046 ct
+277.99951 166.1903 278.5736 170.49853 279.74938 173.7301 ct
+280.92504 176.96179 282.64758 178.54003 284.99902 178.54003 ct
+287.35034 178.54003 289.03698 176.96179 290.13928 173.7301 ct
+291.24145 170.49853 291.77978 166.1903 291.77978 160.60046 ct
+291.77978 160.60046 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+351.89965 995.92773 mt
+351.89965 1002.66589 350.89953 1008.33325 348.8518 1013.1997 ct
+346.80395 1018.06616 343.57299 1020.44274 339.00488 1020.44274 ct
+334.43664 1020.44274 331.16723 1018.06616 329.04064 1013.1997 ct
+326.91406 1008.33325 325.87561 1002.66589 325.87561 995.92773 ct
+325.87561 989.18957 326.91406 983.56799 329.04064 978.79504 ct
+331.16723 974.02221 334.43664 971.69128 339.00488 971.69128 ct
+343.57299 971.69128 346.80395 974.02221 348.8518 978.79504 ct
+350.89953 983.56799 351.89965 989.18957 351.89965 995.92773 ct
+351.89965 995.92773 li
+cp
+346.27282 995.92773 mt
+346.27282 989.93823 345.6958 985.36779 344.5144 981.99877 ct
+343.333 978.62963 341.52514 976.98437 339.00488 976.98437 ct
+336.48449 976.98437 334.63818 978.62963 333.37805 981.99877 ct
+332.11779 985.36779 331.50244 989.93823 331.50244 995.92773 ct
+331.50244 1001.91723 332.11779 1006.53332 333.37805 1009.99597 ct
+334.63818 1013.45874 336.48449 1015.14978 339.00488 1015.14978 ct
+341.52514 1015.14978 343.333 1013.45874 344.5144 1009.99597 ct
+345.6958 1006.53332 346.27282 1001.91723 346.27282 995.92773 ct
+346.27282 995.92773 li
+cp
+dp
+353.89965 995.92773 mt
+353.89965 1002.66589 352.89953 1008.33325 350.8518 1013.1997 ct
+348.80395 1018.06616 345.57299 1020.44274 341.00488 1020.44274 ct
+336.43664 1020.44274 333.16723 1018.06616 331.04064 1013.1997 ct
+328.91406 1008.33325 327.87561 1002.66589 327.87561 995.92773 ct
+327.87561 989.18957 328.91406 983.56799 331.04064 978.79504 ct
+333.16723 974.02221 336.43664 971.69128 341.00488 971.69128 ct
+345.57299 971.69128 348.80395 974.02221 350.8518 978.79504 ct
+352.89953 983.56799 353.89965 989.18957 353.89965 995.92773 ct
+353.89965 995.92773 li
+cp
+348.27282 995.92773 mt
+348.27282 989.93823 347.6958 985.36779 346.5144 981.99877 ct
+345.333 978.62963 343.52514 976.98437 341.00488 976.98437 ct
+338.48449 976.98437 336.63818 978.62963 335.37805 981.99877 ct
+334.11779 985.36779 333.50244 989.93823 333.50244 995.92773 ct
+333.50244 1001.91723 334.11779 1006.53332 335.37805 1009.99597 ct
+336.63818 1013.45874 338.48449 1015.14978 341.00488 1015.14978 ct
+343.52514 1015.14978 345.333 1013.45874 346.5144 1009.99597 ct
+347.6958 1006.53332 348.27282 1001.91723 348.27282 995.92773 ct
+348.27282 995.92773 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+455.72741 1019.88562 mt
+431.81335 lh
+431.81335 1015.42834 li
+432.75854 1012.43359 434.02783 1009.73706 435.68176 1007.2102 ct
+437.33581 1004.68347 439.68212 1001.8955 442.83251 998.7135 ct
+445.19543 996.28027 446.84936 994.08654 447.87329 992.02758 ct
+448.89721 989.96875 449.39721 987.7749 449.39721 985.34167 ct
+449.39721 982.90844 448.97412 980.94323 448.10766 979.35229 ct
+447.24133 977.76135 445.89514 976.98437 444.00488 976.98437 ct
+442.42956 976.98437 441.08337 977.807 439.90197 979.49157 ct
+438.72045 981.17602 438.14355 984.10119 438.14355 988.40612 ct
+432.75122 988.40612 li
+432.90869 982.97814 433.94726 978.9104 435.91625 976.00927 ct
+437.88525 973.10815 440.61621 971.69128 444.23925 971.69128 ct
+447.70471 971.69128 450.32031 972.92529 452.21057 975.45214 ct
+454.10083 977.979 455.02404 981.31542 455.02404 985.62036 ct
+455.02404 989.17651 454.17785 992.19299 452.44506 994.81347 ct
+450.71228 997.43383 448.63525 999.99328 446.11486 1002.61364 ct
+443.27954 1005.60839 441.3562 1007.80224 440.25366 1009.29956 ct
+439.151 1010.79699 438.15087 1012.53369 437.20568 1014.59265 ct
+455.72741 1014.59265 li
+455.72741 1019.88562 li
+cp
+dp
+457.72741 1019.88562 mt
+433.81335 lh
+433.81335 1015.42834 li
+434.75854 1012.43359 436.02783 1009.73706 437.68176 1007.2102 ct
+439.33581 1004.68347 441.68212 1001.8955 444.83251 998.7135 ct
+447.19543 996.28027 448.84936 994.08654 449.87329 992.02758 ct
+450.89721 989.96875 451.39721 987.7749 451.39721 985.34167 ct
+451.39721 982.90844 450.97412 980.94323 450.10766 979.35229 ct
+449.24133 977.76135 447.89514 976.98437 446.00488 976.98437 ct
+444.42956 976.98437 443.08337 977.807 441.90197 979.49157 ct
+440.72045 981.17602 440.14355 984.10119 440.14355 988.40612 ct
+434.75122 988.40612 li
+434.90869 982.97814 435.94726 978.9104 437.91625 976.00927 ct
+439.88525 973.10815 442.61621 971.69128 446.23925 971.69128 ct
+449.70471 971.69128 452.32031 972.92529 454.21057 975.45214 ct
+456.10083 977.979 457.02404 981.31542 457.02404 985.62036 ct
+457.02404 989.17651 456.17785 992.19299 454.44506 994.81347 ct
+452.71228 997.43383 450.63525 999.99328 448.11486 1002.61364 ct
+445.27954 1005.60839 443.3562 1007.80224 442.25366 1009.29956 ct
+441.151 1010.79699 440.15087 1012.53369 439.20568 1014.59265 ct
+457.72741 1014.59265 li
+457.72741 1019.88562 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+564.89965 1007.62805 mt
+559.97619 lh
+559.97619 1019.88562 li
+554.58374 1019.88562 li
+554.58374 1007.62805 li
+538.87561 1007.62805 li
+538.87561 1002.33508 li
+554.58374 971.69128 li
+559.97619 971.69128 li
+559.97619 1002.33508 li
+564.89965 1002.33508 li
+564.89965 1007.62805 li
+cp
+554.58374 1002.33508 mt
+981.72021 lv
+544.03344 1002.33508 li
+554.58374 1002.33508 li
+cp
+dp
+566.89965 1007.62805 mt
+561.97619 lh
+561.97619 1019.88562 li
+556.58374 1019.88562 li
+556.58374 1007.62805 li
+540.87561 1007.62805 li
+540.87561 1002.33508 li
+556.58374 971.69128 li
+561.97619 971.69128 li
+561.97619 1002.33508 li
+566.89965 1002.33508 li
+566.89965 1007.62805 li
+cp
+556.58374 1002.33508 mt
+981.72021 lv
+546.03344 1002.33508 li
+556.58374 1002.33508 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+671.72741 1003.72802 mt
+671.72741 1008.96875 670.80419 1012.99072 668.91394 1015.98547 ct
+667.02368 1018.98022 664.25427 1020.44274 660.47375 1020.44274 ct
+656.69323 1020.44274 653.76989 1018.61462 651.56457 1014.87121 ct
+649.35925 1011.1278 648.28222 1005.18615 648.28222 996.76354 ct
+648.28222 989.08947 649.3977 983.10217 651.68176 978.51647 ct
+653.96582 973.93078 657.15844 971.69128 661.41149 971.69128 ct
+664.40441 971.69128 666.75073 972.97106 668.56225 975.59143 ct
+670.37377 978.21179 671.25854 981.04553 671.25854 984.22741 ct
+665.86608 984.22741 li
+665.86608 982.35571 665.44299 980.71032 664.57666 979.21301 ct
+663.7102 977.71557 662.59472 976.98437 661.17712 976.98437 ct
+658.8142 976.98437 657.04492 978.40112 655.78466 981.30236 ct
+654.52453 984.20349 653.83215 988.54541 653.67468 994.53491 ct
+654.77734 992.10168 655.93127 990.45629 657.1914 989.52038 ct
+658.45153 988.58459 659.9132 988.12756 661.64599 988.12756 ct
+664.63891 988.12756 667.02368 989.49865 668.91394 992.30627 ct
+670.80419 995.11376 671.72741 998.86157 671.72741 1003.72802 ct
+671.72741 1003.72802 li
+cp
+666.10058 1003.72802 mt
+666.10058 1000.35888 665.63903 997.79943 664.69384 995.92773 ct
+663.74865 994.05603 662.44091 993.14196 660.70812 993.14196 ct
+658.6604 993.14196 657.08337 994.05603 655.90197 995.92773 ct
+654.72045 997.79943 654.14355 999.99328 654.14355 1002.61364 ct
+654.14355 1006.73144 654.72045 1009.83935 655.90197 1012.08532 ct
+657.08337 1014.33142 658.6604 1015.42834 660.70812 1015.42834 ct
+662.12585 1015.42834 663.35668 1014.60559 664.45935 1012.92114 ct
+665.56201 1011.23657 666.10058 1008.22009 666.10058 1003.72802 ct
+666.10058 1003.72802 li
+cp
+dp
+673.72741 1003.72802 mt
+673.72741 1008.96875 672.80419 1012.99072 670.91394 1015.98547 ct
+669.02368 1018.98022 666.25427 1020.44274 662.47375 1020.44274 ct
+658.69323 1020.44274 655.76989 1018.61462 653.56457 1014.87121 ct
+651.35925 1011.1278 650.28222 1005.18615 650.28222 996.76354 ct
+650.28222 989.08947 651.3977 983.10217 653.68176 978.51647 ct
+655.96582 973.93078 659.15844 971.69128 663.41149 971.69128 ct
+666.40441 971.69128 668.75073 972.97106 670.56225 975.59143 ct
+672.37377 978.21179 673.25854 981.04553 673.25854 984.22741 ct
+667.86608 984.22741 li
+667.86608 982.35571 667.44299 980.71032 666.57666 979.21301 ct
+665.7102 977.71557 664.59472 976.98437 663.17712 976.98437 ct
+660.8142 976.98437 659.04492 978.40112 657.78466 981.30236 ct
+656.52453 984.20349 655.83215 988.54541 655.67468 994.53491 ct
+656.77734 992.10168 657.93127 990.45629 659.1914 989.52038 ct
+660.45153 988.58459 661.9132 988.12756 663.64599 988.12756 ct
+666.63891 988.12756 669.02368 989.49865 670.91394 992.30627 ct
+672.80419 995.11376 673.72741 998.86157 673.72741 1003.72802 ct
+673.72741 1003.72802 li
+cp
+668.10058 1003.72802 mt
+668.10058 1000.35888 667.63903 997.79943 666.69384 995.92773 ct
+665.74865 994.05603 664.44091 993.14196 662.70812 993.14196 ct
+660.6604 993.14196 659.08337 994.05603 657.90197 995.92773 ct
+656.72045 997.79943 656.14355 999.99328 656.14355 1002.61364 ct
+656.14355 1006.73144 656.72045 1009.83935 657.90197 1012.08532 ct
+659.08337 1014.33142 660.6604 1015.42834 662.70812 1015.42834 ct
+664.12585 1015.42834 665.35668 1014.60559 666.45935 1012.92114 ct
+667.56201 1011.23657 668.10058 1008.22009 668.10058 1003.72802 ct
+668.10058 1003.72802 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+779.96179 1006.23522 mt
+779.96179 1010.91442 778.88488 1014.38806 776.67956 1016.82128 ct
+774.47424 1019.25439 771.5509 1020.44274 767.77038 1020.44274 ct
+763.98986 1020.44274 761.06652 1019.25439 758.8612 1016.82128 ct
+756.65588 1014.38806 755.57885 1010.91442 755.57885 1006.23522 ct
+755.57885 1003.802 756.19433 1001.6538 757.45446 999.68859 ct
+758.71472 997.72326 760.4071 996.30639 762.61242 995.3706 ct
+760.72216 994.43469 759.29895 993.15502 758.27514 991.47045 ct
+757.25122 989.78588 756.75122 987.68347 756.75122 985.06311 ct
+756.75122 980.94543 757.82812 977.74609 760.03344 975.31286 ct
+762.23876 972.87963 764.77746 971.69128 767.77038 971.69128 ct
+770.7633 971.69128 773.302 972.87963 775.50732 975.31286 ct
+777.71252 977.74609 778.78955 980.94543 778.78955 985.06311 ct
+778.78955 987.68347 778.28955 989.78588 777.26562 991.47045 ct
+776.24169 993.15502 774.8186 994.43469 772.92834 995.3706 ct
+775.13366 996.30639 776.82604 997.72326 778.08618 999.68859 ct
+779.34643 1001.6538 779.96179 1003.802 779.96179 1006.23522 ct
+779.96179 1006.23522 li
+cp
+773.63171 985.06311 mt
+773.63171 982.06835 773.09313 979.96594 771.99047 978.65576 ct
+770.88781 977.34558 769.50305 976.70581 767.77038 976.70581 ct
+766.03759 976.70581 764.65295 977.34558 763.55029 978.65576 ct
+762.44763 979.96594 761.90905 982.06835 761.90905 985.06311 ct
+761.90905 988.05786 762.48608 990.11462 763.66748 991.33117 ct
+764.84887 992.54785 766.19519 993.14196 767.77038 993.14196 ct
+769.34558 993.14196 770.69189 992.54785 771.87329 991.33117 ct
+773.05468 990.11462 773.63171 988.05786 773.63171 985.06311 ct
+773.63171 985.06311 li
+cp
+774.56945 1006.23522 mt
+774.56945 1003.61486 773.99243 1001.60375 772.81103 1000.10644 ct
+771.62963 998.60913 769.9757 997.8778 767.77038 997.8778 ct
+765.56506 997.8778 763.91113 998.60913 762.72961 1000.10644 ct
+761.54821 1001.60375 760.97131 1003.61486 760.97131 1006.23522 ct
+760.97131 1009.22998 761.58666 1011.46948 762.84692 1013.06042 ct
+764.10705 1014.65136 765.72253 1015.42834 767.77038 1015.42834 ct
+769.81811 1015.42834 771.43371 1014.65136 772.69384 1013.06042 ct
+773.95397 1011.46948 774.56945 1009.22998 774.56945 1006.23522 ct
+774.56945 1006.23522 li
+cp
+dp
+781.96179 1006.23522 mt
+781.96179 1010.91442 780.88488 1014.38806 778.67956 1016.82128 ct
+776.47424 1019.25439 773.5509 1020.44274 769.77038 1020.44274 ct
+765.98986 1020.44274 763.06652 1019.25439 760.8612 1016.82128 ct
+758.65588 1014.38806 757.57885 1010.91442 757.57885 1006.23522 ct
+757.57885 1003.802 758.19433 1001.6538 759.45446 999.68859 ct
+760.71472 997.72326 762.4071 996.30639 764.61242 995.3706 ct
+762.72216 994.43469 761.29895 993.15502 760.27514 991.47045 ct
+759.25122 989.78588 758.75122 987.68347 758.75122 985.06311 ct
+758.75122 980.94543 759.82812 977.74609 762.03344 975.31286 ct
+764.23876 972.87963 766.77746 971.69128 769.77038 971.69128 ct
+772.7633 971.69128 775.302 972.87963 777.50732 975.31286 ct
+779.71252 977.74609 780.78955 980.94543 780.78955 985.06311 ct
+780.78955 987.68347 780.28955 989.78588 779.26562 991.47045 ct
+778.24169 993.15502 776.8186 994.43469 774.92834 995.3706 ct
+777.13366 996.30639 778.82604 997.72326 780.08618 999.68859 ct
+781.34643 1001.6538 781.96179 1003.802 781.96179 1006.23522 ct
+781.96179 1006.23522 li
+cp
+775.63171 985.06311 mt
+775.63171 982.06835 775.09313 979.96594 773.99047 978.65576 ct
+772.88781 977.34558 771.50305 976.70581 769.77038 976.70581 ct
+768.03759 976.70581 766.65295 977.34558 765.55029 978.65576 ct
+764.44763 979.96594 763.90905 982.06835 763.90905 985.06311 ct
+763.90905 988.05786 764.48608 990.11462 765.66748 991.33117 ct
+766.84887 992.54785 768.19519 993.14196 769.77038 993.14196 ct
+771.34558 993.14196 772.69189 992.54785 773.87329 991.33117 ct
+775.05468 990.11462 775.63171 988.05786 775.63171 985.06311 ct
+775.63171 985.06311 li
+cp
+776.56945 1006.23522 mt
+776.56945 1003.61486 775.99243 1001.60375 774.81103 1000.10644 ct
+773.62963 998.60913 771.9757 997.8778 769.77038 997.8778 ct
+767.56506 997.8778 765.91113 998.60913 764.72961 1000.10644 ct
+763.54821 1001.60375 762.97131 1003.61486 762.97131 1006.23522 ct
+762.97131 1009.22998 763.58666 1011.46948 764.84692 1013.06042 ct
+766.10705 1014.65136 767.72253 1015.42834 769.77038 1015.42834 ct
+771.81811 1015.42834 773.43371 1014.65136 774.69384 1013.06042 ct
+775.95397 1011.46948 776.56945 1009.22998 776.56945 1006.23522 ct
+776.56945 1006.23522 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+867.28356 1019.88562 mt
+861.89221 lh
+861.89221 982.83447 li
+854.8601 982.83447 li
+854.8601 979.49157 li
+857.69494 979.49157 859.84851 978.85168 861.42346 977.5415 ct
+862.99829 976.23132 863.99816 974.31164 864.4707 971.69128 ct
+867.28356 971.69128 li
+867.28356 1019.88562 li
+cp
+dp
+869.28356 1019.88562 mt
+863.89221 lh
+863.89221 982.83447 li
+856.8601 982.83447 li
+856.8601 979.49157 li
+859.69494 979.49157 861.84851 978.85168 863.42346 977.5415 ct
+864.99829 976.23132 865.99816 974.31164 866.4707 971.69128 ct
+869.28356 971.69128 li
+869.28356 1019.88562 li
+cp
+dp
+917.89416 995.92773 mt
+917.89416 1002.66589 916.89428 1008.33325 914.84692 1013.1997 ct
+912.79956 1018.06616 909.56909 1020.44274 905.00195 1020.44274 ct
+900.43469 1020.44274 897.16577 1018.06616 895.03967 1013.1997 ct
+892.91357 1008.33325 891.87524 1002.66589 891.87524 995.92773 ct
+891.87524 989.18957 892.91357 983.56799 895.03967 978.79504 ct
+897.16577 974.02221 900.43469 971.69128 905.00195 971.69128 ct
+909.56909 971.69128 912.79956 974.02221 914.84692 978.79504 ct
+916.89428 983.56799 917.89416 989.18957 917.89416 995.92773 ct
+917.89416 995.92773 li
+cp
+912.26843 995.92773 mt
+912.26843 989.93823 911.69165 985.36779 910.51037 981.99877 ct
+909.32922 978.62963 907.52172 976.98437 905.00195 976.98437 ct
+902.48205 976.98437 900.6361 978.62963 899.37622 981.99877 ct
+898.11621 985.36779 897.50097 989.93823 897.50097 995.92773 ct
+897.50097 1001.91723 898.11621 1006.53332 899.37622 1009.99597 ct
+900.6361 1013.45874 902.48205 1015.14978 905.00195 1015.14978 ct
+907.52172 1015.14978 909.32922 1013.45874 910.51037 1009.99597 ct
+911.69165 1006.53332 912.26843 1001.91723 912.26843 995.92773 ct
+912.26843 995.92773 li
+cp
+dp
+919.89416 995.92773 mt
+919.89416 1002.66589 918.89428 1008.33325 916.84692 1013.1997 ct
+914.79956 1018.06616 911.56909 1020.44274 907.00195 1020.44274 ct
+902.43469 1020.44274 899.16577 1018.06616 897.03967 1013.1997 ct
+894.91357 1008.33325 893.87524 1002.66589 893.87524 995.92773 ct
+893.87524 989.18957 894.91357 983.56799 897.03967 978.79504 ct
+899.16577 974.02221 902.43469 971.69128 907.00195 971.69128 ct
+911.56909 971.69128 914.79956 974.02221 916.84692 978.79504 ct
+918.89428 983.56799 919.89416 989.18957 919.89416 995.92773 ct
+919.89416 995.92773 li
+cp
+914.26843 995.92773 mt
+914.26843 989.93823 913.69165 985.36779 912.51037 981.99877 ct
+911.32922 978.62963 909.52172 976.98437 907.00195 976.98437 ct
+904.48205 976.98437 902.6361 978.62963 901.37622 981.99877 ct
+900.11621 985.36779 899.50097 989.93823 899.50097 995.92773 ct
+899.50097 1001.91723 900.11621 1006.53332 901.37622 1009.99597 ct
+902.6361 1013.45874 904.48205 1015.14978 907.00195 1015.14978 ct
+909.52172 1015.14978 911.32922 1013.45874 912.51037 1009.99597 ct
+913.69165 1006.53332 914.26843 1001.91723 914.26843 995.92773 ct
+914.26843 995.92773 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+975.28356 1019.88562 mt
+969.89221 lh
+969.89221 982.83447 li
+962.8601 982.83447 li
+962.8601 979.49157 li
+965.69494 979.49157 967.84851 978.85168 969.42346 977.5415 ct
+970.99829 976.23132 971.99816 974.31164 972.4707 971.69128 ct
+975.28356 971.69128 li
+975.28356 1019.88562 li
+cp
+dp
+977.28356 1019.88562 mt
+971.89221 lh
+971.89221 982.83447 li
+964.8601 982.83447 li
+964.8601 979.49157 li
+967.69494 979.49157 969.84851 978.85168 971.42346 977.5415 ct
+972.99829 976.23132 973.99816 974.31164 974.4707 971.69128 ct
+977.28356 971.69128 li
+977.28356 1019.88562 li
+cp
+dp
+1024.72216 1019.88562 mt
+1000.81286 lh
+1000.81286 1015.42834 li
+1001.75781 1012.43359 1003.02685 1009.73706 1004.68054 1007.2102 ct
+1006.3341 1004.68347 1008.68005 1001.8955 1011.82983 998.7135 ct
+1014.19226 996.28027 1015.84594 994.08654 1016.86962 992.02758 ct
+1017.89331 989.96875 1018.39318 987.7749 1018.39318 985.34167 ct
+1018.39318 982.90844 1017.97021 980.94323 1017.104 979.35229 ct
+1016.23779 977.76135 1014.89184 976.98437 1013.00195 976.98437 ct
+1011.427 976.98437 1010.08093 977.807 1008.89978 979.49157 ct
+1007.71862 981.17602 1007.14172 984.10119 1007.14172 988.40612 ct
+1001.75048 988.40612 li
+1001.90795 982.97814 1002.94628 978.9104 1004.91491 976.00927 ct
+1006.88354 973.10815 1009.61401 971.69128 1013.23632 971.69128 ct
+1016.70104 971.69128 1019.31616 972.92529 1021.20605 975.45214 ct
+1023.09594 977.979 1024.01892 981.31542 1024.01892 985.62036 ct
+1024.01892 989.17651 1023.17285 992.19299 1021.44055 994.81347 ct
+1019.70812 997.43383 1017.63134 999.99328 1015.11157 1002.61364 ct
+1012.27673 1005.60839 1010.35388 1007.80224 1009.25146 1009.29956 ct
+1008.14892 1010.79699 1007.14904 1012.53369 1006.2041 1014.59265 ct
+1024.72216 1014.59265 li
+1024.72216 1019.88562 li
+cp
+dp
+1026.72216 1019.88562 mt
+1002.81286 lh
+1002.81286 1015.42834 li
+1003.75781 1012.43359 1005.02685 1009.73706 1006.68054 1007.2102 ct
+1008.3341 1004.68347 1010.68005 1001.8955 1013.82983 998.7135 ct
+1016.19226 996.28027 1017.84594 994.08654 1018.86962 992.02758 ct
+1019.89331 989.96875 1020.39318 987.7749 1020.39318 985.34167 ct
+1020.39318 982.90844 1019.97021 980.94323 1019.104 979.35229 ct
+1018.23779 977.76135 1016.89184 976.98437 1015.00195 976.98437 ct
+1013.427 976.98437 1012.08093 977.807 1010.89978 979.49157 ct
+1009.71862 981.17602 1009.14172 984.10119 1009.14172 988.40612 ct
+1003.75048 988.40612 li
+1003.90795 982.97814 1004.94628 978.9104 1006.91491 976.00927 ct
+1008.88354 973.10815 1011.61401 971.69128 1015.23632 971.69128 ct
+1018.70104 971.69128 1021.31616 972.92529 1023.20605 975.45214 ct
+1025.09594 977.979 1026.01892 981.31542 1026.01892 985.62036 ct
+1026.01892 989.17651 1025.17285 992.19299 1023.44055 994.81347 ct
+1021.70812 997.43383 1019.63134 999.99328 1017.11157 1002.61364 ct
+1014.27673 1005.60839 1012.35388 1007.80224 1011.25146 1009.29956 ct
+1010.14892 1010.79699 1009.14904 1012.53369 1008.2041 1014.59265 ct
+1026.72216 1014.59265 li
+1026.72216 1019.88562 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+1083.28356 1019.88562 mt
+1077.89221 lh
+1077.89221 982.83447 li
+1070.8601 982.83447 li
+1070.8601 979.49157 li
+1073.69494 979.49157 1075.84851 978.85168 1077.42346 977.5415 ct
+1078.99829 976.23132 1079.99816 974.31164 1080.4707 971.69128 ct
+1083.28356 971.69128 li
+1083.28356 1019.88562 li
+cp
+dp
+1085.28356 1019.88562 mt
+1079.89221 lh
+1079.89221 982.83447 li
+1072.8601 982.83447 li
+1072.8601 979.49157 li
+1075.69494 979.49157 1077.84851 978.85168 1079.42346 977.5415 ct
+1080.99829 976.23132 1081.99816 974.31164 1082.4707 971.69128 ct
+1085.28356 971.69128 li
+1085.28356 1019.88562 li
+cp
+dp
+1133.89416 1007.62805 mt
+1128.97167 lh
+1128.97167 1019.88562 li
+1123.58032 1019.88562 li
+1123.58032 1007.62805 li
+1107.87524 1007.62805 li
+1107.87524 1002.33508 li
+1123.58032 971.69128 li
+1128.97167 971.69128 li
+1128.97167 1002.33508 li
+1133.89416 1002.33508 li
+1133.89416 1007.62805 li
+cp
+1123.58032 1002.33508 mt
+981.72021 lv
+1113.0321 1002.33508 li
+1123.58032 1002.33508 li
+cp
+dp
+1135.89416 1007.62805 mt
+1130.97167 lh
+1130.97167 1019.88562 li
+1125.58032 1019.88562 li
+1125.58032 1007.62805 li
+1109.87524 1007.62805 li
+1109.87524 1002.33508 li
+1125.58032 971.69128 li
+1130.97167 971.69128 li
+1130.97167 1002.33508 li
+1135.89416 1002.33508 li
+1135.89416 1007.62805 li
+cp
+1125.58032 1002.33508 mt
+981.72021 lv
+1115.0321 1002.33508 li
+1125.58032 1002.33508 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+1191.28356 1019.88562 mt
+1185.89221 lh
+1185.89221 982.83447 li
+1178.8601 982.83447 li
+1178.8601 979.49157 li
+1181.69494 979.49157 1183.84851 978.85168 1185.42346 977.5415 ct
+1186.99829 976.23132 1187.99816 974.31164 1188.4707 971.69128 ct
+1191.28356 971.69128 li
+1191.28356 1019.88562 li
+cp
+dp
+1193.28356 1019.88562 mt
+1187.89221 lh
+1187.89221 982.83447 li
+1180.8601 982.83447 li
+1180.8601 979.49157 li
+1183.69494 979.49157 1185.84851 978.85168 1187.42346 977.5415 ct
+1188.99829 976.23132 1189.99816 974.31164 1190.4707 971.69128 ct
+1193.28356 971.69128 li
+1193.28356 1019.88562 li
+cp
+dp
+1240.72216 1003.72802 mt
+1240.72216 1008.96875 1239.79919 1012.99072 1237.9093 1015.98547 ct
+1236.0194 1018.98022 1233.25048 1020.44274 1229.4707 1020.44274 ct
+1225.69091 1020.44274 1222.76818 1018.61462 1220.56335 1014.87121 ct
+1218.35839 1011.1278 1217.28161 1005.18615 1217.28161 996.76354 ct
+1217.28161 989.08947 1218.39685 983.10217 1220.68054 978.51647 ct
+1222.96411 973.93078 1226.156 971.69128 1230.40832 971.69128 ct
+1233.40063 971.69128 1235.74658 972.97106 1237.55773 975.59143 ct
+1239.36889 978.21179 1240.25341 981.04553 1240.25341 984.22741 ct
+1234.86206 984.22741 li
+1234.86206 982.35571 1234.43896 980.71032 1233.57275 979.21301 ct
+1232.70654 977.71557 1231.5913 976.98437 1230.17395 976.98437 ct
+1227.81152 976.98437 1226.04248 978.40112 1224.78259 981.30236 ct
+1223.5227 984.20349 1222.83044 988.54541 1222.67297 994.53491 ct
+1223.77539 992.10168 1224.92907 990.45629 1226.18908 989.52038 ct
+1227.44897 988.58459 1228.91027 988.12756 1230.6427 988.12756 ct
+1233.635 988.12756 1236.0194 989.49865 1237.9093 992.30627 ct
+1239.79919 995.11376 1240.72216 998.86157 1240.72216 1003.72802 ct
+1240.72216 1003.72802 li
+cp
+1235.09643 1003.72802 mt
+1235.09643 1000.35888 1234.635 997.79943 1233.69006 995.92773 ct
+1232.74499 994.05603 1231.4375 993.14196 1229.70507 993.14196 ct
+1227.65771 993.14196 1226.08093 994.05603 1224.89978 995.92773 ct
+1223.71862 997.79943 1223.14172 999.99328 1223.14172 1002.61364 ct
+1223.14172 1006.73144 1223.71862 1009.83935 1224.89978 1012.08532 ct
+1226.08093 1014.33142 1227.65771 1015.42834 1229.70507 1015.42834 ct
+1231.12255 1015.42834 1232.35314 1014.60559 1233.45556 1012.92114 ct
+1234.55798 1011.23657 1235.09643 1008.22009 1235.09643 1003.72802 ct
+1235.09643 1003.72802 li
+cp
+dp
+1242.72216 1003.72802 mt
+1242.72216 1008.96875 1241.79919 1012.99072 1239.9093 1015.98547 ct
+1238.0194 1018.98022 1235.25048 1020.44274 1231.4707 1020.44274 ct
+1227.69091 1020.44274 1224.76818 1018.61462 1222.56335 1014.87121 ct
+1220.35839 1011.1278 1219.28161 1005.18615 1219.28161 996.76354 ct
+1219.28161 989.08947 1220.39685 983.10217 1222.68054 978.51647 ct
+1224.96411 973.93078 1228.156 971.69128 1232.40832 971.69128 ct
+1235.40063 971.69128 1237.74658 972.97106 1239.55773 975.59143 ct
+1241.36889 978.21179 1242.25341 981.04553 1242.25341 984.22741 ct
+1236.86206 984.22741 li
+1236.86206 982.35571 1236.43896 980.71032 1235.57275 979.21301 ct
+1234.70654 977.71557 1233.5913 976.98437 1232.17395 976.98437 ct
+1229.81152 976.98437 1228.04248 978.40112 1226.78259 981.30236 ct
+1225.5227 984.20349 1224.83044 988.54541 1224.67297 994.53491 ct
+1225.77539 992.10168 1226.92907 990.45629 1228.18908 989.52038 ct
+1229.44897 988.58459 1230.91027 988.12756 1232.6427 988.12756 ct
+1235.635 988.12756 1238.0194 989.49865 1239.9093 992.30627 ct
+1241.79919 995.11376 1242.72216 998.86157 1242.72216 1003.72802 ct
+1242.72216 1003.72802 li
+cp
+1237.09643 1003.72802 mt
+1237.09643 1000.35888 1236.635 997.79943 1235.69006 995.92773 ct
+1234.74499 994.05603 1233.4375 993.14196 1231.70507 993.14196 ct
+1229.65771 993.14196 1228.08093 994.05603 1226.89978 995.92773 ct
+1225.71862 997.79943 1225.14172 999.99328 1225.14172 1002.61364 ct
+1225.14172 1006.73144 1225.71862 1009.83935 1226.89978 1012.08532 ct
+1228.08093 1014.33142 1229.65771 1015.42834 1231.70507 1015.42834 ct
+1233.12255 1015.42834 1234.35314 1014.60559 1235.45556 1012.92114 ct
+1236.55798 1011.23657 1237.09643 1008.22009 1237.09643 1003.72802 ct
+1237.09643 1003.72802 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+1299.28356 1019.88562 mt
+1293.89221 lh
+1293.89221 982.83447 li
+1286.8601 982.83447 li
+1286.8601 979.49157 li
+1289.69494 979.49157 1291.84851 978.85168 1293.42346 977.5415 ct
+1294.99829 976.23132 1295.99816 974.31164 1296.4707 971.69128 ct
+1299.28356 971.69128 li
+1299.28356 1019.88562 li
+cp
+dp
+1301.28356 1019.88562 mt
+1295.89221 lh
+1295.89221 982.83447 li
+1288.8601 982.83447 li
+1288.8601 979.49157 li
+1291.69494 979.49157 1293.84851 978.85168 1295.42346 977.5415 ct
+1296.99829 976.23132 1297.99816 974.31164 1298.4707 971.69128 ct
+1301.28356 971.69128 li
+1301.28356 1019.88562 li
+cp
+dp
+1348.95654 1006.23522 mt
+1348.95654 1010.91442 1347.87976 1014.38806 1345.67492 1016.82128 ct
+1343.46997 1019.25439 1340.54724 1020.44274 1336.76745 1020.44274 ct
+1332.98767 1020.44274 1330.06494 1019.25439 1327.8601 1016.82128 ct
+1325.65515 1014.38806 1324.57836 1010.91442 1324.57836 1006.23522 ct
+1324.57836 1003.802 1325.19372 1001.6538 1326.45361 999.68859 ct
+1327.71362 997.72326 1329.40563 996.30639 1331.61059 995.3706 ct
+1329.7207 994.43469 1328.29772 993.15502 1327.27404 991.47045 ct
+1326.25036 989.78588 1325.75048 987.68347 1325.75048 985.06311 ct
+1325.75048 980.94543 1326.82727 977.74609 1329.0321 975.31286 ct
+1331.23693 972.87963 1333.77514 971.69128 1336.76745 971.69128 ct
+1339.75976 971.69128 1342.29797 972.87963 1344.50292 975.31286 ct
+1346.70776 977.74609 1347.78454 980.94543 1347.78454 985.06311 ct
+1347.78454 987.68347 1347.28454 989.78588 1346.26086 991.47045 ct
+1345.23718 993.15502 1343.81433 994.43469 1341.92443 995.3706 ct
+1344.12927 996.30639 1345.82141 997.72326 1347.08129 999.68859 ct
+1348.3413 1001.6538 1348.95654 1003.802 1348.95654 1006.23522 ct
+1348.95654 1006.23522 li
+cp
+1342.62768 985.06311 mt
+1342.62768 982.06835 1342.08923 979.96594 1340.98681 978.65576 ct
+1339.88439 977.34558 1338.49987 976.70581 1336.76745 976.70581 ct
+1335.03503 976.70581 1333.65063 977.34558 1332.54821 978.65576 ct
+1331.4458 979.96594 1330.90734 982.06835 1330.90734 985.06311 ct
+1330.90734 988.05786 1331.48425 990.11462 1332.6654 991.33117 ct
+1333.84655 992.54785 1335.19262 993.14196 1336.76745 993.14196 ct
+1338.3424 993.14196 1339.68835 992.54785 1340.86962 991.33117 ct
+1342.05078 990.11462 1342.62768 988.05786 1342.62768 985.06311 ct
+1342.62768 985.06311 li
+cp
+1343.5653 1006.23522 mt
+1343.5653 1003.61486 1342.9884 1001.60375 1341.80725 1000.10644 ct
+1340.62597 998.60913 1338.97241 997.8778 1336.76745 997.8778 ct
+1334.56262 997.8778 1332.90893 998.60913 1331.72778 1000.10644 ct
+1330.54663 1001.60375 1329.96972 1003.61486 1329.96972 1006.23522 ct
+1329.96972 1009.22998 1330.58508 1011.46948 1331.84497 1013.06042 ct
+1333.10485 1014.65136 1334.72009 1015.42834 1336.76745 1015.42834 ct
+1338.81481 1015.42834 1340.43005 1014.65136 1341.69006 1013.06042 ct
+1342.94995 1011.46948 1343.5653 1009.22998 1343.5653 1006.23522 ct
+1343.5653 1006.23522 li
+cp
+dp
+1350.95654 1006.23522 mt
+1350.95654 1010.91442 1349.87976 1014.38806 1347.67492 1016.82128 ct
+1345.46997 1019.25439 1342.54724 1020.44274 1338.76745 1020.44274 ct
+1334.98767 1020.44274 1332.06494 1019.25439 1329.8601 1016.82128 ct
+1327.65515 1014.38806 1326.57836 1010.91442 1326.57836 1006.23522 ct
+1326.57836 1003.802 1327.19372 1001.6538 1328.45361 999.68859 ct
+1329.71362 997.72326 1331.40563 996.30639 1333.61059 995.3706 ct
+1331.7207 994.43469 1330.29772 993.15502 1329.27404 991.47045 ct
+1328.25036 989.78588 1327.75048 987.68347 1327.75048 985.06311 ct
+1327.75048 980.94543 1328.82727 977.74609 1331.0321 975.31286 ct
+1333.23693 972.87963 1335.77514 971.69128 1338.76745 971.69128 ct
+1341.75976 971.69128 1344.29797 972.87963 1346.50292 975.31286 ct
+1348.70776 977.74609 1349.78454 980.94543 1349.78454 985.06311 ct
+1349.78454 987.68347 1349.28454 989.78588 1348.26086 991.47045 ct
+1347.23718 993.15502 1345.81433 994.43469 1343.92443 995.3706 ct
+1346.12927 996.30639 1347.82141 997.72326 1349.08129 999.68859 ct
+1350.3413 1001.6538 1350.95654 1003.802 1350.95654 1006.23522 ct
+1350.95654 1006.23522 li
+cp
+1344.62768 985.06311 mt
+1344.62768 982.06835 1344.08923 979.96594 1342.98681 978.65576 ct
+1341.88439 977.34558 1340.49987 976.70581 1338.76745 976.70581 ct
+1337.03503 976.70581 1335.65063 977.34558 1334.54821 978.65576 ct
+1333.4458 979.96594 1332.90734 982.06835 1332.90734 985.06311 ct
+1332.90734 988.05786 1333.48425 990.11462 1334.6654 991.33117 ct
+1335.84655 992.54785 1337.19262 993.14196 1338.76745 993.14196 ct
+1340.3424 993.14196 1341.68835 992.54785 1342.86962 991.33117 ct
+1344.05078 990.11462 1344.62768 988.05786 1344.62768 985.06311 ct
+1344.62768 985.06311 li
+cp
+1345.5653 1006.23522 mt
+1345.5653 1003.61486 1344.9884 1001.60375 1343.80725 1000.10644 ct
+1342.62597 998.60913 1340.97241 997.8778 1338.76745 997.8778 ct
+1336.56262 997.8778 1334.90893 998.60913 1333.72778 1000.10644 ct
+1332.54663 1001.60375 1331.96972 1003.61486 1331.96972 1006.23522 ct
+1331.96972 1009.22998 1332.58508 1011.46948 1333.84497 1013.06042 ct
+1335.10485 1014.65136 1336.72009 1015.42834 1338.76745 1015.42834 ct
+1340.81481 1015.42834 1342.43005 1014.65136 1343.69006 1013.06042 ct
+1344.94995 1011.46948 1345.5653 1009.22998 1345.5653 1006.23522 ct
+1345.5653 1006.23522 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+T sa
+1415.72216 1019.88562 mt
+1391.81286 lh
+1391.81286 1015.42834 li
+1392.75781 1012.43359 1394.02685 1009.73706 1395.68054 1007.2102 ct
+1397.3341 1004.68347 1399.68005 1001.8955 1402.82983 998.7135 ct
+1405.19226 996.28027 1406.84594 994.08654 1407.86962 992.02758 ct
+1408.89331 989.96875 1409.39318 987.7749 1409.39318 985.34167 ct
+1409.39318 982.90844 1408.97021 980.94323 1408.104 979.35229 ct
+1407.23779 977.76135 1405.89184 976.98437 1404.00195 976.98437 ct
+1402.427 976.98437 1401.08093 977.807 1399.89978 979.49157 ct
+1398.71862 981.17602 1398.14172 984.10119 1398.14172 988.40612 ct
+1392.75048 988.40612 li
+1392.90795 982.97814 1393.94628 978.9104 1395.91491 976.00927 ct
+1397.88354 973.10815 1400.61401 971.69128 1404.23632 971.69128 ct
+1407.70104 971.69128 1410.31616 972.92529 1412.20605 975.45214 ct
+1414.09594 977.979 1415.01892 981.31542 1415.01892 985.62036 ct
+1415.01892 989.17651 1414.17285 992.19299 1412.44055 994.81347 ct
+1410.70812 997.43383 1408.63134 999.99328 1406.11157 1002.61364 ct
+1403.27673 1005.60839 1401.35388 1007.80224 1400.25146 1009.29956 ct
+1399.14892 1010.79699 1398.14904 1012.53369 1397.2041 1014.59265 ct
+1415.72216 1014.59265 li
+1415.72216 1019.88562 li
+cp
+dp
+1417.72216 1019.88562 mt
+1393.81286 lh
+1393.81286 1015.42834 li
+1394.75781 1012.43359 1396.02685 1009.73706 1397.68054 1007.2102 ct
+1399.3341 1004.68347 1401.68005 1001.8955 1404.82983 998.7135 ct
+1407.19226 996.28027 1408.84594 994.08654 1409.86962 992.02758 ct
+1410.89331 989.96875 1411.39318 987.7749 1411.39318 985.34167 ct
+1411.39318 982.90844 1410.97021 980.94323 1410.104 979.35229 ct
+1409.23779 977.76135 1407.89184 976.98437 1406.00195 976.98437 ct
+1404.427 976.98437 1403.08093 977.807 1401.89978 979.49157 ct
+1400.71862 981.17602 1400.14172 984.10119 1400.14172 988.40612 ct
+1394.75048 988.40612 li
+1394.90795 982.97814 1395.94628 978.9104 1397.91491 976.00927 ct
+1399.88354 973.10815 1402.61401 971.69128 1406.23632 971.69128 ct
+1409.70104 971.69128 1412.31616 972.92529 1414.20605 975.45214 ct
+1416.09594 977.979 1417.01892 981.31542 1417.01892 985.62036 ct
+1417.01892 989.17651 1416.17285 992.19299 1414.44055 994.81347 ct
+1412.70812 997.43383 1410.63134 999.99328 1408.11157 1002.61364 ct
+1405.27673 1005.60839 1403.35388 1007.80224 1402.25146 1009.29956 ct
+1401.14892 1010.79699 1400.14904 1012.53369 1399.2041 1014.59265 ct
+1417.72216 1014.59265 li
+1417.72216 1019.88562 li
+cp
+dp
+1457.89416 995.92773 mt
+1457.89416 1002.66589 1456.89428 1008.33325 1454.84692 1013.1997 ct
+1452.79956 1018.06616 1449.56909 1020.44274 1445.00195 1020.44274 ct
+1440.43469 1020.44274 1437.16577 1018.06616 1435.03967 1013.1997 ct
+1432.91357 1008.33325 1431.87524 1002.66589 1431.87524 995.92773 ct
+1431.87524 989.18957 1432.91357 983.56799 1435.03967 978.79504 ct
+1437.16577 974.02221 1440.43469 971.69128 1445.00195 971.69128 ct
+1449.56909 971.69128 1452.79956 974.02221 1454.84692 978.79504 ct
+1456.89428 983.56799 1457.89416 989.18957 1457.89416 995.92773 ct
+1457.89416 995.92773 li
+cp
+1452.26843 995.92773 mt
+1452.26843 989.93823 1451.69165 985.36779 1450.51037 981.99877 ct
+1449.32922 978.62963 1447.52172 976.98437 1445.00195 976.98437 ct
+1442.48205 976.98437 1440.6361 978.62963 1439.37622 981.99877 ct
+1438.11621 985.36779 1437.50097 989.93823 1437.50097 995.92773 ct
+1437.50097 1001.91723 1438.11621 1006.53332 1439.37622 1009.99597 ct
+1440.6361 1013.45874 1442.48205 1015.14978 1445.00195 1015.14978 ct
+1447.52172 1015.14978 1449.32922 1013.45874 1450.51037 1009.99597 ct
+1451.69165 1006.53332 1452.26843 1001.91723 1452.26843 995.92773 ct
+1452.26843 995.92773 li
+cp
+dp
+1459.89416 995.92773 mt
+1459.89416 1002.66589 1458.89428 1008.33325 1456.84692 1013.1997 ct
+1454.79956 1018.06616 1451.56909 1020.44274 1447.00195 1020.44274 ct
+1442.43469 1020.44274 1439.16577 1018.06616 1437.03967 1013.1997 ct
+1434.91357 1008.33325 1433.87524 1002.66589 1433.87524 995.92773 ct
+1433.87524 989.18957 1434.91357 983.56799 1437.03967 978.79504 ct
+1439.16577 974.02221 1442.43469 971.69128 1447.00195 971.69128 ct
+1451.56909 971.69128 1454.79956 974.02221 1456.84692 978.79504 ct
+1458.89428 983.56799 1459.89416 989.18957 1459.89416 995.92773 ct
+1459.89416 995.92773 li
+cp
+1454.26843 995.92773 mt
+1454.26843 989.93823 1453.69165 985.36779 1452.51037 981.99877 ct
+1451.32922 978.62963 1449.52172 976.98437 1447.00195 976.98437 ct
+1444.48205 976.98437 1442.6361 978.62963 1441.37622 981.99877 ct
+1440.11621 985.36779 1439.50097 989.93823 1439.50097 995.92773 ct
+1439.50097 1001.91723 1440.11621 1006.53332 1441.37622 1009.99597 ct
+1442.6361 1013.45874 1444.48205 1015.14978 1447.00195 1015.14978 ct
+1449.52172 1015.14978 1451.32922 1013.45874 1452.51037 1009.99597 ct
+1453.69165 1006.53332 1454.26843 1001.91723 1454.26843 995.92773 ct
+1454.26843 995.92773 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+826. 1109. mt
+tb
+60 fts
+/___FN2-1 0.99987 1.18859 mf
+0. -18.80004 ta
+826.9375 1109. mt
+(Epochs) 6 0 153.20007 tf
+826. 1109. mt
+(Epochs) 6 0 153.20007 tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Rectangle
+0. pg
+2. 2. sp
+2 lc
+0 lj
+1. fg
+377. 89.6499 453. 195.44079 rp
+db
+%%EndObject
+%%BeginObject: Line
+1 lc
+1 lj
+383. 103.91381 mt
+409.99987 103.91406 li
+ds
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+0. pg
+1. 1. sp
+1649. 428. mt
+tb
+60 fts
+/___FN2 1. 1.18859 mf
+0. -26. ta
+(LMS) 3 0 86. tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+1649. 532. mt
+tb
+60 fts
+/___FN2 0.99987 1.18859 mf
+0. -17.25 ta
+(s=2.0) 5 0 106.75 tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+1649. 636. mt
+tb
+60 fts
+/___FN2 0.99987 1.18859 mf
+0. -17.25 ta
+(s=2.2) 5 0 106.75 tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+1649. 744. mt
+tb
+60 fts
+/___FN2 0.99987 1.18859 mf
+0. -17.25 ta
+(s=2.4) 5 0 106.75 tf
+te
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%BeginObject: Line
+0. pg
+2. 2. sp
+383. 130.06433 mt
+409.99987 130.06457 li
+ds
+%%EndObject
+%%BeginObject: Rectangle
+2 lc
+0 lj
+0. fg
+393. 126.49841 398.99987 133.63049 rp
+db
+%%EndObject
+%%BeginObject: Line
+1 lc
+1 lj
+383. 156.21484 mt
+409.99987 156.21508 li
+ds
+%%EndObject
+%%BeginObject: Polygon
+%%NumPoints: 5 
+395.99987 152.64892 mt
+398.99987 159.781 li
+393. lh
+395.99987 152.64892 li
+152.64892 lv
+cp
+db
+%%EndObject
+%%BeginObject: Line
+383. 182.36535 mt
+409.99987 182.3656 li
+ds
+%%EndObject
+%%BeginObject: Polygon
+%%NumPoints: 6 
+395.99987 178.79943 mt
+398.99987 182.36547 li
+395.99987 185.93151 li
+393. 182.36547 li
+395.99987 178.79943 li
+178.79943 lv
+cp
+db
+%%EndObject
+%%BeginObject: Text
+cd
+gs
+ .25 .25 scale
+0. pg
+1. 1. sp
+T sa
+186.90307 367.66271 mt
+181.28027 lh
+203.49487 326.87756 li
+202.93261 326.87756 li
+173.97058 367.66271 li
+169.47229 367.66271 li
+184.93945 326.87756 li
+184.37719 326.87756 li
+162.16247 367.66271 li
+156.53967 367.66271 li
+187.67236 310.49658 li
+196.38781 310.49658 li
+182.00244 348.27307 li
+182.56469 348.27307 li
+209.32043 310.49658 li
+218.03588 310.49658 li
+186.90307 367.66271 li
+cp
+dp
+F sa
+T sa
+190.86206 435.61608 mt
+189.38623 440.7821 186.9049 444.78588 183.29968 447.81823 ct
+179.69445 450.85046 175.62756 452.33129 170.90527 452.33129 ct
+166.18286 452.33129 163.02404 450.79565 161.27832 447.651 ct
+159.53247 444.50646 159.33715 440.66723 160.6831 435.95043 ct
+161.3551 433.61022 li
+167.82141 433.61022 li
+167.24597 435.61608 li
+166.28381 438.98522 166.39331 441.50817 167.57983 443.30505 ct
+168.76635 445.10192 170.45275 445.97949 172.71948 445.97949 ct
+175.74182 445.97949 178.17626 445.04711 180.13903 443.13793 ct
+182.1018 441.22875 183.43652 438.97998 184.20678 436.28466 ct
+184.84729 434.03857 184.59643 432.00927 183.4425 430.10009 ct
+182.28845 428.19079 180.37573 426.4906 177.61315 424.91833 ct
+173.6582 422.89685 171.10253 420.703 169.82458 418.23217 ct
+168.54663 415.76147 168.39379 412.90942 169.359 409.54028 ct
+170.70483 404.82348 173.10766 401.09387 176.68188 398.17395 ct
+180.2561 395.25402 183.84655 393.828 187.62451 393.828 ct
+192.53564 393.828 195.50927 395.52819 196.68688 399.00964 ct
+197.86462 402.49121 197.87463 406.16589 196.71765 410.20886 ct
+190.25146 410.20886 li
+191.14575 407.73815 191.21923 405.54431 190.47546 403.52282 ct
+189.73168 401.50134 188.16918 400.51403 185.71362 400.51403 ct
+183.44689 400.51403 181.49011 401.22705 179.75024 402.68701 ct
+178.01037 404.14697 176.81616 406.06665 176.11083 408.53735 ct
+175.53234 410.55883 175.55322 412.25915 176.17443 413.71911 ct
+176.79577 415.17907 178.93981 416.87939 182.70886 418.90087 ct
+186.28601 420.92236 188.74792 423.28076 190.21191 426.08837 ct
+191.67578 428.89599 191.88916 432.02233 190.86206 435.61608 ct
+190.86206 435.61608 li
+cp
+dp
+F sa
+T sa
+186.27587 535.66271 mt
+157.59924 lh
+173.93627 478.49658 li
+201.20715 478.49658 li
+199.39294 484.84838 li
+178.58837 484.84838 li
+173.52343 502.56652 li
+192.64111 502.56652 li
+190.8269 508.91833 li
+171.7091 508.91833 li
+165.87976 529.31091 li
+188.09008 529.31091 li
+186.27587 535.66271 li
+cp
+dp
+F sa
+gr
+1. 1. sp
+1 lc
+1 lj
+%%EndObject
+%%EndGroup
+userdict /canvassave get restore
+%%Trailer
+/Deneba_CanvasGraphics where{/Deneba_CanvasGraphics get/terminate get exec}if
+/Deneba_CanvasCustomColors where{/Deneba_CanvasCustomColors get/terminate get exec}if
+showpage
+%%Trailer
+%%EOF
